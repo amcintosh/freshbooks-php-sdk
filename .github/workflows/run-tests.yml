@@ -1,0 +1,42 @@
+# This workflows will run tests when a pull_request is created
+
+name: Run Tests
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: ['8.0']
+
+    steps:
+    - name: Setup
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2 #https://github.com/shivammathur/setup-php
+      with:
+        php-version: ${{ matrix.php-versions }}
+        coverage: pcov
+
+    - name: Cache composer dependencies
+      id: composer-cache
+      uses: actions/cache@v2
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+
+    - name: Lint with code-sniffer
+      run: |
+        make check-style
+
+    - name: Test with phpunit
+      run: make test
