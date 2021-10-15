@@ -1,0 +1,25 @@
+{
+    "name": "amcintosh/freshbooks",
+    "description": "FreshBooks API wrapper",
+    "type": "library",
+    "require": {
+        "php": "^7.4 || ^8.0, <8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5.x-dev",
+        "squizlabs/php_codesniffer": "4.0.x-dev"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "amcintosh\\FreshBooks\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andrew McIntosh",
+            "email": "andrew@amcintosh.net"
+        }
+    ],
+    "minimum-stability": "dev"
+}
