@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks;
 
-use amcintosh\FreshBooks\api\Accounting;
+use amcintosh\FreshBooks\resources\AccountingResource;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Common\Plugin;
 use Http\Client\Common\Plugin\BaseUriPlugin;
@@ -42,7 +42,7 @@ class Client
         ];
     }
 
-    private function createHttpClient()
+    private function createHttpClient(): HttpMethodsClient
     {
         $plugins = array(
             new BaseUriPlugin(Psr17FactoryDiscovery::findUriFactory()->createUri('https://api.freshbooks.com')),
@@ -67,8 +67,8 @@ class Client
      *
      * @return array
      */
-    public function clients(): Accounting
+    public function clients(): AccountingResource
     {
-        return new Accounting($this->httpClient);
+        return new AccountingResource($this->httpClient);
     }
 }

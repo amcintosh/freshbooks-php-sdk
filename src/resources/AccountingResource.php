@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace amcintosh\FreshBooks\api;
+namespace amcintosh\FreshBooks\resources;
 
 use Http\Client\Common\HttpMethodsClient;
 
-class Accounting
+class AccountingResource
 {
 
     public function __construct(HttpMethodsClient $httpClient)
