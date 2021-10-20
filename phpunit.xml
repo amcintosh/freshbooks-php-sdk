@@ -9,5 +9,8 @@
     <testsuite name="Test Suite">
       <directory>./tests</directory>
     </testsuite>
+    <testsuite name="unit">
+      <file phpVersion="8.0.0" phpVersionOperator=">=">./tests/PHP8Test.php</file>
+    </testsuite>
   </testsuites>
 </phpunit>

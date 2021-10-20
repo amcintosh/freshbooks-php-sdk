@@ -21,11 +21,11 @@ final class ClientConfigTest extends TestCase
         $this->assertEquals("FreshBooks php sdk/{$version} client_id {$clientId}", $conf->getUserAgent());
     }
 
-    public function testUserAgentIsSet(): void
+    public function testUserAgentIsSetByArray(): void
     {
         $myAgent = 'my awesome user agent string';
 
-        $conf = new ClientConfig(userAgent: $myAgent);
+        $conf = new ClientConfig(['userAgent' => $myAgent]);
         $conf->clientId = 'my_client_id';
 
         $this->assertEquals($myAgent, $conf->getUserAgent());

@@ -8,6 +8,7 @@ use amcintosh\FreshBooks\resources\AccountingResource;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Common\Plugin;
 use Http\Client\Common\Plugin\BaseUriPlugin;
+use Http\Client\Common\Plugin\ContentTypePlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use Http\Client\Common\PluginClientFactory;
 use Http\Discovery\HttpClientDiscovery;
@@ -27,6 +28,9 @@ class Client
 
     public function __construct(string $clientId, $config = null)
     {
+        if (is_array($config)) {
+            $config = new ClientConfig($config);
+        }
         $this->config = $config;
         $this->config->clientId = $clientId;
         $this->httpClient = $this->createHttpClient();
@@ -37,8 +41,6 @@ class Client
         return [
             'Authorization' => 'Bearer ' . $this->config->accessToken,
             'User-Agent' => $this->config->getUserAgent(),
-            'Content-Type' => 'application/json',
-            'Accept' => 'application/json',
         ];
     }
 
@@ -47,6 +49,7 @@ class Client
         $plugins = array(
             new BaseUriPlugin(Psr17FactoryDiscovery::findUriFactory()->createUri('https://api.freshbooks.com')),
             new HeaderDefaultsPlugin($this->getHeaders()),
+            new ContentTypePlugin(),
         );
 
         $pluginClient = (new PluginClientFactory())->createClient(

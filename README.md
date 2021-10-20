@@ -19,6 +19,52 @@ Requires a [PSR-18 implementation](https://packagist.org/providers/psr/http-clie
 composer require amcintosh/freshbooks-php-sdk php-http/guzzle7-adapter
 ```
 
+## Usage
+
+### Configuring the API client
+
+You can create an instance of the API client by passing a configuration object and your application's client_id.
+
+To get a working client, you will need to:
+
+- Provide your application's OAuth2 `clientId` and `clientSecret` and following through the auth flow, which when complete will return an access token
+- Or if you already have a valid access token, you can instantiate the client directly using that token, however token refresh flows will not function without the application id and secret.
+
+```php
+<?php
+use amcintosh\FreshBooks\Client;
+use amcintosh\FreshBooks\ClientConfig;
+
+$conf = new ClientConfig(
+    clientSecret: '<your application secret>',
+    redirectUri: = '<your redirect uri>',
+);
+$client = new Client('<your application id>', $conf);
+```
+
+and then proceed with the auth flow (see below).
+
+Or
+
+```php
+$conf = new ClientConfig(
+    accessToken: '<a valid token>'
+);
+$client = new Client('<your application id>', $conf);
+```
+
+For PHP 7.4, named arguments are not supported, so you will need to configure the SDK with an array of
+key-values matching the argument names and values of the matching allowed types. For example:
+
+```php
+$client = new Client('<your application id>', [
+    'clientSecret' => '<your application secret>',
+    'redirectUri' => '<your redirect uri>',
+]);
+```
+
+This method is otherwise discouraged because you lose out on type hinting.
+
 ## Development
 
 ### Testing

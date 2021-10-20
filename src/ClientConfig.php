@@ -18,13 +18,14 @@ class ClientConfig
      * @return void
      */
     public function __construct(
+        ?array $configuration = null,
         ?string $clientSecret = null,
         ?string $redirectUri = null,
         ?string $accessToken = null,
         ?string $refreshToken = null,
         ?string $userAgent = null,
-        bool $autoRetry = true,
-        int $timeout = self::DEFAULT_TIMEOUT
+        bool $autoRetry = true, // TODO: add retry
+        int $timeout = self::DEFAULT_TIMEOUT //TODO: add timeouts
     ) {
         $this->clientSecret = null;
         $this->clientSecret = $clientSecret;
@@ -34,6 +35,13 @@ class ClientConfig
         $this->userAgent = $userAgent;
         $this->autoRetry = $autoRetry;
         $this->timeout = $timeout;
+
+        if (is_array($configuration)) {
+            foreach ($configuration as $parameterKey => $parameterValue) {
+                $this->$parameterKey = $parameterValue;
+            }
+        }
+
         $this->version = $this->getVersion();
     }
 

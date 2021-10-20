@@ -3,7 +3,7 @@
     "description": "FreshBooks API wrapper",
     "type": "library",
     "require": {
-        "php": "^8.0",
+        "php": "^7.4 || ^8.0",
         "php-http/client-common": "^2.4",
         "php-http/discovery": "^1.14",
         "psr/http-client": "1.0.x-dev",
