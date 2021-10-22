@@ -10,6 +10,7 @@ namespace amcintosh\FreshBooks;
 class ClientConfig
 {
 
+    private const API_BASE_URL = "https://api.freshbooks.com";
     private const DEFAULT_TIMEOUT = 30;
 
     /**
@@ -26,6 +27,7 @@ class ClientConfig
         bool $autoRetry = true,
         int $timeout = self::DEFAULT_TIMEOUT
     ) {
+        $this->apiBaseUrl = self::API_BASE_URL;
         $this->clientSecret = null;
         $this->clientSecret = $clientSecret;
         $this->redirectUri = $redirectUri;
