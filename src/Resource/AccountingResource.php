@@ -32,9 +32,12 @@ class AccountingResource extends BaseResource
         return "/accounting/account/{$accountId}/{$this->accountingPath}";
     }
 
-    private function makeRequest(string $method, string $url, array $data = [])
+    private function makeRequest(string $method, string $url, array $data = null)
     {
-        $response = $this->httpClient->send($method, $url);
+        if (!is_null($data)) {
+            $data = json_encode($data);
+        }
+        $response = $this->httpClient->send($method, $url, [], $data);
 
         $statusCode = $response->getStatusCode();
 
@@ -88,5 +91,10 @@ class AccountingResource extends BaseResource
     public function get(string $accountId, int $resourceId)
     {
         return $this->makeRequest(self::GET, $this->getUrl($accountId, $resourceId));
+    }
+
+    public function create(string $accountId, array $data)
+    {
+        return $this->makeRequest(self::POST, $this->getUrl($accountId), $data);
     }
 }
