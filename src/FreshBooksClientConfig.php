@@ -7,7 +7,7 @@ namespace amcintosh\FreshBooks;
 /**
  * Configuration object for FreshBooks API Client
  */
-class ClientConfig
+class FreshBooksClientConfig
 {
 
     private const API_BASE_URL = "https://api.freshbooks.com";

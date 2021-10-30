@@ -11,4 +11,14 @@ class BaseResource
     protected const PUT = 'PUT';
     protected const PATCH = 'PATCH';
     protected const DELETE = 'DELETE';
+
+    public function __construct($model)
+    {
+        $this->model = $model;
+    }
+
+    protected function getModelName()
+    {
+        return strtolower((new \ReflectionClass($this->model))->getShortName());
+    }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks;
 
+use amcintosh\FreshBooks\Model\Client;
 use amcintosh\FreshBooks\Resource\AccountingResource;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Common\Plugin;
@@ -16,14 +17,14 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
-class Client
+class FreshBooksClient
 {
 
     private ClientInterface $httpClient;
     private RequestFactoryInterface $requestFactoryInterface;
     private StreamFactoryInterface $streamFactoryInterface;
 
-    private ClientConfig $config;
+    private FreshBooksClientConfig $config;
 
     public function __construct(string $clientId, $config = null)
     {
@@ -69,6 +70,6 @@ class Client
      */
     public function clients(): AccountingResource
     {
-        return new AccountingResource($this->httpClient, "users/clients");
+        return new AccountingResource($this->httpClient, "users/clients", Client::class);
     }
 }

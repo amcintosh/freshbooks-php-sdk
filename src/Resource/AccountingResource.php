@@ -5,13 +5,16 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks\Resource;
 
 use Http\Client\Common\HttpMethodsClient;
+use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
+use amcintosh\FreshBooks\Model\Client;
 
 class AccountingResource extends BaseResource
 {
 
-    public function __construct(HttpMethodsClient $httpClient, string $accountingPath)
+    public function __construct(HttpMethodsClient $httpClient, string $accountingPath, string $model)
     {
+        parent::__construct($model);
         $this->httpClient = $httpClient;
         $this->accountingPath = $accountingPath;
     }
@@ -88,13 +91,15 @@ class AccountingResource extends BaseResource
         throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode);
     }
 
-    public function get(string $accountId, int $resourceId)
+    public function get(string $accountId, int $resourceId): DataTransferObject
     {
-        return $this->makeRequest(self::GET, $this->getUrl($accountId, $resourceId));
+        $data = $this->makeRequest(self::GET, $this->getUrl($accountId, $resourceId));
+        return new $this->model($data[$this->getModelName()]);
     }
 
-    public function create(string $accountId, array $data)
+    public function create(string $accountId, array $data): DataTransferObject
     {
-        return $this->makeRequest(self::POST, $this->getUrl($accountId), $data);
+        $data = $this->makeRequest(self::POST, $this->getUrl($accountId), $data);
+        return new $this->model($data[$this->getModelName()]);
     }
 }
