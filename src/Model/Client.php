@@ -21,6 +21,10 @@ class Client extends DataTransferObject
     #[MapFrom('fname')]
     public ?string $firstName;
 
+    #[MapFrom('signup_date')]
+    #[CastWith(AccountingDateTimeImmutableCaster::class, isUtc: true)]
+    public DateTimeImmutable $signupDate;
+
     #[CastWith(AccountingDateTimeImmutableCaster::class)]
     public DateTimeImmutable $updated;
 }
