@@ -17,7 +17,7 @@ class BaseResource
         $this->model = $model;
     }
 
-    protected function getModelName()
+    protected function getModelName(): string
     {
         return strtolower((new \ReflectionClass($this->model))->getShortName());
     }

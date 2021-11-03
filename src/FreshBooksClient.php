@@ -66,10 +66,10 @@ class FreshBooksClient
     /**
      * FreshBooks clients resource with calls to get, list, create, update, delete
      *
-     * @return array
+     * @return AccountingResource
      */
     public function clients(): AccountingResource
     {
-        return new AccountingResource($this->httpClient, "users/clients", Client::class);
+        return new AccountingResource($this->httpClient, 'users/clients', Client::class);
     }
 }

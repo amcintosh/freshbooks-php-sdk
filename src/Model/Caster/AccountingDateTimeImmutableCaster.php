@@ -16,7 +16,7 @@ class AccountingDateTimeImmutableCaster implements Caster
     public function __construct(
         private array $types,
         private bool $isUtc = false
-    ){
+    ) {
     }
 
     /**

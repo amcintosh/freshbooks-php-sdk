@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Resource;
 
-use Http\Client\Common\HttpMethodsClient;
+use Http\Client\HttpClient;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Model\Client;
@@ -12,7 +12,7 @@ use amcintosh\FreshBooks\Model\Client;
 class AccountingResource extends BaseResource
 {
 
-    public function __construct(HttpMethodsClient $httpClient, string $accountingPath, string $model)
+    public function __construct(HttpClient $httpClient, string $accountingPath, string $model)
     {
         parent::__construct($model);
         $this->httpClient = $httpClient;
@@ -35,7 +35,7 @@ class AccountingResource extends BaseResource
         return "/accounting/account/{$accountId}/{$this->accountingPath}";
     }
 
-    private function makeRequest(string $method, string $url, array $data = null)
+    private function makeRequest(string $method, string $url, array $data = null): array
     {
         if (!is_null($data)) {
             $data = json_encode($data);
@@ -51,7 +51,7 @@ class AccountingResource extends BaseResource
             throw new FreshBooksException('Failed to parse response', $statusCode, $e, $contents);
         }
 
-        if (!array_key_exists('response', $responseData)) {
+        if (is_null($responseData) || !array_key_exists('response', $responseData)) {
             throw new FreshBooksException('Returned an unexpected response', $statusCode, null, $contents);
         }
 

@@ -13,12 +13,18 @@
     "require-dev": {
         "phpunit/phpunit": "9.5.x-dev",
         "squizlabs/php_codesniffer": "4.0.x-dev",
-        "php-http/guzzle7-adapter": "1.x-dev"
+        "php-http/guzzle7-adapter": "1.x-dev",
+        "php-http/mock-client": "1.x-dev"
     },
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "amcintosh\\FreshBooks\\": "src/"
+            "amcintosh\\FreshBooks\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "amcintosh\\FreshBooks\\Tests\\": "tests"
         }
     },
     "authors": [
