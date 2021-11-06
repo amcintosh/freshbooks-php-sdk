@@ -7,6 +7,7 @@ namespace amcintosh\FreshBooks\Tests\Resource;
 use PHPUnit\Framework\TestCase;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Model\Client;
+use amcintosh\FreshBooks\Model\ClientList;
 use amcintosh\FreshBooks\Resource\AccountingResource;
 use amcintosh\FreshBooks\Tests\Resource\BaseResourceTest;
 
@@ -27,7 +28,7 @@ final class AccountingResourceTest extends TestCase
             ['response' => ['result' => ['client' => ['id' => $clientId]]]]
         );
 
-        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class);
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $client = $resource->get($this->accountId, $clientId);
 
         $this->assertEquals($clientId, $client->id);
@@ -42,7 +43,7 @@ final class AccountingResourceTest extends TestCase
         $clientId = 12345;
         $mockHttpClient = $this->getMockHttpClient(200, ['foo' => 'bar']);
 
-        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class);
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
 
         $this->expectException(FreshBooksException::class);
         $this->expectExceptionMessage('Returned an unexpected response');
@@ -55,7 +56,7 @@ final class AccountingResourceTest extends TestCase
         $clientId = 12345;
         $mockHttpClient = $this->getMockHttpClient(400, ['foo' => 'bar']);
 
-        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class);
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
 
         $this->expectException(FreshBooksException::class);
         $this->expectExceptionMessage('Returned an unexpected response');
@@ -74,7 +75,7 @@ final class AccountingResourceTest extends TestCase
             ]]]]
         );
 
-        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class);
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
 
         $this->expectException(FreshBooksException::class);
         $this->expectExceptionMessage(
@@ -82,6 +83,34 @@ final class AccountingResourceTest extends TestCase
         );
 
         $resource->get($this->accountId, $clientId);
+    }
+
+    public function testList(): void
+    {
+        $clientId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => [
+                'clients' => [['id' => $clientId]],
+                'page' => 0,
+                'per_page' => 15,
+                'pages' => 1,
+                'total' => 1
+            ]]]
+        );
+
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
+        $clients = $resource->list($this->accountId);
+
+        $this->assertEquals($clientId, $clients->clients[0]->id);
+        $this->assertEquals(0, $clients->page);
+        $this->assertEquals(15, $clients->perPage);
+        $this->assertEquals(1, $clients->pages);
+        $this->assertEquals(1, $clients->total);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertEquals('GET', $request->getMethod());
+        $this->assertEquals('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
     }
 
     public function testCreateByModel(): void
@@ -94,7 +123,7 @@ final class AccountingResourceTest extends TestCase
         $model = new Client();
         $model->organization = 'FreshBooks';
 
-        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class);
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $client = $resource->create($this->accountId, model: $model);
 
         $this->assertEquals($clientId, $client->id);
@@ -115,7 +144,7 @@ final class AccountingResourceTest extends TestCase
         $model = new Client();
         $model->organization = 'FreshBooks';
 
-        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class);
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $client = $resource->create($this->accountId, model: $model);
 
         $this->assertEquals($clientId, $client->id);

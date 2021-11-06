@@ -12,13 +12,9 @@ class BaseResource
     protected const PATCH = 'PATCH';
     protected const DELETE = 'DELETE';
 
-    public function __construct($model)
+    public function __construct(string $singleModel, string $listModel)
     {
-        $this->model = $model;
-    }
-
-    protected function getModelName(): string
-    {
-        return strtolower((new \ReflectionClass($this->model))->getShortName());
+        $this->singleModel = $singleModel;
+        $this->listModel = $listModel;
     }
 }

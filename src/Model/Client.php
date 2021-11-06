@@ -6,7 +6,6 @@ namespace amcintosh\FreshBooks\Model;
 
 use DateTimeImmutable;
 use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\DefaultCast;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Caster;
@@ -22,6 +21,8 @@ use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
  */
 class Client extends DataTransferObject implements DataModel
 {
+    public const RESPONSE_FIELD = 'client';
+
     /**
      * @var int The unique identifier of this client within this business.
      */

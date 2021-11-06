@@ -8,17 +8,17 @@ use Http\Client\HttpClient;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\ListModel;
 
 class AccountingResource extends BaseResource
 {
 
-    public function __construct(HttpClient $httpClient, string $accountingPath, string $model)
+    public function __construct(HttpClient $httpClient, string $accountingPath, string $singleModel, string $listModel)
     {
-        parent::__construct($model);
+        parent::__construct($singleModel, $listModel);
         $this->httpClient = $httpClient;
         $this->accountingPath = $accountingPath;
     }
-
 
     /**
      * getUrl
@@ -94,7 +94,13 @@ class AccountingResource extends BaseResource
     public function get(string $accountId, int $resourceId): DataTransferObject
     {
         $result = $this->makeRequest(self::GET, $this->getUrl($accountId, $resourceId));
-        return new $this->model($result[$this->getModelName()]);
+        return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
+    }
+
+    public function list(string $accountId): DataTransferObject
+    {
+        $result = $this->makeRequest(self::GET, $this->getUrl($accountId));
+        return new $this->listModel($result);
     }
 
     public function create(string $accountId, DataModel $model = null, array $data = null): DataTransferObject
@@ -104,6 +110,6 @@ class AccountingResource extends BaseResource
         }
         $data = array('client' => $data);
         $result = $this->makeRequest(self::POST, $this->getUrl($accountId), $data);
-        return new $this->model($result[$this->getModelName()]);
+        return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks;
 
 use amcintosh\FreshBooks\Model\Client;
+use amcintosh\FreshBooks\Model\ClientList;
 use amcintosh\FreshBooks\Resource\AccountingResource;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Common\Plugin;
@@ -70,6 +71,6 @@ class FreshBooksClient
      */
     public function clients(): AccountingResource
     {
-        return new AccountingResource($this->httpClient, 'users/clients', Client::class);
+        return new AccountingResource($this->httpClient, 'users/clients', Client::class, ClientList::class);
     }
 }

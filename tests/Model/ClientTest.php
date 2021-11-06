@@ -89,7 +89,7 @@ final class ClientTest extends TestCase
     {
         $clientData = json_decode($this->sampleClientData, true);
 
-        $client = new Client($clientData['client']);
+        $client = new Client($clientData[Client::RESPONSE_FIELD]);
 
         $this->assertEquals(12345, $client->id);
         $this->assertEquals('ACM123', $client->accountingSystemId);
