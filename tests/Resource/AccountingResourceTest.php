@@ -31,6 +31,10 @@ final class AccountingResourceTest extends TestCase
         $client = $resource->get($this->accountId, $clientId);
 
         $this->assertEquals($clientId, $client->id);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertEquals('GET', $request->getMethod());
+        $this->assertEquals('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
     }
 
     public function testGetWrongSuccessContent(): void
@@ -78,5 +82,47 @@ final class AccountingResourceTest extends TestCase
         );
 
         $resource->get($this->accountId, $clientId);
+    }
+
+    public function testCreateByModel(): void
+    {
+        $clientId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['client' => ['id' => $clientId, 'organization' => 'FreshBooks']]]]
+        );
+        $model = new Client();
+        $model->organization = 'FreshBooks';
+
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class);
+        $client = $resource->create($this->accountId, model: $model);
+
+        $this->assertEquals($clientId, $client->id);
+        $this->assertEquals('FreshBooks', $client->organization);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertEquals('POST', $request->getMethod());
+        $this->assertEquals('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
+    }
+
+    public function testCreateByData(): void
+    {
+        $clientId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['client' => ['id' => $clientId, 'organization' => 'FreshBooks']]]]
+        );
+        $model = new Client();
+        $model->organization = 'FreshBooks';
+
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class);
+        $client = $resource->create($this->accountId, model: $model);
+
+        $this->assertEquals($clientId, $client->id);
+        $this->assertEquals('FreshBooks', $client->organization);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertEquals('POST', $request->getMethod());
+        $this->assertEquals('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
     }
 }

@@ -13,7 +13,8 @@ Install it via Composer.
 composer require amcintosh/freshbooks-php-sdk
 ```
 
-Requires a [PSR-18 implementation](https://packagist.org/providers/psr/http-client-implementation) client. If you do not already have a compatible client, you can install one with it.
+Requires a [PSR-18 implementation](https://packagist.org/providers/psr/http-client-implementation) client. If you do
+not already have a compatible client, you can install one with it.
 
 ```shell
 composer require amcintosh/freshbooks-php-sdk php-http/guzzle7-adapter
@@ -25,8 +26,10 @@ composer require amcintosh/freshbooks-php-sdk php-http/guzzle7-adapter
 
 You can create an instance of the API client in one of two ways:
 
-- By providing your application's OAuth2 `clientId` and `clientSecret` and following through the auth flow, which when complete will return an access token.
-- Or if you already have a valid access token, you can instantiate the client with that token, however token refresh flows will not function without the application id and secret.
+- By providing your application's OAuth2 `clientId` and `clientSecret` and following through the auth flow, which
+  when complete will return an access token.
+- Or if you already have a valid access token, you can instantiate the client with that token, however token refresh
+  flows will not function without the application id and secret.
 
 ```php
 use amcintosh\FreshBooks\FreshBooksClient;
@@ -72,9 +75,137 @@ authorize your application for.
 $authUrl = $freshBooksClient->getAuthRequestUrl(['user:profile:read', 'user:clients:read'])
 ```
 
-Once the user has been redirected to your `redirectUri` and you have obtained the access grant code, you can exchange that code for a valid access token.
+TODO: finish flow
+Once the user has been redirected to your `redirectUri` and you have obtained the access grant code, you can exchange
+that code for a valid access token.
 
 ### Current User
+
+TODO: current user
+
+### Making API Calls
+
+Each resource in the client has provides calls for `get`, `list`, `create`, `update` and `delete` calls. Please note
+that some API resources are scoped to a FreshBooks `accountId` while others are scoped to a `businessId`. In general
+these fall along the lines of accounting resources vs projects/time tracking resources, but that is not precise.
+
+```php
+$client = $freshBooksClient->clients()->get($accountId, $clientId);
+$project = $freshBooksClient->projects()->get($businessId, $projectId);
+```
+
+#### Get and List
+
+API calls with a single resource return a [DataTransferObject](https://github.com/spatie/data-transfer-object) with
+the returned data accessible via properties.
+
+```php
+$client = $freshBooksClient->clients()->get($accountId, $clientId);
+
+echo $client->organization; // 'FreshBooks'
+$client->only('organization')->toArray(); // ['organization' => 'FreshBooks'];
+```
+
+`visState` numbers correspond with various states. See [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
+for details.
+
+```php
+use amcintosh\FreshBooks\Model\VisState;
+
+echo $client->visState; // '0'
+echo $client->visState == VisState::ACTIVE ? 'Is Active' : 'Not Active'; // 'Is Active'
+```
+
+TODO: lists
+
+API calls with returning a list of resources return a `ListResult` object. The resources in the list can be accessed by index and iterated over. Similarly, the raw dictionary can be accessed via the `data` attribute.
+
+```python
+clients = freshBooksClient.clients.list(account_id)
+
+assert clients[0].organization == "FreshBooks"
+
+assert clients.data["clients"][0]["organization"] == "FreshBooks"
+
+for client in clients:
+    assert client.organization == "FreshBooks"
+    assert client.data["organization"] == "FreshBooks"
+```
+
+#### Create, Update, and Delete
+
+API calls to create and update take either a `DataModel` object, or an array of the resource data. A successful call
+will return a `DataTransferObject` object as if a `get` call.
+
+Create:
+
+```php
+
+$clientData = new Client();
+$clientData->organization = 'FreshBooks';
+
+$newClient = $freshBooksClient->clients()->create($accountId, model: $clientData));
+
+echo $newClient->organization; // 'FreshBooks'
+```
+
+or
+
+```php
+$clientData = array('organization' => 'FreshBooks');
+
+$newClient = $freshBooksClient->clients()->create($accountId, data: $clientData));
+
+echo $newClient->organization; // 'FreshBooks'
+```
+
+TODO: Update
+Update:
+
+```python
+payload = {"email": "john.doe@abcorp.ca"}
+client = freshBooksClient.clients.update(account_id, client_id, payload)
+
+assert client.email == "john.doe@abcorp.ca"
+```
+
+TODO: Delete
+Delete:
+
+```python
+client = freshBooksClient.clients.delete(account_id, client_id)
+
+assert client.vis_state == VisState.DELETED
+```
+
+#### Error Handling
+
+Calls made to the FreshBooks API with a non-2xx response are wrapped in a `FreshBooksException`.
+This exception class contains the error message, HTTP response code, FreshBooks-specific error number if one exists,
+and the HTTP response body.
+
+Example:
+
+```php
+use amcintosh\FreshBooks\Exception\FreshBooksException;
+
+try {
+    $client = $freshBooksClient->clients()->get($accountId, 134);
+} catch (FreshBooksException $e) {
+    echo $e->getMessage(); // 'Client not found'
+    echo $e->getCode(); // 404
+    echo $e->getErrorCode(); // 1012
+    echo $e->getRawResponse(); // '{"response": {"errors": [{"errno": 1012,
+                               // "field": "userid", "message": "Client not found.",
+                               // "object": "client", "value": "134"}]}}'
+}
+```
+
+TODO: this
+Not all resources have full CRUD methods available. For example expense categories have `list` and `get`
+calls, but are not deletable. If you attempt to call a method that does not exist, the SDK will raise a
+`FreshBooksNotImplementedError` exception, but this is not something you will likely have to account
+for outside of development.
 
 ## Development
 

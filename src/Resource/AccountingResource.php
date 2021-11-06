@@ -7,7 +7,7 @@ namespace amcintosh\FreshBooks\Resource;
 use Http\Client\HttpClient;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
-use amcintosh\FreshBooks\Model\Client;
+use amcintosh\FreshBooks\Model\DataModel;
 
 class AccountingResource extends BaseResource
 {
@@ -93,13 +93,17 @@ class AccountingResource extends BaseResource
 
     public function get(string $accountId, int $resourceId): DataTransferObject
     {
-        $data = $this->makeRequest(self::GET, $this->getUrl($accountId, $resourceId));
-        return new $this->model($data[$this->getModelName()]);
+        $result = $this->makeRequest(self::GET, $this->getUrl($accountId, $resourceId));
+        return new $this->model($result[$this->getModelName()]);
     }
 
-    public function create(string $accountId, array $data): DataTransferObject
+    public function create(string $accountId, DataModel $model = null, array $data = null): DataTransferObject
     {
-        $data = $this->makeRequest(self::POST, $this->getUrl($accountId), $data);
-        return new $this->model($data[$this->getModelName()]);
+        if (!is_null($model)) {
+            $data = $model->getContent();
+        }
+        $data = array('client' => $data);
+        $result = $this->makeRequest(self::POST, $this->getUrl($accountId), $data);
+        return new $this->model($result[$this->getModelName()]);
     }
 }
