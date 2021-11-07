@@ -21,7 +21,7 @@ class AccountingResource extends BaseResource
     }
 
     /**
-     * getUrl
+     * The the url to the accounting resource.
      *
      * @param  mixed $accountId
      * @param  mixed $resourceId
@@ -35,6 +35,16 @@ class AccountingResource extends BaseResource
         return "/accounting/account/{$accountId}/{$this->accountingPath}";
     }
 
+
+    /**
+     * Make a request against the accounting resource and return an array of the json response.
+     * Throws a FreshBooksException if the response is not a 200 or if the response cannot be parsed.
+     *
+     * @param  mixed $method
+     * @param  mixed $url
+     * @param  mixed $data
+     * @return array
+     */
     private function makeRequest(string $method, string $url, array $data = null): array
     {
         if (!is_null($data)) {
@@ -68,11 +78,11 @@ class AccountingResource extends BaseResource
     }
 
     /**
-     * createResponseError
+     * Parse the json response from the accounting endpoint and create a FreshBooksException from it.
      *
-     * @param  mixed $statusCode
-     * @param  mixed $responseData
-     * @param  mixed $rawRespone
+     * @param  mixed $statusCode HTTP status code
+     * @param  mixed $responseData The json-parsed response
+     * @param  mixed $rawRespone The raw response body
      * @return void
      */
     private function createResponseError(int $statusCode, array $responseData, string $rawRespone): void
@@ -91,18 +101,39 @@ class AccountingResource extends BaseResource
         throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode);
     }
 
+    /**
+     * Get a single resource with the corresponding id.
+     *
+     * @param  mixed $accountId The alpha-numeric account id
+     * @param  mixed $resourceId Id of the resource to return
+     * @return DataTransferObject The result model
+     */
     public function get(string $accountId, int $resourceId): DataTransferObject
     {
         $result = $this->makeRequest(self::GET, $this->getUrl($accountId, $resourceId));
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
 
+    /**
+     * Get a list of resources.
+     *
+     * @param  mixed $accountId The alpha-numeric account id
+     * @return DataTransferObject The list result model
+     */
     public function list(string $accountId): DataTransferObject
     {
         $result = $this->makeRequest(self::GET, $this->getUrl($accountId));
         return new $this->listModel($result);
     }
 
+    /**
+     * Create a resource from either an array or a DataModel object.
+     *
+     * @param  mixed $accountId The alpha-numeric account id
+     * @param  mixed $model (Optional) The model to create
+     * @param  mixed $data (Optional) The data to create the model with
+     * @return DataTransferObject Model of the new resource's response data.
+     */
     public function create(string $accountId, DataModel $model = null, array $data = null): DataTransferObject
     {
         if (!is_null($model)) {
@@ -113,8 +144,21 @@ class AccountingResource extends BaseResource
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
 
-    public function update(string $accountId, int $resourceId, DataModel $model = null, array $data = null): DataTransferObject
-    {
+    /**
+     * Update a resource from either an array or a DataModel object.
+     *
+     * @param  mixed $accountId The alpha-numeric account id
+     * @param  mixed $resourceId Id of the resource to update
+     * @param  mixed $model (Optional) The model to update
+     * @param  mixed $data (Optional) The data to update the model with
+     * @return DataTransferObject Model of the updated resource's response data.
+     */
+    public function update(
+        string $accountId,
+        int $resourceId,
+        DataModel $model = null,
+        array $data = null
+    ): DataTransferObject {
         if (!is_null($model)) {
             $data = $model->getContent();
         }

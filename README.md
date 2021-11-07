@@ -96,8 +96,8 @@ $project = $freshBooksClient->projects()->get($businessId, $projectId);
 
 #### Get and List
 
-API calls with a single resource return a [DataTransferObject](https://github.com/spatie/data-transfer-object) with
-the returned data accessible via properties.
+API calls which return a single resource return a [DataTransferObject](https://github.com/spatie/data-transfer-object)
+with the returned data accessible via properties.
 
 ```php
 $client = $freshBooksClient->clients()->get($accountId, $clientId);
@@ -116,20 +116,17 @@ echo $client->visState; // '0'
 echo $client->visState == VisState::ACTIVE ? 'Is Active' : 'Not Active'; // 'Is Active'
 ```
 
-TODO: lists
+API calls which return a list of resources return a [DataTransferObject](https://github.com/spatie/data-transfer-object)
+with an array of the resources.
 
-API calls with returning a list of resources return a `ListResult` object. The resources in the list can be accessed by index and iterated over. Similarly, the raw dictionary can be accessed via the `data` attribute.
+```php
+$clients = $freshBooksClient->clients()->list($accountId);
 
-```python
-clients = freshBooksClient.clients.list(account_id)
+echo $clients->clients[0]->organization; // 'FreshBooks'
 
-assert clients[0].organization == "FreshBooks"
-
-assert clients.data["clients"][0]["organization"] == "FreshBooks"
-
-for client in clients:
-    assert client.organization == "FreshBooks"
-    assert client.data["organization"] == "FreshBooks"
+foreach ($clients->clients as $client) {
+    echo $client->organization;
+}
 ```
 
 #### Create, Update, and Delete
@@ -140,7 +137,6 @@ will return a `DataTransferObject` object as if a `get` call.
 Create:
 
 ```php
-
 $clientData = new Client();
 $clientData->organization = 'FreshBooks';
 
@@ -159,14 +155,25 @@ $newClient = $freshBooksClient->clients()->create($accountId, data: $clientData)
 echo $newClient->organization; // 'FreshBooks'
 ```
 
-TODO: Update
 Update:
 
-```python
-payload = {"email": "john.doe@abcorp.ca"}
-client = freshBooksClient.clients.update(account_id, client_id, payload)
+```php
+$clientData->organization = 'New Org';
 
-assert client.email == "john.doe@abcorp.ca"
+$newClient = $freshBooksClient->clients()->update($accountId, $clientData->id, model: $clientData));
+
+echo $newClient->organization; // 'New Org'
+```
+
+or
+
+```php
+$clientData = array('organization' => 'Really New Org');
+
+$newClient = $freshBooksClient->clients()->update($accountId, $clientId, data: $clientData));
+
+echo $newClient->organization; // 'Really New Org'
+
 ```
 
 TODO: Delete
@@ -215,4 +222,12 @@ To run all tests:
 
 ```bash
 make test
+```
+
+### Documentations
+
+You can generate the documentation via:
+
+```bash
+make generate-docs
 ```
