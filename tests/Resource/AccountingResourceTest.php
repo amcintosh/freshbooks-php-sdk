@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Model\Client;
 use amcintosh\FreshBooks\Model\ClientList;
+use amcintosh\FreshBooks\Model\VisState;
 use amcintosh\FreshBooks\Resource\AccountingResource;
 use amcintosh\FreshBooks\Tests\Resource\BaseResourceTest;
 
@@ -192,6 +193,48 @@ final class AccountingResourceTest extends TestCase
 
         $request = $mockHttpClient->getLastRequest();
         $this->assertEquals('PUT', $request->getMethod());
+        $this->assertEquals('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+    }
+
+    public function testDeleteViaUpdate(): void
+    {
+        $clientId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['client' => ['id' => $clientId, 'vis_state' => 1]]]]
+        );
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
+        $client = $resource->delete($this->accountId, $clientId);
+
+        $this->assertEquals($clientId, $client->id);
+        $this->assertEquals(VisState::DELETED, $client->visState);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertEquals('PUT', $request->getMethod());
+        $this->assertEquals('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+    }
+
+    public function testDeleteViaDelete(): void
+    {
+        $clientId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['client' => ['id' => $clientId, 'vis_state' => 1]]]]
+        );
+        $resource = new AccountingResource(
+            $mockHttpClient,
+            'users/clients',
+            Client::class,
+            ClientList::class,
+            deleteViaUpdate: false
+        );
+        $client = $resource->delete($this->accountId, $clientId);
+
+        $this->assertEquals($clientId, $client->id);
+        $this->assertEquals(VisState::DELETED, $client->visState);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertEquals('DELETE', $request->getMethod());
         $this->assertEquals('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
     }
 }

@@ -9,15 +9,22 @@ use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\ListModel;
+use amcintosh\FreshBooks\Model\VisState;
 
 class AccountingResource extends BaseResource
 {
 
-    public function __construct(HttpClient $httpClient, string $accountingPath, string $singleModel, string $listModel)
-    {
+    public function __construct(
+        HttpClient $httpClient,
+        string $accountingPath,
+        string $singleModel,
+        string $listModel,
+        bool $deleteViaUpdate = true
+    ) {
         parent::__construct($singleModel, $listModel);
         $this->httpClient = $httpClient;
         $this->accountingPath = $accountingPath;
+        $this->deleteViaUpdate = $deleteViaUpdate;
     }
 
     /**
@@ -164,6 +171,17 @@ class AccountingResource extends BaseResource
         }
         $data = array('client' => $data);
         $result = $this->makeRequest(self::PUT, $this->getUrl($accountId, $resourceId), $data);
+        return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
+    }
+
+    public function delete(string $accountId, int $resourceId): DataTransferObject
+    {
+        if ($this->deleteViaUpdate) {
+            $data = array('client' => ['vis_state' => VisState::DELETED]);
+            $result = $this->makeRequest(self::PUT, $this->getUrl($accountId, $resourceId), $data);
+        } else {
+            $result = $this->makeRequest(self::DELETE, $this->getUrl($accountId, $resourceId));
+        }
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
 }

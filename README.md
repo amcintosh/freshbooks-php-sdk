@@ -140,7 +140,7 @@ Create:
 $clientData = new Client();
 $clientData->organization = 'FreshBooks';
 
-$newClient = $freshBooksClient->clients()->create($accountId, model: $clientData));
+$newClient = $freshBooksClient->clients()->create($accountId, model: $clientData);
 
 echo $newClient->organization; // 'FreshBooks'
 ```
@@ -150,7 +150,7 @@ or
 ```php
 $clientData = array('organization' => 'FreshBooks');
 
-$newClient = $freshBooksClient->clients()->create($accountId, data: $clientData));
+$newClient = $freshBooksClient->clients()->create($accountId, data: $clientData);
 
 echo $newClient->organization; // 'FreshBooks'
 ```
@@ -160,7 +160,7 @@ Update:
 ```php
 $clientData->organization = 'New Org';
 
-$newClient = $freshBooksClient->clients()->update($accountId, $clientData->id, model: $clientData));
+$newClient = $freshBooksClient->clients()->update($accountId, $clientData->id, model: $clientData);
 
 echo $newClient->organization; // 'New Org'
 ```
@@ -170,19 +170,19 @@ or
 ```php
 $clientData = array('organization' => 'Really New Org');
 
-$newClient = $freshBooksClient->clients()->update($accountId, $clientId, data: $clientData));
+$newClient = $freshBooksClient->clients()->update($accountId, $clientId, data: $clientData);
 
 echo $newClient->organization; // 'Really New Org'
 
 ```
 
-TODO: Delete
 Delete:
 
-```python
-client = freshBooksClient.clients.delete(account_id, client_id)
+```php
+$client = $freshBooksClient->clients()->delete($accountId, $clientId);
 
-assert client.vis_state == VisState.DELETED
+echo $client->visState; // '1'
+echo $client->visState == VisState::ACTIVE ? 'Is Active' : 'Not Active'; // 'Not Active'
 ```
 
 #### Error Handling
