@@ -112,4 +112,14 @@ class AccountingResource extends BaseResource
         $result = $this->makeRequest(self::POST, $this->getUrl($accountId), $data);
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
+
+    public function update(string $accountId, int $resourceId, DataModel $model = null, array $data = null): DataTransferObject
+    {
+        if (!is_null($model)) {
+            $data = $model->getContent();
+        }
+        $data = array('client' => $data);
+        $result = $this->makeRequest(self::PUT, $this->getUrl($accountId, $resourceId), $data);
+        return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
+    }
 }
