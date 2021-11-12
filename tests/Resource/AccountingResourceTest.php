@@ -6,6 +6,7 @@ namespace amcintosh\FreshBooks\Tests\Resource;
 
 use PHPUnit\Framework\TestCase;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
+use amcintosh\FreshBooks\Builder\PaginateBuilder;
 use amcintosh\FreshBooks\Model\Client;
 use amcintosh\FreshBooks\Model\ClientList;
 use amcintosh\FreshBooks\Model\VisState;
@@ -93,7 +94,7 @@ final class AccountingResourceTest extends TestCase
             200,
             ['response' => ['result' => [
                 'clients' => [['id' => $clientId]],
-                'page' => 0,
+                'page' => 1,
                 'per_page' => 15,
                 'pages' => 1,
                 'total' => 1
@@ -104,7 +105,7 @@ final class AccountingResourceTest extends TestCase
         $clients = $resource->list($this->accountId);
 
         $this->assertEquals($clientId, $clients->clients[0]->id);
-        $this->assertEquals(0, $clients->page);
+        $this->assertEquals(1, $clients->page);
         $this->assertEquals(15, $clients->perPage);
         $this->assertEquals(1, $clients->pages);
         $this->assertEquals(1, $clients->total);
@@ -112,6 +113,56 @@ final class AccountingResourceTest extends TestCase
         $request = $mockHttpClient->getLastRequest();
         $this->assertEquals('GET', $request->getMethod());
         $this->assertEquals('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
+    }
+
+    public function testListNoRecords(): void
+    {
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => [
+                'clients' => [],
+                'page' => 1,
+                'per_page' => 15,
+                'pages' => 0,
+                'total' => 0
+            ]]]
+        );
+
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
+        $clients = $resource->list($this->accountId);
+
+        $this->assertEquals([], $clients->clients);
+        $this->assertEquals(1, $clients->page);
+        $this->assertEquals(15, $clients->perPage);
+        $this->assertEquals(0, $clients->pages);
+        $this->assertEquals(0, $clients->total);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertEquals('GET', $request->getMethod());
+        $this->assertEquals('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
+    }
+
+
+    public function testListPaged(): void
+    {
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => [
+                'clients' => [['id' => 12345]],
+                'page' => 1,
+                'per_page' => 1,
+                'pages' => 2,
+                'total' => 2
+            ]]]
+        );
+
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
+        $pages = new PaginateBuilder(1, 2);
+        $clients = $resource->list($this->accountId, [$pages]);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertEquals('GET', $request->getMethod());
+        $this->assertEquals('/accounting/account/ACM123/users/clients?page=1&per_page=2', $request->getRequestTarget());
     }
 
     public function testCreateByModel(): void

@@ -30,8 +30,8 @@ class AccountingResource extends BaseResource
     /**
      * The the url to the accounting resource.
      *
-     * @param  mixed $accountId
-     * @param  mixed $resourceId
+     * @param  string $accountId
+     * @param  int $resourceId
      * @return string
      */
     private function getUrl(string $accountId, int $resourceId = null): string
@@ -47,9 +47,9 @@ class AccountingResource extends BaseResource
      * Make a request against the accounting resource and return an array of the json response.
      * Throws a FreshBooksException if the response is not a 200 or if the response cannot be parsed.
      *
-     * @param  mixed $method
-     * @param  mixed $url
-     * @param  mixed $data
+     * @param  string $method
+     * @param  string $url
+     * @param  array $data
      * @return array
      */
     private function makeRequest(string $method, string $url, array $data = null): array
@@ -87,9 +87,9 @@ class AccountingResource extends BaseResource
     /**
      * Parse the json response from the accounting endpoint and create a FreshBooksException from it.
      *
-     * @param  mixed $statusCode HTTP status code
-     * @param  mixed $responseData The json-parsed response
-     * @param  mixed $rawRespone The raw response body
+     * @param  int $statusCode HTTP status code
+     * @param  array $responseData The json-parsed response
+     * @param  string $rawRespone The raw response body
      * @return void
      */
     private function createResponseError(int $statusCode, array $responseData, string $rawRespone): void
@@ -111,8 +111,8 @@ class AccountingResource extends BaseResource
     /**
      * Get a single resource with the corresponding id.
      *
-     * @param  mixed $accountId The alpha-numeric account id
-     * @param  mixed $resourceId Id of the resource to return
+     * @param  string $accountId The alpha-numeric account id
+     * @param  int $resourceId Id of the resource to return
      * @return DataTransferObject The result model
      */
     public function get(string $accountId, int $resourceId): DataTransferObject
@@ -124,21 +124,23 @@ class AccountingResource extends BaseResource
     /**
      * Get a list of resources.
      *
-     * @param  mixed $accountId The alpha-numeric account id
+     * @param  string $accountId The alpha-numeric account id
+     * @param  array $builders (Optional) List of builder objects for filters, pagination, etc.
      * @return DataTransferObject The list result model
      */
-    public function list(string $accountId): DataTransferObject
+    public function list(string $accountId, ?array $builders = null): DataTransferObject
     {
-        $result = $this->makeRequest(self::GET, $this->getUrl($accountId));
+        $queryString = $this->buildQueryString($builders);
+        $result = $this->makeRequest(self::GET, $this->getUrl($accountId) . $queryString);
         return new $this->listModel($result);
     }
 
     /**
      * Create a resource from either an array or a DataModel object.
      *
-     * @param  mixed $accountId The alpha-numeric account id
-     * @param  mixed $model (Optional) The model to create
-     * @param  mixed $data (Optional) The data to create the model with
+     * @param  string $accountId The alpha-numeric account id
+     * @param  DataModel $model (Optional) The model to create
+     * @param  array $data (Optional) The data to create the model with
      * @return DataTransferObject Model of the new resource's response data.
      */
     public function create(string $accountId, DataModel $model = null, array $data = null): DataTransferObject
@@ -154,10 +156,10 @@ class AccountingResource extends BaseResource
     /**
      * Update a resource from either an array or a DataModel object.
      *
-     * @param  mixed $accountId The alpha-numeric account id
-     * @param  mixed $resourceId Id of the resource to update
-     * @param  mixed $model (Optional) The model to update
-     * @param  mixed $data (Optional) The data to update the model with
+     * @param  string $accountId The alpha-numeric account id
+     * @param  int $resourceId Id of the resource to update
+     * @param  DataModel $model (Optional) The model to update
+     * @param  array $data (Optional) The data to update the model with
      * @return DataTransferObject Model of the updated resource's response data.
      */
     public function update(

@@ -17,4 +17,19 @@ class BaseResource
         $this->singleModel = $singleModel;
         $this->listModel = $listModel;
     }
+
+    protected function buildQueryString(?array $builders): string
+    {
+        $queryString = '';
+        if (is_null($builders)) {
+            return $queryString;
+        }
+        foreach ($builders as $builder) {
+            $queryString .= $builder->build();
+        }
+        if ($queryString !== '') {
+            $queryString = '?' . ltrim($queryString, '&');
+        }
+        return $queryString;
+    }
 }

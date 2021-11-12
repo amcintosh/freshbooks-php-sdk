@@ -214,6 +214,63 @@ calls, but are not deletable. If you attempt to call a method that does not exis
 `FreshBooksNotImplementedError` exception, but this is not something you will likely have to account
 for outside of development.
 
+#### Pagination, Filters, and Includes
+
+`list` calls take a list of builder objects that can be used to paginate, filter, and include
+optional data in the response. See [FreshBooks API - Parameters](https://www.freshbooks.com/api/parameters) documentation.
+
+##### Pagination
+
+Pagination results are included in `list` responses:
+
+```php
+$clients = $freshBooksClient->clients()->list($accountId);
+
+echo $clients->page    // 1
+echo $clients->pages   // 1
+echo $clients->perPage // 30
+echo $clients->total   // 6
+```
+
+To make a paginated call, first create a `PaginateBuilder` that can be passed into the `list` method.
+
+```php
+use amcintosh\FreshBooks\Builder\PaginateBuilder;
+
+$paginator = new PaginateBuilder(2, 4);
+
+$clients = $freshBooksClient->clients()->list($accountId, builders: [$paginator]);
+
+echo $clients->page    // 2
+echo $clients->pages   // 2
+echo $clients->perPage // 4
+echo $clients->total   // 6
+```
+
+`PaginateBuilder` has chainable methods `page` and `perPage` to set the values.
+
+```php
+$paginator = new PaginateBuilder(1, 3);
+echo $paginator->page;    // 1
+echo $paginator->perPage; // 3
+
+$paginator->page(2)->perPage(4);
+echo $paginator->page;    // 2
+echo $paginator->perPage; // 4
+```
+
+##### Filters
+
+TODO:
+
+##### Includes
+
+TODO:
+
+##### Sorting
+
+TODO:
+
 ## Development
 
 ### Testing
