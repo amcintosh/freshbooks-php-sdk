@@ -27,14 +27,14 @@ class FreshBooksClient
 
     private FreshBooksClientConfig $config;
 
-    public function __construct(string $clientId, $config = null)
+    public function __construct(string $clientId, $config)
     {
         $this->config = $config;
         $this->config->clientId = $clientId;
         $this->httpClient = $this->createHttpClient();
     }
 
-    private function getHeaders(): array
+    protected function getHeaders(): array
     {
         return [
             'Authorization' => 'Bearer ' . $this->config->accessToken,
@@ -44,7 +44,7 @@ class FreshBooksClient
         ];
     }
 
-    private function createHttpClient(): HttpMethodsClient
+    protected function createHttpClient(): HttpMethodsClient
     {
         $plugins = array(
             new BaseUriPlugin(Psr17FactoryDiscovery::findUriFactory()->createUri($this->config->apiBaseUrl)),
