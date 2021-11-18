@@ -8,7 +8,8 @@
         "php-http/discovery": "^1.14",
         "psr/http-client": "1.0.x-dev",
         "psr/http-factory": "1.0.x-dev",
-        "spatie/data-transfer-object": "dev-master"
+        "spatie/data-transfer-object": "dev-master",
+        "spryker/decimal-object": "1.x-dev"
     },
     "require-dev": {
         "phpunit/phpunit": "9.5.x-dev",

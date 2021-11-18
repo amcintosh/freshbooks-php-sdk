@@ -91,47 +91,47 @@ final class ClientTest extends TestCase
 
         $client = new Client($clientData[Client::RESPONSE_FIELD]);
 
-        $this->assertEquals(12345, $client->id);
-        $this->assertEquals('ACM123', $client->accountingSystemId);
-        $this->assertEquals('416-867-5309', $client->businessPhone);
-        $this->assertEquals('', $client->companyIndustry);
-        $this->assertEquals('', $client->companySize);
-        $this->assertEquals('CAD', $client->currencyCode);
-        $this->assertEquals('gordon.shumway@AmericanCyanamid.com', $client->email);
-        $this->assertEquals('416-444-4444', $client->fax);
-        $this->assertEquals('Gordon', $client->firstName);
-        $this->assertEquals('416-444-4445', $client->homePhone);
-        $this->assertEquals('en', $client->language);
-        $this->assertEquals('', $client->lastActivity);
-        $this->assertEquals('Shumway', $client->lastName);
-        $this->assertEquals('416-444-4446', $client->mobilePhone);
-        $this->assertEquals('I like cats', $client->note);
-        $this->assertEquals('American Cyanamid', $client->organization);
-        $this->assertEquals('Toronto', $client->billingCity);
-        $this->assertEquals('M5T 2B3', $client->billingCode);
-        $this->assertEquals('Canada', $client->billingCountry);
-        $this->assertEquals('ON', $client->billingProvince);
-        $this->assertEquals('123 Huron St', $client->billingStreet);
-        $this->assertEquals('', $client->billingStreet2);
-        $this->assertEquals('', $client->shippingCity);
-        $this->assertEquals('', $client->shippingCode);
-        $this->assertEquals('', $client->shippingCountry);
-        $this->assertEquals('', $client->shippingProvince);
-        $this->assertEquals('', $client->shippingStreet);
-        $this->assertEquals('', $client->shippingStreet2);
+        $this->assertSame(12345, $client->id);
+        $this->assertSame('ACM123', $client->accountingSystemId);
+        $this->assertSame('416-867-5309', $client->businessPhone);
+        $this->assertSame(null, $client->companyIndustry);
+        $this->assertSame(null, $client->companySize);
+        $this->assertSame('CAD', $client->currencyCode);
+        $this->assertSame('gordon.shumway@AmericanCyanamid.com', $client->email);
+        $this->assertSame('416-444-4444', $client->fax);
+        $this->assertSame('Gordon', $client->firstName);
+        $this->assertSame('416-444-4445', $client->homePhone);
+        $this->assertSame('en', $client->language);
+        $this->assertSame(null, $client->lastActivity);
+        $this->assertSame('Shumway', $client->lastName);
+        $this->assertSame('416-444-4446', $client->mobilePhone);
+        $this->assertSame('I like cats', $client->note);
+        $this->assertSame('American Cyanamid', $client->organization);
+        $this->assertSame('Toronto', $client->billingCity);
+        $this->assertSame('M5T 2B3', $client->billingCode);
+        $this->assertSame('Canada', $client->billingCountry);
+        $this->assertSame('ON', $client->billingProvince);
+        $this->assertSame('123 Huron St', $client->billingStreet);
+        $this->assertSame('', $client->billingStreet2);
+        $this->assertSame('', $client->shippingCity);
+        $this->assertSame('', $client->shippingCode);
+        $this->assertSame('', $client->shippingCountry);
+        $this->assertSame('', $client->shippingProvince);
+        $this->assertSame('', $client->shippingStreet);
+        $this->assertSame('', $client->shippingStreet2);
         $this->assertEquals(new DateTime('2020-10-31T15:25:34Z'), $client->signupDate);
         $this->assertEquals(new DateTime('2020-11-01T18:11:10Z'), $client->updated);
-        $this->assertEquals(12345, $client->userId);
-        $this->assertEquals('', $client->vatName);
-        $this->assertEquals('', $client->vatNumber);
-        $this->assertEquals(VisState::ACTIVE, $client->visState);
+        $this->assertSame(12345, $client->userId);
+        $this->assertSame(null, $client->vatName);
+        $this->assertSame(null, $client->vatNumber);
+        $this->assertSame(VisState::ACTIVE, $client->visState);
     }
 
     public function testClientGetContent(): void
     {
         $clientData = json_decode($this->sampleClientData, true);
         $client = new Client($clientData['client']);
-        $this->assertEquals([
+        $this->assertSame([
             'bus_phone' => '416-867-5309',
             'company_industry' => null,
             'company_size' => null,

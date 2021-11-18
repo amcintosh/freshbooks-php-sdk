@@ -29,7 +29,7 @@ class Client extends DataTransferObject implements DataModel
     public ?int $id;
 
     /**
-     * @var string Unique identifier of business client exists on.
+     * @var string Unique identifier of account the client exists on.
      */
     #[MapFrom('accounting_systemid')]
     public ?string $accountingSystemId;
@@ -218,7 +218,7 @@ class Client extends DataTransferObject implements DataModel
     public ?DateTimeImmutable $signupDate;
 
     /**
-     * @var DateTimeImmutable The time of last modification to the client.
+     * @var DateTimeImmutable The time of last modification.
      */
     #[CastWith(AccountingDateTimeImmutableCaster::class)]
     public ?DateTimeImmutable $updated;

@@ -18,7 +18,7 @@ final class FreshBooksClientConfigTest extends TestCase
         $conf->clientId = $clientId;
         $conf->version = $version;
 
-        $this->assertEquals("FreshBooks php sdk/{$version} client_id {$clientId}", $conf->getUserAgent());
+        $this->assertSame("FreshBooks php sdk/{$version} client_id {$clientId}", $conf->getUserAgent());
     }
 
     public function testUserAgentIsSet(): void
@@ -28,6 +28,6 @@ final class FreshBooksClientConfigTest extends TestCase
         $conf = new FreshBooksClientConfig(userAgent: $myAgent);
         $conf->clientId = 'my_client_id';
 
-        $this->assertEquals($myAgent, $conf->getUserAgent());
+        $this->assertSame($myAgent, $conf->getUserAgent());
     }
 }

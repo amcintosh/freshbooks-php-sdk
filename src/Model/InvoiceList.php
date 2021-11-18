@@ -8,17 +8,17 @@ use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Casters\ArrayCaster;
 use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\Client;
+use amcintosh\FreshBooks\Model\Invoice;
 
 /**
- * Results of clients list call containing list of clients and pagination data.
+ * Results of invoices list call containing list of invoices and pagination data.
  *
  * @package amcintosh\FreshBooks\Model
- * @link https://www.freshbooks.com/api/clients
+ * @link https://www.freshbooks.com/api/invoices
  */
-class ClientList extends DataTransferObject
+class InvoiceList extends DataTransferObject
 {
-    public const RESPONSE_FIELD = 'clients';
+    public const RESPONSE_FIELD = 'invoices';
 
     public int $page;
 
@@ -29,6 +29,6 @@ class ClientList extends DataTransferObject
 
     public int $total;
 
-    #[CastWith(ArrayCaster::class, itemType: Client::class)]
-    public array $clients;
+    #[CastWith(ArrayCaster::class, itemType: Invoice::class)]
+    public array $invoices;
 }

@@ -33,11 +33,11 @@ final class AccountingResourceTest extends TestCase
         $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $client = $resource->get($this->accountId, $clientId);
 
-        $this->assertEquals($clientId, $client->id);
+        $this->assertSame($clientId, $client->id);
 
         $request = $mockHttpClient->getLastRequest();
-        $this->assertEquals('GET', $request->getMethod());
-        $this->assertEquals('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+        $this->assertSame('GET', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
     }
 
     public function testGetWrongSuccessContent(): void
@@ -104,15 +104,15 @@ final class AccountingResourceTest extends TestCase
         $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $clients = $resource->list($this->accountId);
 
-        $this->assertEquals($clientId, $clients->clients[0]->id);
-        $this->assertEquals(1, $clients->page);
-        $this->assertEquals(15, $clients->perPage);
-        $this->assertEquals(1, $clients->pages);
-        $this->assertEquals(1, $clients->total);
+        $this->assertSame($clientId, $clients->clients[0]->id);
+        $this->assertSame(1, $clients->page);
+        $this->assertSame(15, $clients->perPage);
+        $this->assertSame(1, $clients->pages);
+        $this->assertSame(1, $clients->total);
 
         $request = $mockHttpClient->getLastRequest();
-        $this->assertEquals('GET', $request->getMethod());
-        $this->assertEquals('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
+        $this->assertSame('GET', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
     }
 
     public function testListNoRecords(): void
@@ -131,15 +131,15 @@ final class AccountingResourceTest extends TestCase
         $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $clients = $resource->list($this->accountId);
 
-        $this->assertEquals([], $clients->clients);
-        $this->assertEquals(1, $clients->page);
-        $this->assertEquals(15, $clients->perPage);
-        $this->assertEquals(0, $clients->pages);
-        $this->assertEquals(0, $clients->total);
+        $this->assertSame([], $clients->clients);
+        $this->assertSame(1, $clients->page);
+        $this->assertSame(15, $clients->perPage);
+        $this->assertSame(0, $clients->pages);
+        $this->assertSame(0, $clients->total);
 
         $request = $mockHttpClient->getLastRequest();
-        $this->assertEquals('GET', $request->getMethod());
-        $this->assertEquals('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
+        $this->assertSame('GET', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
     }
 
 
@@ -161,8 +161,8 @@ final class AccountingResourceTest extends TestCase
         $clients = $resource->list($this->accountId, [$pages]);
 
         $request = $mockHttpClient->getLastRequest();
-        $this->assertEquals('GET', $request->getMethod());
-        $this->assertEquals('/accounting/account/ACM123/users/clients?page=1&per_page=2', $request->getRequestTarget());
+        $this->assertSame('GET', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/users/clients?page=1&per_page=2', $request->getRequestTarget());
     }
 
     public function testCreateByModel(): void
@@ -178,12 +178,12 @@ final class AccountingResourceTest extends TestCase
         $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $client = $resource->create($this->accountId, model: $model);
 
-        $this->assertEquals($clientId, $client->id);
-        $this->assertEquals('FreshBooks', $client->organization);
+        $this->assertSame($clientId, $client->id);
+        $this->assertSame('FreshBooks', $client->organization);
 
         $request = $mockHttpClient->getLastRequest();
-        $this->assertEquals('POST', $request->getMethod());
-        $this->assertEquals('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
+        $this->assertSame('POST', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
     }
 
     public function testCreateByData(): void
@@ -198,12 +198,12 @@ final class AccountingResourceTest extends TestCase
         $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $client = $resource->create($this->accountId, data: $data);
 
-        $this->assertEquals($clientId, $client->id);
-        $this->assertEquals('FreshBooks', $client->organization);
+        $this->assertSame($clientId, $client->id);
+        $this->assertSame('FreshBooks', $client->organization);
 
         $request = $mockHttpClient->getLastRequest();
-        $this->assertEquals('POST', $request->getMethod());
-        $this->assertEquals('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
+        $this->assertSame('POST', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
     }
 
     public function testUpdateByModel(): void
@@ -219,12 +219,12 @@ final class AccountingResourceTest extends TestCase
         $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $client = $resource->update($this->accountId, $clientId, model: $model);
 
-        $this->assertEquals($clientId, $client->id);
-        $this->assertEquals('FreshBooks', $client->organization);
+        $this->assertSame($clientId, $client->id);
+        $this->assertSame('FreshBooks', $client->organization);
 
         $request = $mockHttpClient->getLastRequest();
-        $this->assertEquals('PUT', $request->getMethod());
-        $this->assertEquals('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+        $this->assertSame('PUT', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
     }
 
     public function testUpdateByData(): void
@@ -239,12 +239,12 @@ final class AccountingResourceTest extends TestCase
         $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $client = $resource->update($this->accountId, $clientId, data: $data);
 
-        $this->assertEquals($clientId, $client->id);
-        $this->assertEquals('FreshBooks', $client->organization);
+        $this->assertSame($clientId, $client->id);
+        $this->assertSame('FreshBooks', $client->organization);
 
         $request = $mockHttpClient->getLastRequest();
-        $this->assertEquals('PUT', $request->getMethod());
-        $this->assertEquals('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+        $this->assertSame('PUT', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
     }
 
     public function testDeleteViaUpdate(): void
@@ -257,12 +257,12 @@ final class AccountingResourceTest extends TestCase
         $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
         $client = $resource->delete($this->accountId, $clientId);
 
-        $this->assertEquals($clientId, $client->id);
-        $this->assertEquals(VisState::DELETED, $client->visState);
+        $this->assertSame($clientId, $client->id);
+        $this->assertSame(VisState::DELETED, $client->visState);
 
         $request = $mockHttpClient->getLastRequest();
-        $this->assertEquals('PUT', $request->getMethod());
-        $this->assertEquals('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+        $this->assertSame('PUT', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
     }
 
     public function testDeleteViaDelete(): void
@@ -281,11 +281,11 @@ final class AccountingResourceTest extends TestCase
         );
         $client = $resource->delete($this->accountId, $clientId);
 
-        $this->assertEquals($clientId, $client->id);
-        $this->assertEquals(VisState::DELETED, $client->visState);
+        $this->assertSame($clientId, $client->id);
+        $this->assertSame(VisState::DELETED, $client->visState);
 
         $request = $mockHttpClient->getLastRequest();
-        $this->assertEquals('DELETE', $request->getMethod());
-        $this->assertEquals('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+        $this->assertSame('DELETE', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
     }
 }

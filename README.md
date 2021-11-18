@@ -20,7 +20,19 @@ not already have a compatible client, you can install one with it.
 composer require amcintosh/freshbooks-php-sdk php-http/guzzle7-adapter
 ```
 
+This SDK makes use of the [spryker/decimal-object](https://packagist.org/packages/spryker/decimal-object) package.
+All monetary amounts are represented as as `Spryker\DecimalObject\Decimal`, so it is recommended that you refer to
+[their documentation](https://github.com/spryker/decimal-object/tree/master/docs).
+
+```php
+use Spryker\DecimalObject\Decimal;
+
+$this->assertEquals(Decimal::create('41.94'), $invoice->amount->amount);
+```
+
 ## Usage
+
+Check out some of our [examples](examples/README.md).
 
 ### Configuring the API client
 
@@ -134,45 +146,65 @@ foreach ($clients->clients as $client) {
 API calls to create and update take either a `DataModel` object, or an array of the resource data. A successful call
 will return a `DataTransferObject` object as if a `get` call.
 
+_Note_: When using the array of data, you need to specify the field as it exists in the FreshBooks API. There
+are API fields that are translated to more intuitive names in the data models. For example `fname` = `firstName`,
+or `bus_phone` = `businessPhone`.
+
 Create:
 
 ```php
 $clientData = new Client();
 $clientData->organization = 'FreshBooks';
+$clientData->firstName = 'Gordon';
+$clientData->businessPhone = '416-444-4445';
 
 $newClient = $freshBooksClient->clients()->create($accountId, model: $clientData);
 
 echo $newClient->organization; // 'FreshBooks'
+echo $newClient->firstName; // 'Gordon'
+echo $newClient->businessPhone; // '416-444-4445'
 ```
 
 or
 
 ```php
-$clientData = array('organization' => 'FreshBooks');
+$clientData = array(
+    'organization' => 'FreshBooks',
+    'fname' => 'Gordon',
+    'bus_phone' => '416-444-4445'
+);
 
 $newClient = $freshBooksClient->clients()->create($accountId, data: $clientData);
 
 echo $newClient->organization; // 'FreshBooks'
+echo $newClient->firstName; // 'Gordon'
+echo $newClient->businessPhone; // '416-444-4445'
 ```
 
 Update:
 
 ```php
 $clientData->organization = 'New Org';
+$clientData->firstName = 'Gord';
 
 $newClient = $freshBooksClient->clients()->update($accountId, $clientData->id, model: $clientData);
 
 echo $newClient->organization; // 'New Org'
+echo $newClient->firstName; // 'Gord'
 ```
 
 or
 
 ```php
-$clientData = array('organization' => 'Really New Org');
+$clientData = array(
+    'organization' => 'Really New Org',
+    'fname' => 'Gord',
+);
 
 $newClient = $freshBooksClient->clients()->update($accountId, $clientId, data: $clientData);
 
 echo $newClient->organization; // 'Really New Org'
+echo $newClient->firstName; // 'Gord'
 
 ```
 

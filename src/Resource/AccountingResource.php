@@ -148,7 +148,7 @@ class AccountingResource extends BaseResource
         if (!is_null($model)) {
             $data = $model->getContent();
         }
-        $data = array('client' => $data);
+        $data = array($this->singleModel::RESPONSE_FIELD => $data);
         $result = $this->makeRequest(self::POST, $this->getUrl($accountId), $data);
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
@@ -171,7 +171,7 @@ class AccountingResource extends BaseResource
         if (!is_null($model)) {
             $data = $model->getContent();
         }
-        $data = array('client' => $data);
+        $data = array($this->singleModel::RESPONSE_FIELD => $data);
         $result = $this->makeRequest(self::PUT, $this->getUrl($accountId, $resourceId), $data);
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
@@ -179,7 +179,7 @@ class AccountingResource extends BaseResource
     public function delete(string $accountId, int $resourceId): DataTransferObject
     {
         if ($this->deleteViaUpdate) {
-            $data = array('client' => ['vis_state' => VisState::DELETED]);
+            $data = array($this->singleModel::RESPONSE_FIELD => ['vis_state' => VisState::DELETED]);
             $result = $this->makeRequest(self::PUT, $this->getUrl($accountId, $resourceId), $data);
         } else {
             $result = $this->makeRequest(self::DELETE, $this->getUrl($accountId, $resourceId));

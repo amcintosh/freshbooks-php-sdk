@@ -21,6 +21,6 @@ final class FreshBooksClientTest extends TestCase
         $conf = new FreshBooksClientConfig(accessToken: 'some_token', userAgent: 'some_ua');
 
         $client = new MockFreshBooksClient('some_client_id', $conf);
-        $this->assertEquals($expectedHeaders, $client->accessGetHeaders());
+        $this->assertSame($expectedHeaders, $client->accessGetHeaders());
     }
 }

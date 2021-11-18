@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks;
 
-use amcintosh\FreshBooks\Model\Client;
-use amcintosh\FreshBooks\Model\ClientList;
-use amcintosh\FreshBooks\Resource\AccountingResource;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Common\Plugin;
 use Http\Client\Common\Plugin\BaseUriPlugin;
@@ -17,6 +14,11 @@ use Http\Discovery\Psr17FactoryDiscovery;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
+use amcintosh\FreshBooks\Model\Client;
+use amcintosh\FreshBooks\Model\ClientList;
+use amcintosh\FreshBooks\Model\Invoice;
+use amcintosh\FreshBooks\Model\InvoiceList;
+use amcintosh\FreshBooks\Resource\AccountingResource;
 
 class FreshBooksClient
 {
@@ -72,5 +74,15 @@ class FreshBooksClient
     public function clients(): AccountingResource
     {
         return new AccountingResource($this->httpClient, 'users/clients', Client::class, ClientList::class);
+    }
+
+    /**
+     * FreshBooks invoices resource with calls to get, list, create, update, delete
+     *
+     * @return AccountingResource
+     */
+    public function invoices(): AccountingResource
+    {
+        return new AccountingResource($this->httpClient, 'invoices/invoices', Invoice::class, InvoiceList::class);
     }
 }
