@@ -12,6 +12,6 @@ git add CHANGELOG.md && \
 git commit -m "🔖 Update CHANGELOG for release" && \
 git push origin main
 
-git tag -a -m "Bump version: ${OLD_VERSION} → ${VERSION}" "release/${VERSION}" && \
+git tag -a -m "Bump version: ${OLD_VERSION} → ${VERSION}" "${VERSION}" && \
 git push origin --tags && \
 git push origin main
