@@ -64,17 +64,23 @@ class Tax extends DataTransferObject implements DataModel
     public ?DateTimeImmutable $updated;
 
     /**
-     * Get the client data as an array to POST or PUT to FreshBooks, removing any read-only fields.
+     * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
      *
      * @return array
      */
     public function getContent(): array
     {
-        return $this
+        $data = $this
             ->except('id')
             ->except('accountingSystemId')
             ->except('taxId')
             ->except('updated')
             ->toArray();
+        foreach ($data as $key => $value) {
+            if (is_null($value)) {
+                unset($data[$key]);
+            }
+        }
+        return $data;
     }
 }

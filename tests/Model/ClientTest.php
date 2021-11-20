@@ -133,8 +133,6 @@ final class ClientTest extends TestCase
         $client = new Client($clientData['client']);
         $this->assertSame([
             'bus_phone' => '416-867-5309',
-            'company_industry' => null,
-            'company_size' => null,
             'currency_code' => 'CAD',
             'email' => 'gordon.shumway@AmericanCyanamid.com',
             'fax' => '416-444-4444',
@@ -156,9 +154,7 @@ final class ClientTest extends TestCase
             's_country' => '',
             's_province' => '',
             's_street' => '',
-            's_street2' => '',
-            'vat_name' => null,
-            'vat_number' => null
+            's_street2' => ''
         ], $client->getContent());
     }
 }

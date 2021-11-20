@@ -252,13 +252,13 @@ class Client extends DataTransferObject implements DataModel
     public ?int $visState;
 
     /**
-     * Get the client data as an array to POST or PUT to FreshBooks, removing any read-only fields.
+     * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
      *
      * @return array
      */
     public function getContent(): array
     {
-        return $this
+        $data = $this
             ->except('id')
             ->except('accountingSystemId')
             ->except('lastActivity')
@@ -267,5 +267,11 @@ class Client extends DataTransferObject implements DataModel
             ->except('userId')
             ->except('visState')
             ->toArray();
+        foreach ($data as $key => $value) {
+            if (is_null($value)) {
+                unset($data[$key]);
+            }
+        }
+        return $data;
     }
 }

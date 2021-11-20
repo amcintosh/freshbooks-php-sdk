@@ -507,7 +507,7 @@ class Invoice extends DataTransferObject implements DataModel
     public ?int $visState;
 
     /**
-     * Get the invoice data as an array to POST or PUT to FreshBooks, removing any read-only fields.
+     * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
      *
      * @return array
      */

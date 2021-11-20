@@ -4,4 +4,4 @@
 
 Basic Invoicing workflow functionality
 
-- Supports clients, invoices, line items, taxes
+- Supports clients, invoices, line items, payments, taxes

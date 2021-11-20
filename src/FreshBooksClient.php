@@ -18,6 +18,8 @@ use amcintosh\FreshBooks\Model\Client;
 use amcintosh\FreshBooks\Model\ClientList;
 use amcintosh\FreshBooks\Model\Invoice;
 use amcintosh\FreshBooks\Model\InvoiceList;
+use amcintosh\FreshBooks\Model\Payment;
+use amcintosh\FreshBooks\Model\PaymentList;
 use amcintosh\FreshBooks\Model\Tax;
 use amcintosh\FreshBooks\Model\TaxList;
 use amcintosh\FreshBooks\Resource\AccountingResource;
@@ -86,6 +88,16 @@ class FreshBooksClient
     public function invoices(): AccountingResource
     {
         return new AccountingResource($this->httpClient, 'invoices/invoices', Invoice::class, InvoiceList::class);
+    }
+
+    /**
+     * FreshBooks payments resource with calls to get, list, create, update, delete.
+     *
+     * @return AccountingResource
+     */
+    public function payments(): AccountingResource
+    {
+        return new AccountingResource($this->httpClient, 'payments/payments', Payment::class, PaymentList::class);
     }
 
     /**
