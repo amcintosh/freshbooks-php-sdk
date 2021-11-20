@@ -15,7 +15,8 @@
         "phpunit/phpunit": "9.5.x-dev",
         "squizlabs/php_codesniffer": "4.0.x-dev",
         "php-http/guzzle7-adapter": "1.x-dev",
-        "php-http/mock-client": "1.x-dev"
+        "php-http/mock-client": "1.x-dev",
+        "quazardous/php-bump-version": "1.0.x-dev"
     },
     "license": "MIT",
     "autoload": {

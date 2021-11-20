@@ -46,7 +46,7 @@ class FreshBooksClientConfig
      */
     private function getVersion(): string
     {
-        return file_get_contents(dirname(__FILE__) . '/VERSION');
+        return trim(file_get_contents(dirname(__FILE__) . '/VERSION'));
     }
 
     /**
