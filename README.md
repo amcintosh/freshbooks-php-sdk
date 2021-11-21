@@ -20,6 +20,10 @@ not already have a compatible client, you can install one with it.
 composer require amcintosh/freshbooks-php-sdk php-http/guzzle7-adapter
 ```
 
+## Usage
+
+Check out some of our [examples](examples/README.md).
+
 This SDK makes use of the [spryker/decimal-object](https://packagist.org/packages/spryker/decimal-object) package.
 All monetary amounts are represented as as `Spryker\DecimalObject\Decimal`, so it is recommended that you refer to
 [their documentation](https://github.com/spryker/decimal-object/tree/master/docs).
@@ -29,10 +33,6 @@ use Spryker\DecimalObject\Decimal;
 
 $this->assertEquals(Decimal::create('41.94'), $invoice->amount->amount);
 ```
-
-## Usage
-
-Check out some of our [examples](examples/README.md).
 
 ### Configuring the API client
 
