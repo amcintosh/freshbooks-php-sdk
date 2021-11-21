@@ -21,8 +21,9 @@ class AccountingResource extends BaseResource
         string $listModel,
         bool $deleteViaUpdate = true
     ) {
-        parent::__construct($singleModel, $listModel);
         $this->httpClient = $httpClient;
+        $this->singleModel = $singleModel;
+        $this->listModel = $listModel;
         $this->accountingPath = $accountingPath;
         $this->deleteViaUpdate = $deleteViaUpdate;
     }
