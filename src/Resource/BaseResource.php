@@ -12,12 +12,6 @@ class BaseResource
     protected const PATCH = 'PATCH';
     protected const DELETE = 'DELETE';
 
-    public function __construct(string $singleModel, string $listModel)
-    {
-        $this->singleModel = $singleModel;
-        $this->listModel = $listModel;
-    }
-
     protected function buildQueryString(?array $builders): string
     {
         $queryString = '';
