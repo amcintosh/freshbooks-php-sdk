@@ -80,11 +80,11 @@ First, instantiate your Client with `clientId`, `clientSecret`, and `redirectUri
 To get an access token, the user must first authorize your application. This can be done by sending the user to
 the FreshBooks authorization page. Once the user has clicked accept there, they will be redirected to your
 `redirectUri` with an access grant code. The authorization URL can be obtained by calling
-`$freshBooksClient->getAuthRequestUrl()`. This method also accepts a list of scopes that you wish the user to
+`$freshBooksClient->getAuthRequestUri()`. This method also accepts a list of scopes that you wish the user to
 authorize your application for.
 
 ```php
-$authUrl = $freshBooksClient->getAuthRequestUrl(['user:profile:read', 'user:clients:read'])
+$authUrl = $freshBooksClient->getAuthRequestUri(['user:profile:read', 'user:clients:read'])
 ```
 
 TODO: finish flow

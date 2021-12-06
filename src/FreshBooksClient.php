@@ -14,6 +14,7 @@ use Http\Discovery\Psr17FactoryDiscovery;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
+use amcintosh\FreshBooks\Exception\FreshBooksClientConfigException;
 use amcintosh\FreshBooks\Model\Client;
 use amcintosh\FreshBooks\Model\ClientList;
 use amcintosh\FreshBooks\Model\Identity;
@@ -40,6 +41,22 @@ class FreshBooksClient
         $this->config = $config;
         $this->config->clientId = $clientId;
         $this->httpClient = $this->createHttpClient();
+    }
+
+    public function getAuthRequestUri(array $scopes = null): string
+    {
+        if (is_null($this->config->redirectUri)) {
+            throw new FreshBooksClientConfigException('redirectUri must be configured');
+        }
+        $params = [
+            'client_id' => $this->config->clientId,
+            'response_type' => "code",
+            'redirect_uri' => $this->config->redirectUri
+        ];
+        if (!is_null($scopes)) {
+            $params["scope"] = implode(' ', $scopes);
+        }
+        return $this->config->authBaseUrl . '/oauth/authorize?' . http_build_query($params);
     }
 
     protected function getHeaders(): array

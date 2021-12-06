@@ -11,6 +11,7 @@ class FreshBooksClientConfig
 {
 
     private const API_BASE_URL = "https://api.freshbooks.com";
+    private const AUTH_BASE_URL = "https://auth.freshbooks.com";
     private const DEFAULT_TIMEOUT = 30;
 
     /**
@@ -28,6 +29,7 @@ class FreshBooksClientConfig
         int $timeout = self::DEFAULT_TIMEOUT
     ) {
         $this->apiBaseUrl = self::API_BASE_URL;
+        $this->authBaseUrl = self::AUTH_BASE_URL;
         $this->clientSecret = null;
         $this->clientSecret = $clientSecret;
         $this->redirectUri = $redirectUri;
