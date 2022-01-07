@@ -22,7 +22,7 @@ composer require amcintosh/freshbooks-php-sdk php-http/guzzle7-adapter
 
 ## Usage
 
-Check out some of our [examples](examples/README.md).
+Check out some of our [examples](examples).
 
 This SDK makes use of the [spryker/decimal-object](https://packagist.org/packages/spryker/decimal-object) package.
 All monetary amounts are represented as as `Spryker\DecimalObject\Decimal`, so it is recommended that you refer to
@@ -84,12 +84,44 @@ the FreshBooks authorization page. Once the user has clicked accept there, they 
 authorize your application for.
 
 ```php
-$authUrl = $freshBooksClient->getAuthRequestUri(['user:profile:read', 'user:clients:read'])
+$authUrl = $freshBooksClient->getAuthRequestUri(['user:profile:read', 'user:clients:read']);
 ```
 
-TODO: finish flow
 Once the user has been redirected to your `redirectUri` and you have obtained the access grant code, you can exchange
 that code for a valid access token.
+
+```php
+$authResults = $freshBooksClient->getAccessToken($accessGrantCode);
+```
+
+This call both sets the `accessToken`, `refreshToken`, and `tokenExpiresAt` fields on you Client's
+FreshBooksClientConfig instance and returns those values.
+
+```php
+echo $authResults->accessToken;  // Your token
+echo $authResults->refreshToken; // Your refresh token
+echo $authResults->createdAt;    // When the token was created (as a DateTime)
+echo $authResults->expiresIn;    // How long the token is valid for (in seconds)
+echo $authResults->getExpiresAt; // When the token expires (as a DateTime)
+
+echo $freshBooksClient->getConfig()->accessToken;    // Your token
+echo $freshBooksClient->getConfig()->refreshToken;   // Your refresh token
+echo $freshBooksClient->getConfig()->tokenExpiresAt; // When the token expires (as a DateTime)
+```
+
+When the token expires, it can be refreshed with the `refreshToken` value in the FreshBooksClient:
+
+```php
+$authResults = $freshBooksClient->refreshAccessToken();
+echo $authResults->accessToken;  // Your new token
+```
+
+or you can pass the refresh token yourself:
+
+```php
+$authResults = $freshBooksClient->refreshAccessToken($storedRefreshToken);
+echo $authResults->accessToken;  // Your new token
+```
 
 ### Current User
 
@@ -178,8 +210,8 @@ $clientData->businessPhone = '416-444-4445';
 
 $newClient = $freshBooksClient->clients()->create($accountId, model: $clientData);
 
-echo $newClient->organization; // 'FreshBooks'
-echo $newClient->firstName; // 'Gordon'
+echo $newClient->organization;  // 'FreshBooks'
+echo $newClient->firstName;     // 'Gordon'
 echo $newClient->businessPhone; // '416-444-4445'
 ```
 
@@ -194,8 +226,8 @@ $clientData = array(
 
 $newClient = $freshBooksClient->clients()->create($accountId, data: $clientData);
 
-echo $newClient->organization; // 'FreshBooks'
-echo $newClient->firstName; // 'Gordon'
+echo $newClient->organization;  // 'FreshBooks'
+echo $newClient->firstName;     // 'Gordon'
 echo $newClient->businessPhone; // '416-444-4445'
 ```
 
@@ -208,7 +240,7 @@ $clientData->firstName = 'Gord';
 $newClient = $freshBooksClient->clients()->update($accountId, $clientData->id, model: $clientData);
 
 echo $newClient->organization; // 'New Org'
-echo $newClient->firstName; // 'Gord'
+echo $newClient->firstName;    // 'Gord'
 ```
 
 or
@@ -222,7 +254,7 @@ $clientData = array(
 $newClient = $freshBooksClient->clients()->update($accountId, $clientId, data: $clientData);
 
 echo $newClient->organization; // 'Really New Org'
-echo $newClient->firstName; // 'Gord'
+echo $newClient->firstName;    // 'Gord'
 
 ```
 
@@ -249,9 +281,9 @@ use amcintosh\FreshBooks\Exception\FreshBooksException;
 try {
     $client = $freshBooksClient->clients()->get($accountId, 134);
 } catch (FreshBooksException $e) {
-    echo $e->getMessage(); // 'Client not found'
-    echo $e->getCode(); // 404
-    echo $e->getErrorCode(); // 1012
+    echo $e->getMessage();     // 'Client not found'
+    echo $e->getCode();        // 404
+    echo $e->getErrorCode();   // 1012
     echo $e->getRawResponse(); // '{"response": {"errors": [{"errno": 1012,
                                // "field": "userid", "message": "Client not found.",
                                // "object": "client", "value": "134"}]}}'

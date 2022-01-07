@@ -16,7 +16,8 @@
         "squizlabs/php_codesniffer": "4.0.x-dev",
         "php-http/guzzle7-adapter": "1.x-dev",
         "php-http/mock-client": "1.x-dev",
-        "quazardous/php-bump-version": "1.0.x-dev"
+        "quazardous/php-bump-version": "1.0.x-dev",
+        "mockery/mockery": "1.4.x-dev"
     },
     "license": "MIT",
     "autoload": {

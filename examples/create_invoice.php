@@ -15,8 +15,8 @@ use amcintosh\FreshBooks\FreshBooksClientConfig;
 use amcintosh\FreshBooks\Builder\PaginateBuilder;
 use Spryker\DecimalObject\Decimal;
 
-$accountId = "6VApk";
-$accessToken = 'd9e165343d6ef400e08ccb6816f619902d0b52ad43b9aaed5c52c64610fcc9c2';
+$accountId = "<your account id>";
+$accessToken = '<your access token>';
 
 $conf = new FreshBooksClientConfig(accessToken: $accessToken);
 $freshBooksClient = new FreshBooksClient('12345', $conf);
@@ -39,13 +39,13 @@ $line1 = new LineItem();
 $line1->name = 'Fancy Dishes';
 $line1->description = "They're pretty swanky";
 $line1->quantity = 6;
-$line1->unitCost = new Money(Decimal::create('24.99'), 'CAD');
+$line1->unitCost = new Money(Decimal::create('24.99'), 'CAD'); // Using a Decimal object
 
 $line2 = new LineItem();
 $line2->name = 'Regular Glasses';
 $line2->description = 'They look "just ok"';
 $line2->quantity = 8;
-$line2->unitCost = new Money(Decimal::create('5.95'), 'CAD');
+$line2->unitCost = new Money('5.95', 'CAD'); // Using a string, which is converted to a Decimal object
 
 $model = new Invoice();
 $model->lines = [$line1, $line2];

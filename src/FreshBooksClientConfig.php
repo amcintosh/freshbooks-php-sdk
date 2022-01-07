@@ -35,6 +35,7 @@ class FreshBooksClientConfig
         $this->redirectUri = $redirectUri;
         $this->accessToken = $accessToken;
         $this->refreshToken = $refreshToken;
+        $this->tokenExpiresAt = null;
         $this->userAgent = $userAgent;
         $this->autoRetry = $autoRetry;
         $this->timeout = $timeout;
