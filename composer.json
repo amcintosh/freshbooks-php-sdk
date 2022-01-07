@@ -4,12 +4,12 @@
     "type": "library",
     "require": {
         "php": "^8.0",
-        "php-http/client-common": "^2.4",
+        "php-http/client-common": "^2.5",
         "php-http/discovery": "^1.14",
-        "psr/http-client": "1.0.x-dev",
-        "psr/http-factory": "1.0.x-dev",
-        "spatie/data-transfer-object": "dev-main",
-        "spryker/decimal-object": "1.x-dev"
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "spatie/data-transfer-object": "^3.7",
+        "spryker/decimal-object": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "9.5.x-dev",
@@ -36,5 +36,6 @@
             "email": "andrew@amcintosh.net"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
