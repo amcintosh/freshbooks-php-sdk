@@ -10,7 +10,7 @@ A FreshBooks PHP SDK to allow you to more easily utilize the [FreshBooks API](ht
 Install it via Composer.
 
 ```shell
-composer require amcintosh/freshbooks-php-sdk
+composer require amcintosh/freshbooks
 ```
 
 Requires a [PSR-18 implementation](https://packagist.org/providers/psr/http-client-implementation) client. If you do
