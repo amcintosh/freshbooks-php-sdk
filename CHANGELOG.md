@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.0
+
 - Add OAuth authentication methods
 - Add current user and identity model (identity, business, business membership)
 - Set depedencies to stable versions
