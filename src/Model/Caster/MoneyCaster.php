@@ -10,7 +10,6 @@ use amcintosh\FreshBooks\Model\Money;
 
 class MoneyCaster implements Caster
 {
-
     /**
      * @param string|mixed $value
      *

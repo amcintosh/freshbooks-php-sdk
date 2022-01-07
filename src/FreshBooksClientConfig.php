@@ -9,7 +9,6 @@ namespace amcintosh\FreshBooks;
  */
 class FreshBooksClientConfig
 {
-
     private const API_BASE_URL = "https://api.freshbooks.com";
     private const AUTH_BASE_URL = "https://auth.freshbooks.com";
     private const DEFAULT_TIMEOUT = 30;

@@ -30,7 +30,6 @@ use amcintosh\FreshBooks\Resource\AuthResource;
 
 class FreshBooksClient
 {
-
     private ClientInterface $httpClient;
     private RequestFactoryInterface $requestFactoryInterface;
     private StreamFactoryInterface $streamFactoryInterface;

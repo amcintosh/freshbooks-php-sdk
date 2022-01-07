@@ -9,7 +9,6 @@ use amcintosh\FreshBooks\FreshBooksClient;
 
 final class MockFreshBooksClient extends FreshBooksClient
 {
-
     public function accessCreateHttpClient(): HttpMethodsClient
     {
         return $this->createHttpClient();
