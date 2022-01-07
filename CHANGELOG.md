@@ -6,7 +6,7 @@
 
 - Add OAuth authentication methods
 - Add current user and identity model (identity, business, business membership)
-- Set depedencies to stable versions
+- Set dependencies to stable versions
 
 ## 0.1.0
 
