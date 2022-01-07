@@ -13,7 +13,6 @@ use amcintosh\FreshBooks\Model\VisState;
 
 class AccountingResource extends BaseResource
 {
-
     public function __construct(
         HttpClient $httpClient,
         string $accountingPath,
