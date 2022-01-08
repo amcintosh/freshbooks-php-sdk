@@ -1,0 +1,40 @@
+# This workflows will re-generate the PHP docs when there are changes on main
+
+name: Generate Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup
+      uses: actions/checkout@v2
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.0'
+    - name: Install dependencies
+      run: |
+        composer install --prefer-dist --no-progress
+        wget https://phpdoc.org/phpDocumentor.phar
+        chmod +x phpDocumentor.phar
+    - name: Run generate-docs
+      run: |
+        make generate-docs
+    - name: Commit files
+      run: |
+        echo ${{ github.ref }}
+        git add docs
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "📝 CI: automated Generate Documentation" -a | exit 0
+    - name: Push changes
+      if: github.ref == 'refs/heads/main'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
