@@ -15,11 +15,12 @@ use amcintosh\FreshBooks\FreshBooksClientConfig;
 use amcintosh\FreshBooks\Builder\PaginateBuilder;
 use Spryker\DecimalObject\Decimal;
 
-$accountId = "<your account id>";
+$fbClientId = '<your client_id>';
+$accountId = '<your account_id>';
 $accessToken = '<your access token>';
 
 $conf = new FreshBooksClientConfig(accessToken: $accessToken);
-$freshBooksClient = new FreshBooksClient('12345', $conf);
+$freshBooksClient = new FreshBooksClient($fbClientId, $conf);
 
 // Create the client
 $createData = new Client();

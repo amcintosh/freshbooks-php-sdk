@@ -6,8 +6,8 @@ If you checkout the project, these files should be runnable locally after instal
 
 ```shell
 composer install
-cd examples
-php ./create_invoice.php
+php ./examples/create_invoice.php
 ```
 
-Be sure to update the example files with your own credentials in place of `<your account id>` and `<your access token>`.
+Be sure to update the example files with your own credentials in place of things like `<your client_id>`,
+`<your account id>`, and `<your access token>`.

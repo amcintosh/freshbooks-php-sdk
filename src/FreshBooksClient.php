@@ -131,6 +131,7 @@ class FreshBooksClient
         $this->config->accessToken = $tokenDetails->accessToken;
         $this->config->refreshToken = $tokenDetails->refreshToken;
         $this->config->tokenExpiresAt = $tokenDetails->getExpiresAt();
+        $this->httpClient = $this->createHttpClient();
         return $tokenDetails;
     }
 
