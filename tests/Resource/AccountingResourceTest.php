@@ -270,7 +270,7 @@ final class AccountingResourceTest extends TestCase
         $clientId = 12345;
         $mockHttpClient = $this->getMockHttpClient(
             200,
-            ['response' => ['result' => ['client' => ['id' => $clientId, 'vis_state' => 1]]]]
+            ['response' => []]
         );
         $resource = new AccountingResource(
             $mockHttpClient,
@@ -281,9 +281,7 @@ final class AccountingResourceTest extends TestCase
         );
         $client = $resource->delete($this->accountId, $clientId);
 
-        $this->assertSame($clientId, $client->id);
-        $this->assertSame(VisState::DELETED, $client->visState);
-
+        $this->assertSame(null, $client);
         $request = $mockHttpClient->getLastRequest();
         $this->assertSame('DELETE', $request->getMethod());
         $this->assertSame('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
