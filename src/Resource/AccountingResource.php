@@ -176,14 +176,15 @@ class AccountingResource extends BaseResource
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
 
-    public function delete(string $accountId, int $resourceId): DataTransferObject
+    public function delete(string $accountId, int $resourceId): ?DataTransferObject
     {
         if ($this->deleteViaUpdate) {
             $data = array($this->singleModel::RESPONSE_FIELD => ['vis_state' => VisState::DELETED]);
             $result = $this->makeRequest(self::PUT, $this->getUrl($accountId, $resourceId), $data);
+            return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
         } else {
             $result = $this->makeRequest(self::DELETE, $this->getUrl($accountId, $resourceId));
+            return null;
         }
-        return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
 }

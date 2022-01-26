@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks\Model;
 
 /**
- * Visibility values for a resource. Mostly used in accounting-type resources, not project-type.
+ * Status values for an invoice.
  *
  * Values are:
  *

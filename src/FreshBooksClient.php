@@ -18,6 +18,8 @@ use amcintosh\FreshBooks\Exception\FreshBooksClientConfigException;
 use amcintosh\FreshBooks\Model\AuthorizationToken;
 use amcintosh\FreshBooks\Model\Client;
 use amcintosh\FreshBooks\Model\ClientList;
+use amcintosh\FreshBooks\Model\Expense;
+use amcintosh\FreshBooks\Model\ExpenseList;
 use amcintosh\FreshBooks\Model\Identity;
 use amcintosh\FreshBooks\Model\Invoice;
 use amcintosh\FreshBooks\Model\InvoiceList;
@@ -199,6 +201,17 @@ class FreshBooksClient
         return new AccountingResource($this->httpClient, 'users/clients', Client::class, ClientList::class);
     }
 
+
+    /**
+     * FreshBooks expenses resource with calls to get, list, create, update, delete
+     *
+     * @return AccountingResource
+     */
+    public function expenses(): AccountingResource
+    {
+        return new AccountingResource($this->httpClient, 'expenses/expenses', Expense::class, ExpenseList::class);
+    }
+
     /**
      * FreshBooks invoices resource with calls to get, list, create, update, delete
      *
@@ -206,7 +219,13 @@ class FreshBooksClient
      */
     public function invoices(): AccountingResource
     {
-        return new AccountingResource($this->httpClient, 'invoices/invoices', Invoice::class, InvoiceList::class);
+        return new AccountingResource(
+            $this->httpClient,
+            'invoices/invoices',
+            Invoice::class,
+            InvoiceList::class,
+            deleteViaUpdate: false
+        );
     }
 
     /**
