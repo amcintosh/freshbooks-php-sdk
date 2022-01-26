@@ -106,8 +106,11 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    InvoiceStatus
+    ExpenseList
 
+        <span class="phpdocumentor-element__extends">
+        extends <abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -122,39 +125,14 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/InvoiceStatus.php"><a href="files/src-model-invoicestatus.html"><abbr title="src/Model/InvoiceStatus.php">InvoiceStatus.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/ExpenseList.php"><a href="files/src-model-expenselist.html"><abbr title="src/Model/ExpenseList.php">ExpenseList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Status values for an invoice.</p>
+            <p class="phpdocumentor-summary">Results of expenses list call containing list of expenses and pagination data.</p>
 
-    <section class="phpdocumentor-description"><p>Values are:</p>
-<ul>
-<li>
-<strong>0:</strong> DISPUTED. An Invoice with the Dispute option enabled, which has been disputed by a Client.
-This is a feature of FreshBooks Classic only and should only appear in migrated accounts.</li>
-<li>
-<strong>1:</strong> DRAFT. An Invoice that has been created, but not yet sent.</li>
-<li>
-<strong>2</strong>: SENT. An Invoice that has been sent to a Client or marked as sent.</li>
-<li>
-<strong>3</strong>: VIEWED. An Invoice that has been viewed by a Client.</li>
-<li>
-<strong>4</strong>: PAID. A fully paid Invoice.</li>
-<li>
-<strong>5</strong>: AUTOPAID. An Invoice paid automatically with a saved credit card.</li>
-<li>
-<strong>6</strong>: RETRY. An Invoice that would normally be paid automatically, but encountered a processing
-issue, either due to a bad card or a service outage. It will be retried 1 day later.</li>
-<li>
-<strong>7</strong>: FAILED. An Invoice that was in Retry status which again encountered a processing
-issue when being retried.</li>
-<li>
-<strong>8</strong>: PARTIAL. An Invoice that has been partially paid.</li>
-</ul>
-</section>
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -166,7 +144,7 @@ issue when being retried.</li>
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://www.freshbooks.com/api/invoices"> https://www.freshbooks.com/api/invoices </a>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://www.freshbooks.com/api/expenses"> https://www.freshbooks.com/api/expenses </a>
                     
                                     </dd>
                         </dl>
@@ -183,69 +161,48 @@ issue when being retried.</li>
 
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_AUTOPAID">AUTOPAID</a>
+    <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#constant_RESPONSE_FIELD">RESPONSE_FIELD</a>
     <span>
-        &nbsp;= 5                            </span>
+        &nbsp;= &#039;expenses&#039;                            </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DISPUTED">DISPUTED</a>
+                    <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_expenses">$expenses</a>
     <span>
-        &nbsp;= 0                            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DRAFT">DRAFT</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_page">$page</a>
     <span>
-        &nbsp;= 1                            </span>
+                        &nbsp;: int            </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_FAILED">FAILED</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_pages">$pages</a>
     <span>
-        &nbsp;= 7                            </span>
+                        &nbsp;: int            </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PAID">PAID</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_perPage">$perPage</a>
     <span>
-        &nbsp;= 4                            </span>
+                        &nbsp;: int            </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PARTIAL">PARTIAL</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_total">$total</a>
     <span>
-        &nbsp;= 8                            </span>
+                        &nbsp;: int            </span>
 </dt>
 <dd></dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_RETRY">RETRY</a>
-    <span>
-        &nbsp;= 6                            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_SENT">SENT</a>
-    <span>
-        &nbsp;= 2                            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_VIEWED">VIEWED</a>
-    <span>
-        &nbsp;= 3                            </span>
-</dt>
-<dd></dd>
-
-                    </dl>
+            </dl>
 
 
 
@@ -253,18 +210,18 @@ issue when being retried.</li>
     <section class="phpdocumentor-constants">
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
-            <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_AUTOPAID">
-        AUTOPAID
-        <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_AUTOPAID" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="constant_RESPONSE_FIELD">
+        RESPONSE_FIELD
+        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#constant_RESPONSE_FIELD" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/InvoiceStatus.php"><a href="files/src-model-invoicestatus.html"><abbr title="src/Model/InvoiceStatus.php">InvoiceStatus.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/ExpenseList.php"><a href="files/src-model-expenselist.html"><abbr title="src/Model/ExpenseList.php">ExpenseList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -272,240 +229,8 @@ issue when being retried.</li>
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">AUTOPAID</span>
-    = <span class="phpdocumentor-signature__default-value">5</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_DISPUTED">
-        DISPUTED
-        <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DISPUTED" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/InvoiceStatus.php"><a href="files/src-model-invoicestatus.html"><abbr title="src/Model/InvoiceStatus.php">InvoiceStatus.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">30</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">DISPUTED</span>
-    = <span class="phpdocumentor-signature__default-value">0</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_DRAFT">
-        DRAFT
-        <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DRAFT" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/InvoiceStatus.php"><a href="files/src-model-invoicestatus.html"><abbr title="src/Model/InvoiceStatus.php">InvoiceStatus.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">31</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">DRAFT</span>
-    = <span class="phpdocumentor-signature__default-value">1</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_FAILED">
-        FAILED
-        <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_FAILED" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/InvoiceStatus.php"><a href="files/src-model-invoicestatus.html"><abbr title="src/Model/InvoiceStatus.php">InvoiceStatus.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">37</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">FAILED</span>
-    = <span class="phpdocumentor-signature__default-value">7</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_PAID">
-        PAID
-        <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PAID" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/InvoiceStatus.php"><a href="files/src-model-invoicestatus.html"><abbr title="src/Model/InvoiceStatus.php">InvoiceStatus.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">34</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">PAID</span>
-    = <span class="phpdocumentor-signature__default-value">4</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_PARTIAL">
-        PARTIAL
-        <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PARTIAL" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/InvoiceStatus.php"><a href="files/src-model-invoicestatus.html"><abbr title="src/Model/InvoiceStatus.php">InvoiceStatus.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">38</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">PARTIAL</span>
-    = <span class="phpdocumentor-signature__default-value">8</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_RETRY">
-        RETRY
-        <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_RETRY" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/InvoiceStatus.php"><a href="files/src-model-invoicestatus.html"><abbr title="src/Model/InvoiceStatus.php">InvoiceStatus.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">36</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">RETRY</span>
-    = <span class="phpdocumentor-signature__default-value">6</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_SENT">
-        SENT
-        <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_SENT" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/InvoiceStatus.php"><a href="files/src-model-invoicestatus.html"><abbr title="src/Model/InvoiceStatus.php">InvoiceStatus.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">32</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">SENT</span>
-    = <span class="phpdocumentor-signature__default-value">2</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_VIEWED">
-        VIEWED
-        <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_VIEWED" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/InvoiceStatus.php"><a href="files/src-model-invoicestatus.html"><abbr title="src/Model/InvoiceStatus.php">InvoiceStatus.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">33</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">VIEWED</span>
-    = <span class="phpdocumentor-signature__default-value">3</span>
+    <span class="phpdocumentor-signature__name">RESPONSE_FIELD</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;expenses&#039;</span>
 </code>
 
 
@@ -519,6 +244,182 @@ issue when being retried.</li>
             </section>
 
         
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_expenses">
+        $expenses
+        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_expenses" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/ExpenseList.php"><a href="files/src-model-expenselist.html"><abbr title="src/Model/ExpenseList.php">ExpenseList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$expenses</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_page">
+        $page
+        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_page" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/ExpenseList.php"><a href="files/src-model-expenselist.html"><abbr title="src/Model/ExpenseList.php">ExpenseList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$page</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_pages">
+        $pages
+        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_pages" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/ExpenseList.php"><a href="files/src-model-expenselist.html"><abbr title="src/Model/ExpenseList.php">ExpenseList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">25</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$pages</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_perPage">
+        $perPage
+        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_perPage" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/ExpenseList.php"><a href="files/src-model-expenselist.html"><abbr title="src/Model/ExpenseList.php">ExpenseList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">27</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$perPage</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_total">
+        $total
+        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_total" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/ExpenseList.php"><a href="files/src-model-expenselist.html"><abbr title="src/Model/ExpenseList.php">ExpenseList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$total</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
         
         
@@ -597,7 +498,7 @@ issue when being retried.</li>
 </section>
             </div>
         </div>
-        <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
