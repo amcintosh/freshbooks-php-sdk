@@ -11,9 +11,29 @@ Search.appendIndex(
             "summary": "Builds\u0020the\u0020query\u0020string\u0020parameters\u0020from\u0020the\u0020Builder.",
             "url": "classes/amcintosh-FreshBooks-Builder-BuilderInterface.html#method_build"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\IncludesBuilder",
+            "name": "IncludesBuilder",
+            "summary": "Builder\u0020for\u0020including\u0020relationships,\u0020sub\u002Dresources,\u0020or\u0020additional\u0020data\u0020in\u0020the\u0020response.",
+            "url": "classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\IncludesBuilder\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Builder\u0020for\u0020including\u0020relationships,\u0020sub\u002Dresources,\u0020or\u0020additional\u0020data\u0020in\u0020the\u0020response.",
+            "url": "classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\IncludesBuilder\u003A\u003Ainclude\u0028\u0029",
+            "name": "include",
+            "summary": "Add\u0020an\u0020include\u0020key\u0020to\u0020the\u0020builder.",
+            "url": "classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#method_include"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\IncludesBuilder\u003A\u003Abuild\u0028\u0029",
+            "name": "build",
+            "summary": "Builds\u0020the\u0020query\u0020string\u0020parameters\u0020from\u0020the\u0020Builder.",
+            "url": "classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#method_build"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Builder\\PaginateBuilder",
             "name": "PaginateBuilder",
-            "summary": "",
+            "summary": "Builder\u0020for\u0020making\u0020paginated\u0020list\u0020queries.",
             "url": "classes/amcintosh-FreshBooks-Builder-PaginateBuilder.html"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Builder\\PaginateBuilder\u003A\u003A__construct\u0028\u0029",
