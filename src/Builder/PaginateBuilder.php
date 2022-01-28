@@ -6,6 +6,12 @@ namespace amcintosh\FreshBooks\Builder;
 
 use amcintosh\FreshBooks\Builder\BuilderInterface;
 
+/**
+ * Builder for making paginated list queries.
+ *
+ * @package amcintosh\FreshBooks\Builder
+ * @link https://www.freshbooks.com/api/parameters
+ */
 class PaginateBuilder implements BuilderInterface
 {
     private const MAX_PER_PAGE = 100;

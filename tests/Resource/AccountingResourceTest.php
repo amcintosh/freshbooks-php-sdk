@@ -6,6 +6,7 @@ namespace amcintosh\FreshBooks\Tests\Resource;
 
 use PHPUnit\Framework\TestCase;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
+use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Builder\PaginateBuilder;
 use amcintosh\FreshBooks\Model\Client;
 use amcintosh\FreshBooks\Model\ClientList;
@@ -38,6 +39,28 @@ final class AccountingResourceTest extends TestCase
         $request = $mockHttpClient->getLastRequest();
         $this->assertSame('GET', $request->getMethod());
         $this->assertSame('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+    }
+
+    public function testGetWithIncludes(): void
+    {
+        $clientId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['client' => ['id' => $clientId]]]]
+        );
+
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
+        $includes = (new IncludesBuilder())->include('late_reminders')->include('late_fees');
+        $client = $resource->get($this->accountId, $clientId, $includes);
+
+        $this->assertSame($clientId, $client->id);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertSame('GET', $request->getMethod());
+        $this->assertSame(
+            '/accounting/account/ACM123/users/clients/12345?include%5B%5D=late_reminders&include%5B%5D=late_fees',
+            $request->getRequestTarget()
+        );
     }
 
     public function testGetWrongSuccessContent(): void
@@ -206,6 +229,31 @@ final class AccountingResourceTest extends TestCase
         $this->assertSame('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
     }
 
+    public function testCreateWithIncludes(): void
+    {
+        $clientId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['client' => ['id' => $clientId, 'organization' => 'FreshBooks']]]]
+        );
+        $model = new Client();
+        $model->organization = 'FreshBooks';
+
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
+        $includes = (new IncludesBuilder())->include('late_reminders');
+        $client = $resource->create($this->accountId, model: $model, includes: $includes);
+
+        $this->assertSame($clientId, $client->id);
+        $this->assertSame('FreshBooks', $client->organization);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertSame('POST', $request->getMethod());
+        $this->assertSame(
+            '/accounting/account/ACM123/users/clients?include%5B%5D=late_reminders',
+            $request->getRequestTarget()
+        );
+    }
+
     public function testUpdateByModel(): void
     {
         $clientId = 12345;
@@ -245,6 +293,31 @@ final class AccountingResourceTest extends TestCase
         $request = $mockHttpClient->getLastRequest();
         $this->assertSame('PUT', $request->getMethod());
         $this->assertSame('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+    }
+
+    public function testUpdateWithIncludes(): void
+    {
+        $clientId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['client' => ['id' => $clientId, 'organization' => 'FreshBooks']]]]
+        );
+        $model = new Client();
+        $model->organization = 'FreshBooks';
+
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
+        $includes = (new IncludesBuilder())->include('late_reminders');
+        $client = $resource->update($this->accountId, $clientId, model: $model, includes: $includes);
+
+        $this->assertSame($clientId, $client->id);
+        $this->assertSame('FreshBooks', $client->organization);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertSame('PUT', $request->getMethod());
+        $this->assertSame(
+            '/accounting/account/ACM123/users/clients/12345?include%5B%5D=late_reminders',
+            $request->getRequestTarget()
+        );
     }
 
     public function testDeleteViaUpdate(): void

@@ -6,6 +6,7 @@ namespace amcintosh\FreshBooks\Resource;
 
 use Http\Client\HttpClient;
 use Spatie\DataTransferObject\DataTransferObject;
+use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\ListModel;
@@ -115,9 +116,10 @@ class AccountingResource extends BaseResource
      * @param  int $resourceId Id of the resource to return
      * @return DataTransferObject The result model
      */
-    public function get(string $accountId, int $resourceId): DataTransferObject
+    public function get(string $accountId, int $resourceId, ?IncludesBuilder $includes = null): DataTransferObject
     {
-        $result = $this->makeRequest(self::GET, $this->getUrl($accountId, $resourceId));
+        $url = $this->getUrl($accountId, $resourceId) . $this->buildQueryString([$includes]);
+        $result = $this->makeRequest(self::GET, $url);
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
 
@@ -130,8 +132,8 @@ class AccountingResource extends BaseResource
      */
     public function list(string $accountId, ?array $builders = null): DataTransferObject
     {
-        $queryString = $this->buildQueryString($builders);
-        $result = $this->makeRequest(self::GET, $this->getUrl($accountId) . $queryString);
+        $url = $this->getUrl($accountId) . $this->buildQueryString($builders);
+        $result = $this->makeRequest(self::GET, $url);
         return new $this->listModel($result);
     }
 
@@ -143,13 +145,18 @@ class AccountingResource extends BaseResource
      * @param  array $data (Optional) The data to create the model with
      * @return DataTransferObject Model of the new resource's response data.
      */
-    public function create(string $accountId, DataModel $model = null, array $data = null): DataTransferObject
-    {
+    public function create(
+        string $accountId,
+        DataModel $model = null,
+        array $data = null,
+        ?IncludesBuilder $includes = null
+    ): DataTransferObject {
         if (!is_null($model)) {
             $data = $model->getContent();
         }
         $data = array($this->singleModel::RESPONSE_FIELD => $data);
-        $result = $this->makeRequest(self::POST, $this->getUrl($accountId), $data);
+        $url = $this->getUrl($accountId) . $this->buildQueryString([$includes]);
+        $result = $this->makeRequest(self::POST, $url, $data);
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
 
@@ -166,13 +173,15 @@ class AccountingResource extends BaseResource
         string $accountId,
         int $resourceId,
         DataModel $model = null,
-        array $data = null
+        array $data = null,
+        ?IncludesBuilder $includes = null
     ): DataTransferObject {
         if (!is_null($model)) {
             $data = $model->getContent();
         }
         $data = array($this->singleModel::RESPONSE_FIELD => $data);
-        $result = $this->makeRequest(self::PUT, $this->getUrl($accountId, $resourceId), $data);
+        $url = $this->getUrl($accountId, $resourceId) . $this->buildQueryString([$includes]);
+        $result = $this->makeRequest(self::PUT, $url, $data);
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
 
