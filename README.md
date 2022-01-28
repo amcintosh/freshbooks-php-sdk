@@ -347,7 +347,40 @@ TODO:
 
 ##### Includes
 
-TODO:
+To include additional relationships, sub-resources, or data in a response an `IncludesBuilder`
+can be constructed.
+
+```php
+use amcintosh\FreshBooks\Builder\IncludesBuilder;
+
+$includes = new IncludesBuilder();
+$includes->include("outstanding_balance");
+```
+
+Which can then be passed into `list` or `get` calls:
+
+```php
+$clients = $freshBooksClient->clients()->list($accountId, builders: [$includes]);
+echo $clients->clients[0]->outstanding_balance->amount; // '100.00'
+echo $clients->clients[0]->outstanding_balance->code; // 'USD'
+
+$client = $freshBooksClient->clients()->get($accountId, $clientId, $includes);
+echo $client->outstanding_balance->amount; // '100.00'
+echo $client->outstanding_balance->code; // 'USD'
+```
+
+Includes can also be passed into `create` and `update` calls to include the data in the response of the updated
+resource:
+
+```php
+$clientData = array(
+    'email' => 'john.doe@abcorp.com'
+);
+
+$newClient = $freshBooksClient->clients()->create($accountId, data: $clientData);
+
+echo $client->outstanding_balance->amount; // null, new client has no balance
+```
 
 ##### Sorting
 

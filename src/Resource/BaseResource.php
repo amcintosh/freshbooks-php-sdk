@@ -18,6 +18,7 @@ class BaseResource
         if (is_null($builders)) {
             return $queryString;
         }
+        $builders = array_filter($builders);
         foreach ($builders as $builder) {
             $queryString .= $builder->build();
         }

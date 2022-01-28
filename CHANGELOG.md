@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Support for expenses
+- Support for resource includes
+
 ## 0.2.0
 
 - Add OAuth authentication methods
