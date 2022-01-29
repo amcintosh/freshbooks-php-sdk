@@ -1,6 +1,7 @@
 # FreshBooks PHP SDK
 
-[![Packagist PHP Version Support](https://badgen.net/packagist/v/amcintosh/freshbooks)](https://packagist.org/packages/amcintosh/freshbooks)
+[![Packagist Version](https://badgen.net/packagist/v/amcintosh/freshbooks)](https://packagist.org/packages/amcintosh/freshbooks)
+![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/amcintosh/freshbooks)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/amcintosh/freshbooks-php-sdk/Run%20Tests)](https://github.com/amcintosh/freshbooks-php-sdk/actions?query=workflow%3A%22Run+Tests%22)
 
 A FreshBooks PHP SDK to allow you to more easily utilize the [FreshBooks API](https://www.freshbooks.com/api).

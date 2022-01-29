@@ -4,6 +4,7 @@
 
 - Support for expenses
 - Support for resource includes
+- Support for PHP 8.1
 
 ## 0.2.0
 
