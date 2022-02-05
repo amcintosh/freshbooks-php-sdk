@@ -6,6 +6,7 @@ namespace amcintosh\FreshBooks\Tests\Resource;
 
 use PHPUnit\Framework\TestCase;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
+use amcintosh\FreshBooks\Builder\FilterBuilder;
 use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Builder\PaginateBuilder;
 use amcintosh\FreshBooks\Model\Client;
@@ -188,6 +189,30 @@ final class AccountingResourceTest extends TestCase
         $this->assertSame('/accounting/account/ACM123/users/clients?page=1&per_page=2', $request->getRequestTarget());
     }
 
+    public function testListFiltered(): void
+    {
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => [
+                'clients' => [['id' => 12345]],
+                'page' => 1,
+                'per_page' => 15,
+                'pages' => 1,
+                'total' => 1
+            ]]]
+        );
+
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
+        $filters = (new FilterBuilder())->equals('clientid', 12345);
+        $clients = $resource->list($this->accountId, [$filters]);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertSame('GET', $request->getMethod());
+        $this->assertSame(
+            '/accounting/account/ACM123/users/clients?search%5Bclientid%5D=12345',
+            $request->getRequestTarget()
+        );
+    }
     public function testCreateByModel(): void
     {
         $clientId = 12345;

@@ -344,7 +344,38 @@ echo $paginator->perPage; // 4
 
 ##### Filters
 
-TODO:
+To filter which results are return by `list` method calls, construct a `FilterBuilder` and pass that
+in the list of builders to the `list` method.
+
+```php
+use amcintosh\FreshBooks\Builder\FilterBuilder;
+
+$filters = new FilterBuilder();
+$filters->equals('userid', 123);
+
+$clients = $freshBooksClient->clients()->list($accountId, builders: [$filters]);
+```
+
+Filters can be built with the methods: `equals`, `inList`, `like`, `between`, `boolean`, and `datetime`
+which can be chained together.
+
+```php
+$filters = new FilterBuilder();
+$filters->like('email_like', '@freshbooks.com');
+// Creates `&search[email_like]=@freshbooks.com`
+
+$filters = new FilterBuilder();
+$filters->inList('clientids', [123, 456])->boolean('active', false);
+// Creates `&search[clientids][]=123&search[clientids][]=456&active=false`
+
+$filters = new FilterBuilder();
+$filters->between('amount', 1, 10);
+// Creates `&search[amount_min]=1&search[amount_max]=10`
+
+$filters = new FilterBuilder();
+$filters->between("start_date", min: new DateTime('2020-10-17'))
+// Creates `&search[start_date]=2020-10-17`
+```
 
 ##### Includes
 
