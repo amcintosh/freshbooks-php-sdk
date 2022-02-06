@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.3.0
+
 - Support for expenses
 - Support for resource includes
 - Support for resource list filters
