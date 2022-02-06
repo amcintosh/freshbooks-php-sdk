@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Tests\Builder;
 
+use DateTime;
 use PHPUnit\Framework\TestCase;
 use amcintosh\FreshBooks\Builder\IncludesBuilder;
 
@@ -11,7 +12,7 @@ final class IncludesBuilderTest extends TestCase
 {
     public function testIncludeBuildAccounting(): void
     {
-        $builder = new IncludesBuilder('AccountingResource');
+        $builder = new IncludesBuilder();
         $builder->include("late_reminders");
 
         $this->assertSame('&include[]=late_reminders', $builder->build('AccountingResource'));
@@ -27,7 +28,7 @@ final class IncludesBuilderTest extends TestCase
 
     public function testIncludeBuildEvents(): void
     {
-        $builder = new IncludesBuilder('');
+        $builder = new IncludesBuilder();
         $builder->include("late_reminders");
 
         $this->assertSame('&include[]=late_reminders', $builder->build('EventsResource'));
