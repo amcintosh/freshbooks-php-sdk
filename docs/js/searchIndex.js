@@ -11,6 +11,61 @@ Search.appendIndex(
             "summary": "Builds\u0020the\u0020query\u0020string\u0020parameters\u0020from\u0020the\u0020Builder.",
             "url": "classes/amcintosh-FreshBooks-Builder-BuilderInterface.html#method_build"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder",
+            "name": "FilterBuilder",
+            "summary": "Builder\u0020for\u0020making\u0020filtered\u0020list\u0020queries.",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Builder\u0020for\u0020making\u0020filtered\u0020list\u0020queries.",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003Abetween\u0028\u0029",
+            "name": "between",
+            "summary": "Filters\u0020results\u0020where\u0020the\u0020provided\u0020field\u0020is\u0020between\u0020two\u0020values.",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method_between"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003AconvertBetweenKey\u0028\u0029",
+            "name": "convertBetweenKey",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method_convertBetweenKey"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003AconvertBetweenValue\u0028\u0029",
+            "name": "convertBetweenValue",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method_convertBetweenValue"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003Aboolean\u0028\u0029",
+            "name": "boolean",
+            "summary": "Filters\u0020results\u0020where\u0020the\u0020field\u0020is\u0020equal\u0020to\u0020true\u0020or\u0020false.",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method_boolean"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003Adatetime\u0028\u0029",
+            "name": "datetime",
+            "summary": "Filters\u0020for\u0020entries\u0020that\u0020come\u0020before\u0020or\u0020after\u0020a\u0020particular\u0020time,\u0020as\u0020specified\nby\u0020the\u0020field.",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method_datetime"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "Filters\u0020results\u0020where\u0020the\u0020field\u0020is\u0020equal\u0020to\u0020the\u0020provided\u0020value.",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method_equals"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003AinList\u0028\u0029",
+            "name": "inList",
+            "summary": "Filters\u0020if\u0020the\u0020provided\u0020field\u0020matches\u0020a\u0020value\u0020in\u0020a\u0020list.",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method_inList"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003Alike\u0028\u0029",
+            "name": "like",
+            "summary": "Filters\u0020for\u0020a\u0020match\u0020contained\u0020within\u0020the\u0020field\u0020being\u0020searched.\u0020For\u0020example,\n\u0022leaf\u0022\u0020will\u0020Like\u002Dmatch\u0020\u0022aleaf\u0022\u0020and\u0020\u0022leafy\u0022,\u0020but\u0020not\u0020\u0022leav\u0022,\u0020and\u0020\u0022leafs\u0022\u0020would\nnot\u0020Like\u002Dmatch\u0020\u0022leaf\u0022.",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method_like"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003Abuild\u0028\u0029",
+            "name": "build",
+            "summary": "Builds\u0020the\u0020query\u0020string\u0020parameters\u0020from\u0020the\u0020Builder.",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method_build"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Builder\\IncludesBuilder",
             "name": "IncludesBuilder",
             "summary": "Builder\u0020for\u0020including\u0020relationships,\u0020sub\u002Dresources,\u0020or\u0020additional\u0020data\u0020in\u0020the\u0020response.",
