@@ -33,7 +33,7 @@ try {
     echo 'Error: ' . $e->getMessage();
     exit(1);
 }
-echo 'Created client "' . $client->id . "\n";
+echo 'Created client "' . $client->id . "\"\n";
 
 // Create the invoice
 $line1 = new LineItem();
@@ -60,5 +60,12 @@ try {
     echo 'Error: ' . $e->getMessage();
     exit(1);
 }
-echo 'Created invoice "' . $invoice->id . "\n";
+echo 'Created invoice "' . $invoice->id . "\"\n";
 echo 'Invoice total is ' . $invoice->amount->amount . ' ' . $invoice->amount->code . "\n";
+
+// Invoices are created in draft status, so we need to mark it as sent
+echo "Marking invoice as sent...\n";
+$invoiceData = [
+    'action_mark_as_sent' => true
+];
+$invoice = $freshBooksClient->invoices()->update($accountId, $invoice->id, data: $invoiceData);

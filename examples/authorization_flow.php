@@ -30,8 +30,12 @@ $authorizationUrl = $freshBooksClient->getAuthRequestUri(
 );
 echo 'Go to this URL to authorize: ' . $authorizationUrl . "\n";
 
-# The authorization code will be in the URL after the redirect
+# Going to that URL will prompt the user to log into FreshBooks and authorize the application.
+# Once authorized, FreshBooks will redirect the user to your `redirect_uri` with the authorization
+# code will be a parameter in the URL.
 $authCode = readline('Enter the code you get after authorization: ');
+
+# This will exchange the authorization code for an access token
 $tokenResponse = $freshBooksClient->getAccessToken($authCode);
 echo "\nThis is the access token the client is now configurated with: " . $tokenResponse->accessToken . "\n";
 echo 'It is good until ' . $tokenResponse->getExpiresAt()->format('Y-m-d H:i:s') . "\n\n";
