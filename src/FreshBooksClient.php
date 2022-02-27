@@ -23,6 +23,8 @@ use amcintosh\FreshBooks\Model\ExpenseList;
 use amcintosh\FreshBooks\Model\Identity;
 use amcintosh\FreshBooks\Model\Invoice;
 use amcintosh\FreshBooks\Model\InvoiceList;
+use amcintosh\FreshBooks\Model\Item;
+use amcintosh\FreshBooks\Model\ItemList;
 use amcintosh\FreshBooks\Model\Payment;
 use amcintosh\FreshBooks\Model\PaymentList;
 use amcintosh\FreshBooks\Model\Tax;
@@ -227,6 +229,16 @@ class FreshBooksClient
             InvoiceList::class,
             deleteViaUpdate: false
         );
+    }
+
+    /**
+     * FreshBooks items resource with calls to get, list, create, update, delete
+     *
+     * @return AccountingResource
+     */
+    public function items(): AccountingResource
+    {
+        return new AccountingResource($this->httpClient, 'items/items', Item::class, ItemList::class);
     }
 
     /**

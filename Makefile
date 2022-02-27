@@ -4,6 +4,9 @@
 generate-docs:
 	./phpDocumentor.phar -d ./src -t ./docs
 
+install:
+	composer install
+
 OLD_VERSION = $(shell cat src/VERSION)
 tag:
 	@if [ "$(VERSION_PART)" = '' ]; then \

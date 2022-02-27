@@ -369,7 +369,7 @@ final class InvoiceTest extends TestCase
         ], $invoice->getContent());
     }
 
-    public function testInvoiceGetContentNEw(): void
+    public function testInvoiceGetContentNew(): void
     {
         $invoiceData = json_decode($this->sampleInvoiceData, true);
         unset($invoiceData['invoice']['id']);
