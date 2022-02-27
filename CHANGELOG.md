@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Support for items
+- Support for tasks
 
 ## 0.3.0
 
