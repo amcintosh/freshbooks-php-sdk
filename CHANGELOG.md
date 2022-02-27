@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Support for items
+
 ## 0.3.0
 
 - Support for expenses
