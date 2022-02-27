@@ -226,6 +226,11 @@ Search.appendIndex(
             "summary": "FreshBooks\u0020payments\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete.",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_payments"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003Atasks\u0028\u0029",
+            "name": "tasks",
+            "summary": "FreshBooks\u0020tasks\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_tasks"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003Ataxes\u0028\u0029",
             "name": "taxes",
             "summary": "FreshBooks\u0020taxes\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete.",
@@ -1775,6 +1780,111 @@ Search.appendIndex(
             "name": "payments",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-PaymentList.html#property_payments"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task",
+            "name": "Task",
+            "summary": "Tasks\u0020in\u0020Freshbooks\u0020represent\u0020services\u0020that\u0020your\u0020business\u0020offers\u0020to\u0020clients.",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#method_getContent"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024taskId",
+            "name": "taskId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_taskId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024accountingSystemId",
+            "name": "accountingSystemId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_accountingSystemId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024billable",
+            "name": "billable",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_billable"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024description",
+            "name": "description",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_description"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_name"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024rate",
+            "name": "rate",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_rate"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024tax1",
+            "name": "tax1",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_tax1"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024tax2",
+            "name": "tax2",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_tax2"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024updated",
+            "name": "updated",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_updated"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A\u0024visState",
+            "name": "visState",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#property_visState"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList",
+            "name": "TaskList",
+            "summary": "Results\u0020of\u0020tasks\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020tasks\u0020and\u0020pagination\u0020data.",
+            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003A\u0024page",
+            "name": "page",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#property_page"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003A\u0024pages",
+            "name": "pages",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#property_pages"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003A\u0024perPage",
+            "name": "perPage",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#property_perPage"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003A\u0024total",
+            "name": "total",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#property_total"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003A\u0024tasks",
+            "name": "tasks",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#property_tasks"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Tax",
             "name": "Tax",
