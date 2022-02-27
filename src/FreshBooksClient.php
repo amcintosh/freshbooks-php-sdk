@@ -27,6 +27,8 @@ use amcintosh\FreshBooks\Model\Item;
 use amcintosh\FreshBooks\Model\ItemList;
 use amcintosh\FreshBooks\Model\Payment;
 use amcintosh\FreshBooks\Model\PaymentList;
+use amcintosh\FreshBooks\Model\Task;
+use amcintosh\FreshBooks\Model\TaskList;
 use amcintosh\FreshBooks\Model\Tax;
 use amcintosh\FreshBooks\Model\TaxList;
 use amcintosh\FreshBooks\Resource\AccountingResource;
@@ -249,6 +251,16 @@ class FreshBooksClient
     public function payments(): AccountingResource
     {
         return new AccountingResource($this->httpClient, 'payments/payments', Payment::class, PaymentList::class);
+    }
+
+    /**
+     * FreshBooks tasks resource with calls to get, list, create, update, delete
+     *
+     * @return AccountingResource
+     */
+    public function tasks(): AccountingResource
+    {
+        return new AccountingResource($this->httpClient, 'projects/tasks', Task::class, TaskList::class);
     }
 
     /**
