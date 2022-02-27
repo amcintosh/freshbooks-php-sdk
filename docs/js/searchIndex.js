@@ -216,6 +216,11 @@ Search.appendIndex(
             "summary": "FreshBooks\u0020invoices\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_invoices"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003Aitems\u0028\u0029",
+            "name": "items",
+            "summary": "FreshBooks\u0020items\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_items"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003Apayments\u0028\u0029",
             "name": "payments",
             "summary": "FreshBooks\u0020payments\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete.",
@@ -1400,6 +1405,121 @@ Search.appendIndex(
             "name": "PARTIAL",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PARTIAL"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item",
+            "name": "Item",
+            "summary": "Items\u0020are\u0020stored\u0020from\u0020invoice\u0020lines\u0020to\u0020make\u0020invoicing\u0020easier\u0020in\u0020the\u0020future.",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#method_getContent"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024itemId",
+            "name": "itemId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_itemId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024accountingSystemId",
+            "name": "accountingSystemId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_accountingSystemId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024description",
+            "name": "description",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_description"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024inventory",
+            "name": "inventory",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_inventory"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_name"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024quantity",
+            "name": "quantity",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_quantity"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024sku",
+            "name": "sku",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_sku"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024tax1",
+            "name": "tax1",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_tax1"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024tax2",
+            "name": "tax2",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_tax2"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024unitCost",
+            "name": "unitCost",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_unitCost"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024updated",
+            "name": "updated",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_updated"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A\u0024visState",
+            "name": "visState",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#property_visState"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList",
+            "name": "ItemList",
+            "summary": "Results\u0020of\u0020items\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020items\u0020and\u0020pagination\u0020data.",
+            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A\u0024page",
+            "name": "page",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#property_page"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A\u0024pages",
+            "name": "pages",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#property_pages"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A\u0024perPage",
+            "name": "perPage",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#property_perPage"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A\u0024total",
+            "name": "total",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#property_total"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A\u0024items",
+            "name": "items",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#property_items"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\LineItem",
             "name": "LineItem",
