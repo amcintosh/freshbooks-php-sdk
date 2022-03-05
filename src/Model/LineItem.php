@@ -67,7 +67,7 @@ class LineItem extends DataTransferObject implements DataModel
      */
     #[MapFrom('qty')]
     #[MapTo('qty')]
-    public ?int $quantity;
+    public ?float $quantity;
 
     /**
      * @var string First tax amount, in percentage, up to 3 decimal places.
