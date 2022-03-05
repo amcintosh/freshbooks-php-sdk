@@ -61,7 +61,7 @@ class Item extends DataTransferObject implements DataModel
      */
     #[MapFrom('qty')]
     #[MapTo('qty')]
-    public ?int $quantity;
+    public ?float $quantity;
 
     /**
      * @var string Id for a specific item or product, used in inventory management.

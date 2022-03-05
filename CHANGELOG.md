@@ -4,6 +4,7 @@
 
 - Support for items
 - Support for tasks
+- Change quantity field on invoice lines and items to float
 
 ## 0.3.0
 

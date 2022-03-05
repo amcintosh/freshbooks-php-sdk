@@ -44,7 +44,7 @@ final class ItemTest extends TestCase
         $this->assertSame('Melmac melamine resin molded dinnerware', $item->description);
         $this->assertSame('50', $item->inventory);
         $this->assertSame('Bowls', $item->name);
-        $this->assertSame(4, $item->quantity);
+        $this->assertSame(4.0, $item->quantity);
         $this->assertSame('SQ8608333', $item->sku);
         $this->assertSame(2, $item->tax1);
         $this->assertSame(0, $item->tax2);
@@ -62,7 +62,7 @@ final class ItemTest extends TestCase
             'description' => 'Melmac melamine resin molded dinnerware',
             'inventory' => '50',
             'name' => 'Bowls',
-            'qty' => 4,
+            'qty' => 4.0,
             'sku' => 'SQ8608333',
             'tax1' => 2,
             'tax2' => 0,

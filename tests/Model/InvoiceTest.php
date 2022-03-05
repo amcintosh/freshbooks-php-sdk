@@ -263,7 +263,7 @@ final class InvoiceTest extends TestCase
         $this->assertSame('Melmac melamine resin molded dinnerware', $line->description);
         $this->assertSame(0, $line->expenseId);
         $this->assertSame('Bowls', $line->name);
-        $this->assertSame(4, $line->quantity);
+        $this->assertSame(4.0, $line->quantity);
         $this->assertSame('13', $line->taxAmount1);
         $this->assertSame('0', $line->taxAmount2);
         $this->assertSame('HST1', $line->taxName1);
@@ -317,7 +317,7 @@ final class InvoiceTest extends TestCase
                     'description' => 'Melmac melamine resin molded dinnerware',
                     'expenseid' => 0,
                     'name' => 'Bowls',
-                    'qty' => 4,
+                    'qty' => 4.0,
                     'taxAmount1' => '13',
                     'taxAmount2' => '0',
                     'taxName1' => 'HST1',
@@ -339,7 +339,7 @@ final class InvoiceTest extends TestCase
                     'description' => 'Melmac melamine resin molded mug',
                     'expenseid' => 0,
                     'name' => 'Mugs',
-                    'qty' => 6,
+                    'qty' => 6.0,
                     'taxAmount1' => '0',
                     'taxAmount2' => '0',
                     'taxName1' => '',
@@ -411,7 +411,7 @@ final class InvoiceTest extends TestCase
                     'description' => 'Melmac melamine resin molded dinnerware',
                     'expenseid' => 0,
                     'name' => 'Bowls',
-                    'qty' => 4,
+                    'qty' => 4.0,
                     'taxAmount1' => '13',
                     'taxAmount2' => '0',
                     'taxName1' => 'HST1',
@@ -433,7 +433,7 @@ final class InvoiceTest extends TestCase
                     'description' => 'Melmac melamine resin molded mug',
                     'expenseid' => 0,
                     'name' => 'Mugs',
-                    'qty' => 6,
+                    'qty' => 6.0,
                     'taxAmount1' => '0',
                     'taxAmount2' => '0',
                     'taxName1' => '',
