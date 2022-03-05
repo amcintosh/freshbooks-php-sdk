@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.4.0
+
 - Support for items
 - Support for tasks
 - Change quantity field on invoice lines and items to float
