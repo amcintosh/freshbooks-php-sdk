@@ -1,12 +1,11 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.202.5/containers/php
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.224.2/containers/php
 {
 	"name": "PHP",
-	"runArgs": ["--init"],
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			// Update VARIANT to pick a PHP version: 8, 8.0, 7, 7.4, 7.3
+			// Update VARIANT to pick a PHP version: 8, 8.1, 8.0, 7, 7.4
 			// Append -bullseye or -buster to pin to an OS version.
 			// Use -bullseye variants on local on arm64/Apple Silicon.
 			"VARIANT": "8",
@@ -21,7 +20,7 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"felixfbecker.php-debug",
+		"xdebug.php-debug",
 		"bmewburn.vscode-intelephense-client",
 		"mrmlnc.vscode-apache"
 	],
@@ -32,7 +31,7 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "composer install",
 
-	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	"features": {
 		"git": "os-provided",
