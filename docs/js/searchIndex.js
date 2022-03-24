@@ -916,6 +916,46 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-Expense.html#property_visState"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Expense\u003A\u003A\u0024attachment",
+            "name": "attachment",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Expense.html#property_attachment"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseAttachment",
+            "name": "ExpenseAttachment",
+            "summary": "Attached\u0020receipt\u0020image\u0020details\u0020for\u0020an\u0020expense.",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseAttachment.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseAttachment\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseAttachment.html#method_getContent"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseAttachment\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseAttachment.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseAttachment\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseAttachment.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseAttachment\u003A\u003A\u0024attachmentId",
+            "name": "attachmentId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseAttachment.html#property_attachmentId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseAttachment\u003A\u003A\u0024jwt",
+            "name": "jwt",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseAttachment.html#property_jwt"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseAttachment\u003A\u003A\u0024mediaType",
+            "name": "mediaType",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseAttachment.html#property_mediaType"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseList",
             "name": "ExpenseList",
             "summary": "Results\u0020of\u0020expenses\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020expenses\u0020and\u0020pagination\u0020data.",
