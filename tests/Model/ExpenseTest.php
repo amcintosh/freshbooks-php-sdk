@@ -118,6 +118,10 @@ final class ExpenseTest extends TestCase
         $this->assertEquals(new DateTime('2021-07-19T08:42:03Z'), $expense->updated);
         $this->assertSame('Serano Bakery', $expense->vendor);
         $this->assertSame(VisState::ACTIVE, $expense->visState);
+        $this->assertSame(7788, $expense->attachment->id);
+        $this->assertSame(7788, $expense->attachment->attachmentId);
+        $this->assertSame('someAwesomeJWT', $expense->attachment->jwt);
+        $this->assertSame('image/jpeg', $expense->attachment->mediaType);
     }
 
     public function testExpenseGetContent(): void
@@ -151,7 +155,11 @@ final class ExpenseTest extends TestCase
                 'code' => 'CAD',
             ],
             'taxName1' => 'HST1',
-            'vendor' => 'Serano Bakery'
+            'vendor' => 'Serano Bakery',
+            'attachment' => [
+                'jwt' => 'someAwesomeJWT',
+                'media_type' => 'image/jpeg'
+            ]
         ], $expense->getContent());
     }
 }

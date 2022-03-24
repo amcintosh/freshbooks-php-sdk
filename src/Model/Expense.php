@@ -12,6 +12,7 @@ use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\ExpenseAttachment;
 use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
 use amcintosh\FreshBooks\Model\Caster\DateCaster;
 use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
@@ -282,7 +283,12 @@ class Expense extends DataTransferObject implements DataModel
     public ?int $visState;
 
     // Includes
-    // ExpenseAttachment attachment
+
+    /**
+     * @var ExpenseAttachment Attached receipt.
+     */
+    public ?ExpenseAttachment $attachment;
+
 
     /**
      * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
@@ -300,12 +306,16 @@ class Expense extends DataTransferObject implements DataModel
             ->except('status')
             ->except('updated')
             ->except('visState')
+            ->except('attachment')
             ->toArray();
         if (is_null($this->id) && is_null($this->expenseId)) {
             $data['status'] = $this->status;
         }
         if (isset($this->date)) {
             $data['date'] = $this->date->format('Y-m-d');
+        }
+        if (isset($this->attachment)) {
+            $data['attachment'] = $this->attachment->getContent();
         }
         foreach ($data as $key => $value) {
             if (is_null($value)) {

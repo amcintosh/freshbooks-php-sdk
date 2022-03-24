@@ -26,7 +26,7 @@ class BusinessMembership extends DataTransferObject
     public ?string $role;
 
     /**
-     * @var string The business details.
+     * @var Business The business details.
      */
     public ?Business $business;
 }
