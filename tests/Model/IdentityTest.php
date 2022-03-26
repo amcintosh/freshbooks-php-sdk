@@ -102,11 +102,11 @@ final class IdentityTest extends TestCase
                     "date_format": "dd/mm/yyyy",
                     "address": {
                         "id": 76433,
-                        "street": "123 Somewhere",
-                        "city": "Toronto",
-                        "province": "Ontario",
-                        "country": "Canada",
-                        "postal_code": "M6P 2T6"
+                        "street": "123 Somewhere St. Apt. 705",
+                        "city": "Salaam",
+                        "province": "Terra Nova",
+                        "country": "Commonwealth of Independent Systems",
+                        "postal_code": "TER 123"
                     },
                     "phone_number": {
                         "id": 666111,
@@ -141,10 +141,10 @@ final class IdentityTest extends TestCase
                     "date_format": "mm/dd/yyyy",
                     "address": {
                         "id": 273196,
-                        "street": "123 Bright Ave.",
-                        "city": "Toronto",
-                        "province": "Ontario",
-                        "country": "Canada",
+                        "street": "5th Ring Street",
+                        "city": "Bergfestung",
+                        "province": "Bayern",
+                        "country": "Bayern Corporation",
                         "postal_code": "E1E 1E1"
                     },
                     "phone_number": {
@@ -233,5 +233,13 @@ final class IdentityTest extends TestCase
         $this->assertEquals('Commonwealth of Independent Systems', $business->name);
         $this->assertEquals('ABC123', $business->accountId);
         $this->assertEquals('dd/mm/yyyy', $business->dateFormat);
+        $this->assertEquals(76433, $business->address->id);
+        $this->assertEquals('123 Somewhere St. Apt. 705', $business->address->street);
+        $this->assertEquals('Salaam', $business->address->city);
+        $this->assertEquals('Terra Nova', $business->address->province);
+        $this->assertEquals('Commonwealth of Independent Systems', $business->address->country);
+        $this->assertEquals('TER 123', $business->address->postalCode);
+        $this->assertEquals(666111, $business->phoneNumber->id);
+        $this->assertEquals('8675309', $business->phoneNumber->phoneNumber);
     }
 }

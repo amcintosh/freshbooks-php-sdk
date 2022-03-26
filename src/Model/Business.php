@@ -4,16 +4,14 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use DateTimeImmutable;
-use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\Business;
+use amcintosh\FreshBooks\Model\BusinessAddress;
+use amcintosh\FreshBooks\Model\BusinessPhone;
 
 /**
- *
+ * Each FreshBooks user is associated with a business.
  *
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/identity_model
@@ -43,8 +41,19 @@ class Business extends DataTransferObject
     public ?string $accountId;
 
     /**
+     * @var string The business address.
+     */
+    public ?BusinessAddress $address;
+
+    /**
      * @var string Date format used by the business in FreshBooks.
      */
     #[MapFrom('date_format')]
     public ?string $dateFormat;
+
+    /**
+     * @var BusinessPhone The phone number object of the business.
+     */
+    #[MapFrom('phone_number')]
+    public ?BusinessPhone $phoneNumber;
 }
