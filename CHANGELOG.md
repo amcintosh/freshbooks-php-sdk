@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Support expense attachments
+- Added fields to Business model (address and phone)
 
 ## 0.4.0
 
