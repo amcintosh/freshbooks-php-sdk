@@ -328,7 +328,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Business",
             "name": "Business",
-            "summary": "",
+            "summary": "Each\u0020FreshBooks\u0020user\u0020is\u0020associated\u0020with\u0020a\u0020business.",
             "url": "classes/amcintosh-FreshBooks-Model-Business.html"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Business\u003A\u003A\u0024id",
@@ -351,10 +351,55 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-Business.html#property_accountId"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Business\u003A\u003A\u0024address",
+            "name": "address",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Business.html#property_address"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Business\u003A\u003A\u0024dateFormat",
             "name": "dateFormat",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-Business.html#property_dateFormat"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Business\u003A\u003A\u0024phoneNumber",
+            "name": "phoneNumber",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Business.html#property_phoneNumber"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessAddress",
+            "name": "BusinessAddress",
+            "summary": "The\u0020address\u0020of\u0020the\u0020business.",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessAddress.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessAddress\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessAddress.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessAddress\u003A\u003A\u0024street",
+            "name": "street",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessAddress.html#property_street"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessAddress\u003A\u003A\u0024city",
+            "name": "city",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessAddress.html#property_city"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessAddress\u003A\u003A\u0024province",
+            "name": "province",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessAddress.html#property_province"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessAddress\u003A\u003A\u0024country",
+            "name": "country",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessAddress.html#property_country"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessAddress\u003A\u003A\u0024postalCode",
+            "name": "postalCode",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessAddress.html#property_postalCode"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessMembership",
             "name": "BusinessMembership",
@@ -375,6 +420,21 @@ Search.appendIndex(
             "name": "business",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-BusinessMembership.html#property_business"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessPhone",
+            "name": "BusinessPhone",
+            "summary": "The\u0020phone\u0020number\u0020of\u0020the\u0020business.",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessPhone.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessPhone\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessPhone.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessPhone\u003A\u003A\u0024phoneNumber",
+            "name": "phoneNumber",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessPhone.html#property_phoneNumber"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Caster\\AccountingDateTimeImmutableCaster",
             "name": "AccountingDateTimeImmutableCaster",
