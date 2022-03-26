@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Support expense attachments
+
 ## 0.4.0
 
 - Support for items
