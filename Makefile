@@ -2,7 +2,7 @@
 .PHONY: check-style, test, test-all
 
 generate-docs:
-	./phpDocumentor.phar -d ./src -t ./docs
+	./phpDocumentor.phar
 
 install:
 	composer install

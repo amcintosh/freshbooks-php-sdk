@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor
+        configVersion="3"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://www.phpdoc.org"
+        xsi:noNamespaceSchemaLocation="data/xsd/phpdoc.xsd"
+>
+    <title>freshbooks-php-sdk</title>
+    <paths>
+        <output>docs/html</output>
+        <cache>build/cache</cache>
+    </paths>
+    <version number="3.0.0">
+        <folder>latest</folder>
+        <api>
+            <source dsn=".">
+                <path>src</path>
+            </source>
+            <ignore hidden="true" symlinks="true">
+                <path>tests/**/*</path>
+                <path>build/**/*</path>
+                <path>var/**/*</path>
+                <path>vendor/**/*</path>
+            </ignore>
+            <extensions>
+                <extension>php</extension>
+            </extensions>
+            <default-package-name>amcintosh</default-package-name>
+        </api>
+        <guide>
+            <source dsn=".">
+                <path>docs/source</path>
+            </source>
+            <output>guide</output>
+        </guide>
+    </version>
+    <setting name="guides.enabled" value="true"/>
+    <template name="default"/>
+</phpdocumentor>
