@@ -23,7 +23,7 @@ composer require amcintosh/freshbooks php-http/guzzle7-adapter
 
 ## Usage
 
-See https://amcintosh.github.io/freshbooks-php-sdk/ for module documentation and check out some of our [examples](examples).
+See the [full documentation](https://amcintosh.github.io/freshbooks-php-sdk/) or check out some [examples](examples).
 
 This SDK makes use of the [spryker/decimal-object](https://packagist.org/packages/spryker/decimal-object) package.
 All monetary amounts are represented as as `Spryker\DecimalObject\Decimal`, so it is recommended that you refer to

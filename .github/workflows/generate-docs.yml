@@ -24,6 +24,7 @@ jobs:
         chmod +x phpDocumentor.phar
     - name: Run generate-docs
       run: |
+        rm -rf docs/html
         make generate-docs
     - name: Commit files
       run: |
