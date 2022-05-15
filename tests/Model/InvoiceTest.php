@@ -154,9 +154,9 @@ final class InvoiceTest extends TestCase
             "description_heading": null,
             "hours_heading": null,
             "image_banner_position_y": 0,
-            "image_banner_src": null,
-            "image_logo_src": null,
-            "invoiceid": 2621640,
+            "image_banner_src": "/uploads/images/abc123",
+            "image_logo_src": "/uploads/images/abc124",
+            "invoiceid": 987654,
             "item_heading": null,
             "label": null,
             "quantity_heading": null,
@@ -274,9 +274,19 @@ final class InvoiceTest extends TestCase
         $this->assertEquals(Decimal::create('5.00'), $line->unitCost->amount);
         $this->assertSame('CAD', $line->unitCost->code);
         $this->assertEquals(new DateTime('2021-04-16T14:31:19Z'), $line->updated);
+
+        // Presentation
+        $presentation = $invoice->presentation;
+        $this->assertSame(987654, $presentation->invoiceId);
+        $this->assertSame('dd/mm/yyyy', $presentation->dateFormat);
+        $this->assertSame('/uploads/images/abc123', $presentation->imageBannerSrc);
+        $this->assertSame('/uploads/images/abc124', $presentation->imageLogoSrc);
+        $this->assertSame('modern', $presentation->themeFontName);
+        $this->assertSame('simple', $presentation->themeLayout);
+        $this->assertSame('#663399', $presentation->themePrimaryColor);
     }
 
-    public function testInvoiceGetContent(): void
+    public function testInvoiceGetContentExisting(): void
     {
         $invoiceData = json_decode($this->sampleInvoiceData, true);
         $invoice = new Invoice($invoiceData['invoice']);
@@ -295,14 +305,8 @@ final class InvoiceTest extends TestCase
                 'code' => 'CAD'
             ],
             'deposit_percentage' => '1.5',
-            'discount_total' => [
-                'amount' => '-4.40',
-                'code' => 'CAD'
-            ],
             'discount_value' => 10.0,
-            'display_status' => 'sent',
             'due_offset_days' => 0,
-            'estimateid' => 0,
             'fname' => 'Gordon',
             'invoice_number' => 'ACM0002',
             'language' => 'en',
@@ -354,15 +358,20 @@ final class InvoiceTest extends TestCase
                 ]
             ],
             'notes' => 'Thanks for your business',
-            'ownerid' => 1,
             'parent' => 0,
-            'payment_status' => 'partial',
+            'presentation' => [
+                'invoiceid' => 987654,
+                'date_format' => 'dd/mm/yyyy',
+                'image_banner_src' => '/uploads/images/abc123',
+                'image_logo_src' => '/uploads/images/abc124',
+                'theme_font_name' => 'modern',
+                'theme_layout' => 'simple',
+                'theme_primary_color' => '#663399',
+            ],
             'province' => 'Ontario',
-            'sentid' => 1,
             'show_attachments' => false,
             'street' => '123 Huron St.',
             'street2' => '',
-            'v3_status' => 'partial',
             'vat_name' => 'VAT Number',
             'vat_number' => '123',
             'generation_date' => '2021-04-16'
@@ -375,20 +384,24 @@ final class InvoiceTest extends TestCase
         unset($invoiceData['invoice']['id']);
         unset($invoiceData['invoice']['invoiceid']);
         $invoice = new Invoice($invoiceData['invoice']);
+        $content = $invoice->getContent();
+        ksort($content);
+
         $this->assertSame([
             'address' => '',
             'auto_bill' => false,
             'city' => 'Toronto',
             'code' => 'M5T 2B3',
             'country' => 'Canada',
-            'customerid' => 12345,
             'create_date' => '2021-04-16',
             'currency_code' => 'CAD',
+            'customerid' => 12345,
             'deposit_amount' => [
                 'amount' => '1.00',
                 'code' => 'CAD'
             ],
             'deposit_percentage' => '1.5',
+            'deposit_status' => 'none',
             'discount_total' => [
                 'amount' => '-4.40',
                 'code' => 'CAD'
@@ -398,9 +411,9 @@ final class InvoiceTest extends TestCase
             'due_offset_days' => 0,
             'estimateid' => 0,
             'fname' => 'Gordon',
+            'generation_date' => '2021-04-16',
             'invoice_number' => 'ACM0002',
             'language' => 'en',
-            'lname' => 'Shumway',
             'lines' => [
                 [
                     'lineid' => 1,
@@ -447,23 +460,29 @@ final class InvoiceTest extends TestCase
                     ]
                 ]
             ],
+            'lname' => 'Shumway',
             'notes' => 'Thanks for your business',
             'ownerid' => 1,
             'parent' => 0,
             'payment_status' => 'partial',
+            'presentation' => [
+                'invoiceid' => 987654,
+                'date_format' => 'dd/mm/yyyy',
+                'image_banner_src' => '/uploads/images/abc123',
+                'image_logo_src' => '/uploads/images/abc124',
+                'theme_font_name' => 'modern',
+                'theme_layout' => 'simple',
+                'theme_primary_color' => '#663399',
+            ],
             'province' => 'Ontario',
             'sentid' => 1,
             'show_attachments' => false,
+            'status' => 2,
             'street' => '123 Huron St.',
             'street2' => '',
             'v3_status' => 'partial',
             'vat_name' => 'VAT Number',
-            'vat_number' => '123',
-            'status' => 2,
-            'payment_status' => 'partial',
-            'deposit_status' => 'none',
-            'autobill' => false,
-            'generation_date' => '2021-04-16'
-        ], $invoice->getContent());
+            'vat_number' => '123'
+        ], $content);
     }
 }

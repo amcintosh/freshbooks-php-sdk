@@ -14,6 +14,7 @@ use Spatie\DataTransferObject\Casters\ArrayCaster;
 use Spatie\DataTransferObject\Casters\DataTransferObjectCaster;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\InvoicePresentation;
 use amcintosh\FreshBooks\Model\LineItem;
 use amcintosh\FreshBooks\Model\Money;
 use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
@@ -371,9 +372,7 @@ class Invoice extends DataTransferObject implements DataModel
      * _Note:_ The presentation details are only returned with a invoice call
      * using a "presentation" include.
      */
-    // TODO: make presentation
-    //#[CastWith(InvoicePresentationCaster::class)]
-    //public ?InvoicePresentation $presentation;
+    public ?InvoicePresentation $presentation;
 
     /**
      * @var string Province/state for address on invoice.
@@ -520,29 +519,27 @@ class Invoice extends DataTransferObject implements DataModel
             ->except('autoBill')
             ->except('autoBillStatus')
             ->except('amount')
-            ->except('createDate')
             ->except('createdAt')
             ->except('currentOrganization')
             ->except('datePaid')
             ->except('depositStatus')
             ->except('description')
-            ->except('discountTotal')
-            ->except('displayStatus')
+            ->except('display_status')
             ->except('dueDate')
-            ->except('estimateId')
+            ->except('estimateid')
             ->except('generationDate')
             ->except('groundMail')
             ->except('invoiceId')
             ->except('lastOrderStatus')
             ->except('organization')
             ->except('outstanding')
-            ->except('ownerId')
+            ->except('ownerid')
             ->except('paid')
-            ->except('paymentStatus')
-            ->except('sentId')
+            ->except('payment_status')
+            ->except('sentid')
             ->except('status')
             ->except('updated')
-            ->except('v3Status')
+            ->except('v3_status')
             ->except('visState')
             ->toArray();
         if (is_null($this->id) && is_null($this->invoiceId)) {
@@ -555,8 +552,10 @@ class Invoice extends DataTransferObject implements DataModel
             $data['payment_status'] = $this->paymentStatus;
             $data['last_order_status'] = $this->lastOrderStatus;
             $data['deposit_status'] = $this->depositStatus;
-            $data['autobill'] = $this->autoBill;
+            $data['auto_bill'] = $this->autoBill;
             $data['v3_status'] = $this->v3Status;
+        } else {
+            unset($data['discount_total']);
         }
         if (isset($this->createDate)) {
             $data['create_date'] = $this->createDate->format('Y-m-d');
