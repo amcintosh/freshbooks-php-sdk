@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.5.0
+
 - Fixed issue with sending invoice models fields that are only write-on-create
 - Support expense attachments
 - Added support for invoice presentations
