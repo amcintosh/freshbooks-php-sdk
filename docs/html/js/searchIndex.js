@@ -1361,6 +1361,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-Invoice.html#property_PONumber"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Invoice\u003A\u003A\u0024presentation",
+            "name": "presentation",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Invoice.html#property_presentation"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Invoice\u003A\u003A\u0024province",
             "name": "province",
             "summary": "",
@@ -1460,6 +1465,46 @@ Search.appendIndex(
             "name": "invoices",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-InvoiceList.html#property_invoices"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation",
+            "name": "InvoicePresentation",
+            "summary": "Invoice\u0020Presentations\u0020are\u0020used\u0020to\u0020style\u0020an\u0020invoice\u0020including\u0020font,\u0020colors,\u0020and\u0020logos.",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation\u003A\u003A\u0024invoiceId",
+            "name": "invoiceId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html#property_invoiceId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation\u003A\u003A\u0024dateFormat",
+            "name": "dateFormat",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html#property_dateFormat"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation\u003A\u003A\u0024imageBannerSrc",
+            "name": "imageBannerSrc",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html#property_imageBannerSrc"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation\u003A\u003A\u0024imageLogoSrc",
+            "name": "imageLogoSrc",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html#property_imageLogoSrc"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation\u003A\u003A\u0024themeFontName",
+            "name": "themeFontName",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html#property_themeFontName"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation\u003A\u003A\u0024themeLayout",
+            "name": "themeLayout",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html#property_themeLayout"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation\u003A\u003A\u0024themePrimaryColor",
+            "name": "themePrimaryColor",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html#property_themePrimaryColor"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceStatus",
             "name": "InvoiceStatus",
