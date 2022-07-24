@@ -291,6 +291,66 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#constant_DEFAULT_TIMEOUT"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024apiBaseUrl",
+            "name": "apiBaseUrl",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_apiBaseUrl"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024authBaseUrl",
+            "name": "authBaseUrl",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_authBaseUrl"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024clientId",
+            "name": "clientId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_clientId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024clientSecret",
+            "name": "clientSecret",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_clientSecret"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024redirectUri",
+            "name": "redirectUri",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_redirectUri"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024accessToken",
+            "name": "accessToken",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_accessToken"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024refreshToken",
+            "name": "refreshToken",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_refreshToken"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024tokenExpiresAt",
+            "name": "tokenExpiresAt",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_tokenExpiresAt"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024userAgent",
+            "name": "userAgent",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_userAgent"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024autoRetry",
+            "name": "autoRetry",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_autoRetry"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024timeout",
+            "name": "timeout",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_timeout"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024version",
+            "name": "version",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_version"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\AuthorizationToken",
             "name": "AuthorizationToken",
             "summary": "Authorization\u0020data\u0020including\u0020the\u0020OAuth\u0020bearer\u0020token,\u0020expiry,\u0020and\u0020refresh\u0020token.",
