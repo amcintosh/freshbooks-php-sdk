@@ -151,7 +151,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    IncludesBuilder
+    SortBuilder
 
     
             <div class="phpdocumentor-element__package">
@@ -170,13 +170,13 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/IncludesBuilder.php"><a href="files/src-builder-includesbuilder.html"><abbr title="src/Builder/IncludesBuilder.php">IncludesBuilder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/SortBuilder.php"><a href="files/src-builder-sortbuilder.html"><abbr title="src/Builder/SortBuilder.php">SortBuilder.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Builder for including relationships, sub-resources, or additional data in the response.</p>
+            <p class="phpdocumentor-summary">Builder for making sorted list queries.</p>
 
 
 
@@ -218,25 +218,46 @@
 
 <dl class="phpdocumentor-table-of-contents">
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#method___construct">__construct()</a>
+    <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Builder for including relationships, sub-resources, or additional data in the response.</dd>
+<dd>Builder for including sort by field data in a list request.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#method_build">build()</a>
+    <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_asc">asc()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Alias for ascending().</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_ascending">ascending()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Add a sort by the field in ascending order.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_build">build()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Builds the query string parameters from the Builder.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#method_include">include()</a>
+    <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_desc">desc()</a>
     <span>
-                                &nbsp;: self    </span>
+                                &nbsp;: void    </span>
 </dt>
-<dd>Add an include key to the builder.</dd>
+<dd>Alias for descending().</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_descending">descending()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Add a sort by the field in descending order.</dd>
 
         </dl>
 
@@ -249,7 +270,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -259,16 +280,16 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/IncludesBuilder.php"><a href="files/src-builder-includesbuilder.html"><abbr title="src/Builder/IncludesBuilder.php">IncludesBuilder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/SortBuilder.php"><a href="files/src-builder-sortbuilder.html"><abbr title="src/Builder/SortBuilder.php">SortBuilder.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Builder for including relationships, sub-resources, or additional data in the response.</p>
+        <p class="phpdocumentor-summary">Builder for including sort by field data in a list request.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -290,14 +311,104 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_build">
-        build()
-        <a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#method_build" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_asc">
+        asc()
+        <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_asc" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/IncludesBuilder.php"><a href="files/src-builder-includesbuilder.html"><abbr title="src/Builder/IncludesBuilder.php">IncludesBuilder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/SortBuilder.php"><a href="files/src-builder-sortbuilder.html"><abbr title="src/Builder/SortBuilder.php">SortBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Alias for ascending().</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">asc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The field for the resource list to be sorted by.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_ascending">
+        ascending()
+        <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_ascending" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/SortBuilder.php"><a href="files/src-builder-sortbuilder.html"><abbr title="src/Builder/SortBuilder.php">SortBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">45</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add a sort by the field in ascending order.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">ascending</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The field for the resource list to be sorted by.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_build">
+        build()
+        <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_build" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/SortBuilder.php"><a href="files/src-builder-sortbuilder.html"><abbr title="src/Builder/SortBuilder.php">SortBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -338,22 +449,22 @@ Eg. AccountingResource, ProjectsResource</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_include">
-        include()
-        <a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#method_include" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_desc">
+        desc()
+        <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_desc" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/IncludesBuilder.php"><a href="files/src-builder-includesbuilder.html"><abbr title="src/Builder/IncludesBuilder.php">IncludesBuilder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/SortBuilder.php"><a href="files/src-builder-sortbuilder.html"><abbr title="src/Builder/SortBuilder.php">SortBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Add an include key to the builder.</p>
+        <p class="phpdocumentor-summary">Alias for descending().</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">include</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+                    <span class="phpdocumentor-signature__name">desc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -363,7 +474,7 @@ Eg. AccountingResource, ProjectsResource</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The key for the resource or data to include</p>
+                    <section class="phpdocumentor-description"><p>The field for the resource list to be sorted by.</p>
 </section>
 
             </dd>
@@ -372,11 +483,54 @@ Eg. AccountingResource, ProjectsResource</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>The IncludesBuilder instance</p>
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_descending">
+        descending()
+        <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_descending" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Builder/SortBuilder.php"><a href="files/src-builder-sortbuilder.html"><abbr title="src/Builder/SortBuilder.php">SortBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">68</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add a sort by the field in descending order.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">descending</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The field for the resource list to be sorted by.</p>
 </section>
 
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
     
 </article>
             </section>
@@ -457,7 +611,7 @@ Eg. AccountingResource, ProjectsResource</p>
 </section>
             </div>
         </div>
-        <a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/amcintosh-FreshBooks-Builder-SortBuilder.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

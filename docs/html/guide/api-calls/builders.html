@@ -93,7 +93,7 @@
                 
             </li>
                     <li>
-                <a href="guide/api-calls/builders.html" class="-active">Pagination, Filters, and Includes</a>
+                <a href="guide/api-calls/builders.html" class="-active">Pagination, Filters, Includes, and Sorting</a>
                 
             </li>
             </ul>
@@ -144,9 +144,9 @@
 </aside>
 
             <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <div class="section" id="pagination-filters-and-includes">
-<h1>Pagination, Filters, and Includes</h1>
-<p><a href="guide/api-calls/get-list.html">Get and List</a> calls take a list of builder objects that can be used to paginate, filter, and include
+                    <div class="section" id="pagination-filters-includes-and-sorting">
+<h1>Pagination, Filters, Includes, and Sorting</h1>
+<p><a href="guide/api-calls/get-list.html">Get and List</a> calls take a list of builder objects that can be used to paginate, filter, sort, and include
 optional data in the response. See <a href="https://www.freshbooks.com/api/parameters">FreshBooks API - Parameters</a>
 documentation.</p>
 <div class="section" id="pagination">
@@ -235,9 +235,31 @@ o include the data in the response of the updated resource:</p>
     &#039;email&#039; =&gt; &#039;john.doe@abcorp.com&#039;
 );
 
-$newClient = $freshBooksClient-&gt;clients()-&gt;create($accountId, data: $clientData);
+$newClient = $freshBooksClient-&gt;clients()-&gt;create($accountId, data: $clientData, includes: $includes);
 
-echo $client-&gt;outstanding_balance-&gt;amount; // null, new client has no balance</code></pre>
+echo $client-&gt;outstanding_balance-&gt;amount; // null, new client has no balance
+</code></pre>
+</div>
+<div class="section" id="sorting">
+<h2>Sorting</h2>
+<p>To sort the results of a list call by supported fields (see the documentation for that resource) a
+`SortBuilder can be used.</p>
+<pre><code class="language-php " >use amcintosh\FreshBooks\Builder\SortBuilder;
+
+$sort = new SortBuilder();
+$sort-&gt;ascending(&quot;invoice_date&quot;);
+
+$invoices = $freshBooksClient-&gt;invoices()-&gt;list($accountId, builders: [$sort]);
+</code></pre>
+<p>to sort by the invoice date in ascending order, or:</p>
+<pre><code class="language-php " >use amcintosh\FreshBooks\Builder\SortBuilder;
+
+$sort = new SortBuilder();
+$sort-&gt;descending(&quot;invoice_date&quot;);
+
+$invoices = $freshBooksClient-&gt;invoices()-&gt;list($accountId, builders: [$sort]);
+</code></pre>
+<p>for descending order.</p>
 </div>
 
                 <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">

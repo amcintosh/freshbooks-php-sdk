@@ -121,6 +121,41 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Builder-PaginateBuilder.html#constant_MIN_PAGE"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\SortBuilder",
+            "name": "SortBuilder",
+            "summary": "Builder\u0020for\u0020making\u0020sorted\u0020list\u0020queries.",
+            "url": "classes/amcintosh-FreshBooks-Builder-SortBuilder.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\SortBuilder\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Builder\u0020for\u0020including\u0020sort\u0020by\u0020field\u0020data\u0020in\u0020a\u0020list\u0020request.",
+            "url": "classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\SortBuilder\u003A\u003Aasc\u0028\u0029",
+            "name": "asc",
+            "summary": "Alias\u0020for\u0020ascending\u0028\u0029.",
+            "url": "classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_asc"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\SortBuilder\u003A\u003Aascending\u0028\u0029",
+            "name": "ascending",
+            "summary": "Add\u0020a\u0020sort\u0020by\u0020the\u0020field\u0020in\u0020ascending\u0020order.",
+            "url": "classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_ascending"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\SortBuilder\u003A\u003Adesc\u0028\u0029",
+            "name": "desc",
+            "summary": "Alias\u0020for\u0020descending\u0028\u0029.",
+            "url": "classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_desc"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\SortBuilder\u003A\u003Adescending\u0028\u0029",
+            "name": "descending",
+            "summary": "Add\u0020a\u0020sort\u0020by\u0020the\u0020field\u0020in\u0020descending\u0020order.",
+            "url": "classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_descending"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\SortBuilder\u003A\u003Abuild\u0028\u0029",
+            "name": "build",
+            "summary": "Builds\u0020the\u0020query\u0020string\u0020parameters\u0020from\u0020the\u0020Builder.",
+            "url": "classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_build"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksClientConfigException",
             "name": "FreshBooksClientConfigException",
             "summary": "",
