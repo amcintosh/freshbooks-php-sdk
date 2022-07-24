@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks;
 
 use Http\Client\Common\HttpMethodsClient;
-use Http\Client\Common\Plugin;
 use Http\Client\Common\Plugin\BaseUriPlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use Http\Client\Common\PluginClientFactory;
@@ -92,8 +91,9 @@ class FreshBooksClient
     /**
      * getAuthRequestUri
      *
-     * @param  mixed $scopes
+     * @param mixed $scopes
      * @return string
+     * @throws FreshBooksClientConfigException
      */
     public function getAuthRequestUri(array $scopes = null): string
     {
@@ -114,10 +114,11 @@ class FreshBooksClient
     /**
      * Make call to FreshBooks OAuth /token endpoint to fetch access_token and refresh_tokens.
      *
-     * @param  mixed $grantType The grant type to use
-     * @param  mixed $codeType The type of code to use
-     * @param  mixed $code The code to use
-     * @return AuthorizationToken Object containing the access toekn, refresh token, and expiry details.
+     * @param mixed $grantType The grant type to use
+     * @param mixed $codeType The type of code to use
+     * @param mixed $code The code to use
+     * @return AuthorizationToken Object containing the access token, refresh token, and expiry details.
+     * @throws FreshBooksClientConfigException|Exception\FreshBooksException
      */
     protected function getToken(string $grantType, string $codeType, string $code): AuthorizationToken
     {
@@ -152,8 +153,9 @@ class FreshBooksClient
      * FreshBooksClientConfig instance (see {@see FreshBooksClient::getConfig()})
      * and also returns those values in an AuthorizationToken object.
      *
-     * @param  mixed $code access grant code from the authorization redirect
-     * @return AuthorizationToken Object containing the access toekn, refresh token, and expiry details.
+     * @param mixed $code access grant code from the authorization redirect
+     * @return AuthorizationToken Object containing the access token, refresh token, and expiry details.
+     * @throws FreshBooksClientConfigException|Exception\FreshBooksException
      */
     public function getAccessToken(string $code): AuthorizationToken
     {
@@ -170,8 +172,9 @@ class FreshBooksClient
      * FreshBooksClientConfig instance (see {@see FreshBooksClient::getConfig()})
      * and also returns those values in an AuthorizationToken object.
      *
-     * @param  mixed $refreshToken (Optional) Existing refresh token
-     * @return AuthorizationToken Object containing the access toekn, refresh token, and expiry details.
+     * @param mixed $refreshToken (Optional) Existing refresh token
+     * @return AuthorizationToken Object containing the access token, refresh token, and expiry details.
+     * @throws FreshBooksClientConfigException|Exception\FreshBooksException
      */
     public function refreshAccessToken(string $refreshToken = null): AuthorizationToken
     {

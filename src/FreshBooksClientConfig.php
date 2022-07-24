@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks;
 
+use DateTimeImmutable;
+
 /**
  * Configuration object for FreshBooks API Client
  */
@@ -12,6 +14,18 @@ class FreshBooksClientConfig
     private const API_BASE_URL = "https://api.freshbooks.com";
     private const AUTH_BASE_URL = "https://auth.freshbooks.com";
     private const DEFAULT_TIMEOUT = 30;
+    public string $apiBaseUrl;
+    public string $authBaseUrl;
+    public ?string $clientId;
+    public ?string $clientSecret;
+    public ?string $redirectUri;
+    public ?string $accessToken;
+    public ?string $refreshToken;
+    public ?DateTimeImmutable $tokenExpiresAt;
+    public ?string $userAgent;
+    public bool $autoRetry;
+    public int $timeout;
+    public string $version;
 
     /**
      * __construct
@@ -29,7 +43,7 @@ class FreshBooksClientConfig
     ) {
         $this->apiBaseUrl = self::API_BASE_URL;
         $this->authBaseUrl = self::AUTH_BASE_URL;
-        $this->clientSecret = null;
+        $this->clientId = null;
         $this->clientSecret = $clientSecret;
         $this->redirectUri = $redirectUri;
         $this->accessToken = $accessToken;
