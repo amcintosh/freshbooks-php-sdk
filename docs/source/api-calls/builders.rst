@@ -1,8 +1,8 @@
 
-Pagination, Filters, and Includes
-=================================
+Pagination, Filters, Includes, and Sorting
+==========================================
 
-:doc:`list<get-list>` calls take a list of builder objects that can be used to paginate, filter, and include
+:doc:`list<get-list>` calls take a list of builder objects that can be used to paginate, filter, sort, and include
 optional data in the response. See `FreshBooks API - Parameters <https://www.freshbooks.com/api/parameters>`_
 documentation.
 
@@ -109,6 +109,32 @@ o include the data in the response of the updated resource:
         'email' => 'john.doe@abcorp.com'
     );
 
-    $newClient = $freshBooksClient->clients()->create($accountId, data: $clientData);
+    $newClient = $freshBooksClient->clients()->create($accountId, data: $clientData, includes: $includes);
 
     echo $client->outstanding_balance->amount; // null, new client has no balance
+
+Sorting
+-------
+
+To sort the results of a list call by supported fields (see the documentation for that resource) a
+``SortBuilder` can be used.
+
+.. code-block:: php
+    use amcintosh\FreshBooks\Builder\SortBuilder;
+
+    $sort = new SortBuilder();
+    $sort->ascending("invoice_date");
+
+    $invoices = $freshBooksClient->invoices()->list($accountId, builders: [$sort]);
+
+to sort by the invoice date in ascending order, or:
+
+.. code-block:: php
+    use amcintosh\FreshBooks\Builder\SortBuilder;
+
+    $sort = new SortBuilder();
+    $sort->descending("invoice_date");
+
+    $invoices = $freshBooksClient->invoices()->list($accountId, builders: [$sort]);
+
+for descending order.

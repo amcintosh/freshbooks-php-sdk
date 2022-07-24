@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added list sort builder
+
 ## 0.5.0
 
 - Fixed issue with sending invoice models fields that are only write-on-create
