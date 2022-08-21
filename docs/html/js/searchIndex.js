@@ -386,6 +386,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_version"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\AccountingList",
+            "name": "AccountingList",
+            "summary": "Parent\u0020class\u0020for\u0020list\u0020results\u0020on\u0020acocunting\u0020endpoints\u0020to\u0020share\u0020pagination\u0020details.",
+            "url": "classes/amcintosh-FreshBooks-Model-AccountingList.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\AccountingList\u003A\u003A\u0024pages",
+            "name": "pages",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-AccountingList.html#property_pages"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\AccountingList\u003A\u003A\u0024page",
+            "name": "page",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-AccountingList.html#property_page"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\AccountingList\u003A\u003A\u0024perPage",
+            "name": "perPage",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-AccountingList.html#property_perPage"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\AccountingList\u003A\u003A\u0024total",
+            "name": "total",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-AccountingList.html#property_total"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\AuthorizationToken",
             "name": "AuthorizationToken",
             "summary": "Authorization\u0020data\u0020including\u0020the\u0020OAuth\u0020bearer\u0020token,\u0020expiry,\u0020and\u0020refresh\u0020token.",
@@ -831,26 +856,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-ClientList.html#constant_RESPONSE_FIELD"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ClientList\u003A\u003A\u0024page",
-            "name": "page",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ClientList.html#property_page"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ClientList\u003A\u003A\u0024pages",
-            "name": "pages",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ClientList.html#property_pages"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ClientList\u003A\u003A\u0024perPage",
-            "name": "perPage",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ClientList.html#property_perPage"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ClientList\u003A\u003A\u0024total",
-            "name": "total",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ClientList.html#property_total"
-        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\ClientList\u003A\u003A\u0024clients",
             "name": "clients",
             "summary": "",
@@ -1120,26 +1125,6 @@ Search.appendIndex(
             "name": "RESPONSE_FIELD",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-ExpenseList.html#constant_RESPONSE_FIELD"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseList\u003A\u003A\u0024page",
-            "name": "page",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_page"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseList\u003A\u003A\u0024pages",
-            "name": "pages",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_pages"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseList\u003A\u003A\u0024perPage",
-            "name": "perPage",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_perPage"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseList\u003A\u003A\u0024total",
-            "name": "total",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_total"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseList\u003A\u003A\u0024expenses",
             "name": "expenses",
@@ -1536,26 +1521,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-InvoiceList.html#constant_RESPONSE_FIELD"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceList\u003A\u003A\u0024page",
-            "name": "page",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-InvoiceList.html#property_page"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceList\u003A\u003A\u0024pages",
-            "name": "pages",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-InvoiceList.html#property_pages"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceList\u003A\u003A\u0024perPage",
-            "name": "perPage",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-InvoiceList.html#property_perPage"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceList\u003A\u003A\u0024total",
-            "name": "total",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-InvoiceList.html#property_total"
-        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceList\u003A\u003A\u0024invoices",
             "name": "invoices",
             "summary": "",
@@ -1741,26 +1706,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#constant_RESPONSE_FIELD"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A\u0024page",
-            "name": "page",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#property_page"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A\u0024pages",
-            "name": "pages",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#property_pages"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A\u0024perPage",
-            "name": "perPage",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#property_perPage"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A\u0024total",
-            "name": "total",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#property_total"
-        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A\u0024items",
             "name": "items",
             "summary": "",
@@ -1881,6 +1826,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-Money.html#property_code"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Pages",
+            "name": "Pages",
+            "summary": "List\u0020call\u0020pagination\u0020details.",
+            "url": "classes/amcintosh-FreshBooks-Model-Pages.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Pages\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "__construct\u0020Create\u0020a\u0020pages\u0020object",
+            "url": "classes/amcintosh-FreshBooks-Model-Pages.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Pages\u003A\u003A\u0024page",
+            "name": "page",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Pages.html#property_page"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Pages\u003A\u003A\u0024pages",
+            "name": "pages",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Pages.html#property_pages"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Pages\u003A\u003A\u0024perPage",
+            "name": "perPage",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Pages.html#property_perPage"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Pages\u003A\u003A\u0024total",
+            "name": "total",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Pages.html#property_total"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Payment",
             "name": "Payment",
             "summary": "Payments\u0020are\u0020a\u0020record\u0020of\u0020the\u0020payments\u0020made\u0020on\u0020invoices.",
@@ -1996,26 +1971,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-PaymentList.html#constant_RESPONSE_FIELD"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\PaymentList\u003A\u003A\u0024page",
-            "name": "page",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-PaymentList.html#property_page"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\PaymentList\u003A\u003A\u0024pages",
-            "name": "pages",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-PaymentList.html#property_pages"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\PaymentList\u003A\u003A\u0024perPage",
-            "name": "perPage",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-PaymentList.html#property_perPage"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\PaymentList\u003A\u003A\u0024total",
-            "name": "total",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-PaymentList.html#property_total"
-        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\PaymentList\u003A\u003A\u0024payments",
             "name": "payments",
             "summary": "",
@@ -2101,26 +2056,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#constant_RESPONSE_FIELD"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003A\u0024page",
-            "name": "page",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#property_page"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003A\u0024pages",
-            "name": "pages",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#property_pages"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003A\u0024perPage",
-            "name": "perPage",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#property_perPage"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003A\u0024total",
-            "name": "total",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-TaskList.html#property_total"
-        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaskList\u003A\u003A\u0024tasks",
             "name": "tasks",
             "summary": "",
@@ -2185,26 +2120,6 @@ Search.appendIndex(
             "name": "RESPONSE_FIELD",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-TaxList.html#constant_RESPONSE_FIELD"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaxList\u003A\u003A\u0024page",
-            "name": "page",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-TaxList.html#property_page"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaxList\u003A\u003A\u0024pages",
-            "name": "pages",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-TaxList.html#property_pages"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaxList\u003A\u003A\u0024perPage",
-            "name": "perPage",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-TaxList.html#property_perPage"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaxList\u003A\u003A\u0024total",
-            "name": "total",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-TaxList.html#property_total"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaxList\u003A\u003A\u0024taxes",
             "name": "taxes",
@@ -2278,7 +2193,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "",
+            "summary": "Delete\u0020a\u0020resource.",
             "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_delete"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AuthResource",

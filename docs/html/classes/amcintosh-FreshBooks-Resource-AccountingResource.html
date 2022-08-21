@@ -242,9 +242,9 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_delete">delete()</a>
     <span>
-                                &nbsp;: <abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr>|null    </span>
+                                &nbsp;: <abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr>    </span>
 </dt>
-<dd></dd>
+<dd>Delete a resource.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_get">get()</a>
@@ -621,16 +621,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/AccountingResource.php"><a href="files/src-resource-accountingresource.html"><abbr title="src/Resource/AccountingResource.php">AccountingResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">198</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Delete a resource.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$accountId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resourceId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr>|null</span></code>
+                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$accountId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resourceId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>Note: Most FreshBooks resources are soft-deleted,
+See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a></p>
+</section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -639,7 +642,8 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>The alpha-numeric account id</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -647,7 +651,8 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Id of the resource to delete</p>
+</section>
 
             </dd>
             </dl>
@@ -655,9 +660,11 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr>|null</span>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Null for some resources or the Model of the deleted resource's response data.</p>
+</section>
+
     
 </article>
                     <article

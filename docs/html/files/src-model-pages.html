@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-                    <title>freshbooks-php-sdk</title>
+            <title>freshbooks-php-sdk</title>
     
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="../../">
+    <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
@@ -93,7 +92,7 @@
                 
             </li>
                     <li>
-                <a href="guide/api-calls/builders.html" class="-active">Pagination, Filters, Includes, and Sorting</a>
+                <a href="guide/api-calls/builders.html" class="">Pagination, Filters, Includes, and Sorting</a>
                 
             </li>
             </ul>
@@ -144,143 +143,41 @@
 </aside>
 
             <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <div class="section" id="pagination-filters-includes-and-sorting">
-<h1>Pagination, Filters, Includes, and Sorting</h1>
-<p><a href="guide/api-calls/get-list.html">Get and List</a> calls take a list of builder objects that can be used to paginate, filter, sort, and include
-optional data in the response. See <a href="https://www.freshbooks.com/api/parameters">FreshBooks API - Parameters</a>
-documentation.</p>
-<div class="section" id="pagination">
-<h2>Pagination</h2>
-<p>Pagination results are included in <a href="guide/api-calls/get-list.html">Get and List</a> responses:</p>
-<pre><code class="language-php " >$clients = $freshBooksClient-&gt;clients()-&gt;list($accountId);
+                    <ul class="phpdocumentor-breadcrumbs">
+    </ul>
 
-echo $clients-&gt;pages()-&gt;page    // 1
-echo $clients-&gt;pages()-&gt;pages   // 1
-echo $clients-&gt;pages()-&gt;perPage // 30
-echo $clients-&gt;pages()-&gt;total   // 6
-</code></pre>
-<p>To make a paginated call, first create a <code>PaginateBuilder</code> that can be passed into the <code>list</code> method.</p>
-<pre><code class="language-php " >use amcintosh\FreshBooks\Builder\PaginateBuilder;
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">Pages.php</h2>
 
-$paginator = new PaginateBuilder(2, 4);
+        
+    <section class="phpdocumentor-description"></section>
 
-$clients = $freshBooksClient-&gt;clients()-&gt;list($accountId, builders: [$paginator]);
 
-echo $clients-&gt;pages()-&gt;page    // 2
-echo $clients-&gt;pages()-&gt;pages   // 2
-echo $clients-&gt;pages()-&gt;perPage // 4
-echo $clients-&gt;pages()-&gt;total   // 6
-</code></pre>
-<p><code>PaginateBuilder</code> has chainable methods <code>page</code> and <code>perPage</code> to set the values.</p>
-<pre><code class="language-php " >$paginator = new PaginateBuilder(1, 3);
-echo $paginator-&gt;page;    // 1
-echo $paginator-&gt;perPage; // 3
 
-$paginator-&gt;page(2)-&gt;perPage(4);
-echo $paginator-&gt;page;    // 2
-echo $paginator-&gt;perPage; // 4
-</code></pre>
-</div>
-<div class="section" id="filters">
-<h2>Filters</h2>
-<p>To filter which results are return by <a href="guide/api-calls/get-list.html">Get and List</a> method calls, construct a <code>FilterBuilder</code> and pass that
-in the list of builders to the <code>list</code> method.</p>
-<pre><code class="language-php " >use amcintosh\FreshBooks\Builder\FilterBuilder;
 
-$filters = new FilterBuilder();
-$filters-&gt;equals(&#039;userid&#039;, 123);
 
-$clients = $freshBooksClient-&gt;clients()-&gt;list($accountId, builders: [$filters]);
-</code></pre>
-<p>Filters can be built with the methods: <code>equals</code>, <code>inList</code>, <code>like</code>, <code>between</code>, <code>boolean</code>, and <code>datetime</code>
-which can be chained together.</p>
-<p>Please see <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a> for
-details on filtering active, archived, and deleted resources.</p>
-<pre><code class="language-php " >$filters = new FilterBuilder();
-$filters-&gt;inList(&#039;clientids&#039;, [123, 456]);
-// Creates `&amp;search[clientids][]=123&amp;search[clientids][]=456`
 
-$filters = new FilterBuilder();
-$filters-&gt;like(&#039;email_like&#039;, &#039;@freshbooks.com&#039;);
-// Creates `&amp;search[email_like]=@freshbooks.com`
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes, Traits and Enums
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
 
-$filters = new FilterBuilder();
-$filters-&gt;between(&#039;amount&#039;, 1, 10);
-// Creates `&amp;search[amount_min]=1&amp;search[amount_max]=10`
+<dl class="phpdocumentor-table-of-contents">
+    
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Pages.html"><abbr title="\amcintosh\FreshBooks\Model\Pages">Pages</abbr></a></dt>
+        <dd>List call pagination details.</dd>
+    
+    
+    </dl>
 
-$filters = new FilterBuilder();
-$filters-&gt;between(&#039;amount&#039;, min=15); // For just minimum
-// Creates `&amp;search[amount_min]=15`
 
-$filters = new FilterBuilder();
-$filters-&gt;between(&#039;amount_min&#039;, 15); // Alternatively
-// Creates `&amp;search[amount_min]=15`
 
-$filters = new FilterBuilder();
-$filters-&gt;between(&quot;start_date&quot;, min: new DateTime(&#039;2020-10-17&#039;))
-// Creates `&amp;search[start_date]=2020-10-17`
 
-$filters = new FilterBuilder();
-$filters-&gt;boolean(&#039;complete&#039;, false); // Boolean filters are mostly used on Project-like resources
-// Creates `&amp;complete=false`
 
-$filters = new FilterBuilder();
-$filters-&gt;equals(&#039;vis_state&#039;, VisState::ACTIVE)-&gt;between(&#039;updated&#039;, new DateTime(&#039;2020-10-17&#039;), new DateTime(&#039;2020-11-21&#039;));
-// Chaining filters
-// Creates `&amp;search[vis_state]=0&amp;search[updated_min]=2020-10-17&amp;search[updated_max]=2020-11-21`
-</code></pre>
-</div>
-<div class="section" id="includes">
-<h2>Includes</h2>
-<p>To include additional relationships, sub-resources, or data in a response an <code>IncludesBuilder</code>
-can be constructed.</p>
-<pre><code class="language-php " >use amcintosh\FreshBooks\Builder\IncludesBuilder;
+        
 
-$includes = new IncludesBuilder();
-$includes-&gt;include(&quot;outstanding_balance&quot;);
-</code></pre>
-<p>Which can then be passed into <code>list</code> or <code>get</code> calls:</p>
-<pre><code class="language-php " >$clients = $freshBooksClient-&gt;clients()-&gt;list($accountId, builders: [$includes]);
-echo $clients-&gt;clients[0]-&gt;outstanding_balance-&gt;amount; // &#039;100.00&#039;
-echo $clients-&gt;clients[0]-&gt;outstanding_balance-&gt;code; // &#039;USD&#039;
-
-$client = $freshBooksClient-&gt;clients()-&gt;get($accountId, $clientId, $includes);
-echo $client-&gt;outstanding_balance-&gt;amount; // &#039;100.00&#039;
-echo $client-&gt;outstanding_balance-&gt;code; // &#039;USD&#039;
-</code></pre>
-<p>Includes can also be passed into <a href="guide/api-calls/create-update-delete.html">Create, Update, and Delete</a> and <a href="guide/api-calls/create-update-delete.html">Create, Update, and Delete</a> calls t
-o include the data in the response of the updated resource:</p>
-<pre><code class="language-php " >$clientData = array(
-    &#039;email&#039; =&gt; &#039;john.doe@abcorp.com&#039;
-);
-
-$newClient = $freshBooksClient-&gt;clients()-&gt;create($accountId, data: $clientData, includes: $includes);
-
-echo $client-&gt;outstanding_balance-&gt;amount; // null, new client has no balance
-</code></pre>
-</div>
-<div class="section" id="sorting">
-<h2>Sorting</h2>
-<p>To sort the results of a list call by supported fields (see the documentation for that resource) a
-`SortBuilder can be used.</p>
-<pre><code class="language-php " >use amcintosh\FreshBooks\Builder\SortBuilder;
-
-$sort = new SortBuilder();
-$sort-&gt;ascending(&quot;invoice_date&quot;);
-
-$invoices = $freshBooksClient-&gt;invoices()-&gt;list($accountId, builders: [$sort]);
-</code></pre>
-<p>to sort by the invoice date in ascending order, or:</p>
-<pre><code class="language-php " >use amcintosh\FreshBooks\Builder\SortBuilder;
-
-$sort = new SortBuilder();
-$sort-&gt;descending(&quot;invoice_date&quot;);
-
-$invoices = $freshBooksClient-&gt;invoices()-&gt;list($accountId, builders: [$sort]);
-</code></pre>
-<p>for descending order.</p>
-</div>
-
+        
+    </article>
                 <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
@@ -294,7 +191,7 @@ $invoices = $freshBooksClient-&gt;invoices()-&gt;list($accountId, builders: [$so
 </section>
             </div>
         </div>
-        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="files/src-model-pages.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
