@@ -359,22 +359,42 @@ $clients = $freshBooksClient->clients()->list($accountId, builders: [$filters]);
 Filters can be built with the methods: `equals`, `inList`, `like`, `between`, `boolean`, and `datetime`
 which can be chained together.
 
+Please see [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
+for details on filtering active, archived, and deleted resources.
+
 ```php
+$filters = new FilterBuilder();
+$filters->inList('clientids', [123, 456]);
+// Creates `&search[clientids][]=123&search[clientids][]=456`
+
 $filters = new FilterBuilder();
 $filters->like('email_like', '@freshbooks.com');
 // Creates `&search[email_like]=@freshbooks.com`
-
-$filters = new FilterBuilder();
-$filters->inList('clientids', [123, 456])->boolean('active', false);
-// Creates `&search[clientids][]=123&search[clientids][]=456&active=false`
 
 $filters = new FilterBuilder();
 $filters->between('amount', 1, 10);
 // Creates `&search[amount_min]=1&search[amount_max]=10`
 
 $filters = new FilterBuilder();
+$filters->between('amount', min=15); // For just minimum
+// Creates `&search[amount_min]=15`
+
+$filters = new FilterBuilder();
+$filters->between('amount_min', 15); // Alternatively
+// Creates `&search[amount_min]=15`
+
+$filters = new FilterBuilder();
 $filters->between("start_date", min: new DateTime('2020-10-17'))
 // Creates `&search[start_date]=2020-10-17`
+
+$filters = new FilterBuilder();
+$filters->boolean('complete', false); // Boolean filters are mostly used on Project-like resources
+// Creates `&complete=false`
+
+$filters = new FilterBuilder();
+$filters->equals('vis_state', VisState::ACTIVE)->between('updated', new DateTime('2020-10-17'), new DateTime('2020-11-21'));
+// Chaining filters
+// Creates `&search[vis_state]=0&search[updated_min]=2020-10-17&search[updated_max]=2020-11-21`
 ```
 
 ##### Includes
