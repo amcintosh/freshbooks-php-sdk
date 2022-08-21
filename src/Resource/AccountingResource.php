@@ -185,6 +185,16 @@ class AccountingResource extends BaseResource
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
     }
 
+    /**
+     * Delete a resource.
+     *
+     * Note: Most FreshBooks resources are soft-deleted,
+     * See [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
+     *
+     * @param  string $accountId The alpha-numeric account id
+     * @param  int $resourceId Id of the resource to delete
+     * @return DataTransferObject Null for some resources or the Model of the deleted resource's response data.
+     */
     public function delete(string $accountId, int $resourceId): ?DataTransferObject
     {
         if ($this->deleteViaUpdate) {

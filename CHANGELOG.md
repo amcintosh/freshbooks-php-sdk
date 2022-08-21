@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Added list sort builder
+- Updated list models with new `pages()` function to standardize pagination with different models
 
 ## 0.5.0
 
