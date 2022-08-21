@@ -13,6 +13,7 @@ use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
 use Spryker\DecimalObject\Decimal;
 use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\ProjectGroup;
 use amcintosh\FreshBooks\Model\Caster\DateCaster;
 use amcintosh\FreshBooks\Model\Caster\DecimalCaster;
 use amcintosh\FreshBooks\Model\Caster\ISODateTimeImmutableCaster;
@@ -60,7 +61,15 @@ class Project extends DataTransferObject implements DataModel
     #[MapFrom('billed_status')]
     public ?string $billedStatus;
 
-    //@Key("billing_method") ProjectBillingMethod billingMethod;
+    /**
+     * @var string The method by which the project is billed.
+     *
+     * Eg. By business hourly rate, team member's rate, different rates
+     * by service provided, or a rate for the project.
+     */
+    #[MapFrom('billing_method')]
+    #[MapTo('billing_method')]
+    public ?string $billingMethod;
 
     /**
      * @var int Time budgeted for the project in seconds.
@@ -110,13 +119,14 @@ class Project extends DataTransferObject implements DataModel
     public ?string $expenseMarkup;
 
     /**
-     * @var Spryker\DecimalObject\Decimal For projects that are of project type "fixed_price" this is the price for the project.
+     * @var Spryker\DecimalObject\Decimal For projects that are of type "fixed_price" this is the price for the project.
      */
     #[CastWith(DecimalCaster::class)]
     #[MapFrom('fixed_price')]
     public ?Decimal $fixedPrice;
 
-    //@Key ProjectGroup group;
+    #[MapFrom('group')]
+    public ?ProjectGroup $group;
 
     /**
      * @var bool Clarifies that the project is internal to the business and has no client (client is the company).
@@ -129,13 +139,18 @@ class Project extends DataTransferObject implements DataModel
     #[MapFrom('logged_duration')]
     public ?int $loggedDuration;
 
-    //@Key("pending_invitations") List<PendingInvitation> pendingInvitations;
-
     #[MapFrom('project_manager_id')]
     #[MapTo('project_manager_id')]
     public ?int $projectManagerId;
 
-    //@Key("project_type") ProjectType projectType;
+    /**
+     * @var string The project type. Either a fixed price or hourly rate.
+     *
+     * The type of hourly rate used is set with `getBillingMethod()`.
+     */
+    #[MapFrom('project_type')]
+    #[MapTo('project_type')]
+    public ?string $projectType;
 
     /**
      * @var Spryker\DecimalObject\Decimal The hourly rate for project_rate hourly projects.
@@ -177,6 +192,7 @@ class Project extends DataTransferObject implements DataModel
             ->except('createdAt')
             ->except('dueDate')
             ->except('fixedPrice')
+            ->except('group')
             ->except('loggedDuration')
             ->except('rate')
             ->except('updatedAt')

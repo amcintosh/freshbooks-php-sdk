@@ -36,7 +36,7 @@ final class TaxTest extends TestCase
         $this->assertEquals(new DateTime('2020-06-16T14:04:37Z'), $tax->updated);
     }
 
-    public function testClientGetContent(): void
+    public function testTaxGetContent(): void
     {
         $taxData = json_decode($this->sampleTaxData, true);
         $tax = new Tax($taxData['tax']);
