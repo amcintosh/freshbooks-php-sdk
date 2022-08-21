@@ -94,7 +94,7 @@ final class FreshBooksClientTest extends TestCase
         );
         $client = new MockFreshBooksClient('some_client_id', $conf);
 
-        $client->getAccessToken('1234');
+        $this->assertSame($returnToken, $client->getAccessToken('1234'));
     }
 
     public function testGetAccessTokenSecretRequired(): void
@@ -153,7 +153,7 @@ final class FreshBooksClientTest extends TestCase
         );
         $client = new MockFreshBooksClient('some_client_id', $conf);
 
-        $client->refreshAccessToken('1234');
+        $this->assertSame($returnToken, $client->refreshAccessToken('1234'));
     }
 
     public function testRefreshAccessTokenFromConfiguration(): void
@@ -181,7 +181,7 @@ final class FreshBooksClientTest extends TestCase
         );
         $client = new MockFreshBooksClient('some_client_id', $conf);
 
-        $client->refreshAccessToken();
+        $this->assertSame($returnToken, $client->refreshAccessToken());
     }
 
     public function testRefreshAccessTokenCurrentRefreshRequired(): void

@@ -14,10 +14,10 @@ Pagination results are included in :doc:`list<get-list>` responses:
 .. code-block:: php
     $clients = $freshBooksClient->clients()->list($accountId);
 
-    echo $clients->page    // 1
-    echo $clients->pages   // 1
-    echo $clients->perPage // 30
-    echo $clients->total   // 6
+    echo $clients->pages()->page    // 1
+    echo $clients->pages()->pages   // 1
+    echo $clients->pages()->perPage // 30
+    echo $clients->pages()->total   // 6
 
 To make a paginated call, first create a ``PaginateBuilder`` that can be passed into the ``list`` method.
 
@@ -28,10 +28,10 @@ To make a paginated call, first create a ``PaginateBuilder`` that can be passed 
 
     $clients = $freshBooksClient->clients()->list($accountId, builders: [$paginator]);
 
-    echo $clients->page    // 2
-    echo $clients->pages   // 2
-    echo $clients->perPage // 4
-    echo $clients->total   // 6
+    echo $clients->pages()->page    // 2
+    echo $clients->pages()->pages   // 2
+    echo $clients->pages()->perPage // 4
+    echo $clients->pages()->total   // 6
 
 ``PaginateBuilder`` has chainable methods ``page`` and ``perPage`` to set the values.
 

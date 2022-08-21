@@ -131,10 +131,10 @@ final class ClientListTest extends TestCase
 
         $clients = new ClientList($clientData);
 
-        $this->assertSame(1, $clients->page);
-        $this->assertSame(1, $clients->pages);
-        $this->assertSame(15, $clients->perPage);
-        $this->assertSame(2, $clients->total);
+        $this->assertSame(1, $clients->pages()->page);
+        $this->assertSame(1, $clients->pages()->pages);
+        $this->assertSame(15, $clients->pages()->perPage);
+        $this->assertSame(2, $clients->pages()->total);
 
         $this->assertSame(12345, $clients->clients[0]->id);
         $this->assertSame('gordon.shumway@AmericanCyanamid.com', $clients->clients[0]->email);

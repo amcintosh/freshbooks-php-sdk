@@ -13,7 +13,6 @@ use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
-use amcintosh\FreshBooks\Model\Caster\DateCaster;
 use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
 
 /**
