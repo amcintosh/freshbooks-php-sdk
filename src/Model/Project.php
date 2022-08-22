@@ -10,10 +10,12 @@ use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Caster;
+use Spatie\DataTransferObject\Casters\ArrayCaster;
 use Spatie\DataTransferObject\DataTransferObject;
 use Spryker\DecimalObject\Decimal;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\ProjectGroup;
+use amcintosh\FreshBooks\Model\Service;
 use amcintosh\FreshBooks\Model\Caster\DateCaster;
 use amcintosh\FreshBooks\Model\Caster\DecimalCaster;
 use amcintosh\FreshBooks\Model\Caster\ISODateTimeImmutableCaster;
@@ -162,7 +164,12 @@ class Project extends DataTransferObject implements DataModel
     #[MapTo('retainer_id')]
     public ?int $retainerId;
 
-    //@Key List<Service> services;
+    /**
+     * @var array The services that work in this project can be logged against and
+     * will appear on invoices when the project is billed for.
+     */
+    #[CastWith(ArrayCaster::class, itemType: Service::class)]
+    public ?array $services;
 
     /**
      * @var int The project title
@@ -195,6 +202,7 @@ class Project extends DataTransferObject implements DataModel
             ->except('group')
             ->except('loggedDuration')
             ->except('rate')
+            ->except('services')
             ->except('updatedAt')
             ->toArray();
         if (isset($this->dueDate)) {

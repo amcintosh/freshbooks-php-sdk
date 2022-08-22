@@ -108,6 +108,13 @@ final class ProjectTest extends TestCase
         $this->assertSame(65001, $groupMember->identityId);
         $this->assertSame('Shumway', $groupMember->lastName);
         $this->assertSame('owner', $groupMember->role);
+
+        $service = $project->services[0];
+        $this->assertSame(154, $service->id);
+        $this->assertSame(439000, $service->businessId);
+        $this->assertSame('Some Service', $service->name);
+        $this->assertSame(true, $service->billable);
+        $this->assertSame(0, $service->visState);
     }
 
     public function testProjectGetContent(): void
