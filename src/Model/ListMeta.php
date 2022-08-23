@@ -6,14 +6,13 @@ namespace amcintosh\FreshBooks\Model;
 
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\Pages;
 
 /**
- * Parent class for list results on accounting endpoints to share pagination details.
+ * List Meta object for pagination details in project-like responses.
  *
  * @package amcintosh\FreshBooks\Model
  */
-class AccountingList extends DataTransferObject
+class ListMeta extends DataTransferObject
 {
     public int $page;
 
@@ -23,9 +22,4 @@ class AccountingList extends DataTransferObject
     public int $perPage;
 
     public int $total;
-
-    public function pages(): mixed
-    {
-        return new Pages($this->page, $this->pages, $this->perPage, $this->total);
-    }
 }

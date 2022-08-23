@@ -314,10 +314,6 @@ final class InvoiceTest extends TestCase
             'lines' => [
                 [
                     'lineid' => 1,
-                    'amount' => [
-                        'amount' => '20.00',
-                        'code' => 'CAD'
-                    ],
                     'description' => 'Melmac melamine resin molded dinnerware',
                     'expenseid' => 0,
                     'name' => 'Bowls',
@@ -336,10 +332,6 @@ final class InvoiceTest extends TestCase
                 ],
                 [
                     'lineid' => 2,
-                    'amount' => [
-                        'amount' => '24.00',
-                        'code' => 'CAD'
-                    ],
                     'description' => 'Melmac melamine resin molded mug',
                     'expenseid' => 0,
                     'name' => 'Mugs',
@@ -417,10 +409,6 @@ final class InvoiceTest extends TestCase
             'lines' => [
                 [
                     'lineid' => 1,
-                    'amount' => [
-                        'amount' => '20.00',
-                        'code' => 'CAD'
-                    ],
                     'description' => 'Melmac melamine resin molded dinnerware',
                     'expenseid' => 0,
                     'name' => 'Bowls',
@@ -439,10 +427,6 @@ final class InvoiceTest extends TestCase
                 ],
                 [
                     'lineid' => 2,
-                    'amount' => [
-                        'amount' => '24.00',
-                        'code' => 'CAD'
-                    ],
                     'description' => 'Melmac melamine resin molded mug',
                     'expenseid' => 0,
                     'name' => 'Mugs',

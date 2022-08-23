@@ -24,9 +24,9 @@ use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
  *
  * @package amcintosh\FreshBooks\Model
  */
-class LineItem extends DataTransferObject implements DataModel
+class LineItem extends DataTransferObject
 {
-    protected array $exceptKeys = ['updated'];
+    protected array $exceptKeys = ['amount', 'updated'];
 
     /**
      * @var int Unique-to-this-invoice line id.
@@ -119,17 +119,4 @@ class LineItem extends DataTransferObject implements DataModel
      */
     #[CastWith(AccountingDateTimeImmutableCaster::class)]
     public ?DateTimeImmutable $updated;
-
-    /**
-     * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
-     *
-     * @return array
-     */
-    public function getContent(): array
-    {
-        return $this
-            ->except('amount')
-            ->except('updated')
-            ->toArray();
-    }
 }
