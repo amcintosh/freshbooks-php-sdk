@@ -26,12 +26,15 @@ use amcintosh\FreshBooks\Model\Item;
 use amcintosh\FreshBooks\Model\ItemList;
 use amcintosh\FreshBooks\Model\Payment;
 use amcintosh\FreshBooks\Model\PaymentList;
+use amcintosh\FreshBooks\Model\Project;
+use amcintosh\FreshBooks\Model\ProjectList;
 use amcintosh\FreshBooks\Model\Task;
 use amcintosh\FreshBooks\Model\TaskList;
 use amcintosh\FreshBooks\Model\Tax;
 use amcintosh\FreshBooks\Model\TaxList;
 use amcintosh\FreshBooks\Resource\AccountingResource;
 use amcintosh\FreshBooks\Resource\AuthResource;
+use amcintosh\FreshBooks\Resource\ProjectResource;
 
 class FreshBooksClient
 {
@@ -274,5 +277,15 @@ class FreshBooksClient
     public function taxes(): AccountingResource
     {
         return new AccountingResource($this->httpClient, 'taxes/taxes', Tax::class, TaxList::class);
+    }
+
+    /**
+     * FreshBooks projects resource with calls to get, list, create, update, delete.
+     *
+     * @return ProjectResource
+     */
+    public function projects(): ProjectResource
+    {
+        return new ProjectResource($this->httpClient, 'projects', 'projects', Project::class, ProjectList::class);
     }
 }

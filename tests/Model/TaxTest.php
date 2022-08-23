@@ -46,4 +46,15 @@ final class TaxTest extends TestCase
             'number' => 'RT 1234'
         ], $tax->getContent());
     }
+
+    public function testTaxGetContentPartial(): void
+    {
+        $taxData = json_decode($this->sampleTaxData, true);
+        $tax = new Tax($taxData['tax']);
+        $tax->number = null;
+        $this->assertSame([
+            'amount' => '13',
+            'name' => 'HST',
+        ], $tax->getContent());
+    }
 }

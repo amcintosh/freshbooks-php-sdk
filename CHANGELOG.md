@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added Projects resource
 - Added list sort builder
 - Updated list models with new `pages()` function to standardize pagination with different models
 

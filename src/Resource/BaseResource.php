@@ -20,7 +20,7 @@ class BaseResource
         }
         $builders = array_filter($builders);
         foreach ($builders as $builder) {
-            $queryString .= $builder->build();
+            $queryString .= $builder->build((new \ReflectionClass($this))->getShortName());
         }
         if ($queryString !== '') {
             $queryString = '?' . ltrim($queryString, '&');
