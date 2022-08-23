@@ -8,7 +8,7 @@
         "php-http/discovery": "^1.14",
         "psr/http-client": "^1.0",
         "psr/http-factory": "^1.0",
-        "spatie/data-transfer-object": "^3.7",
+        "spatie/data-transfer-object": "^3.8",
         "spryker/decimal-object": "^1.0"
     },
     "require-dev": {
@@ -17,7 +17,7 @@
         "php-http/guzzle7-adapter": "1.x-dev",
         "php-http/mock-client": "1.x-dev",
         "quazardous/php-bump-version": "1.0.x-dev",
-        "mockery/mockery": "1.4.x-dev"
+        "mockery/mockery": "1.5"
     },
     "license": "MIT",
     "autoload": {
