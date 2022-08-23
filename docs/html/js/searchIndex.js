@@ -271,6 +271,11 @@ Search.appendIndex(
             "summary": "FreshBooks\u0020taxes\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete.",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_taxes"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003Aprojects\u0028\u0029",
+            "name": "projects",
+            "summary": "FreshBooks\u0020projects\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete.",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_projects"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003A\u0024httpClient",
             "name": "httpClient",
             "summary": "",
@@ -388,7 +393,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\AccountingList",
             "name": "AccountingList",
-            "summary": "Parent\u0020class\u0020for\u0020list\u0020results\u0020on\u0020acocunting\u0020endpoints\u0020to\u0020share\u0020pagination\u0020details.",
+            "summary": "Parent\u0020class\u0020for\u0020list\u0020results\u0020on\u0020accounting\u0020endpoints\u0020to\u0020share\u0020pagination\u0020details.",
             "url": "classes/amcintosh-FreshBooks-Model-AccountingList.html"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\AccountingList\u003A\u003A\u0024pages",
@@ -606,6 +611,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-Caster-DateCaster.html#constant_FORMAT"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Caster\\DecimalCaster",
+            "name": "DecimalCaster",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Caster-DecimalCaster.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Caster\\DecimalCaster\u003A\u003Acast\u0028\u0029",
+            "name": "cast",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Caster-DecimalCaster.html#method_cast"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Caster\\ISODateTimeImmutableCaster",
             "name": "ISODateTimeImmutableCaster",
             "summary": "",
@@ -626,10 +641,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-Caster-ISODateTimeImmutableCaster.html#constant_FORMAT"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Caster\\ISODateTimeImmutableCaster\u003A\u003AFORMAT_NO_DESIGNATOR",
+            "name": "FORMAT_NO_DESIGNATOR",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Caster-ISODateTimeImmutableCaster.html#constant_FORMAT_NO_DESIGNATOR"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Caster\\ISODateTimeImmutableCaster\u003A\u003A\u0024types",
             "name": "types",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-Caster-ISODateTimeImmutableCaster.html#property_types"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Caster\\ISODateTimeImmutableCaster\u003A\u003A\u0024includeTimeZoneDesignator",
+            "name": "includeTimeZoneDesignator",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Caster-ISODateTimeImmutableCaster.html#property_includeTimeZoneDesignator"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Caster\\MoneyCaster",
             "name": "MoneyCaster",
@@ -1716,11 +1741,6 @@ Search.appendIndex(
             "summary": "Invoice\u0020lines\u0020are\u0020used\u0020to\u0020determine\u0020the\u0020amount\u0020of\u0020an\u0020invoice,\u0020in\u0020addition\u0020to\nbeing\u0020able\u0020to\u0020tie\u0020the\u0020invoice\u0020to\u0020rebilled\u0020expenses.\u0020The\u0020invoice\u0020line\u0020type\ndetermines\u0020whether\u0020a\u0020line\u0020is\u0020an\u0020amount\u0020or\u0020whether\u0020it\u0020refers\u0020to\u0020an\u0020unbilled\u0020expense.",
             "url": "classes/amcintosh-FreshBooks-Model-LineItem.html"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\LineItem\u003A\u003AgetContent\u0028\u0029",
-            "name": "getContent",
-            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
-            "url": "classes/amcintosh-FreshBooks-Model-LineItem.html#method_getContent"
-        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\LineItem\u003A\u003A\u0024exceptKeys",
             "name": "exceptKeys",
             "summary": "",
@@ -1800,6 +1820,31 @@ Search.appendIndex(
             "name": "updated",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-LineItem.html#property_updated"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ListMeta",
+            "name": "ListMeta",
+            "summary": "List\u0020Meta\u0020object\u0020for\u0020pagination\u0020details\u0020in\u0020project\u002Dlike\u0020responses.",
+            "url": "classes/amcintosh-FreshBooks-Model-ListMeta.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ListMeta\u003A\u003A\u0024page",
+            "name": "page",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ListMeta.html#property_page"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ListMeta\u003A\u003A\u0024pages",
+            "name": "pages",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ListMeta.html#property_pages"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ListMeta\u003A\u003A\u0024perPage",
+            "name": "perPage",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ListMeta.html#property_perPage"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ListMeta\u003A\u003A\u0024total",
+            "name": "total",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ListMeta.html#property_total"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Money",
             "name": "Money",
@@ -1975,6 +2020,286 @@ Search.appendIndex(
             "name": "payments",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-PaymentList.html#property_payments"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project",
+            "name": "Project",
+            "summary": "Projects\u0020in\u0020FreshBooks\u0020are\u0020used\u0020to\u0020track\u0020business\u0020projects\u0020and\u0020related\u0020information\nsuch\u0020as\u0020hourly\u0020rate,\u0020service\u0028s\u0029\u0020being\u0020offered,\u0020projected\u0020end\u0020date...etc",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#method_getContent"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024active",
+            "name": "active",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_active"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024billedAmount",
+            "name": "billedAmount",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_billedAmount"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024billedStatus",
+            "name": "billedStatus",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_billedStatus"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024billingMethod",
+            "name": "billingMethod",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_billingMethod"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024budget",
+            "name": "budget",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_budget"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024clientId",
+            "name": "clientId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_clientId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024complete",
+            "name": "complete",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_complete"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_createdAt"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024description",
+            "name": "description",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_description"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024dueDate",
+            "name": "dueDate",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_dueDate"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024expenseMarkup",
+            "name": "expenseMarkup",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_expenseMarkup"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024fixedPrice",
+            "name": "fixedPrice",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_fixedPrice"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024group",
+            "name": "group",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_group"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024internal",
+            "name": "internal",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_internal"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024loggedDuration",
+            "name": "loggedDuration",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_loggedDuration"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024projectManagerId",
+            "name": "projectManagerId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_projectManagerId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024projectType",
+            "name": "projectType",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_projectType"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024rate",
+            "name": "rate",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_rate"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024retainerId",
+            "name": "retainerId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_retainerId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024services",
+            "name": "services",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_services"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024title",
+            "name": "title",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_title"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#property_updatedAt"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroup",
+            "name": "ProjectGroup",
+            "summary": "ProjectGroups\u0020contain\u0020of\u0020the\u0020members\u0020and\u0020pending\u0020invitations\u0020to\u0020become\u0020a\u0020member\u0020of\u0020a\u0020project.",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroup.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroup\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroup.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroup\u003A\u003A\u0024members",
+            "name": "members",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroup.html#property_members"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroup\u003A\u003A\u0024pendingInvitations",
+            "name": "pendingInvitations",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroup.html#property_pendingInvitations"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupInvitation",
+            "name": "ProjectGroupInvitation",
+            "summary": "Invitation\u0020to\u0020join\u0020a\u0020project.",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupInvitation.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupInvitation\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupInvitation.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupInvitation\u003A\u003A\u0024groundId",
+            "name": "groundId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupInvitation.html#property_groundId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupInvitation\u003A\u003A\u0024capacity",
+            "name": "capacity",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupInvitation.html#property_capacity"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupInvitation\u003A\u003A\u0024toEmail",
+            "name": "toEmail",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupInvitation.html#property_toEmail"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupMember",
+            "name": "ProjectGroupMember",
+            "summary": "Member\u0020of\u0020a\u0020project.",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupMember\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupMember\u003A\u003A\u0024active",
+            "name": "active",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html#property_active"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupMember\u003A\u003A\u0024company",
+            "name": "company",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html#property_company"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupMember\u003A\u003A\u0024email",
+            "name": "email",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html#property_email"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupMember\u003A\u003A\u0024firstName",
+            "name": "firstName",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html#property_firstName"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupMember\u003A\u003A\u0024identityId",
+            "name": "identityId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html#property_identityId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupMember\u003A\u003A\u0024lastName",
+            "name": "lastName",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html#property_lastName"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectGroupMember\u003A\u003A\u0024role",
+            "name": "role",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html#property_role"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectLikeList",
+            "name": "ProjectLikeList",
+            "summary": "Parent\u0020class\u0020for\u0020list\u0020results\u0020on\u0020project\u002Dlike\u0020endpoints\u0020to\u0020share\u0020pagination\u0020details.",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectLikeList.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectLikeList\u003A\u003Apages\u0028\u0029",
+            "name": "pages",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectLikeList.html#method_pages"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectLikeList\u003A\u003A\u0024meta",
+            "name": "meta",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectLikeList.html#property_meta"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectList",
+            "name": "ProjectList",
+            "summary": "Results\u0020of\u0020Projects\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020projects\u0020and\u0020pagination\u0020data.",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectList.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectList\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectList.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectList\u003A\u003A\u0024projects",
+            "name": "projects",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectList.html#property_projects"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Service",
+            "name": "Service",
+            "summary": "Services\u0020represent\u0020things\u0020that\u0020a\u0020business\u0020offers\u0020to\u0020clients.\u0020Services\u0020are\u0020added\u0020to\u0020projects\nto\u0020to\u0020allow\u0020tracking\u0020of\u0020time\u0020entries\u0020by\u0020type\u0020of\u0020work.",
+            "url": "classes/amcintosh-FreshBooks-Model-Service.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Service\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Service.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Service\u003A\u003A\u0024businessId",
+            "name": "businessId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Service.html#property_businessId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Service\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Service.html#property_name"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Service\u003A\u003A\u0024billable",
+            "name": "billable",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Service.html#property_billable"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Service\u003A\u003A\u0024visState",
+            "name": "visState",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Service.html#property_visState"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task",
             "name": "Task",
@@ -2260,6 +2585,51 @@ Search.appendIndex(
             "name": "DELETE",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_DELETE"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource",
+            "name": "ProjectResource",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003AgetUrl\u0028\u0029",
+            "name": "getUrl",
+            "summary": "The\u0020the\u0020url\u0020to\u0020the\u0020accounting\u0020resource.",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_getUrl"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003AmakeRequest\u0028\u0029",
+            "name": "makeRequest",
+            "summary": "Make\u0020a\u0020request\u0020against\u0020the\u0020accounting\u0020resource\u0020and\u0020return\u0020an\u0020array\u0020of\u0020the\u0020json\u0020response.",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_makeRequest"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Get\u0020a\u0020single\u0020resource\u0020with\u0020the\u0020corresponding\u0020id.",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_get"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003Alist\u0028\u0029",
+            "name": "list",
+            "summary": "Get\u0020a\u0020list\u0020of\u0020resources.",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_list"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Create\u0020a\u0020resource\u0020from\u0020either\u0020an\u0020array\u0020or\u0020a\u0020DataModel\u0020object.",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_create"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Update\u0020a\u0020resource\u0020from\u0020either\u0020an\u0020array\u0020or\u0020a\u0020DataModel\u0020object.",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_update"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Delete\u0020a\u0020resource.",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_delete"
         },                {
             "fqsen": "\\",
             "name": "\\",

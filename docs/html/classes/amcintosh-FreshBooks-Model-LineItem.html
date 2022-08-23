@@ -166,9 +166,6 @@
                             </ul>
         </div>
     
-            <span class="phpdocumentor-element__implements">
-            implements
-                            <a href="classes/amcintosh-FreshBooks-Model-DataModel.html"><abbr title="\amcintosh\FreshBooks\Model\DataModel">DataModel</abbr></a>                    </span>
     
     </h2>
 
@@ -192,18 +189,6 @@ contain all the lines of the invoice that you wish to remain.</p>
 
 
 
-<h3 id="interfaces_class_traits">
-    Interfaces, Classes, Traits and Enums
-    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
-</h3>
-
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/amcintosh-FreshBooks-Model-DataModel.html"><abbr title="\amcintosh\FreshBooks\Model\DataModel">DataModel</abbr></a></dt>
-        <dd></dd>
-    
-    
-    
-    </dl>
 
 
 <h3 id="toc">
@@ -324,14 +309,7 @@ contain all the lines of the invoice that you wish to remain.</p>
 </dt>
 <dd></dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#method_getContent">getContent()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.</dd>
-
-        </dl>
+            </dl>
 
 
 
@@ -881,7 +859,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$exceptKeys</span>
-     = <span class="phpdocumentor-signature__default-value">[&#039;updated&#039;]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;amount&#039;, &#039;updated&#039;]</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -892,46 +870,7 @@ contain all the lines of the invoice that you wish to remain.</p>
 </article>
             </section>
 
-            <section class="phpdocumentor-methods">
-        <h3 class="phpdocumentor-elements__header" id="methods">
-            Methods
-            <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
-        </h3>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getContent">
-        getContent()
-        <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#method_getContent" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">128</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getContent</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
         
-    
-</article>
-            </section>
-
         
     <script type="text/javascript">
         function loadExternalCodeSnippets(line) {
