@@ -5,6 +5,7 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/amcintosh/freshbooks-php-sdk/Run%20Tests)](https://github.com/amcintosh/freshbooks-php-sdk/actions?query=workflow%3A%22Run+Tests%22)
 
 A FreshBooks PHP SDK to allow you to more easily utilize the [FreshBooks API](https://www.freshbooks.com/api).
+This library is not directly maintained by FreshBooks and [community contributions](CONTRIBUTING.md) are welcome.
 
 ## Installation
 
@@ -126,8 +127,8 @@ echo $authResults->accessToken;  // Your new token
 
 ### Current User
 
-FreshBooks users are uniquely identified by their email across our entire product. One user may act on several
-Businesses in different ways, and our Identity model is how we keep track of it. Each unique user has an Identity,
+FreshBooks users are uniquely identified by their email across the entire product. One user may act on several
+Businesses in different ways, and the Identity model is how to keep track of it. Each unique user has an Identity,
 and each Identity has Business Memberships which define the permissions they have.
 
 See [FreshBooks API - Business, Roles, and Identity](https://www.freshbooks.com/api/me_endpoint) and
