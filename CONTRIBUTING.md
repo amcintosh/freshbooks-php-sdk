@@ -22,7 +22,7 @@ Pull requests are welcome! This library is not directly maintained by FreshBooks
 
 4. Push to your fork and [submit a pull request](https://github.com/amcintosh/freshbooks-php-sdk/compare/).
 
-And you're done for now! I will try to respond quickly to pull requests in a timely manor and accept the
+And you're done for now! I will try to respond quickly to pull requests in a timely manner and accept the
 change or provide feedback.
 
 Some things that will increase the chance that your pull request is accepted:
