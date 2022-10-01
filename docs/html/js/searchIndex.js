@@ -186,6 +186,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksException.html#method_getErrorCode"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksNotImplementedException",
+            "name": "FreshBooksNotImplementedException",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksNotImplementedException.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksNotImplementedException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksNotImplementedException.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient",
             "name": "FreshBooksClient",
             "summary": "",
@@ -245,6 +255,11 @@ Search.appendIndex(
             "name": "expenses",
             "summary": "FreshBooks\u0020expenses\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_expenses"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003AexpenseCategories\u0028\u0029",
+            "name": "expenseCategories",
+            "summary": "FreshBooks\u0020expenses\u0020categories\u0020resource\u0020with\u0020calls\u0020to\u0020get\u0020and\u0020list",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_expenseCategories"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003Ainvoices\u0028\u0029",
             "name": "invoices",
@@ -1140,6 +1155,81 @@ Search.appendIndex(
             "name": "mediaType",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-ExpenseAttachment.html#property_mediaType"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory",
+            "name": "ExpenseCategory",
+            "summary": "Expense\u0020Categories\u0020are\u0020used\u0020to\u0020group\u0020expenses\u0020together\u0020to\u0020aid\u0020in\u0020expense\u0020tracking.",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003A\u0024categoryId",
+            "name": "categoryId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#property_categoryId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003A\u0024category",
+            "name": "category",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#property_category"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#property_createdAt"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003A\u0024isCogs",
+            "name": "isCogs",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#property_isCogs"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003A\u0024isEditable",
+            "name": "isEditable",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#property_isEditable"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003A\u0024parentId",
+            "name": "parentId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#property_parentId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003A\u0024transactionPosted",
+            "name": "transactionPosted",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#property_transactionPosted"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#property_updatedAt"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategory\u003A\u003A\u0024visState",
+            "name": "visState",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategory.html#property_visState"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategoryList",
+            "name": "ExpenseCategoryList",
+            "summary": "Results\u0020of\u0020expense\u0020category\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020expense\u0020categories\u0020and\u0020pagination\u0020data.",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategoryList.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategoryList\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategoryList.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseCategoryList\u003A\u003A\u0024categories",
+            "name": "categories",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseCategoryList.html#property_categories"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseList",
             "name": "ExpenseList",
@@ -2495,6 +2585,11 @@ Search.appendIndex(
             "name": "createResponseError",
             "summary": "Parse\u0020the\u0020json\u0020response\u0020from\u0020the\u0020accounting\u0020endpoint\u0020and\u0020create\u0020a\u0020FreshBooksException\u0020from\u0020it.",
             "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_createResponseError"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003ArejectMissing\u0028\u0029",
+            "name": "rejectMissing",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_rejectMissing"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003Aget\u0028\u0029",
             "name": "get",
