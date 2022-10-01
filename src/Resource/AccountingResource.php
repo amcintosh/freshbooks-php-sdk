@@ -8,6 +8,7 @@ use Http\Client\HttpClient;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
+use amcintosh\FreshBooks\Exception\FreshBooksNotImplementedException;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\ListModel;
 use amcintosh\FreshBooks\Model\VisState;
@@ -19,13 +20,15 @@ class AccountingResource extends BaseResource
         string $accountingPath,
         string $singleModel,
         string $listModel,
-        bool $deleteViaUpdate = true
+        bool $deleteViaUpdate = true,
+        array $missingEndpoints = null
     ) {
         $this->httpClient = $httpClient;
         $this->singleModel = $singleModel;
         $this->listModel = $listModel;
         $this->accountingPath = $accountingPath;
         $this->deleteViaUpdate = $deleteViaUpdate;
+        $this->missingEndpoints = $missingEndpoints;
     }
 
     /**
@@ -42,7 +45,6 @@ class AccountingResource extends BaseResource
         }
         return "/accounting/account/{$accountId}/{$this->accountingPath}";
     }
-
 
     /**
      * Make a request against the accounting resource and return an array of the json response.
@@ -109,6 +111,13 @@ class AccountingResource extends BaseResource
         throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode);
     }
 
+    private function rejectMissing(string $name): void
+    {
+        if (!is_null($this->missingEndpoints) && in_array($name, $this->missingEndpoints)) {
+            throw new FreshBooksNotImplementedException($this->accountingPath, $name);
+        }
+    }
+
     /**
      * Get a single resource with the corresponding id.
      *
@@ -118,6 +127,7 @@ class AccountingResource extends BaseResource
      */
     public function get(string $accountId, int $resourceId, ?IncludesBuilder $includes = null): DataTransferObject
     {
+        $this->rejectMissing('get');
         $url = $this->getUrl($accountId, $resourceId) . $this->buildQueryString([$includes]);
         $result = $this->makeRequest(self::GET, $url);
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
@@ -132,6 +142,7 @@ class AccountingResource extends BaseResource
      */
     public function list(string $accountId, ?array $builders = null): DataTransferObject
     {
+        $this->rejectMissing('list');
         $url = $this->getUrl($accountId) . $this->buildQueryString($builders);
         $result = $this->makeRequest(self::GET, $url);
         return new $this->listModel($result);
@@ -151,6 +162,7 @@ class AccountingResource extends BaseResource
         array $data = null,
         ?IncludesBuilder $includes = null
     ): DataTransferObject {
+        $this->rejectMissing('create');
         if (!is_null($model)) {
             $data = $model->getContent();
         }
@@ -176,6 +188,7 @@ class AccountingResource extends BaseResource
         array $data = null,
         ?IncludesBuilder $includes = null
     ): DataTransferObject {
+        $this->rejectMissing('update');
         if (!is_null($model)) {
             $data = $model->getContent();
         }
@@ -197,6 +210,7 @@ class AccountingResource extends BaseResource
      */
     public function delete(string $accountId, int $resourceId): ?DataTransferObject
     {
+        $this->rejectMissing('delete');
         if ($this->deleteViaUpdate) {
             $data = array($this->singleModel::RESPONSE_FIELD => ['vis_state' => VisState::DELETED]);
             $result = $this->makeRequest(self::PUT, $this->getUrl($accountId, $resourceId), $data);

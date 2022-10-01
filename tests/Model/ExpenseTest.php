@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks\Tests\Model;
 
 use DateTime;
-use DateTimeZone;
 use Spryker\DecimalObject\Decimal;
 use PHPUnit\Framework\TestCase;
 use amcintosh\FreshBooks\Model\Expense;
