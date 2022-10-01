@@ -6,6 +6,7 @@ namespace amcintosh\FreshBooks\Tests\Resource;
 
 use PHPUnit\Framework\TestCase;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
+use amcintosh\FreshBooks\Exception\FreshBooksNotImplementedException;
 use amcintosh\FreshBooks\Builder\FilterBuilder;
 use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Builder\PaginateBuilder;
@@ -383,5 +384,27 @@ final class AccountingResourceTest extends TestCase
         $request = $mockHttpClient->getLastRequest();
         $this->assertSame('DELETE', $request->getMethod());
         $this->assertSame('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+    }
+
+    public function testResourceMissingCalls(): void
+    {
+        $clientId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['client' => ['id' => $clientId]]]]
+        );
+
+        $resource = new AccountingResource(
+            $mockHttpClient,
+            'users/clients',
+            Client::class,
+            ClientList::class,
+            missingEndpoints: ['get', 'update', 'delete']
+        );
+
+        $this->expectException(FreshBooksNotImplementedException::class);
+        $this->expectExceptionMessage("The method 'get' does not exist for users/clients");
+
+        $resource->get($this->accountId, $clientId);
     }
 }
