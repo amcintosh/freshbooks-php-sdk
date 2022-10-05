@@ -7,6 +7,7 @@ namespace amcintosh\FreshBooks;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Common\Plugin\BaseUriPlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
+use Http\Client\Common\Plugin\RetryPlugin;
 use Http\Client\Common\PluginClientFactory;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\Psr17FactoryDiscovery;
@@ -80,6 +81,10 @@ class FreshBooksClient
             new BaseUriPlugin(Psr17FactoryDiscovery::findUriFactory()->createUri($this->config->apiBaseUrl)),
             new HeaderDefaultsPlugin($this->getHeaders()),
         );
+
+        if ($this->config->autoRetry) {
+            $plugins[] = new RetryPlugin();
+        }
 
         $pluginClient = (new PluginClientFactory())->createClient(
             HttpClientDiscovery::find(),
