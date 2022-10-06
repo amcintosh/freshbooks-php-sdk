@@ -24,6 +24,7 @@ class FreshBooksClientConfig
     public ?DateTimeImmutable $tokenExpiresAt;
     public ?string $userAgent;
     public bool $autoRetry;
+    public int $retries;
     public int $timeout;
     public string $version;
 
@@ -39,6 +40,7 @@ class FreshBooksClientConfig
         ?string $refreshToken = null,
         ?string $userAgent = null,
         bool $autoRetry = true,
+        int $retries = 3,
         int $timeout = self::DEFAULT_TIMEOUT
     ) {
         $this->apiBaseUrl = self::API_BASE_URL;
@@ -51,6 +53,7 @@ class FreshBooksClientConfig
         $this->tokenExpiresAt = null;
         $this->userAgent = $userAgent;
         $this->autoRetry = $autoRetry;
+        $this->retries = $retries;
         $this->timeout = $timeout;
         $this->version = $this->getVersion();
     }
