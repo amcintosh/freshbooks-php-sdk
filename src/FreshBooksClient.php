@@ -83,7 +83,7 @@ class FreshBooksClient
         );
 
         if ($this->config->autoRetry) {
-            $plugins[] = new RetryPlugin();
+            $plugins[] = new RetryPlugin(['retries' => $this->config->retries]);
         }
 
         $pluginClient = (new PluginClientFactory())->createClient(
