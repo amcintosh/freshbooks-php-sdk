@@ -396,6 +396,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_autoRetry"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024retries",
+            "name": "retries",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClientConfig.html#property_retries"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClientConfig\u003A\u003A\u0024timeout",
             "name": "timeout",
             "summary": "",
