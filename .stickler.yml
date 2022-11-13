@@ -1,0 +1,11 @@
+linters:
+  phpcs:
+    standard: PSR2
+    fixer: true
+  shellcheck:
+    shell: bash
+files:
+  ignore:
+    - 'vendor/*'
+fixers:
+  enable: true
