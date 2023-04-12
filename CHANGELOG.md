@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.6.0
+
 - Added Projects resource
 - Added Expense Categories resource
 - Added list sort builder
