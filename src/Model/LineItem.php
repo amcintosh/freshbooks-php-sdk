@@ -10,7 +10,6 @@ use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
 use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
 
@@ -26,7 +25,7 @@ use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
  */
 class LineItem extends DataTransferObject
 {
-    protected array $exceptKeys = ['amount', 'updated'];
+    protected array $exceptKeys = ['amount', 'taxNumber1', 'taxNumber2', 'updated'];
 
     /**
      * @var int Unique-to-this-invoice line id.

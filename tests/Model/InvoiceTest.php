@@ -322,8 +322,6 @@ final class InvoiceTest extends TestCase
                     'taxAmount2' => '0',
                     'taxName1' => 'HST1',
                     'taxName2' => null,
-                    'taxNumber1' => 'RT',
-                    'taxNumber2' => null,
                     'type' => 0,
                     'unit_cost' => [
                         'amount' => '5.00',
@@ -340,8 +338,6 @@ final class InvoiceTest extends TestCase
                     'taxAmount2' => '0',
                     'taxName1' => '',
                     'taxName2' => '',
-                    'taxNumber1' => null,
-                    'taxNumber2' => null,
                     'type' => 0,
                     'unit_cost' => [
                         'amount' => '4.00',
@@ -417,8 +413,6 @@ final class InvoiceTest extends TestCase
                     'taxAmount2' => '0',
                     'taxName1' => 'HST1',
                     'taxName2' => null,
-                    'taxNumber1' => 'RT',
-                    'taxNumber2' => null,
                     'type' => 0,
                     'unit_cost' => [
                         'amount' => '5.00',
@@ -435,8 +429,6 @@ final class InvoiceTest extends TestCase
                     'taxAmount2' => '0',
                     'taxName1' => '',
                     'taxName2' => '',
-                    'taxNumber1' => null,
-                    'taxNumber2' => null,
                     'type' => 0,
                     'unit_cost' => [
                         'amount' => '4.00',
