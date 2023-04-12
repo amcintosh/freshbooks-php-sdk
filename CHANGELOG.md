@@ -6,6 +6,7 @@
 - Added Expense Categories resource
 - Added list sort builder
 - Updated list models with new `pages()` function to standardize pagination with different models
+- Make invoice LineItem's taxNumber1 and taxNumber2 readonly due to FreshBooks API change
 
 ## 0.5.0
 
