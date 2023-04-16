@@ -66,6 +66,11 @@ Search.appendIndex(
             "summary": "Builds\u0020the\u0020query\u0020string\u0020parameters\u0020from\u0020the\u0020Builder.",
             "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#method_build"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\FilterBuilder\u003A\u003A\u0024filters",
+            "name": "filters",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Builder-FilterBuilder.html#property_filters"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Builder\\IncludesBuilder",
             "name": "IncludesBuilder",
             "summary": "Builder\u0020for\u0020including\u0020relationships,\u0020sub\u002Dresources,\u0020or\u0020additional\u0020data\u0020in\u0020the\u0020response.",
@@ -86,6 +91,11 @@ Search.appendIndex(
             "summary": "Builds\u0020the\u0020query\u0020string\u0020parameters\u0020from\u0020the\u0020Builder.",
             "url": "classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#method_build"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\IncludesBuilder\u003A\u003A\u0024includes",
+            "name": "includes",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html#property_includes"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Builder\\PaginateBuilder",
             "name": "PaginateBuilder",
             "summary": "Builder\u0020for\u0020making\u0020paginated\u0020list\u0020queries.",
@@ -96,15 +106,15 @@ Search.appendIndex(
             "summary": "Builder\u0020for\u0020making\u0020paginated\u0020list\u0020queries.",
             "url": "classes/amcintosh-FreshBooks-Builder-PaginateBuilder.html#method___construct"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\PaginateBuilder\u003A\u003Apage\u0028\u0029",
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\PaginateBuilder\u003A\u003A\u0024page",
             "name": "page",
-            "summary": "Set\u0020the\u0020page\u0020you\u0020wish\u0020to\u0020fetch\u0020in\u0020a\u0020list\u0020call.\u0020Can\u0020be\u0020chained.",
-            "url": "classes/amcintosh-FreshBooks-Builder-PaginateBuilder.html#method_page"
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Builder-PaginateBuilder.html#property_page"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\PaginateBuilder\u003A\u003AperPage\u0028\u0029",
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\PaginateBuilder\u003A\u003A\u0024perPage",
             "name": "perPage",
-            "summary": "Set\u0020the\u0020number\u0020of\u0020results\u0020you\u0020wish\u0020to\u0020fetch\u0020in\u0020a\u0020page\u0020of\u0020a\u0020list\u0020call.\u0020Can\u0020be\u0020chained.",
-            "url": "classes/amcintosh-FreshBooks-Builder-PaginateBuilder.html#method_perPage"
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Builder-PaginateBuilder.html#property_perPage"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Builder\\PaginateBuilder\u003A\u003Abuild\u0028\u0029",
             "name": "build",
@@ -156,6 +166,16 @@ Search.appendIndex(
             "summary": "Builds\u0020the\u0020query\u0020string\u0020parameters\u0020from\u0020the\u0020Builder.",
             "url": "classes/amcintosh-FreshBooks-Builder-SortBuilder.html#method_build"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\SortBuilder\u003A\u003A\u0024sortKey",
+            "name": "sortKey",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Builder-SortBuilder.html#property_sortKey"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Builder\\SortBuilder\u003A\u003A\u0024isAscending",
+            "name": "isAscending",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Builder-SortBuilder.html#property_isAscending"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksClientConfigException",
             "name": "FreshBooksClientConfigException",
             "summary": "",
@@ -185,6 +205,16 @@ Search.appendIndex(
             "name": "getErrorCode",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksException.html#method_getErrorCode"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksException\u003A\u003A\u0024rawResponse",
+            "name": "rawResponse",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksException.html#property_rawResponse"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksException\u003A\u003A\u0024errorCode",
+            "name": "errorCode",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksException.html#property_errorCode"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksNotImplementedException",
             "name": "FreshBooksNotImplementedException",
@@ -2621,6 +2651,36 @@ Search.appendIndex(
             "summary": "Delete\u0020a\u0020resource.",
             "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_delete"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003A\u0024httpClient",
+            "name": "httpClient",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#property_httpClient"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003A\u0024accountingPath",
+            "name": "accountingPath",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#property_accountingPath"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003A\u0024singleModel",
+            "name": "singleModel",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#property_singleModel"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003A\u0024listModel",
+            "name": "listModel",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#property_listModel"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003A\u0024deleteViaUpdate",
+            "name": "deleteViaUpdate",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#property_deleteViaUpdate"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003A\u0024missingEndpoints",
+            "name": "missingEndpoints",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#property_missingEndpoints"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AuthResource",
             "name": "AuthResource",
             "summary": "",
@@ -2650,6 +2710,11 @@ Search.appendIndex(
             "name": "getMeEndpoint",
             "summary": "Get\u0020the\u0020identity\u0020details\u0020of\u0020the\u0020currently\u0020authenticated\u0020user.",
             "url": "classes/amcintosh-FreshBooks-Resource-AuthResource.html#method_getMeEndpoint"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AuthResource\u003A\u003A\u0024httpClient",
+            "name": "httpClient",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-AuthResource.html#property_httpClient"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\BaseResource",
             "name": "BaseResource",
@@ -2730,6 +2795,31 @@ Search.appendIndex(
             "name": "delete",
             "summary": "Delete\u0020a\u0020resource.",
             "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_delete"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003A\u0024httpClient",
+            "name": "httpClient",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_httpClient"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003A\u0024singleResourcePath",
+            "name": "singleResourcePath",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_singleResourcePath"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003A\u0024listResourcePath",
+            "name": "listResourcePath",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_listResourcePath"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003A\u0024singleModel",
+            "name": "singleModel",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_singleModel"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003A\u0024listModel",
+            "name": "listModel",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_listModel"
         },                {
             "fqsen": "\\",
             "name": "\\",
