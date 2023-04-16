@@ -15,6 +15,8 @@ use amcintosh\FreshBooks\Builder\BuilderInterface;
  */
 class FilterBuilder implements BuilderInterface
 {
+    public array $filters;
+
     /**
      * Builder for making filtered list queries.
      *

@@ -14,6 +14,12 @@ use amcintosh\FreshBooks\Model\VisState;
 
 class ProjectResource extends BaseResource
 {
+    private HttpClient $httpClient;
+    private string $singleResourcePath;
+    private string $listResourcePath;
+    private string $singleModel;
+    private string $listModel;
+
     public function __construct(
         HttpClient $httpClient,
         string $singleResourcePath,

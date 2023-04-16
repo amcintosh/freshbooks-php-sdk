@@ -11,6 +11,8 @@ use amcintosh\FreshBooks\Model\Identity;
 
 class AuthResource extends BaseResource
 {
+    private HttpClient $httpClient;
+
     public function __construct(HttpClient $httpClient)
     {
         $this->httpClient = $httpClient;

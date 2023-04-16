@@ -6,6 +6,9 @@ namespace amcintosh\FreshBooks\Exception;
 
 final class FreshBooksException extends \Exception
 {
+    public ?string $rawResponse;
+    public ?int $errorCode;
+
     public function __construct(
         string $message,
         int $statusCode,

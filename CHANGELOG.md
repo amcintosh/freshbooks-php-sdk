@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Remove warnings in PHP 8.2
+
 ## 0.6.0
 
 - Added Projects resource

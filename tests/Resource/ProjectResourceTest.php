@@ -19,6 +19,8 @@ final class ProjectResourceTest extends TestCase
 {
     use BaseResourceTest;
 
+    private int $businessId;
+
     protected function setUp(): void
     {
         $this->businessId = 99999;

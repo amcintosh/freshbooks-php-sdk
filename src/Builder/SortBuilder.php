@@ -14,6 +14,9 @@ use amcintosh\FreshBooks\Builder\BuilderInterface;
  */
 class SortBuilder implements BuilderInterface
 {
+    public ?string $sortKey;
+    public bool $isAscending;
+
     /**
      * Builder for including sort by field data in a list request.
      *

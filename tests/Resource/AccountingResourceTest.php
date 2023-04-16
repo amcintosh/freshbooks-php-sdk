@@ -20,6 +20,8 @@ final class AccountingResourceTest extends TestCase
 {
     use BaseResourceTest;
 
+    public string $accountId;
+
     protected function setUp(): void
     {
         $this->accountId = 'ACM123';

@@ -17,6 +17,9 @@ class PaginateBuilder implements BuilderInterface
     private const MAX_PER_PAGE = 100;
     private const MIN_PAGE = 1;
 
+    public int $page;
+    public int $perPage;
+
     /**
      * Builder for making paginated list queries.
      * Has two attributes, `page` and `perPage`. When a `PaginateBuilder` object is passed

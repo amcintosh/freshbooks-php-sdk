@@ -14,6 +14,8 @@ use amcintosh\FreshBooks\Builder\BuilderInterface;
  */
 class IncludesBuilder implements BuilderInterface
 {
+    public array $includes;
+
     /**
      * Builder for including relationships, sub-resources, or additional data in the response.
      *

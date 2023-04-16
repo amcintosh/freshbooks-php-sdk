@@ -15,6 +15,13 @@ use amcintosh\FreshBooks\Model\VisState;
 
 class AccountingResource extends BaseResource
 {
+    private HttpClient $httpClient;
+    private string $accountingPath;
+    private string $singleModel;
+    private string $listModel;
+    private bool $deleteViaUpdate;
+    private ?array $missingEndpoints;
+
     public function __construct(
         HttpClient $httpClient,
         string $accountingPath,

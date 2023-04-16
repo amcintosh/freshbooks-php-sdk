@@ -9,6 +9,9 @@ use Psr\Http\Message\StreamFactoryInterface;
 
 final class MockHttpClient extends Client
 {
+    private $requestFactory;
+    private StreamFactoryInterface $streamFactory;
+
     public function __construct($requestFactory, StreamFactoryInterface $streamFactory = null)
     {
         $this->requestFactory = $requestFactory;
