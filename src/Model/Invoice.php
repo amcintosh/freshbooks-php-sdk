@@ -198,7 +198,7 @@ class Invoice extends DataTransferObject implements DataModel
     public ?string $discountDescription;
 
     /**
-     * @var Money Amount outstanding on invoice.
+     * @var Money Amount discounted.
      *
      * Money object containing amount and currency code.
      */
@@ -276,7 +276,7 @@ class Invoice extends DataTransferObject implements DataModel
     public ?string $invoiceNumber;
 
     /**
-     * @var string Describes status of last attempted payment.
+     * @var string Two-letter language code (e.g. "en", "fr")
      */
     public ?string $language;
 
