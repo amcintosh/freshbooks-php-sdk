@@ -1,40 +1,35 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.224.2/containers/php
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/php
 {
 	"name": "PHP",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			// Update VARIANT to pick a PHP version: 8, 8.1, 8.0, 7, 7.4
-			// Append -bullseye or -buster to pin to an OS version.
-			// Use -bullseye variants on local on arm64/Apple Silicon.
-			"VARIANT": "8",
-			"NODE_VERSION": "lts/*"
-		}
-	},
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/php:0-8.2",
 
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"php.validate.executablePath": "/usr/local/bin/php"
-	},
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
 
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"xdebug.php-debug",
-		"bmewburn.vscode-intelephense-client",
-		"mrmlnc.vscode-apache"
-	],
+	// Configure tool-specific properties.
+	// "customizations": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8080],
+	"forwardPorts": [
+		8080
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"nodeGypDependencies": true,
+			"version": "lts"
+		},
+		"ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {}
+	}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "composer install",
+	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
 
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode",
-	"features": {
-		"git": "os-provided",
-		"github-cli": "latest"
-	}
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
