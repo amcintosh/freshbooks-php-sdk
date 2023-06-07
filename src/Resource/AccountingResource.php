@@ -78,15 +78,15 @@ class AccountingResource extends BaseResource
             throw new FreshBooksException('Failed to parse response', $statusCode, $e, $contents);
         }
 
+        if ($statusCode >= 400) {
+            $this->handleError($statusCode, $responseData, $contents);
+        }
+
         if (is_null($responseData) || !array_key_exists('response', $responseData)) {
             throw new FreshBooksException('Returned an unexpected response', $statusCode, null, $contents);
         }
 
         $responseData = $responseData['response'];
-
-        if ($statusCode >= 400) {
-            $this->createResponseError($statusCode, $responseData, $contents);
-        }
 
         if (array_key_exists('result', $responseData)) {
             return $responseData['result'];
@@ -95,27 +95,71 @@ class AccountingResource extends BaseResource
     }
 
     /**
-     * Parse the json response from the accounting endpoint and create a FreshBooksException from it.
+     * Parse the json response for old-style accounting endpoint errors and create a FreshBooksException from it.
      *
      * @param  int $statusCode HTTP status code
      * @param  array $responseData The json-parsed response
      * @param  string $rawRespone The raw response body
      * @return void
      */
-    private function createResponseError(int $statusCode, array $responseData, string $rawRespone): void
+    private function createOldResponseError(int $statusCode, array $responseData, string $rawRespone): void
     {
-        if (!array_key_exists('errors', $responseData)) {
-            throw new FreshBooksException('Unknown error', $statusCode, null, $rawRespone);
-        }
-        $errors = $responseData['errors'];
+        $errors = $responseData['response']['errors'];
         if (array_key_exists(0, $errors)) {
-            $message = $errors[0]['message'] ?? 'Unknown error2';
+            $message = $errors[0]['message'] ?? 'Unknown error';
             $errorCode = $errors[0]['errno'] ?? null;
-            throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode);
+            throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $errors);
         }
+
         $message = $errors['message'] ?? 'Unknown error';
         $errorCode = $errors['errno'] ?? null;
-        throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode);
+        throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $errors);
+    }
+
+    /**
+     * Parse the json response for new-style accounting endpoint errors and create a FreshBooksException from it.
+     *
+     * @param  int $statusCode HTTP status code
+     * @param  array $responseData The json-parsed response
+     * @param  string $rawRespone The raw response body
+     * @return void
+     */
+    private function createNewResponseError(int $statusCode, array $responseData, string $rawRespone): void
+    {
+        $message = $responseData['message'];
+        $details = [];
+
+        foreach ($responseData['details'] as $detail) {
+            if (in_array('type.googleapis.com/google.rpc.ErrorInfo', $detail)) {
+                $errorCode = intval($detail['reason']) ?? null;
+                if (array_key_exists('metadata', $detail)) {
+                    $details[] = $detail['metadata'];
+                    if (array_key_exists('message', $detail['metadata'])) {
+                        $message = $detail['metadata']['message'];
+                    }
+                }
+            }
+        }
+        throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $details);
+    }
+
+    /**
+     * Create a FreshBooksException from the json response from the accounting endpoint.
+     *
+     * @param  int $statusCode HTTP status code
+     * @param  array $responseData The json-parsed response
+     * @param  string $rawRespone The raw response body
+     * @return void
+     */
+    private function handleError(int $statusCode, array $responseData, string $rawRespone): void
+    {
+        if (array_key_exists('response', $responseData) && array_key_exists('errors', $responseData['response'])) {
+            $this->createOldResponseError($statusCode, $responseData, $rawRespone);
+        } elseif (array_key_exists('message', $responseData) && array_key_exists('code', $responseData)) {
+            $this->createNewResponseError($statusCode, $responseData, $rawRespone);
+        } else {
+            throw new FreshBooksException('Unknown error', $statusCode, null, $rawRespone);
+        }
     }
 
     private function rejectMissing(string $name): void

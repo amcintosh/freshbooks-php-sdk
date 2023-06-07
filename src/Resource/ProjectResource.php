@@ -54,6 +54,32 @@ class ProjectResource extends BaseResource
     }
 
     /**
+     * Parse the json response for project endpoint errors and create a FreshBooksException from it.
+     *
+     * @param  int $statusCode HTTP status code
+     * @param  array $responseData The json-parsed response
+     * @param  string $rawRespone The raw response body
+     * @return void
+     */
+    private function createResponseError(int $statusCode, array $responseData, string $rawRespone): void
+    {
+        $message = $responseData['message'] ?? "Unknown error";
+        $errorCode = $responseData['code'] ?? null;
+        $errorDetails = null;
+
+        if (array_key_exists('error', $responseData) && is_array($responseData['error'])) {
+            $errorDetails = [];
+            foreach ($responseData['error'] as $errorKey => $errorDetail) {
+                $errorDetails[] = [$errorKey => $errorDetail];
+                $message = 'Error: ' . $errorKey . ' ' . $errorDetail;
+            }
+        } elseif (array_key_exists('error', $responseData)) {
+            $message = $responseData['error'];
+        }
+        throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $errorDetails);
+    }
+
+    /**
      * Make a request against the accounting resource and return an array of the json response.
      * Throws a FreshBooksException if the response is not a 200 or if the response cannot be parsed.
      *
@@ -81,9 +107,7 @@ class ProjectResource extends BaseResource
         }
 
         if ($statusCode >= 400) {
-            $errorCode = $responseData['code'] ?? null;
-            $message = $responseData['message'] ?? $responseData['error'] ?? "Unknown error";
-            throw new FreshBooksException($message, $statusCode, null, $contents, $errorCode);
+            $this->createResponseError($statusCode, $responseData, $contents);
         }
         if (
             !array_key_exists($this->singleModel::RESPONSE_FIELD, $responseData) &&
