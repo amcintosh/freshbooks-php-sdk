@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Tests\Resource;
 
+use GuzzleHttp\Psr7;
 use Http\Discovery\Psr17FactoryDiscovery;
 use amcintosh\FreshBooks\Tests\Util\MockHttpClient;
 
@@ -15,12 +16,10 @@ trait BaseResourceTest
             Psr17FactoryDiscovery::findRequestFactory(),
             Psr17FactoryDiscovery::findStreamFactory()
         );
-        $mockContent = $this->getMockBuilder(\stdclass::class)->setMethods(['getContents'])->getMock();
-        $mockContent->method('getContents')->will($this->returnValue(json_encode($content)));
 
         $response = $this->createMock('Psr\Http\Message\ResponseInterface');
         $response->method('getStatusCode')->will($this->returnValue($status));
-        $response->method('getBody')->will($this->returnValue($mockContent));
+        $response->method('getBody')->will($this->returnValue(Psr7\Utils::streamFor(json_encode($content))));
         $mockHttpClient->addResponse($response);
         return $mockHttpClient;
     }
