@@ -88,30 +88,94 @@ final class AccountingResourceTest extends TestCase
         $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
 
         $this->expectException(FreshBooksException::class);
-        $this->expectExceptionMessage('Returned an unexpected response');
+        $this->expectExceptionMessage('Unknown error');
 
         $resource->get($this->accountId, $clientId);
     }
 
-    public function testGetNoPermission(): void
+    public function testGetNotFoundOldError(): void
     {
         $clientId = 12345;
         $mockHttpClient = $this->getMockHttpClient(
-            401,
+            404,
             ['response' => ['errors' => [[
-                'message' => 'The server could not verify that you are authorized to access the URL requested.',
-                'errno' => 1003
+                'errno' => 1012,
+                'field' => 'userid',
+                'message' => 'Client not found.',
+                'object' => 'client',
+                'value' => '12345'
             ]]]]
         );
 
         $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
 
-        $this->expectException(FreshBooksException::class);
-        $this->expectExceptionMessage(
-            'The server could not verify that you are authorized to access the URL requested.'
+        try {
+            $resource->get($this->accountId, $clientId);
+            $this->fail('FreshBooksException was not thrown');
+        } catch (FreshBooksException $e) {
+            $this->assertSame('Client not found.', $e->getMessage());
+            $this->assertSame(404, $e->getCode());
+            $this->assertSame(1012, $e->getErrorCode());
+            $this->assertSame(
+                [
+                    [
+                        'errno' => 1012,
+                        'field' => 'userid',
+                        'message' => 'Client not found.',
+                        'object' => 'client',
+                        'value' => '12345'
+                    ]
+                ],
+                $e->getErrorDetails()
+            );
+        }
+    }
+
+    public function testGetNotFoundNewError(): void
+    {
+        $clientId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            404,
+            [
+                'code' => 5,
+                'message' => 'Request failed with status_code: 404',
+                'details' => [
+                    [
+                        '@type' => 'type.googleapis.com/google.rpc.ErrorInfo',
+                        'reason' => '1012',
+                        'domain' => 'accounting.api.freshbooks.com',
+                        'metadata' => [
+                            'object' => 'client',
+                            'message' => 'Client not found.',
+                            'value' => '12345',
+                            'field' => 'userid'
+                        ]
+                    ]
+                ]
+            ]
         );
 
-        $resource->get($this->accountId, $clientId);
+        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
+
+        try {
+            $resource->get($this->accountId, $clientId);
+            $this->fail('FreshBooksException was not thrown');
+        } catch (FreshBooksException $e) {
+            $this->assertSame('Client not found.', $e->getMessage());
+            $this->assertSame(404, $e->getCode());
+            $this->assertSame(1012, $e->getErrorCode());
+            $this->assertSame(
+                [
+                    [
+                        'object' => 'client',
+                        'message' => 'Client not found.',
+                        'value' => '12345',
+                        'field' => 'userid'
+                    ]
+                ],
+                $e->getErrorDetails()
+            );
+        }
     }
 
     public function testList(): void

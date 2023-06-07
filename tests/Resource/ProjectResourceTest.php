@@ -310,6 +310,37 @@ final class ProjectResourceTest extends TestCase
         );
     }
 
+    public function testCreateValidationErrors(): void
+    {
+        $mockHttpClient = $this->getMockHttpClient(
+            422,
+            [
+                'errno' => 2001,
+                'error' => [
+                    'title' => 'field required',
+                    'description' => 'field required'
+                ]
+            ]
+        );
+
+        $resource = new ProjectResource($mockHttpClient, 'projects', 'projects', Project::class, ProjectList::class);
+
+        try {
+            $resource->create($this->businessId, data: []);
+            $this->fail('FreshBooksException was not thrown');
+        } catch (FreshBooksException $e) {
+            $this->assertSame('Error: description field required', $e->getMessage());
+            $this->assertSame(422, $e->getCode());
+            $this->assertSame(
+                [
+                    ['title' => 'field required'],
+                    ['description' => 'field required']
+                ],
+                $e->getErrorDetails()
+            );
+        }
+    }
+
     public function testUpdateByModel(): void
     {
         $projectId = 12345;
