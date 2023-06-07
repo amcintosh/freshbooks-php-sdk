@@ -310,6 +310,13 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_createResponseError">createResponseError()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Parse the json response for project endpoint errors and create a FreshBooksException from it.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_getUrl">getUrl()</a>
     <span>
                                 &nbsp;: string    </span>
@@ -752,7 +759,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">157</span>
 
     </aside>
 
@@ -825,7 +832,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 
     </aside>
 
@@ -882,7 +889,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">104</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
@@ -946,7 +953,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 
     </aside>
 
@@ -1002,7 +1009,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">157</span>
+    <span class="phpdocumentor-element-found-in__line">181</span>
 
     </aside>
 
@@ -1121,6 +1128,69 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_createResponseError">
+        createResponseError()
+        <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_createResponseError" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">64</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Parse the json response for project endpoint errors and create a FreshBooksException from it.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">createResponseError</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$statusCode</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$responseData</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rawRespone</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$statusCode</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>HTTP status code</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$responseData</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The json-parsed response</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$rawRespone</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The raw response body</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getUrl">
         getUrl()
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_getUrl" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1185,7 +1255,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 
     </aside>
 

@@ -206,6 +206,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksException.html#method_getErrorCode"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksException\u003A\u003AgetErrorDetails\u0028\u0029",
+            "name": "getErrorDetails",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksException.html#method_getErrorDetails"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksException\u003A\u003A\u0024rawResponse",
             "name": "rawResponse",
             "summary": "",
@@ -215,6 +220,11 @@ Search.appendIndex(
             "name": "errorCode",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksException.html#property_errorCode"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksException\u003A\u003A\u0024errorDetails",
+            "name": "errorDetails",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksException.html#property_errorDetails"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksNotImplementedException",
             "name": "FreshBooksNotImplementedException",
@@ -2616,10 +2626,20 @@ Search.appendIndex(
             "summary": "Make\u0020a\u0020request\u0020against\u0020the\u0020accounting\u0020resource\u0020and\u0020return\u0020an\u0020array\u0020of\u0020the\u0020json\u0020response.",
             "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_makeRequest"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003AcreateResponseError\u0028\u0029",
-            "name": "createResponseError",
-            "summary": "Parse\u0020the\u0020json\u0020response\u0020from\u0020the\u0020accounting\u0020endpoint\u0020and\u0020create\u0020a\u0020FreshBooksException\u0020from\u0020it.",
-            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_createResponseError"
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003AcreateOldResponseError\u0028\u0029",
+            "name": "createOldResponseError",
+            "summary": "Parse\u0020the\u0020json\u0020response\u0020for\u0020old\u002Dstyle\u0020accounting\u0020endpoint\u0020errors\u0020and\u0020create\u0020a\u0020FreshBooksException\u0020from\u0020it.",
+            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_createOldResponseError"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003AcreateNewResponseError\u0028\u0029",
+            "name": "createNewResponseError",
+            "summary": "Parse\u0020the\u0020json\u0020response\u0020for\u0020new\u002Dstyle\u0020accounting\u0020endpoint\u0020errors\u0020and\u0020create\u0020a\u0020FreshBooksException\u0020from\u0020it.",
+            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_createNewResponseError"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003AhandleError\u0028\u0029",
+            "name": "handleError",
+            "summary": "Create\u0020a\u0020FreshBooksException\u0020from\u0020the\u0020json\u0020response\u0020from\u0020the\u0020accounting\u0020endpoint.",
+            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_handleError"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003ArejectMissing\u0028\u0029",
             "name": "rejectMissing",
@@ -2765,6 +2785,11 @@ Search.appendIndex(
             "name": "getUrl",
             "summary": "The\u0020the\u0020url\u0020to\u0020the\u0020accounting\u0020resource.",
             "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_getUrl"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003AcreateResponseError\u0028\u0029",
+            "name": "createResponseError",
+            "summary": "Parse\u0020the\u0020json\u0020response\u0020for\u0020project\u0020endpoint\u0020errors\u0020and\u0020create\u0020a\u0020FreshBooksException\u0020from\u0020it.",
+            "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_createResponseError"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003AmakeRequest\u0028\u0029",
             "name": "makeRequest",
