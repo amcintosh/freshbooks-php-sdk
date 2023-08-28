@@ -16,6 +16,12 @@ use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use amcintosh\FreshBooks\Exception\FreshBooksClientConfigException;
 use amcintosh\FreshBooks\Model\AuthorizationToken;
+use amcintosh\FreshBooks\Model\Bill;
+use amcintosh\FreshBooks\Model\BillList;
+use amcintosh\FreshBooks\Model\BillPayment;
+use amcintosh\FreshBooks\Model\BillPaymentList;
+use amcintosh\FreshBooks\Model\BillVendor;
+use amcintosh\FreshBooks\Model\BillVendorList;
 use amcintosh\FreshBooks\Model\Client;
 use amcintosh\FreshBooks\Model\ClientList;
 use amcintosh\FreshBooks\Model\Expense;
@@ -310,5 +316,50 @@ class FreshBooksClient
     public function projects(): ProjectResource
     {
         return new ProjectResource($this->httpClient, 'projects', 'projects', Project::class, ProjectList::class);
+    }
+
+    /**
+     * FreshBooks bill vendors resource with calls to get, list, create, update, delete
+     *
+     * @return AccountingResource
+     */
+    public function billVendors(): AccountingResource
+    {
+        return new AccountingResource(
+            $this->httpClient,
+            'bill_vendors/bill_vendors',
+            BillVendor::class,
+            BillVendorList::class
+        );
+    }
+
+    /**
+     * FreshBooks bills resource with calls to get, list, create, update, delete
+     *
+     * @return AccountingResource
+     */
+    public function bills(): AccountingResource
+    {
+        return new AccountingResource(
+            $this->httpClient,
+            'bills/bills',
+            Bill::class,
+            BillList::class
+        );
+    }
+
+    /**
+     * FreshBooks bills payments resource with calls to get, list, create, update, delete
+     *
+     * @return AccountingResource
+     */
+    public function billPayments(): AccountingResource
+    {
+        return new AccountingResource(
+            $this->httpClient,
+            'bill_payments/bill_payments',
+            BillPayment::class,
+            BillPaymentList::class
+        );
     }
 }
