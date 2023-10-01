@@ -437,7 +437,30 @@ echo $client->outstanding_balance->amount; // null, new client has no balance
 
 ##### Sorting
 
-TODO:
+To sort the results of a list call by supported fields (see the documentation for that resource) a
+`SortBuilder` can be used.
+
+```php
+use amcintosh\FreshBooks\Builder\SortBuilder;
+
+$sort = new SortBuilder();
+$sort->ascending("invoice_date");
+
+$invoices = $freshBooksClient->invoices()->list($accountId, builders: [$sort]);
+```
+
+to sort by the invoice date in ascending order, or:
+
+```php
+use amcintosh\FreshBooks\Builder\SortBuilder;
+
+$sort = new SortBuilder();
+$sort->descending("invoice_date");
+
+$invoices = $freshBooksClient->invoices()->list($accountId, builders: [$sort]);
+```
+
+for descending order.
 
 ## Development
 
