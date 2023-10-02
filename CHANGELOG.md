@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added Webhook Callback resource
 - Remove warnings in PHP 8.2
 - Handle new API version accounting errors
 
