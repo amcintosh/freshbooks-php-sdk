@@ -16,6 +16,8 @@ use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use amcintosh\FreshBooks\Exception\FreshBooksClientConfigException;
 use amcintosh\FreshBooks\Model\AuthorizationToken;
+use amcintosh\FreshBooks\Model\Callback;
+use amcintosh\FreshBooks\Model\CallbackList;
 use amcintosh\FreshBooks\Model\Client;
 use amcintosh\FreshBooks\Model\ClientList;
 use amcintosh\FreshBooks\Model\Expense;
@@ -37,6 +39,7 @@ use amcintosh\FreshBooks\Model\Tax;
 use amcintosh\FreshBooks\Model\TaxList;
 use amcintosh\FreshBooks\Resource\AccountingResource;
 use amcintosh\FreshBooks\Resource\AuthResource;
+use amcintosh\FreshBooks\Resource\EventsResource;
 use amcintosh\FreshBooks\Resource\ProjectResource;
 
 class FreshBooksClient
@@ -300,6 +303,17 @@ class FreshBooksClient
     public function taxes(): AccountingResource
     {
         return new AccountingResource($this->httpClient, 'taxes/taxes', Tax::class, TaxList::class);
+    }
+
+    /**
+     * FreshBooks callbacks (webhook callbacks) resource with calls to
+     * get, list, create, update, delete, resend_verification, verify
+     *
+     * @return EventsResource
+     */
+    public function callbacks(): EventsResource
+    {
+        return new EventsResource($this->httpClient, 'events/callbacks', Callback::class, CallbackList::class);
     }
 
     /**

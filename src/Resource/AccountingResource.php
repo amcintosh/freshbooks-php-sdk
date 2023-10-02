@@ -15,12 +15,12 @@ use amcintosh\FreshBooks\Model\VisState;
 
 class AccountingResource extends BaseResource
 {
-    private HttpClient $httpClient;
-    private string $accountingPath;
-    private string $singleModel;
-    private string $listModel;
-    private bool $deleteViaUpdate;
-    private ?array $missingEndpoints;
+    protected HttpClient $httpClient;
+    protected string $accountingPath;
+    protected string $singleModel;
+    protected string $listModel;
+    protected bool $deleteViaUpdate;
+    protected ?array $missingEndpoints;
 
     public function __construct(
         HttpClient $httpClient,
@@ -45,7 +45,7 @@ class AccountingResource extends BaseResource
      * @param  int $resourceId
      * @return string
      */
-    private function getUrl(string $accountId, int $resourceId = null): string
+    protected function getUrl(string $accountId, int $resourceId = null): string
     {
         if (!is_null($resourceId)) {
             return "/accounting/account/{$accountId}/{$this->accountingPath}/{$resourceId}";
@@ -127,6 +127,7 @@ class AccountingResource extends BaseResource
     private function createNewResponseError(int $statusCode, array $responseData, string $rawRespone): void
     {
         $message = $responseData['message'];
+        $errorCode = null;
         $details = [];
 
         foreach ($responseData['details'] as $detail) {
@@ -151,7 +152,7 @@ class AccountingResource extends BaseResource
      * @param  string $rawRespone The raw response body
      * @return void
      */
-    private function handleError(int $statusCode, array $responseData, string $rawRespone): void
+    protected function handleError(int $statusCode, array $responseData, string $rawRespone): void
     {
         if (array_key_exists('response', $responseData) && array_key_exists('errors', $responseData['response'])) {
             $this->createOldResponseError($statusCode, $responseData, $rawRespone);
