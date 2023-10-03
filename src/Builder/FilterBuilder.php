@@ -200,16 +200,19 @@ class FilterBuilder implements BuilderInterface
                 in_array($filterType, ['like', 'between'], true) ||
                 ($isAccountingLike === true && $filterType === 'equals')
             ) {
-                $queryString .= "&search[{$key}]={$value}";
+                $uvalue=urlencode($value);
+                $queryString .= "&search[{$key}]={$uvalue}";
             } elseif ($filterType === 'in') {
                 foreach ($value as $subValue) {
+                    $subValue = urlencode($subValue);
                     $queryString .= "&search[{$key}][]={$subValue}";
                 }
             } elseif (
                 in_array($filterType, ['bool', 'datetime'], true) ||
                 ($isAccountingLike === false && $filterType === 'equals')
             ) {
-                $queryString .= "&{$key}={$value}";
+                $uvalue = urlencode($value);
+                $queryString .= "&{$key}={$uvalue}";
             }
         }
         return $queryString;
