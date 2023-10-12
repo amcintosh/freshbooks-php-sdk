@@ -62,7 +62,7 @@ class AccountingResource extends BaseResource
      * @param  array $data
      * @return array
      */
-    private function makeRequest(string $method, string $url, array $data = null): array
+    protected function makeRequest(string $method, string $url, array $data = null): array
     {
         if (!is_null($data)) {
             $data = json_encode($data);

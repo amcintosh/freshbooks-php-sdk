@@ -64,4 +64,36 @@ class EventsResource extends AccountingResource
         var_dump($details);
         throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $details);
     }
+
+    /**
+     * Tell FreshBooks to resend the verification webhook for the callback
+     *
+     * @param  string $accountId The alpha-numeric account id
+     * @param  int $resourceId Id of the resource to update
+     * @return DataTransferObject Model of the updated resource's response data.
+     */
+    public function resendVerification(string $accountId, int $resourceId): DataTransferObject
+    {
+        $data = array($this->singleModel::RESPONSE_FIELD => array("resend" => true));
+        $result = $this->makeRequest(self::PUT, $this->getUrl($accountId, $resourceId), $data);
+        return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
+    }
+
+    /**
+     * Verify webhook callback by making a put request
+     *
+     * @param  string $accountId The alpha-numeric account id
+     * @param  int $resourceId Id of the resource to update
+     * @param  string The string verifier received by the webhook callback URI
+     * @return DataTransferObject Model of the updated resource's response data.
+     */
+    public function verify(
+        string $accountId,
+        int $resourceId,
+        string $verifier,
+    ): DataTransferObject {
+        $data = array($this->singleModel::RESPONSE_FIELD => array("verifier" => $verifier));
+        $result = $this->makeRequest(self::PUT, $this->getUrl($accountId, $resourceId), $data);
+        return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
+    }
 }

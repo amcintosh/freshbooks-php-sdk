@@ -472,6 +472,12 @@ To run all tests:
 make test
 ```
 
+Run a specific test:
+
+```shell
+ ./vendor/bin/phpunit --filter testCreateValidationError
+```
+
 ### Documentations
 
 You can generate the documentation via:

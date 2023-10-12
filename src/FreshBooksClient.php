@@ -307,7 +307,7 @@ class FreshBooksClient
 
     /**
      * FreshBooks callbacks (webhook callbacks) resource with calls to
-     * get, list, create, update, delete, resend_verification, verify
+     * get, list, create, update, delete, verify, resendVerification
      *
      * @return EventsResource
      */
