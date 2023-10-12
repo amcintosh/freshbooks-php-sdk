@@ -117,4 +117,46 @@ final class EventsResourceTest extends TestCase
             ]], $e->getErrorDetails());
         }
     }
+
+    public function testVerify(): void
+    {
+        $callbackId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['callback' => [
+                'callbackid' => $callbackId,
+                'verified' => true
+            ]]]]
+        );
+
+        $resource = new EventsResource($mockHttpClient, 'events/callbacks', Callback::class, CallbackList::class);
+        $callback = $resource->verify($this->accountId, $callbackId, 'some_verifier');
+
+        $this->assertSame($callbackId, $callback->callbackId);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertSame('PUT', $request->getMethod());
+        $this->assertSame('/events/account/ACM123/events/callbacks/12345', $request->getRequestTarget());
+    }
+
+    public function testResend(): void
+    {
+        $callbackId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['callback' => [
+                'callbackid' => $callbackId,
+                'verified' => true
+            ]]]]
+        );
+
+        $resource = new EventsResource($mockHttpClient, 'events/callbacks', Callback::class, CallbackList::class);
+        $callback = $resource->resendVerification($this->accountId, $callbackId);
+
+        $this->assertSame($callbackId, $callback->callbackId);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertSame('PUT', $request->getMethod());
+        $this->assertSame('/events/account/ACM123/events/callbacks/12345', $request->getRequestTarget());
+    }
 }
