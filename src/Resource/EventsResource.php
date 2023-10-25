@@ -61,7 +61,6 @@ class EventsResource extends AccountingResource
                 $details = $detail['fieldViolations'];
             }
         }
-        var_dump($details);
         throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $details);
     }
 
