@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,53 +53,53 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
+            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/installation.html" class="">Installation</a>
+    <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/configuration.html" class="">Configuring The API Client</a>
+    <a href="guide/configuration.html#configuring-the-api-client" class="">Configuring The API Client</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/authorization.html" class="">Authorization Flow</a>
+    <a href="guide/authorization.html#authorization-flow" class="">Authorization Flow</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/api-calls/index.html" class="">Making API Calls</a>
+    <a href="guide/api-calls/index.html#making-api-calls" class="">Making API Calls</a>
 </h4>
     <ul class="phpdocumentor-list">
                     <li>
-                <a href="guide/api-calls/current-user.html" class="">Current User</a>
+                <a href="guide/api-calls/current-user.html#current-user" class="">Current User</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/decimals.html" class="">Decimal Values</a>
+                <a href="guide/api-calls/decimals.html#decimal-values" class="">Decimal Values</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/get-list.html" class="">Get and List</a>
+                <a href="guide/api-calls/get-list.html#get-and-list" class="">Get and List</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/create-update-delete.html" class="">Create, Update, and Delete</a>
+                <a href="guide/api-calls/create-update-delete.html#create-update-and-delete" class="">Create, Update, and Delete</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/errors.html" class="">Error Handling</a>
+                <a href="guide/api-calls/errors.html#error-handling" class="">Error Handling</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/builders.html" class="">Pagination, Filters, Includes, and Sorting</a>
+                <a href="guide/api-calls/builders.html#pagination-filters-includes-and-sorting" class="">Pagination, Filters, Includes, and Sorting</a>
                 
             </li>
             </ul>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/examples.html" class="">Examples and Sample Code</a>
+    <a href="guide/examples.html#examples-and-sample-code" class="">Examples and Sample Code</a>
 </h4>
 
                         </section>
@@ -142,8 +143,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/amcintosh.html">amcintosh</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/amcintosh-freshbooks.html">FreshBooks</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/amcintosh-freshbooks-resource.html">Resource</a></li>
@@ -167,6 +169,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
     :
@@ -175,10 +182,6 @@
     </aside>
 
         
-    <section class="phpdocumentor-description"></section>
-
-
-
 
 
 
@@ -186,86 +189,104 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+<h4 id="toc-constants">
+    Constants
+    <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
     <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_DELETE">DELETE</a>
     <span>
         &nbsp;= &#039;DELETE&#039;                            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
     <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_GET">GET</a>
     <span>
         &nbsp;= &#039;GET&#039;                            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
     <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_PATCH">PATCH</a>
     <span>
         &nbsp;= &#039;PATCH&#039;                            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
     <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_POST">POST</a>
     <span>
         &nbsp;= &#039;POST&#039;                            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
     <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_PUT">PUT</a>
     <span>
         &nbsp;= &#039;PUT&#039;                            </span>
 </dt>
-<dd></dd>
 
-                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    </dl>
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_httpClient">$httpClient</a>
     <span>
                         &nbsp;: <abbr title="\Http\Client\HttpClient">HttpClient</abbr>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_listModel">$listModel</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_listResourcePath">$listResourcePath</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_singleModel">$singleModel</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_singleResourcePath">$singleResourcePath</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_create">create()</a>
@@ -307,7 +328,6 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_createResponseError">createResponseError()</a>
@@ -328,9 +348,10 @@
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Make a request against the accounting resource and return an array of the json response.</dd>
+<dd>Make a request against the project resource and return an array of the json response.</dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -339,11 +360,13 @@
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
             <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article class="phpdocumentor-element -constant -protected ">
     <h4 class="phpdocumentor-element__name" id="constant_DELETE">
         DELETE
         <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_DELETE" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -362,10 +385,8 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -373,6 +394,7 @@
     <h4 class="phpdocumentor-element__name" id="constant_GET">
         GET
         <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_GET" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -391,10 +413,8 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -402,6 +422,7 @@
     <h4 class="phpdocumentor-element__name" id="constant_PATCH">
         PATCH
         <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_PATCH" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -420,10 +441,8 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -431,6 +450,7 @@
     <h4 class="phpdocumentor-element__name" id="constant_POST">
         POST
         <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_POST" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -449,10 +469,8 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -460,6 +478,7 @@
     <h4 class="phpdocumentor-element__name" id="constant_PUT">
         PUT
         <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_PUT" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -478,10 +497,8 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -492,6 +509,7 @@
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -503,6 +521,7 @@
     <h4 class="phpdocumentor-element__name" id="property_httpClient">
         $httpClient
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_httpClient" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -520,10 +539,8 @@
     <span class="phpdocumentor-signature__name">$httpClient</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -537,6 +554,7 @@
     <h4 class="phpdocumentor-element__name" id="property_listModel">
         $listModel
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_listModel" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -554,10 +572,8 @@
     <span class="phpdocumentor-signature__name">$listModel</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -571,6 +587,7 @@
     <h4 class="phpdocumentor-element__name" id="property_listResourcePath">
         $listResourcePath
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_listResourcePath" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -588,10 +605,8 @@
     <span class="phpdocumentor-signature__name">$listResourcePath</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -605,6 +620,7 @@
     <h4 class="phpdocumentor-element__name" id="property_singleModel">
         $singleModel
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_singleModel" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -622,10 +638,8 @@
     <span class="phpdocumentor-signature__name">$singleModel</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -639,6 +653,7 @@
     <h4 class="phpdocumentor-element__name" id="property_singleResourcePath">
         $singleResourcePath
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_singleResourcePath" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -656,10 +671,8 @@
     <span class="phpdocumentor-signature__name">$singleResourcePath</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -669,6 +682,7 @@
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -679,6 +693,7 @@
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
@@ -692,8 +707,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Http\Client\HttpClient">HttpClient</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$httpClient</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$singleResourcePath</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$listResourcePath</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$singleModel</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$listModel</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -701,49 +717,40 @@
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Http\Client\HttpClient">HttpClient</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$singleResourcePath</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$listResourcePath</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$singleModel</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$listModel</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -755,6 +762,7 @@
     <h4 class="phpdocumentor-element__name" id="method_create">
         create()
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_create" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
@@ -769,6 +777,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$businessId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/amcintosh-FreshBooks-Model-DataModel.html"><abbr title="\amcintosh\FreshBooks\Model\DataModel">DataModel</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$model</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html"><abbr title="\amcintosh\FreshBooks\Builder\IncludesBuilder">IncludesBuilder</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$includes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -804,20 +814,21 @@
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html"><abbr title="\amcintosh\FreshBooks\Builder\IncludesBuilder">IncludesBuilder</abbr></a>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Model of the new resource's response data.</p>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Model of the new resource's response data.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -828,6 +839,7 @@
     <h4 class="phpdocumentor-element__name" id="method_delete">
         delete()
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
@@ -842,6 +854,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$businessId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resourceId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>Note: Most FreshBooks resources are soft-deleted,
 See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a></p>
 </section>
@@ -870,10 +884,6 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -885,6 +895,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <h4 class="phpdocumentor-element__name" id="method_get">
         get()
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
@@ -899,6 +910,8 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$businessId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resourceId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html"><abbr title="\amcintosh\FreshBooks\Builder\IncludesBuilder">IncludesBuilder</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$includes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -925,20 +938,21 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html"><abbr title="\amcintosh\FreshBooks\Builder\IncludesBuilder">IncludesBuilder</abbr></a>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The result model</p>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The result model</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -949,6 +963,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <h4 class="phpdocumentor-element__name" id="method_list">
         list()
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_list" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
@@ -963,6 +978,8 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$businessId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$builders</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -988,13 +1005,15 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
 
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The list result model</p>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The list result model</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1005,6 +1024,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <h4 class="phpdocumentor-element__name" id="method_update">
         update()
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
@@ -1019,6 +1039,8 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$businessId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resourceId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/amcintosh-FreshBooks-Model-DataModel.html"><abbr title="\amcintosh\FreshBooks\Model\DataModel">DataModel</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$model</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html"><abbr title="\amcintosh\FreshBooks\Builder\IncludesBuilder">IncludesBuilder</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$includes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1063,20 +1085,21 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/amcintosh-FreshBooks-Builder-IncludesBuilder.html"><abbr title="\amcintosh\FreshBooks\Builder\IncludesBuilder">IncludesBuilder</abbr></a>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Model of the updated resource's response data.</p>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Model of the updated resource's response data.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1087,6 +1110,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <h4 class="phpdocumentor-element__name" id="method_buildQueryString">
         buildQueryString()
         <a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#method_buildQueryString" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/BaseResource.php"><a href="files/src-resource-baseresource.html"><abbr title="src/Resource/BaseResource.php">BaseResource.php</abbr></a></abbr>
@@ -1100,8 +1124,9 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">buildQueryString</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$builders</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1109,18 +1134,17 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1131,6 +1155,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <h4 class="phpdocumentor-element__name" id="method_createResponseError">
         createResponseError()
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_createResponseError" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
@@ -1145,6 +1170,8 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">createResponseError</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$statusCode</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$responseData</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rawRespone</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1179,10 +1206,6 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1194,6 +1217,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <h4 class="phpdocumentor-element__name" id="method_getUrl">
         getUrl()
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_getUrl" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
@@ -1208,6 +1232,8 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">getUrl</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$businessId</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resourceId</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$isList</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1236,11 +1262,11 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
 
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1251,6 +1277,7 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
     <h4 class="phpdocumentor-element__name" id="method_makeRequest">
         makeRequest()
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_makeRequest" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Resource/ProjectResource.php"><a href="files/src-resource-projectresource.html"><abbr title="src/Resource/ProjectResource.php">ProjectResource.php</abbr></a></abbr>
@@ -1259,12 +1286,14 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
 
     </aside>
 
-        <p class="phpdocumentor-summary">Make a request against the accounting resource and return an array of the json response.</p>
+        <p class="phpdocumentor-summary">Make a request against the project resource and return an array of the json response.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">makeRequest</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$method</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>Throws a FreshBooksException if the response is not a 200 or if the response cannot be parsed.</p>
 </section>
 
@@ -1295,78 +1324,165 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
 
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
             </section>
 
-        
+        <div class="phpdocumentor-modal" id="source-view">
+    <div class="phpdocumentor-modal-bg" data-exit-button></div>
+    <div class="phpdocumentor-modal-container">
+        <div class="phpdocumentor-modal-content">
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Resource/ProjectResource.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+        </div>
+        <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
+    </div>
+</div>
+
     <script type="text/javascript">
-        function loadExternalCodeSnippets(line) {
-            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach((pre) => {
-                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
-                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
-                var language = 'php';
+        (function () {
+            function loadExternalCodeSnippet(el, url, line) {
+                Array.prototype.slice.call(el.querySelectorAll('pre[data-src]')).forEach((pre) => {
+                    const src = url || pre.getAttribute('data-src').replace(/\\/g, '/');
+                    const language = 'php';
 
-                var code = document.createElement('code');
-                code.className = 'language-' + language;
+                    const code = document.createElement('code');
+                    code.className = 'language-' + language;
+                    pre.textContent = '';
+                    pre.setAttribute('data-line', line)
+                    code.textContent = 'Loading…';
+                    pre.appendChild(code);
 
-                pre.textContent = '';
+                    var xhr = new XMLHttpRequest();
 
-                pre.setAttribute('data-line', line)
-                code.textContent = 'Loading…';
+                    xhr.open('GET', src, true);
 
-                pre.appendChild(code);
-
-                var xhr = new XMLHttpRequest();
-
-                xhr.open('GET', src, true);
-
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4) {
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState !== 4) {
+                            return;
+                        }
 
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
-
                             Prism.highlightElement(code);
+                            return;
                         }
-                        else if (xhr.status >= 400) {
+
+                        if (xhr.status === 404) {
+                            code.textContent = '✖ Error: File could not be found';
+                            return;
+                        }
+
+                        if (xhr.status >= 400) {
                             code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                            return;
                         }
-                        else {
-                            code.textContent = '✖ Error: File does not exist, is empty or trying to view from localhost';
-                        }
+
+                        code.textContent = '✖ Error: An unknown error occurred';
+                    };
+
+                    xhr.send(null);
+                });
+            }
+
+            const modalButtons = document.querySelectorAll("[data-modal]");
+            const openedAsLocalFile = window.location.protocol === 'file:';
+            if (modalButtons.length > 0 && openedAsLocalFile) {
+                console.warn(
+                    'Viewing the source code is unavailable because you are opening this page from the file:// scheme; ' +
+                    'browsers block XHR requests when a page is opened this way'
+                );
+            }
+
+            modalButtons.forEach(function (trigger) {
+                if (openedAsLocalFile) {
+                    trigger.setAttribute("hidden", "hidden");
+                }
+
+                trigger.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const modal = document.getElementById(trigger.dataset.modal);
+                    if (!modal) {
+                        console.error(`Modal with id "${trigger.dataset.modal}" could not be found`);
+                        return;
                     }
-                };
+                    modal.classList.add("phpdocumentor-modal__open");
 
-                xhr.send(null);
-            });
-        }
-
-        var modals = document.querySelectorAll("[data-modal]");
-
-        modals.forEach(function (trigger) {
-            trigger.addEventListener("click", function (event) {
-                //event.preventDefault();
-                const modal = document.getElementById(trigger.dataset.modal);
-                modal.classList.add("phpdocumentor-modal__open");
-                loadExternalCodeSnippets(trigger.dataset.line)
-                const exits = modal.querySelectorAll("[data-exit-button]");
-                exits.forEach(function (exit) {
-                    exit.addEventListener("click", function (event) {
-                        event.preventDefault();
-                        modal.classList.remove("phpdocumentor-modal__open");
+                    loadExternalCodeSnippet(modal, trigger.dataset.src || null, trigger.dataset.line)
+                    const exits = modal.querySelectorAll("[data-exit-button]");
+                    exits.forEach(function (exit) {
+                        exit.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            modal.classList.remove("phpdocumentor-modal__open");
+                        });
                     });
                 });
             });
-        });
+        })();
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                        <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#toc-constants">Constants</a></li>
+                                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_DELETE">DELETE</a></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_GET">GET</a></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_PATCH">PATCH</a></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_POST">POST</a></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_PUT">PUT</a></li>
+                                            </ul>
+                </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_httpClient">$httpClient<a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_listModel">$listModel<a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_listResourcePath">$listResourcePath<a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_singleModel">$singleModel<a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_singleResourcePath">$singleResourcePath<a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_create">create()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_delete">delete()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_get">get()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_list">list()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_update">update()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-Resource-BaseResource.html#method_buildQueryString">buildQueryString()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_createResponseError">createResponseError()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_getUrl">getUrl()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_makeRequest">makeRequest()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -1377,7 +1493,6 @@ See <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Act
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

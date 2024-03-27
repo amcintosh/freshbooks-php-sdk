@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,53 +53,53 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
+            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/installation.html" class="">Installation</a>
+    <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/configuration.html" class="">Configuring The API Client</a>
+    <a href="guide/configuration.html#configuring-the-api-client" class="">Configuring The API Client</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/authorization.html" class="">Authorization Flow</a>
+    <a href="guide/authorization.html#authorization-flow" class="">Authorization Flow</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/api-calls/index.html" class="">Making API Calls</a>
+    <a href="guide/api-calls/index.html#making-api-calls" class="">Making API Calls</a>
 </h4>
     <ul class="phpdocumentor-list">
                     <li>
-                <a href="guide/api-calls/current-user.html" class="">Current User</a>
+                <a href="guide/api-calls/current-user.html#current-user" class="">Current User</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/decimals.html" class="">Decimal Values</a>
+                <a href="guide/api-calls/decimals.html#decimal-values" class="">Decimal Values</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/get-list.html" class="">Get and List</a>
+                <a href="guide/api-calls/get-list.html#get-and-list" class="">Get and List</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/create-update-delete.html" class="">Create, Update, and Delete</a>
+                <a href="guide/api-calls/create-update-delete.html#create-update-and-delete" class="">Create, Update, and Delete</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/errors.html" class="">Error Handling</a>
+                <a href="guide/api-calls/errors.html#error-handling" class="">Error Handling</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/builders.html" class="">Pagination, Filters, Includes, and Sorting</a>
+                <a href="guide/api-calls/builders.html#pagination-filters-includes-and-sorting" class="">Pagination, Filters, Includes, and Sorting</a>
                 
             </li>
             </ul>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/examples.html" class="">Examples and Sample Code</a>
+    <a href="guide/examples.html#examples-and-sample-code" class="">Examples and Sample Code</a>
 </h4>
 
                         </section>
@@ -142,8 +143,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="packages/amcintosh.html">amcintosh</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="packages/amcintosh-FreshBooks.html">FreshBooks</a></li>
     </ul>
@@ -152,109 +154,158 @@
         <h2 class="phpdocumentor-content__title">Model</h2>
 
         
+<h3 id="toc">
+    Table of Contents
+    <a href="packages/amcintosh-FreshBooks-Model.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
-<h3 id="interfaces_class_traits">
-    Interfaces, Classes, Traits and Enums
-    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
 </h3>
 
-<dl class="phpdocumentor-table-of-contents">
-    
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-AccountingList.html"><abbr title="\amcintosh\FreshBooks\Model\AccountingList">AccountingList</abbr></a></dt>
-        <dd>Parent class for list results on accounting endpoints to share pagination details.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></dt>
-        <dd>Authorization data including the OAuth bearer token, expiry, and refresh token.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Business.html"><abbr title="\amcintosh\FreshBooks\Model\Business">Business</abbr></a></dt>
-        <dd>Each FreshBooks user is associated with a business.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-BusinessAddress.html"><abbr title="\amcintosh\FreshBooks\Model\BusinessAddress">BusinessAddress</abbr></a></dt>
-        <dd>The address of the business.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-BusinessMembership.html"><abbr title="\amcintosh\FreshBooks\Model\BusinessMembership">BusinessMembership</abbr></a></dt>
-        <dd>Business/Identity relationship</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-BusinessPhone.html"><abbr title="\amcintosh\FreshBooks\Model\BusinessPhone">BusinessPhone</abbr></a></dt>
-        <dd>The phone number of the business.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Client.html"><abbr title="\amcintosh\FreshBooks\Model\Client">Client</abbr></a></dt>
-        <dd>A client in the new FreshBooks is a resource representing an entity you send invoices to.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ClientList.html"><abbr title="\amcintosh\FreshBooks\Model\ClientList">ClientList</abbr></a></dt>
-        <dd>Results of clients list call containing list of clients and pagination data.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Expense.html"><abbr title="\amcintosh\FreshBooks\Model\Expense">Expense</abbr></a></dt>
-        <dd>Expenses are used to track expenditures your business incurs.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ExpenseAttachment.html"><abbr title="\amcintosh\FreshBooks\Model\ExpenseAttachment">ExpenseAttachment</abbr></a></dt>
-        <dd>Attached receipt image details for an expense.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ExpenseCategory.html"><abbr title="\amcintosh\FreshBooks\Model\ExpenseCategory">ExpenseCategory</abbr></a></dt>
-        <dd>Expense Categories are used to group expenses together to aid in expense tracking.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ExpenseCategoryList.html"><abbr title="\amcintosh\FreshBooks\Model\ExpenseCategoryList">ExpenseCategoryList</abbr></a></dt>
-        <dd>Results of expense category list call containing list of expense categories and pagination data.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html"><abbr title="\amcintosh\FreshBooks\Model\ExpenseList">ExpenseList</abbr></a></dt>
-        <dd>Results of expenses list call containing list of expenses and pagination data.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ExpenseStatus.html"><abbr title="\amcintosh\FreshBooks\Model\ExpenseStatus">ExpenseStatus</abbr></a></dt>
-        <dd>Status values for an expense.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Identity.html"><abbr title="\amcintosh\FreshBooks\Model\Identity">Identity</abbr></a></dt>
-        <dd>Users are uniquely identified by their email across all of FreshBooks, so if
+
+
+
+    <h4 id="toc-classes">
+        Classes
+        <a href="packages/amcintosh-FreshBooks-Model.html#toc-classes" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <dl class="phpdocumentor-table-of-contents">
+                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-AccountingList.html"><abbr title="\amcintosh\FreshBooks\Model\AccountingList">AccountingList</abbr></a></dt><dd>Parent class for list results on accounting endpoints to share pagination details.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></dt><dd>Authorization data including the OAuth bearer token, expiry, and refresh token.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Business.html"><abbr title="\amcintosh\FreshBooks\Model\Business">Business</abbr></a></dt><dd>Each FreshBooks user is associated with a business.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-BusinessAddress.html"><abbr title="\amcintosh\FreshBooks\Model\BusinessAddress">BusinessAddress</abbr></a></dt><dd>The address of the business.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-BusinessMembership.html"><abbr title="\amcintosh\FreshBooks\Model\BusinessMembership">BusinessMembership</abbr></a></dt><dd>Business/Identity relationship</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-BusinessPhone.html"><abbr title="\amcintosh\FreshBooks\Model\BusinessPhone">BusinessPhone</abbr></a></dt><dd>The phone number of the business.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Callback.html"><abbr title="\amcintosh\FreshBooks\Model\Callback">Callback</abbr></a></dt><dd>Webhook callback subscription model.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-CallbackList.html"><abbr title="\amcintosh\FreshBooks\Model\CallbackList">CallbackList</abbr></a></dt><dd>Results of callbacks list call containing list of callbacks and pagination data.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Client.html"><abbr title="\amcintosh\FreshBooks\Model\Client">Client</abbr></a></dt><dd>A client in the new FreshBooks is a resource representing an entity you send invoices to.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ClientList.html"><abbr title="\amcintosh\FreshBooks\Model\ClientList">ClientList</abbr></a></dt><dd>Results of clients list call containing list of clients and pagination data.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Expense.html"><abbr title="\amcintosh\FreshBooks\Model\Expense">Expense</abbr></a></dt><dd>Expenses are used to track expenditures your business incurs.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ExpenseAttachment.html"><abbr title="\amcintosh\FreshBooks\Model\ExpenseAttachment">ExpenseAttachment</abbr></a></dt><dd>Attached receipt image details for an expense.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ExpenseCategory.html"><abbr title="\amcintosh\FreshBooks\Model\ExpenseCategory">ExpenseCategory</abbr></a></dt><dd>Expense Categories are used to group expenses together to aid in expense tracking.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ExpenseCategoryList.html"><abbr title="\amcintosh\FreshBooks\Model\ExpenseCategoryList">ExpenseCategoryList</abbr></a></dt><dd>Results of expense category list call containing list of expense categories and pagination data.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html"><abbr title="\amcintosh\FreshBooks\Model\ExpenseList">ExpenseList</abbr></a></dt><dd>Results of expenses list call containing list of expenses and pagination data.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ExpenseStatus.html"><abbr title="\amcintosh\FreshBooks\Model\ExpenseStatus">ExpenseStatus</abbr></a></dt><dd>Status values for an expense.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Identity.html"><abbr title="\amcintosh\FreshBooks\Model\Identity">Identity</abbr></a></dt><dd>Users are uniquely identified by their email across all of FreshBooks, so if
 `leafy@example.com` is an Owner of one account and gets added as a Client on another,
 they will have some access to both. They could then open a second business of their
-own, or be added as an employee of another person’s business.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Invoice.html"><abbr title="\amcintosh\FreshBooks\Model\Invoice">Invoice</abbr></a></dt>
-        <dd>Invoices in FreshBooks are what gets sent to Clients, detailing specific goods or
+own, or be added as an employee of another person’s business.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Invoice.html"><abbr title="\amcintosh\FreshBooks\Model\Invoice">Invoice</abbr></a></dt><dd>Invoices in FreshBooks are what gets sent to Clients, detailing specific goods or
 services performed or provided by the Administrator of their System, and the amount
-that Client owes to the Admin.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-InvoiceList.html"><abbr title="\amcintosh\FreshBooks\Model\InvoiceList">InvoiceList</abbr></a></dt>
-        <dd>Results of invoices list call containing list of invoices and pagination data.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-InvoicePresentation.html"><abbr title="\amcintosh\FreshBooks\Model\InvoicePresentation">InvoicePresentation</abbr></a></dt>
-        <dd>Invoice Presentations are used to style an invoice including font, colors, and logos.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html"><abbr title="\amcintosh\FreshBooks\Model\InvoiceStatus">InvoiceStatus</abbr></a></dt>
-        <dd>Status values for an invoice.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Item.html"><abbr title="\amcintosh\FreshBooks\Model\Item">Item</abbr></a></dt>
-        <dd>Items are stored from invoice lines to make invoicing easier in the future.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ItemList.html"><abbr title="\amcintosh\FreshBooks\Model\ItemList">ItemList</abbr></a></dt>
-        <dd>Results of items list call containing list of items and pagination data.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-LineItem.html"><abbr title="\amcintosh\FreshBooks\Model\LineItem">LineItem</abbr></a></dt>
-        <dd>Invoice lines are used to determine the amount of an invoice, in addition to
+that Client owes to the Admin.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-InvoiceList.html"><abbr title="\amcintosh\FreshBooks\Model\InvoiceList">InvoiceList</abbr></a></dt><dd>Results of invoices list call containing list of invoices and pagination data.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html"><abbr title="\amcintosh\FreshBooks\Model\InvoicePaymentOptions">InvoicePaymentOptions</abbr></a></dt><dd>In FreshBooks, invoices can be paid online via a variety of payment gateways
+setup on the sender’s account. In order for this to be available on an invoice,
+the online payments must be set up through a separate call after the invoice has
+been created.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-InvoicePresentation.html"><abbr title="\amcintosh\FreshBooks\Model\InvoicePresentation">InvoicePresentation</abbr></a></dt><dd>Invoice Presentations are used to style an invoice including font, colors, and logos.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html"><abbr title="\amcintosh\FreshBooks\Model\InvoiceStatus">InvoiceStatus</abbr></a></dt><dd>Status values for an invoice.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Item.html"><abbr title="\amcintosh\FreshBooks\Model\Item">Item</abbr></a></dt><dd>Items are stored from invoice lines to make invoicing easier in the future.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ItemList.html"><abbr title="\amcintosh\FreshBooks\Model\ItemList">ItemList</abbr></a></dt><dd>Results of items list call containing list of items and pagination data.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-LineItem.html"><abbr title="\amcintosh\FreshBooks\Model\LineItem">LineItem</abbr></a></dt><dd>Invoice lines are used to determine the amount of an invoice, in addition to
 being able to tie the invoice to rebilled expenses. The invoice line type
-determines whether a line is an amount or whether it refers to an unbilled expense.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ListMeta.html"><abbr title="\amcintosh\FreshBooks\Model\ListMeta">ListMeta</abbr></a></dt>
-        <dd>List Meta object for pagination details in project-like responses.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Money.html"><abbr title="\amcintosh\FreshBooks\Model\Money">Money</abbr></a></dt>
-        <dd>Monetary amount represented by a decimal value and a currency code.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Pages.html"><abbr title="\amcintosh\FreshBooks\Model\Pages">Pages</abbr></a></dt>
-        <dd>List call pagination details.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Payment.html"><abbr title="\amcintosh\FreshBooks\Model\Payment">Payment</abbr></a></dt>
-        <dd>Payments are a record of the payments made on invoices.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-PaymentList.html"><abbr title="\amcintosh\FreshBooks\Model\PaymentList">PaymentList</abbr></a></dt>
-        <dd>Results of Payments list call containing list of payments and pagination data.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Project.html"><abbr title="\amcintosh\FreshBooks\Model\Project">Project</abbr></a></dt>
-        <dd>Projects in FreshBooks are used to track business projects and related information
-such as hourly rate, service(s) being offered, projected end date...etc</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ProjectGroup.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectGroup">ProjectGroup</abbr></a></dt>
-        <dd>ProjectGroups contain of the members and pending invitations to become a member of a project.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ProjectGroupInvitation.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectGroupInvitation">ProjectGroupInvitation</abbr></a></dt>
-        <dd>Invitation to join a project.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectGroupMember">ProjectGroupMember</abbr></a></dt>
-        <dd>Member of a project.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ProjectLikeList.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectLikeList">ProjectLikeList</abbr></a></dt>
-        <dd>Parent class for list results on project-like endpoints to share pagination details.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ProjectList.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectList">ProjectList</abbr></a></dt>
-        <dd>Results of Projects list call containing list of projects and pagination data.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Task.html"><abbr title="\amcintosh\FreshBooks\Model\Task">Task</abbr></a></dt>
-        <dd>Tasks in Freshbooks represent services that your business offers to clients.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-TaskList.html"><abbr title="\amcintosh\FreshBooks\Model\TaskList">TaskList</abbr></a></dt>
-        <dd>Results of tasks list call containing list of tasks and pagination data.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Tax.html"><abbr title="\amcintosh\FreshBooks\Model\Tax">Tax</abbr></a></dt>
-        <dd>System-wide taxes for invoices.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-TaxList.html"><abbr title="\amcintosh\FreshBooks\Model\TaxList">TaxList</abbr></a></dt>
-        <dd>Results of taxes list call containing list of taxes and pagination data.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-VisState.html"><abbr title="\amcintosh\FreshBooks\Model\VisState">VisState</abbr></a></dt>
-        <dd>Visibility values for a resource. Mostly used in accounting-type resources, not project-type.</dd>
-    
-    
-    </dl>
+determines whether a line is an amount or whether it refers to an unbilled expense.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ListMeta.html"><abbr title="\amcintosh\FreshBooks\Model\ListMeta">ListMeta</abbr></a></dt><dd>List Meta object for pagination details in project-like responses.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Money.html"><abbr title="\amcintosh\FreshBooks\Model\Money">Money</abbr></a></dt><dd>Monetary amount represented by a decimal value and a currency code.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Pages.html"><abbr title="\amcintosh\FreshBooks\Model\Pages">Pages</abbr></a></dt><dd>List call pagination details.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Payment.html"><abbr title="\amcintosh\FreshBooks\Model\Payment">Payment</abbr></a></dt><dd>Payments are a record of the payments made on invoices.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-PaymentList.html"><abbr title="\amcintosh\FreshBooks\Model\PaymentList">PaymentList</abbr></a></dt><dd>Results of Payments list call containing list of payments and pagination data.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Project.html"><abbr title="\amcintosh\FreshBooks\Model\Project">Project</abbr></a></dt><dd>Projects in FreshBooks are used to track business projects and related information
+such as hourly rate, service(s) being offered, projected end date...etc</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ProjectGroup.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectGroup">ProjectGroup</abbr></a></dt><dd>ProjectGroups contain of the members and pending invitations to become a member of a project.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ProjectGroupInvitation.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectGroupInvitation">ProjectGroupInvitation</abbr></a></dt><dd>Invitation to join a project.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ProjectGroupMember.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectGroupMember">ProjectGroupMember</abbr></a></dt><dd>Member of a project.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ProjectLikeList.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectLikeList">ProjectLikeList</abbr></a></dt><dd>Parent class for list results on project-like endpoints to share pagination details.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-ProjectList.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectList">ProjectList</abbr></a></dt><dd>Results of Projects list call containing list of projects and pagination data.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Task.html"><abbr title="\amcintosh\FreshBooks\Model\Task">Task</abbr></a></dt><dd>Tasks in Freshbooks represent services that your business offers to clients.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-TaskList.html"><abbr title="\amcintosh\FreshBooks\Model\TaskList">TaskList</abbr></a></dt><dd>Results of tasks list call containing list of tasks and pagination data.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Tax.html"><abbr title="\amcintosh\FreshBooks\Model\Tax">Tax</abbr></a></dt><dd>System-wide taxes for invoices.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-TaxList.html"><abbr title="\amcintosh\FreshBooks\Model\TaxList">TaxList</abbr></a></dt><dd>Results of taxes list call containing list of taxes and pagination data.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-VisState.html"><abbr title="\amcintosh\FreshBooks\Model\VisState">VisState</abbr></a></dt><dd>Visibility values for a resource. Mostly used in accounting-type resources, not project-type.</dd>    </dl>
+
+
+
+
+
 
 
 
         
 
         
+        <div class="phpdocumentor-modal" id="source-view">
+    <div class="phpdocumentor-modal-bg" data-exit-button></div>
+    <div class="phpdocumentor-modal-container">
+        <div class="phpdocumentor-modal-content">
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="" class="language-php line-numbers linkable-line-numbers"></pre>
+        </div>
+        <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
+    </div>
+</div>
+
+    <script type="text/javascript">
+        (function () {
+            function loadExternalCodeSnippet(el, url, line) {
+                Array.prototype.slice.call(el.querySelectorAll('pre[data-src]')).forEach((pre) => {
+                    const src = url || pre.getAttribute('data-src').replace(/\\/g, '/');
+                    const language = 'php';
+
+                    const code = document.createElement('code');
+                    code.className = 'language-' + language;
+                    pre.textContent = '';
+                    pre.setAttribute('data-line', line)
+                    code.textContent = 'Loading…';
+                    pre.appendChild(code);
+
+                    var xhr = new XMLHttpRequest();
+
+                    xhr.open('GET', src, true);
+
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState !== 4) {
+                            return;
+                        }
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+                            Prism.highlightElement(code);
+                            return;
+                        }
+
+                        if (xhr.status === 404) {
+                            code.textContent = '✖ Error: File could not be found';
+                            return;
+                        }
+
+                        if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                            return;
+                        }
+
+                        code.textContent = '✖ Error: An unknown error occurred';
+                    };
+
+                    xhr.send(null);
+                });
+            }
+
+            const modalButtons = document.querySelectorAll("[data-modal]");
+            const openedAsLocalFile = window.location.protocol === 'file:';
+            if (modalButtons.length > 0 && openedAsLocalFile) {
+                console.warn(
+                    'Viewing the source code is unavailable because you are opening this page from the file:// scheme; ' +
+                    'browsers block XHR requests when a page is opened this way'
+                );
+            }
+
+            modalButtons.forEach(function (trigger) {
+                if (openedAsLocalFile) {
+                    trigger.setAttribute("hidden", "hidden");
+                }
+
+                trigger.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const modal = document.getElementById(trigger.dataset.modal);
+                    if (!modal) {
+                        console.error(`Modal with id "${trigger.dataset.modal}" could not be found`);
+                        return;
+                    }
+                    modal.classList.add("phpdocumentor-modal__open");
+
+                    loadExternalCodeSnippet(modal, trigger.dataset.src || null, trigger.dataset.line)
+                    const exits = modal.querySelectorAll("[data-exit-button]");
+                    exits.forEach(function (exit) {
+                        exit.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            modal.classList.remove("phpdocumentor-modal__open");
+                        });
+                    });
+                });
+            });
+        })();
+    </script>
+
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                            
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                                                                        <li><a href="packages/amcintosh-FreshBooks-Model.html#toc-classes">Classes</a></li>
+                                                                                                                    </ul>
+            </li>
+
+            
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -265,7 +316,6 @@ such as hourly rate, service(s) being offered, projected end date...etc</dd>
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="packages/amcintosh-FreshBooks-Model.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

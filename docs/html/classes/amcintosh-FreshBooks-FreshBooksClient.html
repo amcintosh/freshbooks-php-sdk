@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,53 +53,53 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
+            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/installation.html" class="">Installation</a>
+    <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/configuration.html" class="">Configuring The API Client</a>
+    <a href="guide/configuration.html#configuring-the-api-client" class="">Configuring The API Client</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/authorization.html" class="">Authorization Flow</a>
+    <a href="guide/authorization.html#authorization-flow" class="">Authorization Flow</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/api-calls/index.html" class="">Making API Calls</a>
+    <a href="guide/api-calls/index.html#making-api-calls" class="">Making API Calls</a>
 </h4>
     <ul class="phpdocumentor-list">
                     <li>
-                <a href="guide/api-calls/current-user.html" class="">Current User</a>
+                <a href="guide/api-calls/current-user.html#current-user" class="">Current User</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/decimals.html" class="">Decimal Values</a>
+                <a href="guide/api-calls/decimals.html#decimal-values" class="">Decimal Values</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/get-list.html" class="">Get and List</a>
+                <a href="guide/api-calls/get-list.html#get-and-list" class="">Get and List</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/create-update-delete.html" class="">Create, Update, and Delete</a>
+                <a href="guide/api-calls/create-update-delete.html#create-update-and-delete" class="">Create, Update, and Delete</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/errors.html" class="">Error Handling</a>
+                <a href="guide/api-calls/errors.html#error-handling" class="">Error Handling</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/builders.html" class="">Pagination, Filters, Includes, and Sorting</a>
+                <a href="guide/api-calls/builders.html#pagination-filters-includes-and-sorting" class="">Pagination, Filters, Includes, and Sorting</a>
                 
             </li>
             </ul>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/examples.html" class="">Examples and Sample Code</a>
+    <a href="guide/examples.html#examples-and-sample-code" class="">Examples and Sample Code</a>
 </h4>
 
                         </section>
@@ -142,8 +143,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/amcintosh.html">amcintosh</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/amcintosh-freshbooks.html">FreshBooks</a></li>
     </ul>
@@ -163,18 +165,19 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
         
-    <section class="phpdocumentor-description"></section>
-
-
-
 
 
 
@@ -182,44 +185,69 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_httpClient">$httpClient</a>
     <span>
                         &nbsp;: <abbr title="\Psr\Http\Client\ClientInterface">ClientInterface</abbr>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_config">$config</a>
     <span>
                         &nbsp;: <a href="classes/amcintosh-FreshBooks-FreshBooksClientConfig.html"><abbr title="\amcintosh\FreshBooks\FreshBooksClientConfig">FreshBooksClientConfig</abbr></a>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_requestFactoryInterface">$requestFactoryInterface</a>
     <span>
                         &nbsp;: <abbr title="\Psr\Http\Message\RequestFactoryInterface">RequestFactoryInterface</abbr>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_streamFactoryInterface">$streamFactoryInterface</a>
     <span>
                         &nbsp;: <abbr title="\Psr\Http\Message\StreamFactoryInterface">StreamFactoryInterface</abbr>            </span>
 </dt>
-<dd></dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_callbacks">callbacks()</a>
+    <span>
+                                &nbsp;: <a href="classes/amcintosh-FreshBooks-Resource-EventsResource.html"><abbr title="\amcintosh\FreshBooks\Resource\EventsResource">EventsResource</abbr></a>    </span>
+</dt>
+<dd>FreshBooks callbacks (webhook callbacks) resource with calls to
+get, list, create, update, delete, verify, resendVerification</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_clients">clients()</a>
@@ -269,6 +297,13 @@
                                 &nbsp;: <a href="classes/amcintosh-FreshBooks-FreshBooksClientConfig.html"><abbr title="\amcintosh\FreshBooks\FreshBooksClientConfig">FreshBooksClientConfig</abbr></a>    </span>
 </dt>
 <dd>Get the current config.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_invoicePaymentOptions">invoicePaymentOptions()</a>
+    <span>
+                                &nbsp;: <a href="classes/amcintosh-FreshBooks-Resource-PaymentResource.html"><abbr title="\amcintosh\FreshBooks\Resource\PaymentResource">PaymentResource</abbr></a>    </span>
+</dt>
+<dd>FreshBooks invoice payment options resource with calls to default, get, create.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_invoices">invoices()</a>
@@ -324,14 +359,12 @@
     <span>
                                 &nbsp;: <abbr title="\Http\Client\Common\HttpMethodsClient">HttpMethodsClient</abbr>    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getHeaders">getHeaders()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getToken">getToken()</a>
@@ -340,7 +373,8 @@
 </dt>
 <dd>Make call to FreshBooks OAuth /token endpoint to fetch access_token and refresh_tokens.</dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -351,6 +385,7 @@
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -362,13 +397,14 @@
     <h4 class="phpdocumentor-element__name" id="property_httpClient">
         $httpClient
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_httpClient" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -379,10 +415,8 @@
     <span class="phpdocumentor-signature__name">$httpClient</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -396,13 +430,14 @@
     <h4 class="phpdocumentor-element__name" id="property_config">
         $config
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_config" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -413,10 +448,8 @@
     <span class="phpdocumentor-signature__name">$config</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -430,13 +463,14 @@
     <h4 class="phpdocumentor-element__name" id="property_requestFactoryInterface">
         $requestFactoryInterface
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_requestFactoryInterface" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -447,10 +481,8 @@
     <span class="phpdocumentor-signature__name">$requestFactoryInterface</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -464,13 +496,14 @@
     <h4 class="phpdocumentor-element__name" id="property_streamFactoryInterface">
         $streamFactoryInterface
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_streamFactoryInterface" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -481,10 +514,8 @@
     <span class="phpdocumentor-signature__name">$streamFactoryInterface</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -494,6 +525,7 @@
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -504,11 +536,12 @@
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -517,8 +550,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$clientId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$config</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -526,26 +560,57 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$config</span>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_callbacks">
+        callbacks()
+        <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_callbacks" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">316</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">FreshBooks callbacks (webhook callbacks) resource with calls to
+get, list, create, update, delete, verify, resendVerification</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">callbacks</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-EventsResource.html"><abbr title="\amcintosh\FreshBooks\Resource\EventsResource">EventsResource</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-EventsResource.html"><abbr title="\amcintosh\FreshBooks\Resource\EventsResource">EventsResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -556,11 +621,12 @@
     <h4 class="phpdocumentor-element__name" id="method_clients">
         clients()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_clients" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">222</span>
 
     </aside>
 
@@ -570,15 +636,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">clients</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -589,11 +657,12 @@
     <h4 class="phpdocumentor-element__name" id="method_currentUser">
         currentUser()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_currentUser" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">212</span>
 
     </aside>
 
@@ -603,12 +672,15 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">currentUser</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-Identity.html"><abbr title="\amcintosh\FreshBooks\Model\Identity">Identity</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_currentUser#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -618,13 +690,13 @@
                                                                                                         <a class="phpdocumentor-tag-link" href="https://www.freshbooks.com/api/me_endpoint"> https://www.freshbooks.com/api/me_endpoint </a>
                     
                                     </dd>
-                        </dl>
+                                            </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-Identity.html"><abbr title="\amcintosh\FreshBooks\Model\Identity">Identity</abbr></a></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-Identity.html"><abbr title="\amcintosh\FreshBooks\Model\Identity">Identity</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -635,11 +707,12 @@
     <h4 class="phpdocumentor-element__name" id="method_expenseCategories">
         expenseCategories()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_expenseCategories" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">238</span>
+    <span class="phpdocumentor-element-found-in__line">243</span>
 
     </aside>
 
@@ -649,15 +722,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">expenseCategories</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -668,11 +743,12 @@
     <h4 class="phpdocumentor-element__name" id="method_expenses">
         expenses()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_expenses" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 
     </aside>
 
@@ -682,15 +758,17 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">expenses</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -701,11 +779,12 @@
     <h4 class="phpdocumentor-element__name" id="method_getAccessToken">
         getAccessToken()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getAccessToken" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">170</span>
+    <span class="phpdocumentor-element-found-in__line">175</span>
 
     </aside>
 
@@ -715,6 +794,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getAccessToken</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$code</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>This requires the access_grant code obtained after the user is redirected by the authorization
 step. See <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getAuthRequestUri"><abbr title="\amcintosh\FreshBooks\FreshBooksClient::getAuthRequestUri()">FreshBooksClient::getAuthRequestUri()</abbr></a>.</p>
 <p>This call sets the <code class="prettyprint">accessToken</code>, <code class="prettyprint">refreshToken</code>, and <code class="prettyprint">tokenExpiresAt</code> properties on the
@@ -738,7 +819,8 @@ and also returns those values in an AuthorizationToken object.</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getAccessToken#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -749,15 +831,17 @@ and also returns those values in an AuthorizationToken object.</p>
                                                             
                                              
                                     </dd>
-                        </dl>
+                                            </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Object containing the access token, refresh token, and expiry details.</p>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Object containing the access token, refresh token, and expiry details.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -768,11 +852,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_getAuthRequestUri">
         getAuthRequestUri()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getAuthRequestUri" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 
     </aside>
 
@@ -782,6 +867,8 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getAuthRequestUri</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$scopes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -797,7 +884,8 @@ and also returns those values in an AuthorizationToken object.</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getAuthRequestUri#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -808,13 +896,13 @@ and also returns those values in an AuthorizationToken object.</p>
                                                             
                                              
                                     </dd>
-                        </dl>
+                                            </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -825,11 +913,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_getConfig">
         getConfig()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getConfig" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -839,15 +928,53 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getConfig</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-FreshBooksClientConfig.html"><abbr title="\amcintosh\FreshBooks\FreshBooksClientConfig">FreshBooksClientConfig</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-FreshBooksClientConfig.html"><abbr title="\amcintosh\FreshBooks\FreshBooksClientConfig">FreshBooksClientConfig</abbr></a></span>
-            &mdash;
-        
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-FreshBooksClientConfig.html"><abbr title="\amcintosh\FreshBooks\FreshBooksClientConfig">FreshBooksClientConfig</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_invoicePaymentOptions">
+        invoicePaymentOptions()
+        <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_invoicePaymentOptions" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">336</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">FreshBooks invoice payment options resource with calls to default, get, create.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">invoicePaymentOptions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-PaymentResource.html"><abbr title="\amcintosh\FreshBooks\Resource\PaymentResource">PaymentResource</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
     
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-PaymentResource.html"><abbr title="\amcintosh\FreshBooks\Resource\PaymentResource">PaymentResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -858,11 +985,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_invoices">
         invoices()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_invoices" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">259</span>
 
     </aside>
 
@@ -872,15 +1000,17 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">invoices</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -891,11 +1021,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_items">
         items()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_items" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">270</span>
+    <span class="phpdocumentor-element-found-in__line">275</span>
 
     </aside>
 
@@ -905,15 +1036,17 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">items</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -924,11 +1057,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_payments">
         payments()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_payments" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">280</span>
+    <span class="phpdocumentor-element-found-in__line">285</span>
 
     </aside>
 
@@ -938,15 +1072,17 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">payments</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -957,11 +1093,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_projects">
         projects()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_projects" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">310</span>
+    <span class="phpdocumentor-element-found-in__line">326</span>
 
     </aside>
 
@@ -971,15 +1108,17 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">projects</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html"><abbr title="\amcintosh\FreshBooks\Resource\ProjectResource">ProjectResource</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html"><abbr title="\amcintosh\FreshBooks\Resource\ProjectResource">ProjectResource</abbr></a></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-ProjectResource.html"><abbr title="\amcintosh\FreshBooks\Resource\ProjectResource">ProjectResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -990,11 +1129,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_refreshAccessToken">
         refreshAccessToken()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_refreshAccessToken" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">189</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 
     </aside>
 
@@ -1004,6 +1144,8 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">refreshAccessToken</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$refreshToken</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>If <code class="prettyprint">refreshToken</code> is provided, it will call to refresh it, otherwise it will use the
 <code class="prettyprint">refreshToken</code> on the FreshBooksClientConfig instance.</p>
 <p>This call sets the <code class="prettyprint">accessToken</code>, <code class="prettyprint">refreshToken</code>, and <code class="prettyprint">tokenExpiresAt</code>  properties on the
@@ -1027,7 +1169,8 @@ and also returns those values in an AuthorizationToken object.</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_refreshAccessToken#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1038,15 +1181,17 @@ and also returns those values in an AuthorizationToken object.</p>
                                                             
                                              
                                     </dd>
-                        </dl>
+                                            </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Object containing the access token, refresh token, and expiry details.</p>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Object containing the access token, refresh token, and expiry details.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1057,11 +1202,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_tasks">
         tasks()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_tasks" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">290</span>
+    <span class="phpdocumentor-element-found-in__line">295</span>
 
     </aside>
 
@@ -1071,15 +1217,17 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">tasks</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1090,11 +1238,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_taxes">
         taxes()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_taxes" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">300</span>
+    <span class="phpdocumentor-element-found-in__line">305</span>
 
     </aside>
 
@@ -1104,15 +1253,17 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">taxes</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Resource-AccountingResource.html"><abbr title="\amcintosh\FreshBooks\Resource\AccountingResource">AccountingResource</abbr></a></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1123,11 +1274,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_createHttpClient">
         createHttpClient()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_createHttpClient" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 
     </aside>
 
@@ -1136,16 +1288,17 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">createHttpClient</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Http\Client\Common\HttpMethodsClient">HttpMethodsClient</abbr></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Http\Client\Common\HttpMethodsClient">HttpMethodsClient</abbr></span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Http\Client\Common\HttpMethodsClient">HttpMethodsClient</abbr></span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1156,11 +1309,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_getHeaders">
         getHeaders()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getHeaders" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -1169,16 +1323,17 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">getHeaders</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
+    
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1189,11 +1344,12 @@ and also returns those values in an AuthorizationToken object.</p>
     <h4 class="phpdocumentor-element__name" id="method_getToken">
         getToken()
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getToken" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/FreshBooksClient.php"><a href="files/src-freshbooksclient.html"><abbr title="src/FreshBooksClient.php">FreshBooksClient.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">138</span>
 
     </aside>
 
@@ -1203,6 +1359,8 @@ and also returns those values in an AuthorizationToken object.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">getToken</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$grantType</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$codeType</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$code</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1238,7 +1396,8 @@ and also returns those values in an AuthorizationToken object.</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getToken#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1249,82 +1408,169 @@ and also returns those values in an AuthorizationToken object.</p>
                                                             
                                              
                                     </dd>
-                        </dl>
+                                            </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Object containing the access token, refresh token, and expiry details.</p>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/amcintosh-FreshBooks-Model-AuthorizationToken.html"><abbr title="\amcintosh\FreshBooks\Model\AuthorizationToken">AuthorizationToken</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Object containing the access token, refresh token, and expiry details.</p>
 </section>
 
-    
+            </section>
+
 </article>
             </section>
 
-        
+        <div class="phpdocumentor-modal" id="source-view">
+    <div class="phpdocumentor-modal-bg" data-exit-button></div>
+    <div class="phpdocumentor-modal-container">
+        <div class="phpdocumentor-modal-content">
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/FreshBooksClient.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+        </div>
+        <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
+    </div>
+</div>
+
     <script type="text/javascript">
-        function loadExternalCodeSnippets(line) {
-            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach((pre) => {
-                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
-                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
-                var language = 'php';
+        (function () {
+            function loadExternalCodeSnippet(el, url, line) {
+                Array.prototype.slice.call(el.querySelectorAll('pre[data-src]')).forEach((pre) => {
+                    const src = url || pre.getAttribute('data-src').replace(/\\/g, '/');
+                    const language = 'php';
 
-                var code = document.createElement('code');
-                code.className = 'language-' + language;
+                    const code = document.createElement('code');
+                    code.className = 'language-' + language;
+                    pre.textContent = '';
+                    pre.setAttribute('data-line', line)
+                    code.textContent = 'Loading…';
+                    pre.appendChild(code);
 
-                pre.textContent = '';
+                    var xhr = new XMLHttpRequest();
 
-                pre.setAttribute('data-line', line)
-                code.textContent = 'Loading…';
+                    xhr.open('GET', src, true);
 
-                pre.appendChild(code);
-
-                var xhr = new XMLHttpRequest();
-
-                xhr.open('GET', src, true);
-
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4) {
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState !== 4) {
+                            return;
+                        }
 
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
-
                             Prism.highlightElement(code);
+                            return;
                         }
-                        else if (xhr.status >= 400) {
+
+                        if (xhr.status === 404) {
+                            code.textContent = '✖ Error: File could not be found';
+                            return;
+                        }
+
+                        if (xhr.status >= 400) {
                             code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                            return;
                         }
-                        else {
-                            code.textContent = '✖ Error: File does not exist, is empty or trying to view from localhost';
-                        }
+
+                        code.textContent = '✖ Error: An unknown error occurred';
+                    };
+
+                    xhr.send(null);
+                });
+            }
+
+            const modalButtons = document.querySelectorAll("[data-modal]");
+            const openedAsLocalFile = window.location.protocol === 'file:';
+            if (modalButtons.length > 0 && openedAsLocalFile) {
+                console.warn(
+                    'Viewing the source code is unavailable because you are opening this page from the file:// scheme; ' +
+                    'browsers block XHR requests when a page is opened this way'
+                );
+            }
+
+            modalButtons.forEach(function (trigger) {
+                if (openedAsLocalFile) {
+                    trigger.setAttribute("hidden", "hidden");
+                }
+
+                trigger.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const modal = document.getElementById(trigger.dataset.modal);
+                    if (!modal) {
+                        console.error(`Modal with id "${trigger.dataset.modal}" could not be found`);
+                        return;
                     }
-                };
+                    modal.classList.add("phpdocumentor-modal__open");
 
-                xhr.send(null);
-            });
-        }
-
-        var modals = document.querySelectorAll("[data-modal]");
-
-        modals.forEach(function (trigger) {
-            trigger.addEventListener("click", function (event) {
-                //event.preventDefault();
-                const modal = document.getElementById(trigger.dataset.modal);
-                modal.classList.add("phpdocumentor-modal__open");
-                loadExternalCodeSnippets(trigger.dataset.line)
-                const exits = modal.querySelectorAll("[data-exit-button]");
-                exits.forEach(function (exit) {
-                    exit.addEventListener("click", function (event) {
-                        event.preventDefault();
-                        modal.classList.remove("phpdocumentor-modal__open");
+                    loadExternalCodeSnippet(modal, trigger.dataset.src || null, trigger.dataset.line)
+                    const exits = modal.querySelectorAll("[data-exit-button]");
+                    exits.forEach(function (exit) {
+                        exit.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            modal.classList.remove("phpdocumentor-modal__open");
+                        });
                     });
                 });
             });
-        });
+        })();
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_httpClient">$httpClient<a href="classes/amcintosh-FreshBooks-FreshBooksClient.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_config">$config<a href="classes/amcintosh-FreshBooks-FreshBooksClient.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_requestFactoryInterface">$requestFactoryInterface<a href="classes/amcintosh-FreshBooks-FreshBooksClient.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#property_streamFactoryInterface">$streamFactoryInterface<a href="classes/amcintosh-FreshBooks-FreshBooksClient.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_callbacks">callbacks()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_clients">clients()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_currentUser">currentUser()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_expenseCategories">expenseCategories()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_expenses">expenses()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getAccessToken">getAccessToken()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getAuthRequestUri">getAuthRequestUri()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getConfig">getConfig()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_invoicePaymentOptions">invoicePaymentOptions()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_invoices">invoices()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_items">items()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_payments">payments()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_projects">projects()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_refreshAccessToken">refreshAccessToken()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_tasks">tasks()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_taxes">taxes()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_createHttpClient">createHttpClient()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getHeaders">getHeaders()</a></li>
+                                            <li><a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#method_getToken">getToken()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -1335,7 +1581,6 @@ and also returns those values in an AuthorizationToken object.</p>
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/amcintosh-FreshBooks-FreshBooksClient.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,53 +53,53 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
+            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/installation.html" class="">Installation</a>
+    <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/configuration.html" class="">Configuring The API Client</a>
+    <a href="guide/configuration.html#configuring-the-api-client" class="">Configuring The API Client</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/authorization.html" class="">Authorization Flow</a>
+    <a href="guide/authorization.html#authorization-flow" class="">Authorization Flow</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/api-calls/index.html" class="">Making API Calls</a>
+    <a href="guide/api-calls/index.html#making-api-calls" class="">Making API Calls</a>
 </h4>
     <ul class="phpdocumentor-list">
                     <li>
-                <a href="guide/api-calls/current-user.html" class="">Current User</a>
+                <a href="guide/api-calls/current-user.html#current-user" class="">Current User</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/decimals.html" class="">Decimal Values</a>
+                <a href="guide/api-calls/decimals.html#decimal-values" class="">Decimal Values</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/get-list.html" class="">Get and List</a>
+                <a href="guide/api-calls/get-list.html#get-and-list" class="">Get and List</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/create-update-delete.html" class="">Create, Update, and Delete</a>
+                <a href="guide/api-calls/create-update-delete.html#create-update-and-delete" class="">Create, Update, and Delete</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/errors.html" class="">Error Handling</a>
+                <a href="guide/api-calls/errors.html#error-handling" class="">Error Handling</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/builders.html" class="">Pagination, Filters, Includes, and Sorting</a>
+                <a href="guide/api-calls/builders.html#pagination-filters-includes-and-sorting" class="">Pagination, Filters, Includes, and Sorting</a>
                 
             </li>
             </ul>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/examples.html" class="">Examples and Sample Code</a>
+    <a href="guide/examples.html#examples-and-sample-code" class="">Examples and Sample Code</a>
 </h4>
 
                         </section>
@@ -142,8 +143,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/amcintosh.html">amcintosh</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/amcintosh-freshbooks.html">FreshBooks</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/amcintosh-freshbooks-model.html">Model</a></li>
@@ -172,6 +174,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Project.php"><a href="files/src-model-project.html"><abbr title="src/Model/Project.php">Project.php</abbr></a></abbr>
     :
@@ -186,7 +193,8 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/amcintosh-FreshBooks-Model-Project.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -196,207 +204,205 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
                                                                                                         <a class="phpdocumentor-tag-link" href="https://www.freshbooks.com/api/project"> https://www.freshbooks.com/api/project </a>
                     
                                     </dd>
-                        </dl>
+                                            </dl>
 
-
-
-
-<h3 id="interfaces_class_traits">
-    Interfaces, Classes, Traits and Enums
-    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
-</h3>
-
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/amcintosh-FreshBooks-Model-DataModel.html"><abbr title="\amcintosh\FreshBooks\Model\DataModel">DataModel</abbr></a></dt>
-        <dd></dd>
-    
-    
-    
-    </dl>
 
 
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/amcintosh-FreshBooks-Model-Project.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+    <h4 id="toc-interfaces">
+        Interfaces
+        <a href="classes/amcintosh-FreshBooks-Model-Project.html#toc-interfaces" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <dl class="phpdocumentor-table-of-contents">
+                    <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/amcintosh-FreshBooks-Model-DataModel.html"><abbr title="\amcintosh\FreshBooks\Model\DataModel">DataModel</abbr></a></dt>    </dl>
+
+
+
+
+<h4 id="toc-constants">
+    Constants
+    <a href="classes/amcintosh-FreshBooks-Model-Project.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#constant_RESPONSE_FIELD">RESPONSE_FIELD</a>
     <span>
         &nbsp;= &#039;project&#039;                            </span>
 </dt>
-<dd></dd>
 
-                    <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    </dl>
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/amcintosh-FreshBooks-Model-Project.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_active">$active</a>
     <span>
-                        &nbsp;: bool|null            </span>
+                        &nbsp;: bool            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_billedAmount">$billedAmount</a>
     <span>
-                        &nbsp;: <abbr title="\Spryker\DecimalObject\Decimal">Decimal</abbr>|null            </span>
+                        &nbsp;: <abbr title="\amcintosh\FreshBooks\Model\Spryker\DecimalObject\Decimal">Decimal</abbr>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_billedStatus">$billedStatus</a>
     <span>
-                        &nbsp;: string|null            </span>
+                        &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_billingMethod">$billingMethod</a>
     <span>
-                        &nbsp;: string|null            </span>
+                        &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_budget">$budget</a>
     <span>
-                        &nbsp;: int|null            </span>
+                        &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_clientId">$clientId</a>
     <span>
-                        &nbsp;: int|null            </span>
+                        &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_complete">$complete</a>
     <span>
-                        &nbsp;: bool|null            </span>
+                        &nbsp;: bool            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_createdAt">$createdAt</a>
     <span>
-                        &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>|null            </span>
+                        &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_description">$description</a>
     <span>
-                        &nbsp;: string|null            </span>
+                        &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_dueDate">$dueDate</a>
     <span>
-                        &nbsp;: <abbr title="\DateTime">DateTime</abbr>|null            </span>
+                        &nbsp;: <abbr title="\DateTime">DateTime</abbr>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_expenseMarkup">$expenseMarkup</a>
     <span>
-                        &nbsp;: string|null            </span>
+                        &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_fixedPrice">$fixedPrice</a>
     <span>
-                        &nbsp;: <abbr title="\Spryker\DecimalObject\Decimal">Decimal</abbr>|null            </span>
+                        &nbsp;: <abbr title="\amcintosh\FreshBooks\Model\Spryker\DecimalObject\Decimal">Decimal</abbr>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_group">$group</a>
     <span>
                         &nbsp;: <a href="classes/amcintosh-FreshBooks-Model-ProjectGroup.html"><abbr title="\amcintosh\FreshBooks\Model\ProjectGroup">ProjectGroup</abbr></a>|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_id">$id</a>
     <span>
-                        &nbsp;: int|null            </span>
+                        &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_internal">$internal</a>
     <span>
-                        &nbsp;: bool|null            </span>
+                        &nbsp;: bool            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_loggedDuration">$loggedDuration</a>
     <span>
-                        &nbsp;: int|null            </span>
+                        &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_projectManagerId">$projectManagerId</a>
     <span>
                         &nbsp;: int|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_projectType">$projectType</a>
     <span>
-                        &nbsp;: string|null            </span>
+                        &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_rate">$rate</a>
     <span>
-                        &nbsp;: <abbr title="\Spryker\DecimalObject\Decimal">Decimal</abbr>|null            </span>
+                        &nbsp;: <abbr title="\amcintosh\FreshBooks\Model\Spryker\DecimalObject\Decimal">Decimal</abbr>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_retainerId">$retainerId</a>
     <span>
                         &nbsp;: int|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_services">$services</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_title">$title</a>
     <span>
-                        &nbsp;: string|null            </span>
+                        &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_updatedAt">$updatedAt</a>
     <span>
-                        &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>|null            </span>
+                        &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>            </span>
 </dt>
-<dd></dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/amcintosh-FreshBooks-Model-Project.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/amcintosh-FreshBooks-Model-Project.html#method_getContent">getContent()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.</dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -405,11 +411,13 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
             <a href="classes/amcintosh-FreshBooks-Model-Project.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_RESPONSE_FIELD">
         RESPONSE_FIELD
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#constant_RESPONSE_FIELD" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -428,10 +436,8 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -442,6 +448,7 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/amcintosh-FreshBooks-Model-Project.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -453,6 +460,7 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
     <h4 class="phpdocumentor-element__name" id="property_active">
         $active
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_active" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -466,7 +474,7 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">bool|null</span>
+        <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$active</span>
     </code>
 
@@ -487,6 +495,7 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
     <h4 class="phpdocumentor-element__name" id="property_billedAmount">
         $billedAmount
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_billedAmount" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -500,7 +509,7 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\Spryker\DecimalObject\Decimal">Decimal</abbr>|null</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\amcintosh\FreshBooks\Model\Spryker\DecimalObject\Decimal">Decimal</abbr></span>
     <span class="phpdocumentor-signature__name">$billedAmount</span>
     </code>
 
@@ -521,6 +530,7 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
     <h4 class="phpdocumentor-element__name" id="property_billedStatus">
         $billedStatus
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_billedStatus" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -534,7 +544,7 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$billedStatus</span>
     </code>
 
@@ -554,7 +564,8 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_billedStatus#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -564,7 +575,7 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
                                                                                                         <a class="phpdocumentor-tag-link" href="https://www.freshbooks.com/api/project"> https://www.freshbooks.com/api/project </a>
                     
                                     </dd>
-                        </dl>
+                                            </dl>
 
 </article>
                     <article
@@ -577,6 +588,7 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
     <h4 class="phpdocumentor-element__name" id="property_billingMethod">
         $billingMethod
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_billingMethod" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -590,7 +602,7 @@ such as hourly rate, service(s) being offered, projected end date...etc</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$billingMethod</span>
     </code>
 
@@ -613,6 +625,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_budget">
         $budget
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_budget" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -626,7 +639,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">int|null</span>
+        <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$budget</span>
     </code>
 
@@ -647,6 +660,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_clientId">
         $clientId
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_clientId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -660,7 +674,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">int|null</span>
+        <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$clientId</span>
     </code>
 
@@ -681,6 +695,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_complete">
         $complete
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_complete" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -694,7 +709,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">bool|null</span>
+        <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$complete</span>
     </code>
 
@@ -716,6 +731,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_createdAt">
         $createdAt
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_createdAt" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -729,7 +745,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>|null</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr></span>
     <span class="phpdocumentor-signature__name">$createdAt</span>
     </code>
 
@@ -750,6 +766,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_description">
         $description
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_description" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -763,7 +780,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$description</span>
     </code>
 
@@ -784,6 +801,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_dueDate">
         $dueDate
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_dueDate" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -797,7 +815,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\DateTime">DateTime</abbr>|null</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\DateTime">DateTime</abbr></span>
     <span class="phpdocumentor-signature__name">$dueDate</span>
     </code>
 
@@ -819,6 +837,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_expenseMarkup">
         $expenseMarkup
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_expenseMarkup" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -832,7 +851,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$expenseMarkup</span>
     </code>
 
@@ -853,6 +872,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_fixedPrice">
         $fixedPrice
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_fixedPrice" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -866,7 +886,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\Spryker\DecimalObject\Decimal">Decimal</abbr>|null</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\amcintosh\FreshBooks\Model\Spryker\DecimalObject\Decimal">Decimal</abbr></span>
     <span class="phpdocumentor-signature__name">$fixedPrice</span>
     </code>
 
@@ -887,6 +907,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_group">
         $group
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_group" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -904,10 +925,8 @@ by service provided, or a rate for the project.</p>
     <span class="phpdocumentor-signature__name">$group</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -921,6 +940,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_id">
         $id
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -934,7 +954,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">int|null</span>
+        <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$id</span>
     </code>
 
@@ -955,6 +975,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_internal">
         $internal
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_internal" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -968,7 +989,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">bool|null</span>
+        <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$internal</span>
     </code>
 
@@ -989,6 +1010,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_loggedDuration">
         $loggedDuration
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_loggedDuration" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1002,7 +1024,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">int|null</span>
+        <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$loggedDuration</span>
     </code>
 
@@ -1023,6 +1045,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_projectManagerId">
         $projectManagerId
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_projectManagerId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1040,10 +1063,8 @@ by service provided, or a rate for the project.</p>
     <span class="phpdocumentor-signature__name">$projectManagerId</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -1057,6 +1078,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_projectType">
         $projectType
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_projectType" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1070,7 +1092,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
+        <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$projectType</span>
     </code>
 
@@ -1092,6 +1114,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_rate">
         $rate
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_rate" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1105,7 +1128,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\Spryker\DecimalObject\Decimal">Decimal</abbr>|null</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\amcintosh\FreshBooks\Model\Spryker\DecimalObject\Decimal">Decimal</abbr></span>
     <span class="phpdocumentor-signature__name">$rate</span>
     </code>
 
@@ -1126,6 +1149,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_retainerId">
         $retainerId
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_retainerId" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1143,10 +1167,8 @@ by service provided, or a rate for the project.</p>
     <span class="phpdocumentor-signature__name">$retainerId</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
+    
+    
     
 
 </article>
@@ -1160,6 +1182,7 @@ by service provided, or a rate for the project.</p>
     <h4 class="phpdocumentor-element__name" id="property_services">
         $services
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_services" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1173,7 +1196,7 @@ by service provided, or a rate for the project.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$services</span>
     </code>
 
@@ -1195,6 +1218,7 @@ will appear on invoices when the project is billed for.</p>
     <h4 class="phpdocumentor-element__name" id="property_title">
         $title
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_title" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1208,7 +1232,7 @@ will appear on invoices when the project is billed for.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
+        <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$title</span>
     </code>
 
@@ -1229,6 +1253,7 @@ will appear on invoices when the project is billed for.</p>
     <h4 class="phpdocumentor-element__name" id="property_updatedAt">
         $updatedAt
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#property_updatedAt" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1242,7 +1267,7 @@ will appear on invoices when the project is billed for.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>|null</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr></span>
     <span class="phpdocumentor-signature__name">$updatedAt</span>
     </code>
 
@@ -1259,6 +1284,7 @@ will appear on invoices when the project is billed for.</p>
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/amcintosh-FreshBooks-Model-Project.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -1269,6 +1295,7 @@ will appear on invoices when the project is billed for.</p>
     <h4 class="phpdocumentor-element__name" id="method_getContent">
         getContent()
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#method_getContent" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Project.php"><a href="files/src-model-project.html"><abbr title="src/Model/Project.php">Project.php</abbr></a></abbr>
@@ -1283,82 +1310,176 @@ will appear on invoices when the project is billed for.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getContent</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
             </section>
 
-        
+        <div class="phpdocumentor-modal" id="source-view">
+    <div class="phpdocumentor-modal-bg" data-exit-button></div>
+    <div class="phpdocumentor-modal-container">
+        <div class="phpdocumentor-modal-content">
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Model/Project.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+        </div>
+        <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
+    </div>
+</div>
+
     <script type="text/javascript">
-        function loadExternalCodeSnippets(line) {
-            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach((pre) => {
-                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
-                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
-                var language = 'php';
+        (function () {
+            function loadExternalCodeSnippet(el, url, line) {
+                Array.prototype.slice.call(el.querySelectorAll('pre[data-src]')).forEach((pre) => {
+                    const src = url || pre.getAttribute('data-src').replace(/\\/g, '/');
+                    const language = 'php';
 
-                var code = document.createElement('code');
-                code.className = 'language-' + language;
+                    const code = document.createElement('code');
+                    code.className = 'language-' + language;
+                    pre.textContent = '';
+                    pre.setAttribute('data-line', line)
+                    code.textContent = 'Loading…';
+                    pre.appendChild(code);
 
-                pre.textContent = '';
+                    var xhr = new XMLHttpRequest();
 
-                pre.setAttribute('data-line', line)
-                code.textContent = 'Loading…';
+                    xhr.open('GET', src, true);
 
-                pre.appendChild(code);
-
-                var xhr = new XMLHttpRequest();
-
-                xhr.open('GET', src, true);
-
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4) {
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState !== 4) {
+                            return;
+                        }
 
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
-
                             Prism.highlightElement(code);
+                            return;
                         }
-                        else if (xhr.status >= 400) {
+
+                        if (xhr.status === 404) {
+                            code.textContent = '✖ Error: File could not be found';
+                            return;
+                        }
+
+                        if (xhr.status >= 400) {
                             code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                            return;
                         }
-                        else {
-                            code.textContent = '✖ Error: File does not exist, is empty or trying to view from localhost';
-                        }
+
+                        code.textContent = '✖ Error: An unknown error occurred';
+                    };
+
+                    xhr.send(null);
+                });
+            }
+
+            const modalButtons = document.querySelectorAll("[data-modal]");
+            const openedAsLocalFile = window.location.protocol === 'file:';
+            if (modalButtons.length > 0 && openedAsLocalFile) {
+                console.warn(
+                    'Viewing the source code is unavailable because you are opening this page from the file:// scheme; ' +
+                    'browsers block XHR requests when a page is opened this way'
+                );
+            }
+
+            modalButtons.forEach(function (trigger) {
+                if (openedAsLocalFile) {
+                    trigger.setAttribute("hidden", "hidden");
+                }
+
+                trigger.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const modal = document.getElementById(trigger.dataset.modal);
+                    if (!modal) {
+                        console.error(`Modal with id "${trigger.dataset.modal}" could not be found`);
+                        return;
                     }
-                };
+                    modal.classList.add("phpdocumentor-modal__open");
 
-                xhr.send(null);
-            });
-        }
-
-        var modals = document.querySelectorAll("[data-modal]");
-
-        modals.forEach(function (trigger) {
-            trigger.addEventListener("click", function (event) {
-                //event.preventDefault();
-                const modal = document.getElementById(trigger.dataset.modal);
-                modal.classList.add("phpdocumentor-modal__open");
-                loadExternalCodeSnippets(trigger.dataset.line)
-                const exits = modal.querySelectorAll("[data-exit-button]");
-                exits.forEach(function (exit) {
-                    exit.addEventListener("click", function (event) {
-                        event.preventDefault();
-                        modal.classList.remove("phpdocumentor-modal__open");
+                    loadExternalCodeSnippet(modal, trigger.dataset.src || null, trigger.dataset.line)
+                    const exits = modal.querySelectorAll("[data-exit-button]");
+                    exits.forEach(function (exit) {
+                        exit.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            modal.classList.remove("phpdocumentor-modal__open");
+                        });
                     });
                 });
             });
-        });
+        })();
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                        <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#toc-constants">Constants</a></li>
+                                                            <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#constant_RESPONSE_FIELD">RESPONSE_FIELD</a></li>
+                                            </ul>
+                </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_active">$active<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_billedAmount">$billedAmount<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_billedStatus">$billedStatus<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_billingMethod">$billingMethod<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_budget">$budget<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_clientId">$clientId<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_complete">$complete<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_createdAt">$createdAt<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_description">$description<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_dueDate">$dueDate<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_expenseMarkup">$expenseMarkup<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_fixedPrice">$fixedPrice<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_group">$group<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_id">$id<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_internal">$internal<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_loggedDuration">$loggedDuration<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_projectManagerId">$projectManagerId<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_projectType">$projectType<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_rate">$rate<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_retainerId">$retainerId<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_services">$services<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_title">$title<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                                    <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#property_updatedAt">$updatedAt<a href="classes/amcintosh-FreshBooks-Model-Project.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/amcintosh-FreshBooks-Model-Project.html#method_getContent">getContent()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -1369,7 +1490,6 @@ will appear on invoices when the project is billed for.</p>
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/amcintosh-FreshBooks-Model-Project.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

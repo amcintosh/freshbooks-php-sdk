@@ -326,10 +326,20 @@ Search.appendIndex(
             "summary": "FreshBooks\u0020taxes\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete.",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_taxes"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003Acallbacks\u0028\u0029",
+            "name": "callbacks",
+            "summary": "FreshBooks\u0020callbacks\u0020\u0028webhook\u0020callbacks\u0029\u0020resource\u0020with\u0020calls\u0020to\nget,\u0020list,\u0020create,\u0020update,\u0020delete,\u0020verify,\u0020resendVerification",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_callbacks"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003Aprojects\u0028\u0029",
             "name": "projects",
             "summary": "FreshBooks\u0020projects\u0020resource\u0020with\u0020calls\u0020to\u0020get,\u0020list,\u0020create,\u0020update,\u0020delete.",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_projects"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003AinvoicePaymentOptions\u0028\u0029",
+            "name": "invoicePaymentOptions",
+            "summary": "FreshBooks\u0020invoice\u0020payment\u0020options\u0020resource\u0020with\u0020calls\u0020to\u0020default,\u0020get,\u0020create.",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_invoicePaymentOptions"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003A\u0024httpClient",
             "name": "httpClient",
@@ -620,6 +630,61 @@ Search.appendIndex(
             "name": "phoneNumber",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-BusinessPhone.html#property_phoneNumber"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Callback",
+            "name": "Callback",
+            "summary": "Webhook\u0020callback\u0020subscription\u0020model.",
+            "url": "classes/amcintosh-FreshBooks-Model-Callback.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Callback\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
+            "url": "classes/amcintosh-FreshBooks-Model-Callback.html#method_getContent"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Callback\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Callback.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Callback\u003A\u003A\u0024callbackId",
+            "name": "callbackId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Callback.html#property_callbackId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Callback\u003A\u003A\u0024event",
+            "name": "event",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Callback.html#property_event"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Callback\u003A\u003A\u0024updatedAt",
+            "name": "updatedAt",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Callback.html#property_updatedAt"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Callback\u003A\u003A\u0024uri",
+            "name": "uri",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Callback.html#property_uri"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Callback\u003A\u003A\u0024verified",
+            "name": "verified",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Callback.html#property_verified"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\CallbackList",
+            "name": "CallbackList",
+            "summary": "Results\u0020of\u0020callbacks\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020callbacks\u0020and\u0020pagination\u0020data.",
+            "url": "classes/amcintosh-FreshBooks-Model-CallbackList.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\CallbackList\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-CallbackList.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\CallbackList\u003A\u003A\u0024callbacks",
+            "name": "callbacks",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-CallbackList.html#property_callbacks"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Caster\\AccountingDateTimeImmutableCaster",
             "name": "AccountingDateTimeImmutableCaster",
@@ -1685,6 +1750,71 @@ Search.appendIndex(
             "name": "invoices",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-InvoiceList.html#property_invoices"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions",
+            "name": "InvoicePaymentOptions",
+            "summary": "In\u0020FreshBooks,\u0020invoices\u0020can\u0020be\u0020paid\u0020online\u0020via\u0020a\u0020variety\u0020of\u0020payment\u0020gateways\nsetup\u0020on\u0020the\u0020sender\u2019s\u0020account.\u0020In\u0020order\u0020for\u0020this\u0020to\u0020be\u0020available\u0020on\u0020an\u0020invoice,\nthe\u0020online\u0020payments\u0020must\u0020be\u0020set\u0020up\u0020through\u0020a\u0020separate\u0020call\u0020after\u0020the\u0020invoice\u0020has\nbeen\u0020created.",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#method_getContent"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A\u0024entityId",
+            "name": "entityId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#property_entityId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A\u0024entityType",
+            "name": "entityType",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#property_entityType"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A\u0024gatewayName",
+            "name": "gatewayName",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#property_gatewayName"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A\u0024hasCreditCard",
+            "name": "hasCreditCard",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#property_hasCreditCard"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A\u0024hasAchTransfer",
+            "name": "hasAchTransfer",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#property_hasAchTransfer"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A\u0024hasAcssDebit",
+            "name": "hasAcssDebit",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#property_hasAcssDebit"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A\u0024hasBacsDebit",
+            "name": "hasBacsDebit",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#property_hasBacsDebit"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A\u0024hasSepaDebit",
+            "name": "hasSepaDebit",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#property_hasSepaDebit"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A\u0024hasPaypalSmartCheckout",
+            "name": "hasPaypalSmartCheckout",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#property_hasPaypalSmartCheckout"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A\u0024allowPartialPayments",
+            "name": "allowPartialPayments",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#property_allowPartialPayments"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation",
             "name": "InvoicePresentation",
@@ -2771,6 +2901,101 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Resource-BaseResource.html#constant_DELETE"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\EventsResource",
+            "name": "EventsResource",
+            "summary": "Resource\u0020for\u0020calls\u0020to\u0020\/events\u0020endpoints.",
+            "url": "classes/amcintosh-FreshBooks-Resource-EventsResource.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\EventsResource\u003A\u003AgetUrl\u0028\u0029",
+            "name": "getUrl",
+            "summary": "The\u0020the\u0020url\u0020to\u0020the\u0020events\u0020resource.",
+            "url": "classes/amcintosh-FreshBooks-Resource-EventsResource.html#method_getUrl"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\EventsResource\u003A\u003AhandleError\u0028\u0029",
+            "name": "handleError",
+            "summary": "Create\u0020a\u0020FreshBooksException\u0020from\u0020the\u0020json\u0020response\u0020from\u0020the\u0020events\u0020endpoint.",
+            "url": "classes/amcintosh-FreshBooks-Resource-EventsResource.html#method_handleError"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\EventsResource\u003A\u003AresendVerification\u0028\u0029",
+            "name": "resendVerification",
+            "summary": "Tell\u0020FreshBooks\u0020to\u0020resend\u0020the\u0020verification\u0020webhook\u0020for\u0020the\u0020callback",
+            "url": "classes/amcintosh-FreshBooks-Resource-EventsResource.html#method_resendVerification"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\EventsResource\u003A\u003Averify\u0028\u0029",
+            "name": "verify",
+            "summary": "Verify\u0020webhook\u0020callback\u0020by\u0020making\u0020a\u0020put\u0020request",
+            "url": "classes/amcintosh-FreshBooks-Resource-EventsResource.html#method_verify"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource",
+            "name": "PaymentResource",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003AgetUrl\u0028\u0029",
+            "name": "getUrl",
+            "summary": "The\u0020the\u0020url\u0020to\u0020the\u0020payment\u0020resource.",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#method_getUrl"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003AcreateResponseError\u0028\u0029",
+            "name": "createResponseError",
+            "summary": "Parse\u0020the\u0020json\u0020response\u0020for\u0020payments\u0020endpoint\u0020errors\u0020and\u0020create\u0020a\u0020FreshBooksException\u0020from\u0020it.",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#method_createResponseError"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003AmakeRequest\u0028\u0029",
+            "name": "makeRequest",
+            "summary": "Make\u0020a\u0020request\u0020against\u0020the\u0020payments\u0020resource\u0020and\u0020return\u0020an\u0020array\u0020of\u0020the\u0020json\u0020response.",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#method_makeRequest"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003Adefaults\u0028\u0029",
+            "name": "defaults",
+            "summary": "Get\u0020the\u0020default\u0020settings\u0020for\u0020an\u0020account\u0020resource.",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#method_defaults"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Get\u0020a\u0020single\u0020resource\u0020with\u0020the\u0020corresponding\u0020id.",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#method_get"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Create\u0020a\u0020resource\u0020from\u0020either\u0020an\u0020array\u0020or\u0020a\u0020DataModel\u0020object.",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#method_create"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003A\u0024httpClient",
+            "name": "httpClient",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#property_httpClient"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003A\u0024resourcePath",
+            "name": "resourcePath",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#property_resourcePath"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003A\u0024subResourcePath",
+            "name": "subResourcePath",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#property_subResourcePath"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003A\u0024defaultsPath",
+            "name": "defaultsPath",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#property_defaultsPath"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003A\u0024staticPathParams",
+            "name": "staticPathParams",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#property_staticPathParams"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\PaymentResource\u003A\u003A\u0024model",
+            "name": "model",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-PaymentResource.html#property_model"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource",
             "name": "ProjectResource",
             "summary": "",
@@ -2793,7 +3018,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003AmakeRequest\u0028\u0029",
             "name": "makeRequest",
-            "summary": "Make\u0020a\u0020request\u0020against\u0020the\u0020accounting\u0020resource\u0020and\u0020return\u0020an\u0020array\u0020of\u0020the\u0020json\u0020response.",
+            "summary": "Make\u0020a\u0020request\u0020against\u0020the\u0020project\u0020resource\u0020and\u0020return\u0020an\u0020array\u0020of\u0020the\u0020json\u0020response.",
             "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#method_makeRequest"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\ProjectResource\u003A\u003Aget\u0028\u0029",

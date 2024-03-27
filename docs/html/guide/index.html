@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-                landingpage
-            true
-                <title>freshbooks-php-sdk</title>
+    <meta name="layout" content="landingpage" />
+<meta name="tada" content="true" />
+        <title>freshbooks-php-sdk</title>
     
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -55,53 +56,53 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
+            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/installation.html" class="">Installation</a>
+    <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/configuration.html" class="">Configuring The API Client</a>
+    <a href="guide/configuration.html#configuring-the-api-client" class="">Configuring The API Client</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/authorization.html" class="">Authorization Flow</a>
+    <a href="guide/authorization.html#authorization-flow" class="">Authorization Flow</a>
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/api-calls/index.html" class="">Making API Calls</a>
+    <a href="guide/api-calls/index.html#making-api-calls" class="">Making API Calls</a>
 </h4>
     <ul class="phpdocumentor-list">
                     <li>
-                <a href="guide/api-calls/current-user.html" class="">Current User</a>
+                <a href="guide/api-calls/current-user.html#current-user" class="">Current User</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/decimals.html" class="">Decimal Values</a>
+                <a href="guide/api-calls/decimals.html#decimal-values" class="">Decimal Values</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/get-list.html" class="">Get and List</a>
+                <a href="guide/api-calls/get-list.html#get-and-list" class="">Get and List</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/create-update-delete.html" class="">Create, Update, and Delete</a>
+                <a href="guide/api-calls/create-update-delete.html#create-update-and-delete" class="">Create, Update, and Delete</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/errors.html" class="">Error Handling</a>
+                <a href="guide/api-calls/errors.html#error-handling" class="">Error Handling</a>
                 
             </li>
                     <li>
-                <a href="guide/api-calls/builders.html" class="">Pagination, Filters, Includes, and Sorting</a>
+                <a href="guide/api-calls/builders.html#pagination-filters-includes-and-sorting" class="">Pagination, Filters, Includes, and Sorting</a>
                 
             </li>
             </ul>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="guide/examples.html" class="">Examples and Sample Code</a>
+    <a href="guide/examples.html#examples-and-sample-code" class="">Examples and Sample Code</a>
 </h4>
 
                         </section>
@@ -145,55 +146,63 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                        
 <div class="section" id="documentation">
-<h1>Documentation</h1>
-<p>Welcome to the documentation for phpDocumentor.</p>
-<p>phpDocumentor is the de-facto documentation application for PHP projects. Your project can benefit too from more
+    <h1>Documentation</h1>
+
+            <p>Welcome to the documentation for phpDocumentor.</p>
+            <p>phpDocumentor is the de-facto documentation application for PHP projects. Your project can benefit too from more
 than 20 years of experience and setting the standard for documenting PHP Applications.</p>
-<p>With these tutorials, guides and references we aim to provide you with all the information that you need to optimally
+            <p>With these tutorials, guides and references we aim to provide you with all the information that you need to optimally
 document your code and leverage phpDocumentor to generate an extensive set of documentation for your application.</p>
-<div class="section" id="what-does-it-do">
-<h2>What does it do?</h2>
-<p>phpDocumentor analyzes the code of your application and generates a set of documentation that describes what each
+            <div class="section" id="what-does-it-do">
+    <h2>What does it do?</h2>
+
+            <p>phpDocumentor analyzes the code of your application and generates a set of documentation that describes what each
 element in your code does, what it expects and what it returns. With it, you can easily navigate through your codebase
 and see how it works without having to read the actual code.</p>
-<p>For an example on how that would look like, check the sidebar in
+            <p>For an example on how that would look like, check the sidebar in
 <a href="https://docs.phpdoc.org/latest/">our own documentation</a>.</p>
-<div class="phpdocumentor-admonition -hint ">
+            <div class="phpdocumentor-admonition hint">
                     <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
             <article>
         <p>There is a new feature underway to render handwritten documentation, like the one you are reading now. Check this
 space for updates in the coming months.</p>
-
     </article>
 </div>
-</div>
-<div class="section" id="where-to-start">
-<h2>Where to start?</h2>
-<p>We have divided the documentation into 4 sections:</p>
 
+    </div>
+
+            <div class="section" id="where-to-start">
+    <h2>Where to start?</h2>
+
+            <p>We have divided the documentation into 4 sections:</p>
+            
     
 <ol>
     <li>
-            getting-started/index, which is a series of concise tutorials that will help you get running within minutes.
-        </li>
-    <li>
-            guides/index, these chapters provide in-depth information in the usage and all features of phpDocumentor.
-        </li>
-    <li>
-            references/index, here you can find the nitty-gritty lists of commonly used components, options and
-configuration.
-        </li>
-    <li>
-            internals/index, care to contribute to phpDocumentor or interested in its architecture? Then this section
-is for you.
-        </li>
-</ol>
-</div>
+, which is a series of concise tutorials that will help you get running within minutes.</li>
 
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+    <li>
+, these chapters provide in-depth information in the usage and all features of phpDocumentor.</li>
+
+    <li>
+, here you can find the nitty-gritty lists of commonly used components, options and
+configuration.</li>
+
+    <li>
+, care to contribute to phpDocumentor or interested in its architecture? Then this section
+is for you.</li>
+
+</ol>
+
+    </div>
+
+    </div>
+
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -204,9 +213,8 @@ is for you.
         </section>
     </section>
 </section>
-            </div>
         </div>
-        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="guide/index.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
