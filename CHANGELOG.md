@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Support for PHP 8.3
+
 ## 0.7.0
 
 - Added Invoice Payment Options resource
