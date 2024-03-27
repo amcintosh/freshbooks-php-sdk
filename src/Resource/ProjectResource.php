@@ -80,7 +80,7 @@ class ProjectResource extends BaseResource
     }
 
     /**
-     * Make a request against the accounting resource and return an array of the json response.
+     * Make a request against the project resource and return an array of the json response.
      * Throws a FreshBooksException if the response is not a 200 or if the response cannot be parsed.
      *
      * @param  string $method

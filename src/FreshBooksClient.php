@@ -27,6 +27,7 @@ use amcintosh\FreshBooks\Model\ExpenseCategoryList;
 use amcintosh\FreshBooks\Model\Identity;
 use amcintosh\FreshBooks\Model\Invoice;
 use amcintosh\FreshBooks\Model\InvoiceList;
+use amcintosh\FreshBooks\Model\invoicePaymentOptions;
 use amcintosh\FreshBooks\Model\Item;
 use amcintosh\FreshBooks\Model\ItemList;
 use amcintosh\FreshBooks\Model\Payment;
@@ -40,6 +41,7 @@ use amcintosh\FreshBooks\Model\TaxList;
 use amcintosh\FreshBooks\Resource\AccountingResource;
 use amcintosh\FreshBooks\Resource\AuthResource;
 use amcintosh\FreshBooks\Resource\EventsResource;
+use amcintosh\FreshBooks\Resource\PaymentResource;
 use amcintosh\FreshBooks\Resource\ProjectResource;
 
 class FreshBooksClient
@@ -324,5 +326,22 @@ class FreshBooksClient
     public function projects(): ProjectResource
     {
         return new ProjectResource($this->httpClient, 'projects', 'projects', Project::class, ProjectList::class);
+    }
+
+    /**
+     * FreshBooks invoice payment options resource with calls to default, get, create.
+     *
+     * @return PaymentResource
+     */
+    public function invoicePaymentOptions(): PaymentResource
+    {
+        return new PaymentResource(
+            $this->httpClient,
+            'invoice',
+            InvoicePaymentOptions::class,
+            subResourcePath: 'payment_options',
+            defaultsPath: 'payment_options',
+            staticPathParams: 'entity_type=invoice',
+        );
     }
 }
