@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.7.0
+
 - Added Invoice Payment Options resource
 - Added Webhook Callback resource
 - Remove warnings in PHP 8.2
