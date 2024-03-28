@@ -178,7 +178,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksClientConfigException",
             "name": "FreshBooksClientConfigException",
-            "summary": "",
+            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020SDK\u0020has\u0020not\u0020been\u0020configured\u0020properly.",
             "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksClientConfigException.html"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksClientConfigException\u003A\u003A__construct\u0028\u0029",
@@ -188,7 +188,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksException",
             "name": "FreshBooksException",
-            "summary": "",
+            "summary": "Exception\u0020thrown\u0020when\u0020the\u0020FreshBooks\u0020API\u0020returns\u0020an\u0020error.",
             "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksException.html"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksException\u003A\u003A__construct\u0028\u0029",
@@ -228,7 +228,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksNotImplementedException",
             "name": "FreshBooksNotImplementedException",
-            "summary": "",
+            "summary": "Exception\u0020thrown\u0020when\u0020attempting\u0020to\u0020make\u0020an\u0020API\u0020call\u0020that\u0020is\u0020not\u0020supported.",
             "url": "classes/amcintosh-FreshBooks-Exception-FreshBooksNotImplementedException.html"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Exception\\FreshBooksNotImplementedException\u003A\u003A__construct\u0028\u0029",
@@ -238,7 +238,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient",
             "name": "FreshBooksClient",
-            "summary": "",
+            "summary": "SDK\u0020Client.",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003A__construct\u0028\u0029",
