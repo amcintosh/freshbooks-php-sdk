@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Exception;
 
+/**
+ * Exception thrown when the FreshBooks API returns an error.
+ *
+ * @package amcintosh\FreshBooks\Exception
+ */
 final class FreshBooksException extends \Exception
 {
     public ?string $rawResponse;

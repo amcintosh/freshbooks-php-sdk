@@ -8,6 +8,8 @@ use DateTimeImmutable;
 
 /**
  * Configuration object for FreshBooks API Client
+ *
+ * @package amcintosh\FreshBooks
  */
 class FreshBooksClientConfig
 {

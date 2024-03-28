@@ -44,6 +44,11 @@ use amcintosh\FreshBooks\Resource\EventsResource;
 use amcintosh\FreshBooks\Resource\PaymentResource;
 use amcintosh\FreshBooks\Resource\ProjectResource;
 
+/**
+ * SDK Client.
+ *
+ * @package amcintosh\FreshBooks
+ */
 class FreshBooksClient
 {
     protected ClientInterface $httpClient;

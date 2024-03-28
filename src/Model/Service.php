@@ -27,8 +27,8 @@ use amcintosh\FreshBooks\Model\Caster\ISODateTimeImmutableCaster;
  *
  * Services automatically get converted to tasks for inclusion on invoices.
  *
- * @link https://www.freshbooks.com/api/project
- * @see <a href="https://www.freshbooks.com/api/services">FreshBooks API - Services</a>
+ * @package amcintosh\FreshBooks\Model
+ * @link https://www.freshbooks.com/api/services
  */
 class Service extends DataTransferObject
 {
