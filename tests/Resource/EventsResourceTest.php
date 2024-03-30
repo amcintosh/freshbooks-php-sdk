@@ -46,17 +46,8 @@ final class EventsResourceTest extends TestCase
         $mockHttpClient = $this->getMockHttpClient(
             404,
             [
-                'code' => 5,
-                'message' => 'Requested resource could not be found.',
-                'details' => [
-                    [
-                        '@type' => 'type.googleapis.com/google.rpc.Help',
-                        'links' => [
-                            'description' => 'API Documentation',
-                            'url' => 'https://www.freshbooks.com/api/webhooks',
-                        ]
-                    ]
-                ]
+                'errno' => 404,
+                'message' => 'Requested resource could not be found.'
             ]
         );
 
@@ -79,26 +70,9 @@ final class EventsResourceTest extends TestCase
         $mockHttpClient = $this->getMockHttpClient(
             400,
             [
-                'code' => 3,
-                'message' => 'Invalid data in this request.',
-                'details' => [
-                    [
-                        '@type' => 'type.googleapis.com/google.rpc.BadRequest',
-                        'fieldViolations' => [
-                            [
-                                'field' => 'event',
-                                'description' => 'Value error, Unrecognized event.'
-                            ]
-                        ]
-                    ],
-                    [
-                        '@type' => 'type.googleapis.com/google.rpc.Help',
-                        'links' => [
-                            'description' => 'API Documentation',
-                            'url' => 'https://www.freshbooks.com/api/webhooks',
-                        ]
-                    ]
-                ]
+                'errno' => 3,
+                'message' => 'The request was well-formed but was unable to be followed due to semantic errors.'
+                    . '\nevent: Value error, Unrecognized event.'
             ]
         );
 
@@ -108,13 +82,11 @@ final class EventsResourceTest extends TestCase
             $resource->create($this->accountId, data: []);
             $this->fail('FreshBooksException was not thrown');
         } catch (FreshBooksException $e) {
-            $this->assertSame('Invalid data in this request.', $e->getMessage());
+            $this->assertSame('The request was well-formed but was unable to be followed due to semantic errors.'
+                . '\nevent: Value error, Unrecognized event.', $e->getMessage());
             $this->assertSame(400, $e->getCode());
             $this->assertNull($e->getErrorCode());
-            $this->assertSame([[
-                'field' => 'event',
-                'description' => 'Value error, Unrecognized event.'
-            ]], $e->getErrorDetails());
+            $this->assertSame([], $e->getErrorDetails());
         }
     }
 
