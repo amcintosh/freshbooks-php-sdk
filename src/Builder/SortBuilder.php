@@ -87,7 +87,7 @@ class SortBuilder implements BuilderInterface
             return '';
         }
 
-        if (is_null($resourceName) or in_array($resourceName, ['AccountingResource', 'EventsResource'], true)) {
+        if (is_null($resourceName) || in_array($resourceName, ['AccountingResource', 'EventsResource'], true)) {
             $suffix = $this->isAscending ? '_asc' : '_desc';
             return '&sort=' . $this->sortKey . $suffix;
         }

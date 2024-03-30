@@ -49,7 +49,7 @@ class IncludesBuilder implements BuilderInterface
     {
         $queryString = '';
         foreach ($this->includes as $include) {
-            if (is_null($resourceName) or in_array($resourceName, ['AccountingResource', 'EventsResource'], true)) {
+            if (is_null($resourceName) || in_array($resourceName, ['AccountingResource', 'EventsResource'], true)) {
                 $queryString .= "&include[]={$include}";
             } else {
                 $queryString .= "&{$include}=true";

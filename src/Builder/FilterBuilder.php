@@ -188,7 +188,7 @@ class FilterBuilder implements BuilderInterface
     public function build(string $resourceName = null): string
     {
         $isAccountingLike = false;
-        if (is_null($resourceName) or in_array($resourceName, ['AccountingResource', 'EventsResource'], true)) {
+        if (is_null($resourceName) || in_array($resourceName, ['AccountingResource', 'EventsResource'], true)) {
             $isAccountingLike = true;
         }
         $queryString = '';
