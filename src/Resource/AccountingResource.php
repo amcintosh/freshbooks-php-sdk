@@ -95,56 +95,6 @@ class AccountingResource extends BaseResource
     }
 
     /**
-     * Parse the json response for old-style accounting endpoint errors and create a FreshBooksException from it.
-     *
-     * @param  int $statusCode HTTP status code
-     * @param  array $responseData The json-parsed response
-     * @param  string $rawRespone The raw response body
-     * @return void
-     */
-    private function createOldResponseError(int $statusCode, array $responseData, string $rawRespone): void
-    {
-        $errors = $responseData['response']['errors'];
-        if (array_key_exists(0, $errors)) {
-            $message = $errors[0]['message'] ?? 'Unknown error';
-            $errorCode = $errors[0]['errno'] ?? null;
-            throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $errors);
-        }
-
-        $message = $errors['message'] ?? 'Unknown error';
-        $errorCode = $errors['errno'] ?? null;
-        throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $errors);
-    }
-
-    /**
-     * Parse the json response for new-style accounting endpoint errors and create a FreshBooksException from it.
-     *
-     * @param  int $statusCode HTTP status code
-     * @param  array $responseData The json-parsed response
-     * @param  string $rawRespone The raw response body
-     * @return void
-     */
-    private function createNewResponseError(int $statusCode, array $responseData, string $rawRespone): void
-    {
-        $message = $responseData['message'];
-        $errorCode = null;
-        $details = [];
-
-        foreach ($responseData['details'] as $detail) {
-            if (in_array('type.googleapis.com/google.rpc.ErrorInfo', $detail)) {
-                $errorCode = intval($detail['reason']) ?? null;
-                if (array_key_exists('metadata', $detail)) {
-                    $details[] = $detail['metadata'];
-                    if (array_key_exists('message', $detail['metadata'])) {
-                        $message = $detail['metadata']['message'];
-                    }
-                }
-            }
-        }
-        throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $details);
-    }
-
-    /**
      * Create a FreshBooksException from the json response from the accounting endpoint.
      *
      * @param  int $statusCode HTTP status code
@@ -155,12 +105,17 @@ class AccountingResource extends BaseResource
     protected function handleError(int $statusCode, array $responseData, string $rawRespone): void
     {
         if (array_key_exists('response', $responseData) && array_key_exists('errors', $responseData['response'])) {
-            $this->createOldResponseError($statusCode, $responseData, $rawRespone);
-        } elseif (array_key_exists('message', $responseData) && array_key_exists('code', $responseData)) {
-            $this->createNewResponseError($statusCode, $responseData, $rawRespone);
-        } else {
-            throw new FreshBooksException('Unknown error', $statusCode, null, $rawRespone);
+            $errors = $responseData['response']['errors'];
+            if (array_key_exists(0, $errors)) {
+                $message = $errors[0]['message'] ?? 'Unknown error';
+                $errorCode = $errors[0]['errno'] ?? null;
+                throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $errors);
+            }
+            $message = $errors['message'] ?? 'Unknown error';
+            $errorCode = $errors['errno'] ?? null;
+            throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $errors);
         }
+        throw new FreshBooksException('Unknown error', $statusCode, null, $rawRespone);
     }
 
     private function rejectMissing(string $name): void

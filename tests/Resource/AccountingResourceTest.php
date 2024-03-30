@@ -93,7 +93,7 @@ final class AccountingResourceTest extends TestCase
         $resource->get($this->accountId, $clientId);
     }
 
-    public function testGetNotFoundOldError(): void
+    public function testGetNotFoundError(): void
     {
         $clientId = 12345;
         $mockHttpClient = $this->getMockHttpClient(
@@ -124,53 +124,6 @@ final class AccountingResourceTest extends TestCase
                         'message' => 'Client not found.',
                         'object' => 'client',
                         'value' => '12345'
-                    ]
-                ],
-                $e->getErrorDetails()
-            );
-        }
-    }
-
-    public function testGetNotFoundNewError(): void
-    {
-        $clientId = 12345;
-        $mockHttpClient = $this->getMockHttpClient(
-            404,
-            [
-                'code' => 5,
-                'message' => 'Request failed with status_code: 404',
-                'details' => [
-                    [
-                        '@type' => 'type.googleapis.com/google.rpc.ErrorInfo',
-                        'reason' => '1012',
-                        'domain' => 'accounting.api.freshbooks.com',
-                        'metadata' => [
-                            'object' => 'client',
-                            'message' => 'Client not found.',
-                            'value' => '12345',
-                            'field' => 'userid'
-                        ]
-                    ]
-                ]
-            ]
-        );
-
-        $resource = new AccountingResource($mockHttpClient, 'users/clients', Client::class, ClientList::class);
-
-        try {
-            $resource->get($this->accountId, $clientId);
-            $this->fail('FreshBooksException was not thrown');
-        } catch (FreshBooksException $e) {
-            $this->assertSame('Client not found.', $e->getMessage());
-            $this->assertSame(404, $e->getCode());
-            $this->assertSame(1012, $e->getErrorCode());
-            $this->assertSame(
-                [
-                    [
-                        'object' => 'client',
-                        'message' => 'Client not found.',
-                        'value' => '12345',
-                        'field' => 'userid'
                     ]
                 ],
                 $e->getErrorDetails()
