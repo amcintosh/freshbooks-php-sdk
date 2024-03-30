@@ -45,23 +45,17 @@ class EventsResource extends AccountingResource
      */
     protected function handleError(int $statusCode, array $responseData, string $rawRespone): void
     {
-        if (!array_key_exists('message', $responseData) || !array_key_exists('code', $responseData)) {
+        if (!array_key_exists('message', $responseData)) {
             throw new FreshBooksException('Unknown error', $statusCode, null, $rawRespone);
         }
 
         $message = $responseData['message'];
-        $errorCode = null;
         $details = [];
-
-        foreach ($responseData['details'] as $detail) {
-            if (
-                in_array('type.googleapis.com/google.rpc.BadRequest', $detail)
-                && array_key_exists('fieldViolations', $detail)
-            ) {
-                $details = $detail['fieldViolations'];
-            }
+        if (array_key_exists('details', $responseData)) {
+            $details = $responseData['details'];
         }
-        throw new FreshBooksException($message, $statusCode, null, $rawRespone, $errorCode, $details);
+
+        throw new FreshBooksException($message, $statusCode, null, $rawRespone, null, $details);
     }
 
     /**
