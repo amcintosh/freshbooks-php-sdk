@@ -4,6 +4,7 @@
     <meta charset="utf-8">
             <title>freshbooks-php-sdk</title>
     
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
@@ -148,160 +149,79 @@
 </aside>
 
             <div class="phpdocumentor-column -nine phpdocumentor-content">
-                                <section>
-                                        <ul class="phpdocumentor-breadcrumbs">
-    </ul>
+                                        <div class="section" id="webhook-callbacks">
+    <h1>Webhook Callbacks</h1>
 
-    <article class="phpdocumentor-element -file">
-        <h2 class="phpdocumentor-content__title">Tax.php</h2>
+            <p>The client supports registration and verification of FreshBooks&#039; API Webhook Callbacks.
+See <a href="https://www.freshbooks.com/api/webhooks">FreshBooks&#039; documentation</a> for more information.</p>
+            <p>FreshBooks will send webhooks as a POST request to the registered URI with form data:</p>
+            <pre><code class="language-http">name=invoice.create&amp;object_id=1234567&amp;account_id=6BApk&amp;business_id=6543&amp;identity_id=1234user_id=1</code></pre>
+            <div class="section" id="registration">
+    <h2>Registration</h2>
 
-        
+            <pre><code class="language-php">$clientData = array(
+    &#039;event&#039; =&gt; &#039;invoice.create&#039;,
+    &#039;uri&#039; =&gt; &#039;http://your_server.com/webhooks/ready&#039;
+);
 
+$webhook = $freshBooksClient-&gt;callbacks()-&gt;create($accountId, data: $clientData);
 
-
-
-
-<h3 id="toc">
-    Table of Contents
-    <a href="files/src-model-tax.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
-
-</h3>
-
-
-
-
-    <h4 id="toc-classes">
-        Classes
-        <a href="files/src-model-tax.html#toc-classes" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-Tax.html"><abbr title="\amcintosh\FreshBooks\Model\Tax">Tax</abbr></a></dt><dd>System-wide taxes for invoices.</dd>    </dl>
-
-
-
-
-
-
-
-
-
-
-        
-
-        
-        <div class="phpdocumentor-modal" id="source-view">
-    <div class="phpdocumentor-modal-bg" data-exit-button></div>
-    <div class="phpdocumentor-modal-container">
-        <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Model/Tax.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
-        </div>
-        <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
+echo $webhook-&gt;callbackId;  // 2001
+echo $webhook-&gt;verified;     // false</code></pre>
     </div>
-</div>
 
-    <script type="text/javascript">
-        (function () {
-            function loadExternalCodeSnippet(el, url, line) {
-                Array.prototype.slice.call(el.querySelectorAll('pre[data-src]')).forEach((pre) => {
-                    const src = url || pre.getAttribute('data-src').replace(/\\/g, '/');
-                    const language = 'php';
+            <div class="section" id="registration-verification">
+    <h2>Registration Verification</h2>
 
-                    const code = document.createElement('code');
-                    code.className = 'language-' + language;
-                    pre.textContent = '';
-                    pre.setAttribute('data-line', line)
-                    code.textContent = 'Loading…';
-                    pre.appendChild(code);
+            <p>Registration of a webhook will cause FreshBooks to send a webhook to the specified URI with a
+verification code. The webhook will not be active until you send that code back to FreshBooks.</p>
+            <pre><code class="language-php">$freshBooksClient-&gt;callbacks()-&gt;verify($accountId, $callbackId, $verificationCode);</code></pre>
+            <p>If needed, you can ask FreshBooks to resend the verification code.</p>
+            <pre><code class="language-php">$freshBooksClient-&gt;callbacks()-&gt;resendVerification($accountId, $callbackId);</code></pre>
+            <p>Hold on to the verification code for later use (see below).</p>
+    </div>
 
-                    var xhr = new XMLHttpRequest();
+            <div class="section" id="verifing-webhook-signature">
+    <h2>Verifing Webhook Signature</h2>
 
-                    xhr.open('GET', src, true);
+            <p>Each Webhook sent by FreshBooks includes a header, <code>X-FreshBooks-Hmac-SHA256</code>, with a base64-encoded
+signature generated from a JSON string of the form data sent in the request and hashed with the token
+originally sent in the webhook verification process as a secret.</p>
+            <p>From FreshBooks&#039; documentation, this signature is gnerated in Python using:</p>
+            <pre><code class="language-python">import base64
+import hashlib
+import hmac
+import json
 
-                    xhr.onreadystatechange = function () {
-                        if (xhr.readyState !== 4) {
-                            return;
-                        }
+msg = dict((k, str(v)) for k, v in message.items())
+dig = hmac.new(
+    verifier.encode(&quot;utf-8&quot;),
+    msg=json.dumps(msg).encode(&quot;utf-8&quot;),
+    digestmod=hashlib.sha256
+).digest()
+return base64.b64encode(dig).decode()</code></pre>
+            <p>So to verify the signature in PHP:</p>
+            <pre><code class="language-php">$signature = $_SERVER[&#039;HTTP_X_FRESHBOOKS_HMAC_SHA256&#039;];
+$data = json_encode($_POST);
+// Signature from FreshBooks calculated from Python json.dumps, which
+// produces {&quot;key&quot;: &quot;val&quot;, &quot;key2&quot;: &quot;val&quot;}, but PHP json_encode
+// produces {&quot;key&quot;:&quot;value&quot;,&quot;key2&quot;,&quot;val&quot;}
+$data = str_replace(&quot;:&quot;, &quot;: &quot;, $data);
+$data = str_replace(&quot;,&quot;, &quot;, &quot;, $data);
 
-                        if (xhr.status < 400 && xhr.responseText) {
-                            code.textContent = xhr.responseText;
-                            Prism.highlightElement(code);
-                            return;
-                        }
+$hash = hash_hmac(
+    &#039;sha256&#039;,
+    iconv(mb_detect_encoding($data), &quot;UTF-8&quot;, $data),
+    iconv(mb_detect_encoding($verifier), &quot;UTF-8&quot;, $verifier),
+    true
+);
+$calculated_signature = base64_encode($hash);
 
-                        if (xhr.status === 404) {
-                            code.textContent = '✖ Error: File could not be found';
-                            return;
-                        }
+$isAuthentic = $calculated_signature === $signature;</code></pre>
+    </div>
 
-                        if (xhr.status >= 400) {
-                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
-                            return;
-                        }
+    </div>
 
-                        code.textContent = '✖ Error: An unknown error occurred';
-                    };
-
-                    xhr.send(null);
-                });
-            }
-
-            const modalButtons = document.querySelectorAll("[data-modal]");
-            const openedAsLocalFile = window.location.protocol === 'file:';
-            if (modalButtons.length > 0 && openedAsLocalFile) {
-                console.warn(
-                    'Viewing the source code is unavailable because you are opening this page from the file:// scheme; ' +
-                    'browsers block XHR requests when a page is opened this way'
-                );
-            }
-
-            modalButtons.forEach(function (trigger) {
-                if (openedAsLocalFile) {
-                    trigger.setAttribute("hidden", "hidden");
-                }
-
-                trigger.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    const modal = document.getElementById(trigger.dataset.modal);
-                    if (!modal) {
-                        console.error(`Modal with id "${trigger.dataset.modal}" could not be found`);
-                        return;
-                    }
-                    modal.classList.add("phpdocumentor-modal__open");
-
-                    loadExternalCodeSnippet(modal, trigger.dataset.src || null, trigger.dataset.line)
-                    const exits = modal.querySelectorAll("[data-exit-button]");
-                    exits.forEach(function (exit) {
-                        exit.addEventListener("click", function (event) {
-                            event.preventDefault();
-                            modal.classList.remove("phpdocumentor-modal__open");
-                        });
-                    });
-                });
-            });
-        })();
-    </script>
-
-    </article>
-                                </section>
-                <section class="phpdocumentor-on-this-page__sidebar">
-                            
-    <section class="phpdocumentor-on-this-page__content">
-        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
-
-        <ul class="phpdocumentor-list -clean">
-            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
-            <li>
-                <ul class="phpdocumentor-list -clean">
-                                                                                                        <li><a href="files/src-model-tax.html#toc-classes">Classes</a></li>
-                                                                                                                    </ul>
-            </li>
-
-            
-                    </ul>
-    </section>
-
-                </section>
                             </div>
             <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
@@ -315,7 +235,7 @@
     </section>
 </section>
         </div>
-        <a href="files/src-model-tax.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="guide/webhooks.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
