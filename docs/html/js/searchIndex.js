@@ -2756,16 +2756,6 @@ Search.appendIndex(
             "summary": "Make\u0020a\u0020request\u0020against\u0020the\u0020accounting\u0020resource\u0020and\u0020return\u0020an\u0020array\u0020of\u0020the\u0020json\u0020response.",
             "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_makeRequest"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003AcreateOldResponseError\u0028\u0029",
-            "name": "createOldResponseError",
-            "summary": "Parse\u0020the\u0020json\u0020response\u0020for\u0020old\u002Dstyle\u0020accounting\u0020endpoint\u0020errors\u0020and\u0020create\u0020a\u0020FreshBooksException\u0020from\u0020it.",
-            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_createOldResponseError"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003AcreateNewResponseError\u0028\u0029",
-            "name": "createNewResponseError",
-            "summary": "Parse\u0020the\u0020json\u0020response\u0020for\u0020new\u002Dstyle\u0020accounting\u0020endpoint\u0020errors\u0020and\u0020create\u0020a\u0020FreshBooksException\u0020from\u0020it.",
-            "url": "classes/amcintosh-FreshBooks-Resource-AccountingResource.html#method_createNewResponseError"
-        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Resource\\AccountingResource\u003A\u003AhandleError\u0028\u0029",
             "name": "handleError",
             "summary": "Create\u0020a\u0020FreshBooksException\u0020from\u0020the\u0020json\u0020response\u0020from\u0020the\u0020accounting\u0020endpoint.",
