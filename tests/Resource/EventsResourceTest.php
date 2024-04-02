@@ -71,8 +71,10 @@ final class EventsResourceTest extends TestCase
             400,
             [
                 'errno' => 3,
-                'message' => 'The request was well-formed but was unable to be followed due to semantic errors.'
-                    . '\nevent: Value error, Unrecognized event.'
+                'message' => 'The request was well-formed but was unable to be followed due to semantic errors.',
+                'details' => [
+                    'event: Value error, Unrecognized event.'
+                ]
             ]
         );
 
@@ -82,11 +84,11 @@ final class EventsResourceTest extends TestCase
             $resource->create($this->accountId, data: []);
             $this->fail('FreshBooksException was not thrown');
         } catch (FreshBooksException $e) {
-            $this->assertSame('The request was well-formed but was unable to be followed due to semantic errors.'
-                . '\nevent: Value error, Unrecognized event.', $e->getMessage());
+            $this->assertSame('The request was well-formed but was unable to be followed due '
+                . 'to semantic errors.', $e->getMessage());
             $this->assertSame(400, $e->getCode());
             $this->assertNull($e->getErrorCode());
-            $this->assertSame([], $e->getErrorDetails());
+            $this->assertSame(['event: Value error, Unrecognized event.'], $e->getErrorDetails());
         }
     }
 
