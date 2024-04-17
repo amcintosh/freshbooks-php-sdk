@@ -43,6 +43,7 @@ use amcintosh\FreshBooks\Resource\AuthResource;
 use amcintosh\FreshBooks\Resource\EventsResource;
 use amcintosh\FreshBooks\Resource\PaymentResource;
 use amcintosh\FreshBooks\Resource\ProjectResource;
+use amcintosh\FreshBooks\Resource\UploadResource;
 
 /**
  * SDK Client.
@@ -348,5 +349,25 @@ class FreshBooksClient
             defaultsPath: 'payment_options',
             staticPathParams: 'entity_type=invoice',
         );
+    }
+
+    /**
+     * FreshBooks attachment upload resource with call to upload, get
+     *
+     * @return UploadResource
+     */
+    public function attachments(): UploadResource
+    {
+        return new UploadResource($this->httpClient, 'attachments', 'attachment');
+    }
+
+    /**
+     * FreshBooks image upload resource with call to upload, get
+     *
+     * @return UploadResource
+     */
+    public function images(): UploadResource
+    {
+        return new UploadResource($this->httpClient, 'images', 'image');
     }
 }
