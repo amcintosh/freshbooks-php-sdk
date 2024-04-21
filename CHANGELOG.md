@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.8.0
+
 - Support for PHP 8.3
 - Handle file uploads and invoice, expense attachments
 - Handle new API version webhook event errors
