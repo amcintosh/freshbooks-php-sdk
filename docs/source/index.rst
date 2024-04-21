@@ -9,6 +9,7 @@
    configuration
    authorization
    api-calls/index
+   file-uploads
    webhooks
    examples
 

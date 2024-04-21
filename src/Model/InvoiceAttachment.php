@@ -11,15 +11,15 @@ use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
 
 /**
- * Attached receipt image details for an expense.
+ * Attached files and images to include with an invoice.
  *
  * _Note:_ This data is not in the default response and will only be
  * present with the use of a corresponding "includes" filter.
  *
  * @package amcintosh\FreshBooks\Model
- * @link https://www.freshbooks.com/api/expense-attachments
+ * @link https://www.freshbooks.com/api/invoice_presentation_attachments
  */
-class ExpenseAttachment extends DataTransferObject implements DataModel
+class InvoiceAttachment extends DataTransferObject implements DataModel
 {
     public const RESPONSE_FIELD = 'expense';
 
@@ -33,6 +33,13 @@ class ExpenseAttachment extends DataTransferObject implements DataModel
      */
     #[MapFrom('attachmentid')]
     public ?int $attachmentId;
+
+    /**
+     * @var int Id of the expense this attachment is associated with, if applicable.
+     */
+    #[MapFrom('expenseid')]
+    #[MapTo('expenseid')]
+    public ?int $expenseId;
 
     /**
      * @var string JWT link to the attachment.

@@ -17,8 +17,8 @@ Example:
         echo $e->getCode();        // 404
         echo $e->getErrorCode();   // 1012
         echo $e->getRawResponse(); // '{"response": {"errors": [{"errno": 1012,
-                                // "field": "userid", "message": "Client not found.",
-                                // "object": "client", "value": "134"}]}}'
+                                   // "field": "userid", "message": "Client not found.",
+                                   // "object": "client", "value": "134"}]}}'
     }
 
 Not all resources have full CRUD methods available. For example expense categories have ``list`` and ``get``

@@ -6,6 +6,7 @@
         "php": ">=8.0 <8.4",
         "php-http/client-common": "^2.5",
         "php-http/discovery": "^1.14",
+        "php-http/multipart-stream-builder": "^1.3",
         "psr/http-client": "^1.0",
         "psr/http-factory": "^1.0",
         "spatie/data-transfer-object": "^3.8",
