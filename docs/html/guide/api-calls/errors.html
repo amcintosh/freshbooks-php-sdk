@@ -100,6 +100,10 @@
             </ul>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
+    <a href="guide/file-uploads.html#file-uploads" class="">File Uploads</a>
+</h4>
+
+                                    <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/webhooks.html#webhook-callbacks" class="">Webhook Callbacks</a>
 </h4>
 
@@ -165,8 +169,8 @@ try {
     echo $e-&gt;getCode();        // 404
     echo $e-&gt;getErrorCode();   // 1012
     echo $e-&gt;getRawResponse(); // &#039;{&quot;response&quot;: {&quot;errors&quot;: [{&quot;errno&quot;: 1012,
-                            // &quot;field&quot;: &quot;userid&quot;, &quot;message&quot;: &quot;Client not found.&quot;,
-                            // &quot;object&quot;: &quot;client&quot;, &quot;value&quot;: &quot;134&quot;}]}}&#039;
+                               // &quot;field&quot;: &quot;userid&quot;, &quot;message&quot;: &quot;Client not found.&quot;,
+                               // &quot;object&quot;: &quot;client&quot;, &quot;value&quot;: &quot;134&quot;}]}}&#039;
 }</code></pre>
             <p>Not all resources have full CRUD methods available. For example expense categories have <code>list</code> and <code>get</code>
 calls, but are not deletable. If you attempt to call a method that does not exist, the SDK will raise a

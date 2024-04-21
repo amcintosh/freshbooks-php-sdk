@@ -341,6 +341,16 @@ Search.appendIndex(
             "summary": "FreshBooks\u0020invoice\u0020payment\u0020options\u0020resource\u0020with\u0020calls\u0020to\u0020default,\u0020get,\u0020create.",
             "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_invoicePaymentOptions"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003Aattachments\u0028\u0029",
+            "name": "attachments",
+            "summary": "FreshBooks\u0020attachment\u0020upload\u0020resource\u0020with\u0020call\u0020to\u0020upload,\u0020get",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_attachments"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003Aimages\u0028\u0029",
+            "name": "images",
+            "summary": "FreshBooks\u0020image\u0020upload\u0020resource\u0020with\u0020call\u0020to\u0020upload,\u0020get",
+            "url": "classes/amcintosh-FreshBooks-FreshBooksClient.html#method_images"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\FreshBooksClient\u003A\u003A\u0024httpClient",
             "name": "httpClient",
             "summary": "",
@@ -1381,6 +1391,41 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-ExpenseStatus.html#constant_RECOUPED"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\FileUpload",
+            "name": "FileUpload",
+            "summary": "A\u0020file\u0020that\u0020has\u0020been\u0020uploaded\u0020to\u0020FreshBooks.",
+            "url": "classes/amcintosh-FreshBooks-Model-FileUpload.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\FileUpload\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-FileUpload.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\FileUpload\u003A\u003A\u0024jwt",
+            "name": "jwt",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-FileUpload.html#property_jwt"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\FileUpload\u003A\u003A\u0024fileName",
+            "name": "fileName",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-FileUpload.html#property_fileName"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\FileUpload\u003A\u003A\u0024mediaType",
+            "name": "mediaType",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-FileUpload.html#property_mediaType"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\FileUpload\u003A\u003A\u0024responseBody",
+            "name": "responseBody",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-FileUpload.html#property_responseBody"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\FileUpload\u003A\u003A\u0024link",
+            "name": "link",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-FileUpload.html#property_link"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Identity",
             "name": "Identity",
             "summary": "Users\u0020are\u0020uniquely\u0020identified\u0020by\u0020their\u0020email\u0020across\u0020all\u0020of\u0020FreshBooks,\u0020so\u0020if\n\u0060leafy\u0040example.com\u0060\u0020is\u0020an\u0020Owner\u0020of\u0020one\u0020account\u0020and\u0020gets\u0020added\u0020as\u0020a\u0020Client\u0020on\u0020another,\nthey\u0020will\u0020have\u0020some\u0020access\u0020to\u0020both.\u0020They\u0020could\u0020then\u0020open\u0020a\u0020second\u0020business\u0020of\u0020their\nown,\u0020or\u0020be\u0020added\u0020as\u0020an\u0020employee\u0020of\u0020another\u0020person\u2019s\u0020business.",
@@ -1735,6 +1780,46 @@ Search.appendIndex(
             "name": "visState",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-Invoice.html#property_visState"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment",
+            "name": "InvoiceAttachment",
+            "summary": "Attached\u0020files\u0020and\u0020images\u0020to\u0020include\u0020with\u0020an\u0020invoice.",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html#method_getContent"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003ARESPONSE_FIELD",
+            "name": "RESPONSE_FIELD",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html#constant_RESPONSE_FIELD"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html#property_id"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003A\u0024attachmentId",
+            "name": "attachmentId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html#property_attachmentId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003A\u0024expenseId",
+            "name": "expenseId",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html#property_expenseId"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003A\u0024jwt",
+            "name": "jwt",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html#property_jwt"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003A\u0024mediaType",
+            "name": "mediaType",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html#property_mediaType"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceList",
             "name": "InvoiceList",
@@ -3060,6 +3145,61 @@ Search.appendIndex(
             "name": "listModel",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Resource-ProjectResource.html#property_listModel"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource",
+            "name": "UploadResource",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource\u003A\u003AgetUrl\u0028\u0029",
+            "name": "getUrl",
+            "summary": "The\u0020the\u0020url\u0020to\u0020the\u0020upload\u0020resource.",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html#method_getUrl"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource\u003A\u003AhandleError\u0028\u0029",
+            "name": "handleError",
+            "summary": "Create\u0020a\u0020FreshBooksException\u0020from\u0020the\u0020json\u0020response\u0020from\u0020the\u0020uploads\u0020endpoint.",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html#method_handleError"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource\u003A\u003AmakeGetFileRequest\u0028\u0029",
+            "name": "makeGetFileRequest",
+            "summary": "Make\u0020a\u0020request\u0020against\u0020the\u0020uploads\u0020resource.\u0020Returns\u0020an\u0020object\u0020containing\u0020a\nPsr\\Http\\Message\\StreamInterface\u0020for\u0020flexibility.",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html#method_makeGetFileRequest"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource\u003A\u003AmakeUploadRequest\u0028\u0029",
+            "name": "makeUploadRequest",
+            "summary": "Make\u0020creates\u0020a\u0020POST\u0020request\u0020to\u0020upload\u0020a\u0020file\u0020to\u0020FreshBooks.",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html#method_makeUploadRequest"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Get\u0020an\u0020uploaded\u0020file.",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html#method_get"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource\u003A\u003Aupload\u0028\u0029",
+            "name": "upload",
+            "summary": "Upload\u0020a\u0020file\u0020to\u0020FreshBooks.",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html#method_upload"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource\u003A\u003A\u0024httpClient",
+            "name": "httpClient",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html#property_httpClient"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource\u003A\u003A\u0024uploadPath",
+            "name": "uploadPath",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html#property_uploadPath"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Resource\\UploadResource\u003A\u003A\u0024resourceName",
+            "name": "resourceName",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Resource-UploadResource.html#property_resourceName"
         },                {
             "fqsen": "\\",
             "name": "\\",
