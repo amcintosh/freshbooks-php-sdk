@@ -21,7 +21,7 @@ Invoice Images and Attachments
 See `FreshBooks' API Documentation <https://www.freshbooks.com/api/invoice_presentation_attachments>`_.
 
 The ``upload()`` function takes a `PHP resource <https://www.php.net/manual/en/language.types.resource.php>`_.
-Logo's and banners are added to the invoice presentation objec.t To include an uploaded attachment on
+Logo's and banners are added to the invoice presentation object. To include an uploaded attachment on
 an invoice, the invoice request must include an attachments object.
 
 .. code-block:: php
@@ -51,3 +51,23 @@ Expense Receipts
 ----------------
 
 See `FreshBooks' API Documentation <https://www.freshbooks.com/api/expense-attachments>`_.
+
+Expenses have have images or PDFs of the associated receipt attached. The expense request must include
+an attachments object.
+
+.. code-block:: php
+    $attachment = $freshBooksClient->attachments()->upload($accountId, fopen('./sample_receipt.pdf', 'r'));
+
+    $expense->amount = new Money("6.49", "CAD");
+    $expense->date = new DateTime();
+    $expense->staffId = 1;
+    $expense->categoryId = 3436009;
+
+    $expenseAttachment = new ExpenseAttachment();
+    $expenseAttachment->jwt = $attachment->jwt;
+    $expenseAttachment->mediaType = $attachment->mediaType;
+
+    $expense->attachment = $expenseAttachment;
+
+    $includes = (new IncludesBuilder())->include('attachment');
+    $expense = $freshBooksClient->expenses()->create($accountId, model: $expense, includes: $includes);
