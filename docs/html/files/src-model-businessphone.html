@@ -54,8 +54,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -111,7 +111,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -124,7 +124,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -138,14 +138,14 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
@@ -160,11 +160,12 @@
         <h2 class="phpdocumentor-content__title">BusinessPhone.php</h2>
 
         
+        
+        
+        
 
 
-
-
-
+        
 <h3 id="toc">
     Table of Contents
     <a href="files/src-model-businessphone.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -181,7 +182,6 @@
     </h4>
     <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/amcintosh-FreshBooks-Model-BusinessPhone.html"><abbr title="\amcintosh\FreshBooks\Model\BusinessPhone">BusinessPhone</abbr></a></dt><dd>The phone number of the business.</dd>    </dl>
-
 
 
 
@@ -230,6 +230,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

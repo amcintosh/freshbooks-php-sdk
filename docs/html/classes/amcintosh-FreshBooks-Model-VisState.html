@@ -54,8 +54,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -111,7 +111,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -124,7 +124,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -138,14 +138,14 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
@@ -190,15 +190,13 @@
 
             <p class="phpdocumentor-summary">Visibility values for a resource. Mostly used in accounting-type resources, not project-type.</p>
 
+
     <section class="phpdocumentor-description"><p>Values are:</p>
 <ul>
-<li>
-<em>ACTIVE</em>: refers to objects that are both completed and non-completed.</li>
-<li>
-<em>DELETED</em>: objects are &quot;soft-deleted&quot; meaning they will not show up in list calls by default, and will not
+<li><em>ACTIVE</em>: refers to objects that are both completed and non-completed.</li>
+<li><em>DELETED</em>: objects are &quot;soft-deleted&quot; meaning they will not show up in list calls by default, and will not
 count towards finances, account limits, etc., but can be undeleted at any time.</li>
-<li>
-<em>ARCHIVED</em>: Are hidden from FreshBook's UI by default, but still count towards finances, account limits,
+<li><em>ARCHIVED</em>: Are hidden from FreshBook's UI by default, but still count towards finances, account limits,
 etc.</li>
 </ul>
 </section>
@@ -221,6 +219,8 @@ etc.</li>
 
 
 
+
+
 <h3 id="toc">
     Table of Contents
     <a href="classes/amcintosh-FreshBooks-Model-VisState.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -240,25 +240,24 @@ etc.</li>
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_ACTIVE">ACTIVE</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_ACTIVE">ACTIVE</a>
     <span>
         &nbsp;= 0                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_ARCHIVED">ARCHIVED</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_ARCHIVED">ARCHIVED</a>
     <span>
         &nbsp;= 2                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_DELETED">DELETED</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_DELETED">DELETED</a>
     <span>
         &nbsp;= 1                            </span>
 </dt>
 
     </dl>
-
 
 
 
@@ -287,6 +286,7 @@ etc.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -297,6 +297,8 @@ etc.</li>
 
     
     
+    
+
     
 
 </article>
@@ -315,6 +317,7 @@ etc.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -325,6 +328,8 @@ etc.</li>
 
     
     
+    
+
     
 
 </article>
@@ -343,6 +348,7 @@ etc.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -353,6 +359,8 @@ etc.</li>
 
     
     
+    
+
     
 
 </article>
@@ -397,6 +405,8 @@ etc.</li>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 
@@ -470,9 +480,9 @@ etc.</li>
                             <li class="phpdocumentor-on-this-page-section__title">Constants</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_ACTIVE">ACTIVE</a></li>
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_ARCHIVED">ARCHIVED</a></li>
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_DELETED">DELETED</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_ACTIVE">ACTIVE</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_ARCHIVED">ARCHIVED</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-VisState.html#constant_DELETED">DELETED</a></li>
                                             </ul>
                 </li>
             

@@ -55,8 +55,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -112,7 +112,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -125,7 +125,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -139,28 +139,32 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
 </aside>
 
             <div class="phpdocumentor-column -nine phpdocumentor-content">
-                                        <div class="section" id="configuring-the-api-client">
-    <h1>Configuring The API Client</h1>
+                                        <section class="section " id="configuring-the-api-client">
+            <h1>Configuring The API Client</h1>
 
-            <p>You can create an instance of the API client in one of two ways:</p>
+            
+    <p>You can create an instance of the API client in one of two ways:</p>
+
             
 
 <ul>
-    <li>By providing your application&#039;s OAuth2 <code>clientId</code> and <code>clientSecret</code> and following through the auth flow, which
+    <li>By providing your application&#039;s OAuth2 <code>clientId</code>
+ and <code>clientSecret</code>
+ and following through the auth flow, which
 when complete will return an access token.</li>
 
     <li>Or if you already have a valid access token, you can instantiate the client with that token, however token refresh
@@ -177,8 +181,13 @@ $conf = new FreshBooksClientConfig(
 );
 
 $freshBooksClient = new FreshBooksClient(&#039;your application id&#039;, $conf);</code></pre>
-            <p>and then proceed with the auth flow (see below).</p>
-            <p>Or</p>
+
+            
+    <p>and then proceed with the auth flow (see below).</p>
+
+            
+    <p>Or</p>
+
             <pre><code class="language-php">use amcintosh\FreshBooks\FreshBooksClient;
 use amcintosh\FreshBooks\FreshBooksClientConfig;
 
@@ -187,7 +196,8 @@ $conf = new FreshBooksClientConfig(
 );
 
 $freshBooksClient = new FreshBooksClient(&#039;your application id&#039;, $conf);</code></pre>
-    </div>
+
+    </section>
 
                             </div>
             <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
@@ -202,7 +212,7 @@ $freshBooksClient = new FreshBooksClient(&#039;your application id&#039;, $conf)
     </section>
 </section>
         </div>
-        <a href="guide/configuration.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

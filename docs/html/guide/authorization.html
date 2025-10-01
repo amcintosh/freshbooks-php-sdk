@@ -55,8 +55,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -112,7 +112,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -125,7 +125,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -139,38 +139,60 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
 </aside>
 
             <div class="phpdocumentor-column -nine phpdocumentor-content">
-                                        <div class="section" id="authorization-flow">
-    <h1>Authorization Flow</h1>
+                                        <section class="section " id="authorization-flow">
+            <h1>Authorization Flow</h1>
 
-            <p><em>This is a brief summary of the OAuth2 authorization flow and the methods in the FreshBooks API Client
+            
+    <p><em>This is a brief summary of the OAuth2 authorization flow and the methods in the FreshBooks API Client
 around them. See the `FreshBooks API - Authentication &lt;https://www.freshbooks.com/api/authentication&gt;`_
-documentation.</em></p>
-            <p>First, instantiate your Client with <code>clientId</code>, <code>clientSecret</code>, and <code>redirectUri</code> as above.</p>
-            <p>To get an access token, the user must first authorize your application. This can be done by sending the user to
+documentation.</em>
+</p>
+
+            
+    <p>First, instantiate your Client with <code>clientId</code>
+, <code>clientSecret</code>
+, and <code>redirectUri</code>
+ as above.</p>
+
+            
+    <p>To get an access token, the user must first authorize your application. This can be done by sending the user to
 the FreshBooks authorization page. Once the user has clicked accept there, they will be redirected to your
-<code>redirectUri</code> with an access grant code. The authorization URL can be obtained by calling
-<code>$freshBooksClient-&gt;getAuthRequestUri()</code>. This method also accepts a list of scopes that you wish the user to
+<code>redirectUri</code>
+ with an access grant code. The authorization URL can be obtained by calling
+<code>$freshBooksClient-&gt;getAuthRequestUri()</code>
+. This method also accepts a list of scopes that you wish the user to
 authorize your application for.</p>
+
             <pre><code class="language-php">$authUrl = $freshBooksClient-&gt;getAuthRequestUri([&#039;user:profile:read&#039;, &#039;user:clients:read&#039;]);</code></pre>
-            <p>Once the user has been redirected to your <code>redirectUri</code> and you have obtained the access grant code, you can exchange
+
+            
+    <p>Once the user has been redirected to your <code>redirectUri</code>
+ and you have obtained the access grant code, you can exchange
 that code for a valid access token.</p>
+
             <pre><code class="language-php">$authResults = $freshBooksClient-&gt;getAccessToken($accessGrantCode);</code></pre>
-            <p>This call both sets the <code>accessToken</code>, <code>refreshToken</code>, and <code>tokenExpiresAt</code> fields on you Client&#039;s
+
+            
+    <p>This call both sets the <code>accessToken</code>
+, <code>refreshToken</code>
+, and <code>tokenExpiresAt</code>
+ fields on you Client&#039;s
 FreshBooksClientConfig instance and returns those values.</p>
+
             <pre><code class="language-php">echo $authResults-&gt;accessToken;  // Your token
 echo $authResults-&gt;refreshToken; // Your refresh token
 echo $authResults-&gt;createdAt;    // When the token was created (as a DateTime)
@@ -180,13 +202,21 @@ echo $authResults-&gt;getExpiresAt; // When the token expires (as a DateTime)
 echo $freshBooksClient-&gt;getConfig()-&gt;accessToken;    // Your token
 echo $freshBooksClient-&gt;getConfig()-&gt;refreshToken;   // Your refresh token
 echo $freshBooksClient-&gt;getConfig()-&gt;tokenExpiresAt; // When the token expires (as a DateTime)</code></pre>
-            <p>When the token expires, it can be refreshed with the <code>refreshToken</code> value in the FreshBooksClient:</p>
+
+            
+    <p>When the token expires, it can be refreshed with the <code>refreshToken</code>
+ value in the FreshBooksClient:</p>
+
             <pre><code class="language-php">$authResults = $freshBooksClient-&gt;refreshAccessToken();
 echo $authResults-&gt;accessToken;  // Your new token</code></pre>
-            <p>or you can pass the refresh token yourself:</p>
+
+            
+    <p>or you can pass the refresh token yourself:</p>
+
             <pre><code class="language-php">$authResults = $freshBooksClient-&gt;refreshAccessToken($storedRefreshToken);
 echo $authResults-&gt;accessToken;  // Your new token</code></pre>
-    </div>
+
+    </section>
 
                             </div>
             <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
@@ -201,7 +231,7 @@ echo $authResults-&gt;accessToken;  // Your new token</code></pre>
     </section>
 </section>
         </div>
-        <a href="guide/authorization.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

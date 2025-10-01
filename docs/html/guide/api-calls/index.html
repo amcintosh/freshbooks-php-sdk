@@ -55,8 +55,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -112,7 +112,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -125,7 +125,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -139,72 +139,142 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
 </aside>
 
             <div class="phpdocumentor-column -nine phpdocumentor-content">
-                                        <div class="section" id="making-api-calls">
-    <h1>Making API Calls</h1>
+                                        <section class="section " id="making-api-calls">
+            <h1>Making API Calls</h1>
 
-            <p>Each resource in the client has provides calls for <code>get</code>, <code>list</code>, <code>create</code>, <code>update</code> and <code>delete</code> calls. Please note
-that some API resources are scoped to a FreshBooks <code>accountId</code> while others are scoped to a <code>businessId</code>. In general
+            
+    <p>Each resource in the client has provides calls for <code>get</code>
+, <code>list</code>
+, <code>create</code>
+, <code>update</code>
+ and <code>delete</code>
+ calls. Please note
+that some API resources are scoped to a FreshBooks <code>accountId</code>
+ while others are scoped to a <code>businessId</code>
+. In general
 these fall along the lines of accounting resources vs projects/time tracking resources, but that is not precise.</p>
+
             <pre><code class="language-php">$client = $freshBooksClient-&gt;clients()-&gt;get($accountId, $clientId);
 $project = $freshBooksClient-&gt;projects()-&gt;get($businessId, $projectId);</code></pre>
-            <div class="section" id="usage">
-    <h2>Usage</h2>
+
+            <section class="section " id="usage">
+            <h2>Usage</h2>
 
             <div class="toc">
     <ul class="phpdocumentor-list">
-    <li class="toc-item"><a href="guide/api-calls/current-user.html#current-user">Current User</a></li>
+    <li class="toc-item">
+    <a href="guide/api-calls/current-user.html#current-user">Current User</a>
 
-    <li class="toc-item"><a href="guide/api-calls/decimals.html#decimal-values">Decimal Values</a></li>
 
-    <li class="toc-item"><a href="guide/api-calls/get-list.html#get-and-list">Get and List</a>        <ul class="section-level-1">
-            <li class="toc-item"><a href="guide/api-calls/get-list.html#get">Get</a></li>
+</li>
 
-            <li class="toc-item"><a href="guide/api-calls/get-list.html#list">List</a></li>
+    <li class="toc-item">
+    <a href="guide/api-calls/decimals.html#decimal-values">Decimal Values</a>
 
-                    </ul></li>
 
-    <li class="toc-item"><a href="guide/api-calls/create-update-delete.html#create-update-and-delete">Create, Update, and Delete</a>        <ul class="section-level-1">
-            <li class="toc-item"><a href="guide/api-calls/create-update-delete.html#create">Create</a></li>
+</li>
 
-            <li class="toc-item"><a href="guide/api-calls/create-update-delete.html#update">Update</a></li>
+    <li class="toc-item">
+    <a href="guide/api-calls/get-list.html#get-and-list">Get and List</a>
 
-            <li class="toc-item"><a href="guide/api-calls/create-update-delete.html#delete">Delete</a></li>
+        <ul class="section-level-1">
+            <li class="toc-item">
+    <a href="guide/api-calls/get-list.html#get">Get</a>
 
-                    </ul></li>
 
-    <li class="toc-item"><a href="guide/api-calls/errors.html#error-handling">Error Handling</a></li>
+</li>
 
-    <li class="toc-item"><a href="guide/api-calls/builders.html#pagination-filters-includes-and-sorting">Pagination, Filters, Includes, and Sorting</a>        <ul class="section-level-1">
-            <li class="toc-item"><a href="guide/api-calls/builders.html#pagination">Pagination</a></li>
+            <li class="toc-item">
+    <a href="guide/api-calls/get-list.html#list">List</a>
 
-            <li class="toc-item"><a href="guide/api-calls/builders.html#filters">Filters</a></li>
 
-            <li class="toc-item"><a href="guide/api-calls/builders.html#includes">Includes</a></li>
+</li>
 
-            <li class="toc-item"><a href="guide/api-calls/builders.html#sorting">Sorting</a></li>
+                    </ul>
+</li>
 
-                    </ul></li>
+    <li class="toc-item">
+    <a href="guide/api-calls/create-update-delete.html#create-update-and-delete">Create, Update, and Delete</a>
+
+        <ul class="section-level-1">
+            <li class="toc-item">
+    <a href="guide/api-calls/create-update-delete.html#create">Create</a>
+
+
+</li>
+
+            <li class="toc-item">
+    <a href="guide/api-calls/create-update-delete.html#update">Update</a>
+
+
+</li>
+
+            <li class="toc-item">
+    <a href="guide/api-calls/create-update-delete.html#delete">Delete</a>
+
+
+</li>
+
+                    </ul>
+</li>
+
+    <li class="toc-item">
+    <a href="guide/api-calls/errors.html#error-handling">Error Handling</a>
+
+
+</li>
+
+    <li class="toc-item">
+    <a href="guide/api-calls/builders.html#pagination-filters-includes-and-sorting">Pagination, Filters, Includes, and Sorting</a>
+
+        <ul class="section-level-1">
+            <li class="toc-item">
+    <a href="guide/api-calls/builders.html#pagination">Pagination</a>
+
+
+</li>
+
+            <li class="toc-item">
+    <a href="guide/api-calls/builders.html#filters">Filters</a>
+
+
+</li>
+
+            <li class="toc-item">
+    <a href="guide/api-calls/builders.html#includes">Includes</a>
+
+
+</li>
+
+            <li class="toc-item">
+    <a href="guide/api-calls/builders.html#sorting">Sorting</a>
+
+
+</li>
+
+                    </ul>
+</li>
 
     </ul>
 </div>
 
-    </div>
+    </section>
 
-    </div>
+    </section>
 
                             </div>
             <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
@@ -219,7 +289,7 @@ $project = $freshBooksClient-&gt;projects()-&gt;get($businessId, $projectId);</c
     </section>
 </section>
         </div>
-        <a href="guide/api-calls/index.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

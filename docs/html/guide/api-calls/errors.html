@@ -55,8 +55,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -112,7 +112,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -125,7 +125,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -139,27 +139,32 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
 </aside>
 
             <div class="phpdocumentor-column -nine phpdocumentor-content">
-                                        <div class="section" id="error-handling">
-    <h1>Error Handling</h1>
+                                        <section class="section " id="error-handling">
+            <h1>Error Handling</h1>
 
-            <p>Calls made to the FreshBooks API with a non-2xx response are wrapped in a <code>FreshBooksException</code>.
+            
+    <p>Calls made to the FreshBooks API with a non-2xx response are wrapped in a <code>FreshBooksException</code>
+.
 This exception class contains the error message, HTTP response code, FreshBooks-specific error number if one exists,
 and the HTTP response body.</p>
-            <p>Example:</p>
+
+            
+    <p>Example:</p>
+
             <pre><code class="language-php">use amcintosh\FreshBooks\Exception\FreshBooksException;
 
 try {
@@ -172,11 +177,17 @@ try {
                                // &quot;field&quot;: &quot;userid&quot;, &quot;message&quot;: &quot;Client not found.&quot;,
                                // &quot;object&quot;: &quot;client&quot;, &quot;value&quot;: &quot;134&quot;}]}}&#039;
 }</code></pre>
-            <p>Not all resources have full CRUD methods available. For example expense categories have <code>list</code> and <code>get</code>
+
+            
+    <p>Not all resources have full CRUD methods available. For example expense categories have <code>list</code>
+ and <code>get</code>
+
 calls, but are not deletable. If you attempt to call a method that does not exist, the SDK will raise a
-<code>FreshBooksNotImplementedError</code> exception, but this is not something you will likely have to account
+<code>FreshBooksNotImplementedError</code>
+ exception, but this is not something you will likely have to account
 for outside of development.</p>
-    </div>
+
+    </section>
 
                             </div>
             <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
@@ -191,7 +202,7 @@ for outside of development.</p>
     </section>
 </section>
         </div>
-        <a href="guide/api-calls/errors.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

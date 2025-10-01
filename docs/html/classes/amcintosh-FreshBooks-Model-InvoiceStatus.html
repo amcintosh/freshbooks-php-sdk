@@ -54,8 +54,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -111,7 +111,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -124,7 +124,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -138,14 +138,14 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
@@ -190,29 +190,21 @@
 
             <p class="phpdocumentor-summary">Status values for an invoice.</p>
 
+
     <section class="phpdocumentor-description"><p>Values are:</p>
 <ul>
-<li>
-<strong>0:</strong> DISPUTED. An Invoice with the Dispute option enabled, which has been disputed by a Client.
+<li><strong>0:</strong> DISPUTED. An Invoice with the Dispute option enabled, which has been disputed by a Client.
 This is a feature of FreshBooks Classic only and should only appear in migrated accounts.</li>
-<li>
-<strong>1:</strong> DRAFT. An Invoice that has been created, but not yet sent.</li>
-<li>
-<strong>2</strong>: SENT. An Invoice that has been sent to a Client or marked as sent.</li>
-<li>
-<strong>3</strong>: VIEWED. An Invoice that has been viewed by a Client.</li>
-<li>
-<strong>4</strong>: PAID. A fully paid Invoice.</li>
-<li>
-<strong>5</strong>: AUTOPAID. An Invoice paid automatically with a saved credit card.</li>
-<li>
-<strong>6</strong>: RETRY. An Invoice that would normally be paid automatically, but encountered a processing
+<li><strong>1:</strong> DRAFT. An Invoice that has been created, but not yet sent.</li>
+<li><strong>2</strong>: SENT. An Invoice that has been sent to a Client or marked as sent.</li>
+<li><strong>3</strong>: VIEWED. An Invoice that has been viewed by a Client.</li>
+<li><strong>4</strong>: PAID. A fully paid Invoice.</li>
+<li><strong>5</strong>: AUTOPAID. An Invoice paid automatically with a saved credit card.</li>
+<li><strong>6</strong>: RETRY. An Invoice that would normally be paid automatically, but encountered a processing
 issue, either due to a bad card or a service outage. It will be retried 1 day later.</li>
-<li>
-<strong>7</strong>: FAILED. An Invoice that was in Retry status which again encountered a processing
+<li><strong>7</strong>: FAILED. An Invoice that was in Retry status which again encountered a processing
 issue when being retried.</li>
-<li>
-<strong>8</strong>: PARTIAL. An Invoice that has been partially paid.</li>
+<li><strong>8</strong>: PARTIAL. An Invoice that has been partially paid.</li>
 </ul>
 </section>
 
@@ -231,6 +223,8 @@ issue when being retried.</li>
                     
                                     </dd>
                                             </dl>
+
+
 
 
 
@@ -253,61 +247,60 @@ issue when being retried.</li>
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_AUTOPAID">AUTOPAID</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_AUTOPAID">AUTOPAID</a>
     <span>
         &nbsp;= 5                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DISPUTED">DISPUTED</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DISPUTED">DISPUTED</a>
     <span>
         &nbsp;= 0                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DRAFT">DRAFT</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DRAFT">DRAFT</a>
     <span>
         &nbsp;= 1                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_FAILED">FAILED</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_FAILED">FAILED</a>
     <span>
         &nbsp;= 7                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PAID">PAID</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PAID">PAID</a>
     <span>
         &nbsp;= 4                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PARTIAL">PARTIAL</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PARTIAL">PARTIAL</a>
     <span>
         &nbsp;= 8                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_RETRY">RETRY</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_RETRY">RETRY</a>
     <span>
         &nbsp;= 6                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_SENT">SENT</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_SENT">SENT</a>
     <span>
         &nbsp;= 2                            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_VIEWED">VIEWED</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_VIEWED">VIEWED</a>
     <span>
         &nbsp;= 3                            </span>
 </dt>
 
     </dl>
-
 
 
 
@@ -336,6 +329,7 @@ issue when being retried.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -346,6 +340,8 @@ issue when being retried.</li>
 
     
     
+    
+
     
 
 </article>
@@ -364,6 +360,7 @@ issue when being retried.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -374,6 +371,8 @@ issue when being retried.</li>
 
     
     
+    
+
     
 
 </article>
@@ -392,6 +391,7 @@ issue when being retried.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -402,6 +402,8 @@ issue when being retried.</li>
 
     
     
+    
+
     
 
 </article>
@@ -420,6 +422,7 @@ issue when being retried.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -430,6 +433,8 @@ issue when being retried.</li>
 
     
     
+    
+
     
 
 </article>
@@ -448,6 +453,7 @@ issue when being retried.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -458,6 +464,8 @@ issue when being retried.</li>
 
     
     
+    
+
     
 
 </article>
@@ -476,6 +484,7 @@ issue when being retried.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -486,6 +495,8 @@ issue when being retried.</li>
 
     
     
+    
+
     
 
 </article>
@@ -504,6 +515,7 @@ issue when being retried.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -514,6 +526,8 @@ issue when being retried.</li>
 
     
     
+    
+
     
 
 </article>
@@ -532,6 +546,7 @@ issue when being retried.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -542,6 +557,8 @@ issue when being retried.</li>
 
     
     
+    
+
     
 
 </article>
@@ -560,6 +577,7 @@ issue when being retried.</li>
     </aside>
 
     
+    
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
@@ -570,6 +588,8 @@ issue when being retried.</li>
 
     
     
+    
+
     
 
 </article>
@@ -614,6 +634,8 @@ issue when being retried.</li>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 
@@ -687,15 +709,15 @@ issue when being retried.</li>
                             <li class="phpdocumentor-on-this-page-section__title">Constants</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_AUTOPAID">AUTOPAID</a></li>
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DISPUTED">DISPUTED</a></li>
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DRAFT">DRAFT</a></li>
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_FAILED">FAILED</a></li>
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PAID">PAID</a></li>
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PARTIAL">PARTIAL</a></li>
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_RETRY">RETRY</a></li>
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_SENT">SENT</a></li>
-                                                    <li><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_VIEWED">VIEWED</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_AUTOPAID">AUTOPAID</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DISPUTED">DISPUTED</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_DRAFT">DRAFT</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_FAILED">FAILED</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PAID">PAID</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_PARTIAL">PARTIAL</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_RETRY">RETRY</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_SENT">SENT</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-InvoiceStatus.html#constant_VIEWED">VIEWED</a></li>
                                             </ul>
                 </li>
             

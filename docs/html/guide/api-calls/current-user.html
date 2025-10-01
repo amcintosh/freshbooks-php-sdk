@@ -55,8 +55,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -112,7 +112,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -125,7 +125,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -139,38 +139,45 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
 </aside>
 
             <div class="phpdocumentor-column -nine phpdocumentor-content">
-                                        <div class="section" id="current-user">
-    <h1>Current User</h1>
+                                        <section class="section " id="current-user">
+            <h1>Current User</h1>
 
-            <p>FreshBooks users are uniquely identified by their email across the entire product. One user may act on several
+            
+    <p>FreshBooks users are uniquely identified by their email across the entire product. One user may act on several
 Businesses in different ways, and the Identity model is how to keep track of it. Each unique user has an Identity,
 and each Identity has Business Memberships which define the permissions they have.</p>
-            <p>See <a href="https://www.freshbooks.com/api/me_endpoint">FreshBooks API - Business, Roles, and Identity</a> and
+
+            
+    <p>See <a href="https://www.freshbooks.com/api/me_endpoint">FreshBooks API - Business, Roles, and Identity</a> and
 <a href="https://www.freshbooks.com/api/identity_model">FreshBooks API - The Identity Model</a>.</p>
-            <p>The current user can be accessed by:</p>
-            <pre><code class="language-php">$identity = $freshBooksClient-&gt;currentUser()
-echo $identity.email // prints the current user&#039;s email
+
+            
+    <p>The current user can be accessed by:</p>
+
+            <pre><code class="language-php">$identity = $freshBooksClient-&gt;currentUser();
+echo $identity-&gt;email // prints the current user&#039;s email
 
 // Print name and role of each business the user is a member of
 foreach ($identity.businessMemberships as $businessMembership) {
-    echo $businessMembership-&gt;business.name
+    echo $businessMembership-&gt;business.name;
     echo $businessMembership-&gt;role; // eg. owner
 }</code></pre>
-    </div>
+
+    </section>
 
                             </div>
             <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
@@ -185,7 +192,7 @@ foreach ($identity.businessMemberships as $businessMembership) {
     </section>
 </section>
         </div>
-        <a href="guide/api-calls/current-user.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

@@ -55,8 +55,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -112,7 +112,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -125,7 +125,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -139,31 +139,41 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
 </aside>
 
             <div class="phpdocumentor-column -nine phpdocumentor-content">
-                                        <div class="section" id="create-update-and-delete">
-    <h1>Create, Update, and Delete</h1>
+                                        <section class="section " id="create-update-and-delete">
+            <h1>Create, Update, and Delete</h1>
 
-            <p>API calls to create and update take either a <code>DataModel</code> object, or an array of the resource data. A successful call
-will return a <code>DataTransferObject</code> object as if a <a href="guide/api-calls/get-list.html">get</a>
- call.</p>
-            <p><em>Note</em>: When using the array of data, you need to specify the field as it exists in the FreshBooks API. There
-are API fields that are translated to more intuitive names in the data models. For example <code>fname</code> = <code>firstName</code>,
-or <code>bus_phone</code> = <code>businessPhone</code>.</p>
-            <div class="section" id="create">
-    <h2>Create</h2>
+            
+    <p>API calls to create and update take either a <code>DataModel</code>
+ object, or an array of the resource data. A successful call
+will return a <code>DataTransferObject</code>
+ object as if a <a href="guide/api-calls/get-list.html">get</a> call.</p>
+
+            
+    <p><em>Note</em>
+: When using the array of data, you need to specify the field as it exists in the FreshBooks API. There
+are API fields that are translated to more intuitive names in the data models. For example <code>fname</code>
+ = <code>firstName</code>
+,
+or <code>bus_phone</code>
+ = <code>businessPhone</code>
+.</p>
+
+            <section class="section " id="create">
+            <h2>Create</h2>
 
             <pre><code class="language-php">$clientData = new Client();
 $clientData-&gt;organization = &#039;FreshBooks&#039;;
@@ -175,7 +185,10 @@ $newClient = $freshBooksClient-&gt;clients()-&gt;create($accountId, model: $clie
 echo $newClient-&gt;organization;  // &#039;FreshBooks&#039;
 echo $newClient-&gt;firstName;     // &#039;Gordon&#039;
 echo $newClient-&gt;businessPhone; // &#039;416-444-4445&#039;</code></pre>
-            <p>or</p>
+
+            
+    <p>or</p>
+
             <pre><code class="language-php">$clientData = array(
     &#039;organization&#039; =&gt; &#039;FreshBooks&#039;,
     &#039;fname&#039; =&gt; &#039;Gordon&#039;,
@@ -187,10 +200,11 @@ $newClient = $freshBooksClient-&gt;clients()-&gt;create($accountId, data: $clien
 echo $newClient-&gt;organization;  // &#039;FreshBooks&#039;
 echo $newClient-&gt;firstName;     // &#039;Gordon&#039;
 echo $newClient-&gt;businessPhone; // &#039;416-444-4445&#039;</code></pre>
-    </div>
 
-            <div class="section" id="update">
-    <h2>Update</h2>
+    </section>
+
+            <section class="section " id="update">
+            <h2>Update</h2>
 
             <pre><code class="language-php">$clientData-&gt;organization = &#039;New Org&#039;;
 $clientData-&gt;firstName = &#039;Gord&#039;;
@@ -199,7 +213,10 @@ $newClient = $freshBooksClient-&gt;clients()-&gt;update($accountId, $clientData-
 
 echo $newClient-&gt;organization; // &#039;New Org&#039;
 echo $newClient-&gt;firstName;    // &#039;Gord&#039;</code></pre>
-            <p>or</p>
+
+            
+    <p>or</p>
+
             <pre><code class="language-php">$clientData = array(
     &#039;organization&#039; =&gt; &#039;Really New Org&#039;,
     &#039;fname&#039; =&gt; &#039;Gord&#039;,
@@ -209,18 +226,20 @@ $newClient = $freshBooksClient-&gt;clients()-&gt;update($accountId, $clientId, d
 
 echo $newClient-&gt;organization; // &#039;Really New Org&#039;
 echo $newClient-&gt;firstName;    // &#039;Gord&#039;</code></pre>
-    </div>
 
-            <div class="section" id="delete">
-    <h2>Delete</h2>
+    </section>
+
+            <section class="section " id="delete">
+            <h2>Delete</h2>
 
             <pre><code class="language-php">$client = $freshBooksClient-&gt;clients()-&gt;delete($accountId, $clientId);
 
 echo $client-&gt;visState; // &#039;1&#039;
 echo $client-&gt;visState == VisState::ACTIVE ? &#039;Is Active&#039; : &#039;Not Active&#039;; // &#039;Not Active&#039;</code></pre>
-    </div>
 
-    </div>
+    </section>
+
+    </section>
 
                             </div>
             <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
@@ -235,7 +254,7 @@ echo $client-&gt;visState == VisState::ACTIVE ? &#039;Is Active&#039; : &#039;No
     </section>
 </section>
         </div>
-        <a href="guide/api-calls/create-update-delete.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

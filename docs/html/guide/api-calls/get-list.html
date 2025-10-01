@@ -55,8 +55,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -112,7 +112,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -125,7 +125,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -139,45 +139,54 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
 </aside>
 
             <div class="phpdocumentor-column -nine phpdocumentor-content">
-                                        <div class="section" id="get-and-list">
-    <h1>Get and List</h1>
+                                        <section class="section " id="get-and-list">
+            <h1>Get and List</h1>
 
-            <div class="section" id="get">
-    <h2>Get</h2>
+            <section class="section " id="get">
+            <h2>Get</h2>
 
-            <p>API calls which return a single resource return a <a href="https://github.com/spatie/data-transfer-object">DataTransferObject</a>
+            
+    <p>API calls which return a single resource return a <a href="https://github.com/spatie/data-transfer-object">DataTransferObject</a>
 with the returned data accessible via properties.</p>
+
             <pre><code class="language-php">$client = $freshBooksClient-&gt;clients()-&gt;get($accountId, $clientId);
 
 echo $client-&gt;organization; // &#039;FreshBooks&#039;
 $client-&gt;only(&#039;organization&#039;)-&gt;toArray(); // [&#039;organization&#039; =&gt; &#039;FreshBooks&#039;];</code></pre>
-            <p><code>visState</code> numbers correspond with various states. See
+
+            
+    <p><code>visState</code>
+ numbers correspond with various states. See
 <a href="https://www.freshbooks.com/api/active_deleted">FreshBooks API - Active and Deleted Objects</a> for details.</p>
+
             <pre><code class="language-php">use amcintosh\FreshBooks\Model\VisState;
 
 echo $client-&gt;visState; // &#039;0&#039;
 echo $client-&gt;visState == VisState::ACTIVE ? &#039;Is Active&#039; : &#039;Not Active&#039;; // &#039;Is Active&#039;</code></pre>
-    </div>
 
-            <div class="section" id="list">
-    <h2>List</h2>
+    </section>
 
-            <p>API calls which return a list of resources return a <a href="https://github.com/spatie/data-transfer-object">DataTransferObject</a>
+            <section class="section " id="list">
+            <h2>List</h2>
+
+            
+    <p>API calls which return a list of resources return a <a href="https://github.com/spatie/data-transfer-object">DataTransferObject</a>
 with an array of the resources.</p>
+
             <pre><code class="language-php">$clients = $freshBooksClient-&gt;clients()-&gt;list($accountId);
 
 echo $clients-&gt;clients[0]-&gt;organization; // &#039;FreshBooks&#039;
@@ -185,9 +194,10 @@ echo $clients-&gt;clients[0]-&gt;organization; // &#039;FreshBooks&#039;
 foreach ($clients-&gt;clients as $client) {
     echo $client-&gt;organization;
 }</code></pre>
-    </div>
 
-    </div>
+    </section>
+
+    </section>
 
                             </div>
             <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
@@ -202,7 +212,7 @@ foreach ($clients-&gt;clients as $client) {
     </section>
 </section>
         </div>
-        <a href="guide/api-calls/get-list.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

@@ -55,8 +55,8 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
-            <h2 class="phpdocumentor-sidebar__category-header">documentation</h2>
+                    <section class="phpdocumentor-sidebar__category -documentation">
+            <h2 class="phpdocumentor-sidebar__category-header">Documentation</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="guide/installation.html#installation" class="">Installation</a>
 </h4>
@@ -112,7 +112,7 @@
 </h4>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/amcintosh.html" class="">amcintosh</a>
@@ -125,7 +125,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/amcintosh.html" class="">amcintosh</a>
@@ -139,40 +139,55 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
 </aside>
 
             <div class="phpdocumentor-column -nine phpdocumentor-content">
-                                        <div class="section" id="file-uploads">
-    <h1>File Uploads</h1>
+                                        <section class="section " id="file-uploads">
+            <h1>File Uploads</h1>
 
-            <p>Some FreshBooks resource can include images and attachments. For example, invoices can have a company
+            
+    <p>Some FreshBooks resource can include images and attachments. For example, invoices can have a company
 logo or banner image as part of the invoice presentation object as well as images or pdfs attachments.
 Expenses can also include copies or photos of receipts as attachments.</p>
-            <p>All images and attachments first need to be uploaded to FreshBooks via the <code>images</code> or <code>attachments</code>
+
+            
+    <p>All images and attachments first need to be uploaded to FreshBooks via the <code>images</code>
+ or <code>attachments</code>
+
 endpoints.</p>
-            <p>These will then return a path to your file with a JWT. This path will can then be passed as part of the
+
+            
+    <p>These will then return a path to your file with a JWT. This path will can then be passed as part of the
 data in a subsequent call.</p>
-            <p>See FreshBooks&#039; <a href="https://www.freshbooks.com/api/invoice_presentation_attachments">invoice attachment</a>
+
+            
+    <p>See FreshBooks&#039; <a href="https://www.freshbooks.com/api/invoice_presentation_attachments">invoice attachment</a>
 and <a href="https://www.freshbooks.com/api/https://www.freshbooks.com/api/expense-attachments">expense attachment</a>
 documentation for more information.</p>
-            <div class="section" id="invoice-images-and-attachments">
-    <h2>Invoice Images and Attachments</h2>
 
-            <p>See <a href="https://www.freshbooks.com/api/invoice_presentation_attachments">FreshBooks&#039; API Documentation</a>.</p>
-            <p>The <code>upload()</code> function takes a <a href="https://www.php.net/manual/en/language.types.resource.php">PHP resource</a>.
+            <section class="section " id="invoice-images-and-attachments">
+            <h2>Invoice Images and Attachments</h2>
+
+            
+    <p>See <a href="https://www.freshbooks.com/api/invoice_presentation_attachments">FreshBooks&#039; API Documentation</a>.</p>
+
+            
+    <p>The <code>upload()</code>
+ function takes a <a href="https://www.php.net/manual/en/language.types.resource.php">PHP resource</a>.
 Logo&#039;s and banners are added to the invoice presentation object. To include an uploaded attachment on
 an invoice, the invoice request must include an attachments object.</p>
+
             <pre><code class="language-php">$logo = $freshBooksClient-&gt;images()-&gt;upload($accountId, fopen(&#039;./sample_logo.png&#039;, &#039;r&#039;));
 $attachment = $freshBooksClient-&gt;attachments()-&gt;upload($accountId, fopen(&#039;./sample_attachment.pdf&#039;, &#039;r&#039;));
 
@@ -194,14 +209,19 @@ $invoiceData = [
 ];
 
 $invoice = $freshBooksClient-&gt;invoices()-&gt;create($accountId, $invoiceData);</code></pre>
-    </div>
 
-            <div class="section" id="expense-receipts">
-    <h2>Expense Receipts</h2>
+    </section>
 
-            <p>See <a href="https://www.freshbooks.com/api/expense-attachments">FreshBooks&#039; API Documentation</a>.</p>
-            <p>Expenses have have images or PDFs of the associated receipt attached. The expense request must include
+            <section class="section " id="expense-receipts">
+            <h2>Expense Receipts</h2>
+
+            
+    <p>See <a href="https://www.freshbooks.com/api/expense-attachments">FreshBooks&#039; API Documentation</a>.</p>
+
+            
+    <p>Expenses have have images or PDFs of the associated receipt attached. The expense request must include
 an attachments object.</p>
+
             <pre><code class="language-php">$attachment = $freshBooksClient-&gt;attachments()-&gt;upload($accountId, fopen(&#039;./sample_receipt.pdf&#039;, &#039;r&#039;));
 
 $expense-&gt;amount = new Money(&quot;6.49&quot;, &quot;CAD&quot;);
@@ -217,9 +237,10 @@ $expense-&gt;attachment = $expenseAttachment;
 
 $includes = (new IncludesBuilder())-&gt;include(&#039;attachment&#039;);
 $expense = $freshBooksClient-&gt;expenses()-&gt;create($accountId, model: $expense, includes: $includes);</code></pre>
-    </div>
 
-    </div>
+    </section>
+
+    </section>
 
                             </div>
             <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
@@ -234,7 +255,7 @@ $expense = $freshBooksClient-&gt;expenses()-&gt;create($accountId, model: $expen
     </section>
 </section>
         </div>
-        <a href="guide/file-uploads.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
