@@ -141,7 +141,7 @@ $identity = $freshBooksClient->currentUser();
 echo $identity->email // prints the current user's email
 
 // Print name and role of each business the user is a member of
-foreach ($identity.businessMemberships as $businessMembership) {
+foreach ($identity->businessMemberships as $businessMembership) {
     echo $businessMembership->business.name;
     echo $businessMembership->role; // eg. owner
 }
