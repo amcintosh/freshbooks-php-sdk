@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.9.0
+
 - Support for PHP 8.5
 
 ## 0.8.0
