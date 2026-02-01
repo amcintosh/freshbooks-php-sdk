@@ -27,7 +27,7 @@ class EventsResource extends AccountingResource
      * @param  int $resourceId
      * @return string
      */
-    protected function getUrl(string $accountId, int $resourceId = null): string
+    protected function getUrl(string $accountId, ?int $resourceId = null): string
     {
         if (!is_null($resourceId)) {
             return "/events/account/{$accountId}/{$this->accountingPath}/{$resourceId}";

@@ -34,7 +34,7 @@ class UploadResource extends BaseResource
      * @param  int $resourceId
      * @return string
      */
-    protected function getUrl(string $accountId = null, string $jwt = null): string
+    protected function getUrl(?string $accountId = null, ?string $jwt = null): string
     {
         if (!is_null($accountId)) {
             return "/uploads/account/{$accountId}/{$this->uploadPath}";

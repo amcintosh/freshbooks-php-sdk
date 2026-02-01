@@ -116,7 +116,7 @@ class FreshBooksClient
      * @return string
      * @throws FreshBooksClientConfigException
      */
-    public function getAuthRequestUri(array $scopes = null): string
+    public function getAuthRequestUri(?array $scopes = null): string
     {
         if (is_null($this->config->redirectUri)) {
             throw new FreshBooksClientConfigException('redirectUri must be configured');
@@ -197,7 +197,7 @@ class FreshBooksClient
      * @return AuthorizationToken Object containing the access token, refresh token, and expiry details.
      * @throws FreshBooksClientConfigException|Exception\FreshBooksException
      */
-    public function refreshAccessToken(string $refreshToken = null): AuthorizationToken
+    public function refreshAccessToken(?string $refreshToken = null): AuthorizationToken
     {
         if (is_null($refreshToken)) {
             $refreshToken = $this->config->refreshToken;

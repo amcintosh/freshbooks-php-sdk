@@ -185,7 +185,7 @@ class FilterBuilder implements BuilderInterface
      *               Eg. AccountingResource, ProjectsResource
      * @return string The built query string
      */
-    public function build(string $resourceName = null): string
+    public function build(?string $resourceName = null): string
     {
         $isAccountingLike = false;
         if (is_null($resourceName) || in_array($resourceName, ['AccountingResource', 'EventsResource'], true)) {

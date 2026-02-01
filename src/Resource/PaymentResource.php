@@ -13,18 +13,18 @@ class PaymentResource extends BaseResource
 {
     private HttpClient $httpClient;
     private string $resourcePath;
-    private string $subResourcePath;
-    private string $defaultsPath;
-    private string $staticPathParams;
+    private ?string $subResourcePath;
+    private ?string $defaultsPath;
+    private ?string $staticPathParams;
     private string $model;
 
     public function __construct(
         HttpClient $httpClient,
         string $resourcePath,
         string $model,
-        string $subResourcePath = null,
-        string $defaultsPath = null,
-        string $staticPathParams = null,
+        ?string $subResourcePath = null,
+        ?string $defaultsPath = null,
+        ?string $staticPathParams = null,
     ) {
         $this->httpClient = $httpClient;
         $this->resourcePath = $resourcePath;
@@ -42,7 +42,7 @@ class PaymentResource extends BaseResource
      * @param  bool $isList
      * @return string
      */
-    private function getUrl(string $accountId, int $resourceId = null): string
+    private function getUrl(string $accountId, ?int $resourceId = null): string
     {
         if (!is_null($resourceId) && !is_null($this->subResourcePath)) {
             return "/payments/account/{$accountId}/{$this->resourcePath}/{$resourceId}/{$this->subResourcePath}";
@@ -89,7 +89,7 @@ class PaymentResource extends BaseResource
      * @param  array $data
      * @return array
      */
-    private function makeRequest(string $method, string $url, array $data = null): array
+    private function makeRequest(string $method, string $url, ?array $data = null): array
     {
         if (!is_null($data)) {
             $data = json_encode($data);
@@ -154,8 +154,8 @@ class PaymentResource extends BaseResource
     public function create(
         string $accountId,
         int $resourceId,
-        DataModel $model = null,
-        array $data = null
+        ?DataModel $model = null,
+        ?array $data = null
     ): DataTransferObject {
         if (!is_null($model)) {
             $data = $model->getContent();

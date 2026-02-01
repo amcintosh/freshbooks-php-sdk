@@ -18,7 +18,7 @@
         "php-http/guzzle7-adapter": "1.x-dev",
         "php-http/mock-client": "1.x-dev",
         "quazardous/php-bump-version": "1.0.x-dev",
-        "mockery/mockery": "1.5"
+        "mockery/mockery": "^1.6"
     },
     "license": "MIT",
     "autoload": {

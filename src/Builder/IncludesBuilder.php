@@ -45,7 +45,7 @@ class IncludesBuilder implements BuilderInterface
      *               Eg. AccountingResource, ProjectsResource
      * @return string The built query string
      */
-    public function build(string $resourceName = null): string
+    public function build(?string $resourceName = null): string
     {
         $queryString = '';
         foreach ($this->includes as $include) {

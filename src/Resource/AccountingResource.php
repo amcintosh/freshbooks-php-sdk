@@ -28,7 +28,7 @@ class AccountingResource extends BaseResource
         string $singleModel,
         string $listModel,
         bool $deleteViaUpdate = true,
-        array $missingEndpoints = null
+        ?array $missingEndpoints = null
     ) {
         $this->httpClient = $httpClient;
         $this->singleModel = $singleModel;
@@ -45,7 +45,7 @@ class AccountingResource extends BaseResource
      * @param  int $resourceId
      * @return string
      */
-    protected function getUrl(string $accountId, int $resourceId = null): string
+    protected function getUrl(string $accountId, ?int $resourceId = null): string
     {
         if (!is_null($resourceId)) {
             return "/accounting/account/{$accountId}/{$this->accountingPath}/{$resourceId}";
@@ -62,7 +62,7 @@ class AccountingResource extends BaseResource
      * @param  array $data
      * @return array
      */
-    protected function makeRequest(string $method, string $url, array $data = null): array
+    protected function makeRequest(string $method, string $url, ?array $data = null): array
     {
         if (!is_null($data)) {
             $data = json_encode($data);
@@ -165,8 +165,8 @@ class AccountingResource extends BaseResource
      */
     public function create(
         string $accountId,
-        DataModel $model = null,
-        array $data = null,
+        ?DataModel $model = null,
+        ?array $data = null,
         ?IncludesBuilder $includes = null
     ): DataTransferObject {
         $this->rejectMissing('create');
@@ -191,8 +191,8 @@ class AccountingResource extends BaseResource
     public function update(
         string $accountId,
         int $resourceId,
-        DataModel $model = null,
-        array $data = null,
+        ?DataModel $model = null,
+        ?array $data = null,
         ?IncludesBuilder $includes = null
     ): DataTransferObject {
         $this->rejectMissing('update');

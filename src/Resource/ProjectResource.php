@@ -42,7 +42,7 @@ class ProjectResource extends BaseResource
      * @param  bool $isList
      * @return string
      */
-    private function getUrl(int $businessId, int $resourceId = null, bool $isList = false): string
+    private function getUrl(int $businessId, ?int $resourceId = null, bool $isList = false): string
     {
         if (!is_null($resourceId)) {
             return "/projects/business/{$businessId}/{$this->singleResourcePath}/{$resourceId}";
@@ -88,7 +88,7 @@ class ProjectResource extends BaseResource
      * @param  array $data
      * @return array
      */
-    private function makeRequest(string $method, string $url, array $data = null): array
+    private function makeRequest(string $method, string $url, ?array $data = null): array
     {
         if (!is_null($data)) {
             $data = json_encode($data);
@@ -156,8 +156,8 @@ class ProjectResource extends BaseResource
      */
     public function create(
         int $businessId,
-        DataModel $model = null,
-        array $data = null,
+        ?DataModel $model = null,
+        ?array $data = null,
         ?IncludesBuilder $includes = null
     ): DataTransferObject {
         if (!is_null($model)) {
@@ -181,8 +181,8 @@ class ProjectResource extends BaseResource
     public function update(
         int $businessId,
         int $resourceId,
-        DataModel $model = null,
-        array $data = null,
+        ?DataModel $model = null,
+        ?array $data = null,
         ?IncludesBuilder $includes = null
     ): DataTransferObject {
         if (!is_null($model)) {

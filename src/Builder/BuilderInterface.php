@@ -13,5 +13,5 @@ interface BuilderInterface
      *               Eg. AccountingResource, ProjectsResource
      * @return string The built query string
      */
-    public function build(string $resourceName = null): string;
+    public function build(?string $resourceName = null): string;
 }

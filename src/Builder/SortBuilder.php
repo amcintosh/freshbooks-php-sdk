@@ -81,7 +81,7 @@ class SortBuilder implements BuilderInterface
      *               Eg. AccountingResource, ProjectsResource
      * @return string The built query string
      */
-    public function build(string $resourceName = null): string
+    public function build(?string $resourceName = null): string
     {
         if (is_null($this->sortKey)) {
             return '';

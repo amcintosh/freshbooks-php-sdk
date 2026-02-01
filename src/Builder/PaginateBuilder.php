@@ -69,7 +69,7 @@ class PaginateBuilder implements BuilderInterface
      *               Eg. AccountingResource, ProjectsResource
      * @return string The built query string
      */
-    public function build(string $resourceName = null): string
+    public function build(?string $resourceName = null): string
     {
         return "&page={$this->page}&per_page={$this->perPage}";
     }

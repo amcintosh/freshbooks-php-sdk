@@ -18,10 +18,10 @@ final class FreshBooksException extends \Exception
     public function __construct(
         string $message,
         int $statusCode,
-        Throwable $previous = null,
-        string $rawResponse = null,
-        int $errorCode = null,
-        array $errorDetails = null
+        ?Throwable $previous = null,
+        ?string $rawResponse = null,
+        ?int $errorCode = null,
+        ?array $errorDetails = null
     ) {
         parent::__construct($message, $statusCode, $previous);
 

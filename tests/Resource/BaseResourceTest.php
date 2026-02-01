@@ -10,7 +10,7 @@ use amcintosh\FreshBooks\Tests\Util\MockHttpClient;
 
 trait BaseResourceTest
 {
-    public function getMockHttpClient(int $status = 200, array $content = null): MockHttpClient
+    public function getMockHttpClient(int $status = 200, ?array $content = null): MockHttpClient
     {
         $mockHttpClient = new MockHttpClient(
             Psr17FactoryDiscovery::findRequestFactory(),
