@@ -127,7 +127,7 @@ final class ClientTest extends TestCase
         $this->assertSame(VisState::ACTIVE, $client->visState);
     }
 
-    public function testClientGetContent(): void
+    public function testClientToRequest(): void
     {
         $clientData = json_decode($this->sampleClientData, true);
         $client = new Client($clientData['client']);
@@ -155,6 +155,6 @@ final class ClientTest extends TestCase
             's_province' => '',
             's_street' => '',
             's_street2' => ''
-        ], $client->getContent());
+        ], $client->toRequest());
     }
 }

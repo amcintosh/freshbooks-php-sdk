@@ -9,6 +9,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Exception\FreshBooksNotImplementedException;
+use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\DataModelLegacy;
 use amcintosh\FreshBooks\Model\ListModel;
 use amcintosh\FreshBooks\Model\VisState;
@@ -130,9 +131,9 @@ class AccountingResource extends BaseResource
      *
      * @param  string $accountId The alpha-numeric account id
      * @param  int $resourceId Id of the resource to return
-     * @return DataTransferObject The result model
+     * @return DataModel|DataTransferObject The result model
      */
-    public function get(string $accountId, int $resourceId, ?IncludesBuilder $includes = null): DataTransferObject
+    public function get(string $accountId, int $resourceId, ?IncludesBuilder $includes = null): DataModel|DataTransferObject|null
     {
         $this->rejectMissing('get');
         $url = $this->getUrl($accountId, $resourceId) . $this->buildQueryString([$includes]);
@@ -159,19 +160,21 @@ class AccountingResource extends BaseResource
      * Create a resource from either an array or a DataModelLegacy object.
      *
      * @param  string $accountId The alpha-numeric account id
-     * @param  DataModelLegacy $model (Optional) The model to create
+     * @param  DataModel|DataModelLegacy|null $model (Optional) The model to create
      * @param  array $data (Optional) The data to create the model with
-     * @return DataTransferObject Model of the new resource's response data.
+     * @return DataModel|DataTransferObject Model of the new resource's response data.
      */
     public function create(
         string $accountId,
-        ?DataModelLegacy $model = null,
+        DataModel|DataModelLegacy|null $model = null,
         ?array $data = null,
         ?IncludesBuilder $includes = null
-    ): DataTransferObject {
+    ): DataModel|DataTransferObject {
         $this->rejectMissing('create');
-        if (!is_null($model)) {
+        if (!is_null($model) && $model instanceof DataModelLegacy) {
             $data = $model->getContent();
+        } elseif (!is_null($model)) {
+            $data = $model->toRequest();
         }
         $data = array($this->singleModel::RESPONSE_FIELD => $data);
         $url = $this->getUrl($accountId) . $this->buildQueryString([$includes]);
@@ -184,20 +187,22 @@ class AccountingResource extends BaseResource
      *
      * @param  string $accountId The alpha-numeric account id
      * @param  int $resourceId Id of the resource to update
-     * @param  DataModelLegacy $model (Optional) The model to update
+     * @param  DataModel|DataModelLegacy|null $model (Optional) The model to update
      * @param  array $data (Optional) The data to update the model with
-     * @return DataTransferObject Model of the updated resource's response data.
+     * @return DataModel|DataTransferObject Model of the updated resource's response data.
      */
     public function update(
         string $accountId,
         int $resourceId,
-        ?DataModelLegacy $model = null,
+        DataModel|DataModelLegacy|null $model = null,
         ?array $data = null,
         ?IncludesBuilder $includes = null
-    ): DataTransferObject {
+    ): DataModel|DataTransferObject {
         $this->rejectMissing('update');
-        if (!is_null($model)) {
+        if (!is_null($model) && $model instanceof DataModelLegacy) {
             $data = $model->getContent();
+        } elseif (!is_null($model)) {
+            $data = $model->toRequest();
         }
         $data = array($this->singleModel::RESPONSE_FIELD => $data);
         $url = $this->getUrl($accountId, $resourceId) . $this->buildQueryString([$includes]);
@@ -213,9 +218,9 @@ class AccountingResource extends BaseResource
      *
      * @param  string $accountId The alpha-numeric account id
      * @param  int $resourceId Id of the resource to delete
-     * @return DataTransferObject Null for some resources or the Model of the deleted resource's response data.
+     * @return DataModel|DataTransferObject Null for some resources or the Model of the deleted resource.
      */
-    public function delete(string $accountId, int $resourceId): ?DataTransferObject
+    public function delete(string $accountId, int $resourceId): DataModel|DataTransferObject|null
     {
         $this->rejectMissing('delete');
         if ($this->deleteViaUpdate) {
