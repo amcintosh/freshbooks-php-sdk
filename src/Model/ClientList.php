@@ -6,7 +6,7 @@ namespace amcintosh\FreshBooks\Model;
 
 use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Casters\ArrayCaster;
-use amcintosh\FreshBooks\Model\AccountingList;
+use amcintosh\FreshBooks\Model\AccountingListLegacy;
 use amcintosh\FreshBooks\Model\Client;
 
 /**
@@ -15,7 +15,7 @@ use amcintosh\FreshBooks\Model\Client;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/clients
  */
-class ClientList extends AccountingList
+class ClientList extends AccountingListLegacy
 {
     public const RESPONSE_FIELD = 'clients';
 

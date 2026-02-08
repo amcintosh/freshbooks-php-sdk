@@ -13,7 +13,7 @@ use amcintosh\FreshBooks\Model\Pages;
  *
  * @package amcintosh\FreshBooks\Model
  */
-class AccountingList extends DataTransferObject
+class AccountingListLegacy extends DataTransferObject
 {
     public int $page;
 
