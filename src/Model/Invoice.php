@@ -13,7 +13,7 @@ use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\Casters\ArrayCaster;
 use Spatie\DataTransferObject\Casters\DataTransferObjectCaster;
 use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\DataModelLegacy;
 use amcintosh\FreshBooks\Model\InvoicePresentation;
 use amcintosh\FreshBooks\Model\LineItem;
 use amcintosh\FreshBooks\Model\Money;
@@ -29,7 +29,7 @@ use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/invoices
  */
-class Invoice extends DataTransferObject implements DataModel
+class Invoice extends DataTransferObject implements DataModelLegacy
 {
     public const RESPONSE_FIELD = 'invoice';
 

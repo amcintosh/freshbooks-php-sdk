@@ -11,7 +11,7 @@ use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\Caster\ISODateTimeImmutableCaster;
-use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\DataModelLegacy;
 
 /**
  * Webhook callback subscription model.
@@ -19,7 +19,7 @@ use amcintosh\FreshBooks\Model\DataModel;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/webhooks
  */
-class Callback extends DataTransferObject implements DataModel
+class Callback extends DataTransferObject implements DataModelLegacy
 {
     public const RESPONSE_FIELD = 'callback';
 

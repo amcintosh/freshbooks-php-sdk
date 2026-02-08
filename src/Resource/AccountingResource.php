@@ -9,7 +9,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Exception\FreshBooksNotImplementedException;
-use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\DataModelLegacy;
 use amcintosh\FreshBooks\Model\ListModel;
 use amcintosh\FreshBooks\Model\VisState;
 
@@ -156,16 +156,16 @@ class AccountingResource extends BaseResource
     }
 
     /**
-     * Create a resource from either an array or a DataModel object.
+     * Create a resource from either an array or a DataModelLegacy object.
      *
      * @param  string $accountId The alpha-numeric account id
-     * @param  DataModel $model (Optional) The model to create
+     * @param  DataModelLegacy $model (Optional) The model to create
      * @param  array $data (Optional) The data to create the model with
      * @return DataTransferObject Model of the new resource's response data.
      */
     public function create(
         string $accountId,
-        ?DataModel $model = null,
+        ?DataModelLegacy $model = null,
         ?array $data = null,
         ?IncludesBuilder $includes = null
     ): DataTransferObject {
@@ -180,18 +180,18 @@ class AccountingResource extends BaseResource
     }
 
     /**
-     * Update a resource from either an array or a DataModel object.
+     * Update a resource from either an array or a DataModelLegacy object.
      *
      * @param  string $accountId The alpha-numeric account id
      * @param  int $resourceId Id of the resource to update
-     * @param  DataModel $model (Optional) The model to update
+     * @param  DataModelLegacy $model (Optional) The model to update
      * @param  array $data (Optional) The data to update the model with
      * @return DataTransferObject Model of the updated resource's response data.
      */
     public function update(
         string $accountId,
         int $resourceId,
-        ?DataModel $model = null,
+        ?DataModelLegacy $model = null,
         ?array $data = null,
         ?IncludesBuilder $includes = null
     ): DataTransferObject {

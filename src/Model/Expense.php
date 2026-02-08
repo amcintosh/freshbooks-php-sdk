@@ -11,7 +11,7 @@ use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\DataModelLegacy;
 use amcintosh\FreshBooks\Model\ExpenseAttachment;
 use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
 use amcintosh\FreshBooks\Model\Caster\DateCaster;
@@ -23,7 +23,7 @@ use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/expenses
  */
-class Expense extends DataTransferObject implements DataModel
+class Expense extends DataTransferObject implements DataModelLegacy
 {
     public const RESPONSE_FIELD = 'expense';
 

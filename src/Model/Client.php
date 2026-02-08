@@ -10,7 +10,7 @@ use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\DataModelLegacy;
 use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
 
 /**
@@ -19,7 +19,7 @@ use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/clients
  */
-class Client extends DataTransferObject implements DataModel
+class Client extends DataTransferObject implements DataModelLegacy
 {
     public const RESPONSE_FIELD = 'client';
 

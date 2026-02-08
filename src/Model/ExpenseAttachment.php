@@ -8,7 +8,7 @@ use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\DataModelLegacy;
 
 /**
  * Attached receipt image details for an expense.
@@ -19,7 +19,7 @@ use amcintosh\FreshBooks\Model\DataModel;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/expense-attachments
  */
-class ExpenseAttachment extends DataTransferObject implements DataModel
+class ExpenseAttachment extends DataTransferObject implements DataModelLegacy
 {
     public const RESPONSE_FIELD = 'expense';
 

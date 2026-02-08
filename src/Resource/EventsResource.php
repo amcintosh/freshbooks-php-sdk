@@ -9,7 +9,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Exception\FreshBooksNotImplementedException;
-use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\DataModelLegacy;
 use amcintosh\FreshBooks\Model\ListModel;
 use amcintosh\FreshBooks\Model\VisState;
 

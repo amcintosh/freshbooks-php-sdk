@@ -8,7 +8,7 @@ use Http\Client\HttpClient;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
-use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\DataModelLegacy;
 use amcintosh\FreshBooks\Model\ListModel;
 use amcintosh\FreshBooks\Model\VisState;
 
@@ -147,16 +147,16 @@ class ProjectResource extends BaseResource
     }
 
     /**
-     * Create a resource from either an array or a DataModel object.
+     * Create a resource from either an array or a DataModelLegacy object.
      *
      * @param  int $businessId The business id
-     * @param  DataModel $model (Optional) The model to create
+     * @param  DataModelLegacy $model (Optional) The model to create
      * @param  array $data (Optional) The data to create the model with
      * @return DataTransferObject Model of the new resource's response data.
      */
     public function create(
         int $businessId,
-        ?DataModel $model = null,
+        ?DataModelLegacy $model = null,
         ?array $data = null,
         ?IncludesBuilder $includes = null
     ): DataTransferObject {
@@ -170,18 +170,18 @@ class ProjectResource extends BaseResource
     }
 
     /**
-     * Update a resource from either an array or a DataModel object.
+     * Update a resource from either an array or a DataModelLegacy object.
      *
      * @param  int $businessId The business id
      * @param  int $resourceId Id of the resource to update
-     * @param  DataModel $model (Optional) The model to update
+     * @param  DataModelLegacy $model (Optional) The model to update
      * @param  array $data (Optional) The data to update the model with
      * @return DataTransferObject Model of the updated resource's response data.
      */
     public function update(
         int $businessId,
         int $resourceId,
-        ?DataModel $model = null,
+        ?DataModelLegacy $model = null,
         ?array $data = null,
         ?IncludesBuilder $includes = null
     ): DataTransferObject {

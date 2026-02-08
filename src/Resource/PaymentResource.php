@@ -7,7 +7,7 @@ namespace amcintosh\FreshBooks\Resource;
 use Http\Client\HttpClient;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
-use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\DataModelLegacy;
 
 class PaymentResource extends BaseResource
 {
@@ -144,17 +144,17 @@ class PaymentResource extends BaseResource
     }
 
     /**
-     * Create a resource from either an array or a DataModel object.
+     * Create a resource from either an array or a DataModelLegacy object.
      *
      * @param  string $accountId The alpha-numeric account id
-     * @param  DataModel $model (Optional) The model to create
+     * @param  DataModelLegacy $model (Optional) The model to create
      * @param  array $data (Optional) The data to create the model with
      * @return DataTransferObject Model of the new resource's response data.
      */
     public function create(
         string $accountId,
         int $resourceId,
-        ?DataModel $model = null,
+        ?DataModelLegacy $model = null,
         ?array $data = null
     ): DataTransferObject {
         if (!is_null($model)) {

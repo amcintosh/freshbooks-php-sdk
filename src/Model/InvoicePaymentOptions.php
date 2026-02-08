@@ -8,7 +8,7 @@ use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Model\DataModelLegacy;
 
 /**
  * In FreshBooks, invoices can be paid online via a variety of payment gateways
@@ -22,7 +22,7 @@ use amcintosh\FreshBooks\Model\DataModel;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/online-payments
  */
-class InvoicePaymentOptions extends DataTransferObject implements DataModel
+class InvoicePaymentOptions extends DataTransferObject implements DataModelLegacy
 {
     public const RESPONSE_FIELD = 'payment_options';
 
