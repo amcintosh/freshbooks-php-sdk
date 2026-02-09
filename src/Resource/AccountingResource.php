@@ -132,8 +132,11 @@ class AccountingResource extends BaseResource
      * @param  int $resourceId Id of the resource to return
      * @return DataModel|DataTransferObject The result model
      */
-    public function get(string $accountId, int $resourceId, ?IncludesBuilder $includes = null): DataModel|DataTransferObject|null
-    {
+    public function get(
+        string $accountId,
+        int $resourceId,
+        ?IncludesBuilder $includes = null
+    ): DataModel|DataTransferObject|null {
         $this->rejectMissing('get');
         $url = $this->getUrl($accountId, $resourceId) . $this->buildQueryString([$includes]);
         $result = $this->makeRequest(self::GET, $url);

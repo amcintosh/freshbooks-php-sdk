@@ -22,7 +22,11 @@ class Util
         if ($isUtc) {
             return DateTimeImmutable::createFromFormat(Util::ACCOUNTING_FORMAT, $value, new DateTimeZone('UTC'));
         }
-        $parsedDate = DateTimeImmutable::createFromFormat(Util::ACCOUNTING_FORMAT, $value, new DateTimeZone(Util::ACCOUNTING_TIMEZONE));
+        $parsedDate = DateTimeImmutable::createFromFormat(
+            Util::ACCOUNTING_FORMAT,
+            $value,
+            new DateTimeZone(Util::ACCOUNTING_TIMEZONE)
+        );
         return $parsedDate->setTimeZone(new DateTimeZone('UTC'));
     }
 
