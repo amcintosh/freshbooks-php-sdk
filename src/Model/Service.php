@@ -12,7 +12,6 @@ use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
 use Spryker\DecimalObject\Decimal;
-use amcintosh\FreshBooks\Model\DataModelLegacy;
 use amcintosh\FreshBooks\Model\ProjectGroup;
 use amcintosh\FreshBooks\Model\Caster\DateCaster;
 use amcintosh\FreshBooks\Model\Caster\DecimalCaster;

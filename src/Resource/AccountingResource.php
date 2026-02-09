@@ -10,8 +10,7 @@ use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Exception\FreshBooksNotImplementedException;
 use amcintosh\FreshBooks\Model\DataModel;
-use amcintosh\FreshBooks\Model\DataModelLegacy;
-use amcintosh\FreshBooks\Model\ListModel;
+use amcintosh\FreshBooks\Model\DataModelList;
 use amcintosh\FreshBooks\Model\VisState;
 
 class AccountingResource extends BaseResource
@@ -146,9 +145,9 @@ class AccountingResource extends BaseResource
      *
      * @param  string $accountId The alpha-numeric account id
      * @param  array $builders (Optional) List of builder objects for filters, pagination, etc.
-     * @return DataTransferObject The list result model
+     * @return DataModelList|DataTransferObject The list result model
      */
-    public function list(string $accountId, ?array $builders = null): DataTransferObject
+    public function list(string $accountId, ?array $builders = null): DataModelList|DataTransferObject
     {
         $this->rejectMissing('list');
         $url = $this->getUrl($accountId) . $this->buildQueryString($builders);
@@ -157,24 +156,22 @@ class AccountingResource extends BaseResource
     }
 
     /**
-     * Create a resource from either an array or a DataModelLegacy object.
+     * Create a resource from either an array or a DataModel object.
      *
      * @param  string $accountId The alpha-numeric account id
-     * @param  DataModel|DataModelLegacy|null $model (Optional) The model to create
+     * @param  ?DataModel $model (Optional) The model to create
      * @param  array $data (Optional) The data to create the model with
      * @return DataModel|DataTransferObject Model of the new resource's response data.
      */
     public function create(
         string $accountId,
-        DataModel|DataModelLegacy|null $model = null,
+        ?DataModel $model = null,
         ?array $data = null,
         ?IncludesBuilder $includes = null
     ): DataModel|DataTransferObject {
         $this->rejectMissing('create');
-        if (!is_null($model) && $model instanceof DataModelLegacy) {
+        if (!is_null($model)) {
             $data = $model->getContent();
-        } elseif (!is_null($model)) {
-            $data = $model->toRequest();
         }
         $data = array($this->singleModel::RESPONSE_FIELD => $data);
         $url = $this->getUrl($accountId) . $this->buildQueryString([$includes]);
@@ -183,26 +180,24 @@ class AccountingResource extends BaseResource
     }
 
     /**
-     * Update a resource from either an array or a DataModelLegacy object.
+     * Update a resource from either an array or a DataModel object.
      *
      * @param  string $accountId The alpha-numeric account id
      * @param  int $resourceId Id of the resource to update
-     * @param  DataModel|DataModelLegacy|null $model (Optional) The model to update
+     * @param  ?DataModel $model (Optional) The model to update
      * @param  array $data (Optional) The data to update the model with
      * @return DataModel|DataTransferObject Model of the updated resource's response data.
      */
     public function update(
         string $accountId,
         int $resourceId,
-        DataModel|DataModelLegacy|null $model = null,
+        ?DataModel $model = null,
         ?array $data = null,
         ?IncludesBuilder $includes = null
     ): DataModel|DataTransferObject {
         $this->rejectMissing('update');
-        if (!is_null($model) && $model instanceof DataModelLegacy) {
+        if (!is_null($model)) {
             $data = $model->getContent();
-        } elseif (!is_null($model)) {
-            $data = $model->toRequest();
         }
         $data = array($this->singleModel::RESPONSE_FIELD => $data);
         $url = $this->getUrl($accountId, $resourceId) . $this->buildQueryString([$includes]);

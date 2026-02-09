@@ -15,7 +15,7 @@ use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/clients
  */
-class Client extends DataModel
+class Client implements DataModel
 {
     public const RESPONSE_FIELD = 'client';
 
@@ -241,51 +241,41 @@ class Client extends DataModel
     }
 
     /**
-     * Create a Client instance from an API response array.
-     *
-     * @param array $data The API response data to map to the data model.
-     * @return Client An instance of the client data model
-     */
-    public static function fromResponse(array $data): self
-    {
-        return new self($data);
-    }
-
-    /**
      * Serialize the Client model to an array to POST or PUT to FreshBooks,
      * removing any read-only fields.
      *
      * @return array
      */
-    public function toRequest(): array {
+    public function getContent(): array
+    {
         $data = array();
-        $this->convertContent($data, "bus_phone", $this->businessPhone);
-        $this->convertContent($data, "company_industry", $this->companyIndustry);
-        $this->convertContent($data, "company_size", $this->companySize);
-        $this->convertContent($data, "currency_code", $this->currencyCode);
-        $this->convertContent($data, "email", $this->email);
-        $this->convertContent($data, "fax", $this->fax);
-        $this->convertContent($data, "fname", $this->firstName);
-        $this->convertContent($data, "home_phone", $this->homePhone);
-        $this->convertContent($data, "language", $this->language);
-        $this->convertContent($data, "lname", $this->lastName);
-        $this->convertContent($data, "mob_phone", $this->mobilePhone);
-        $this->convertContent($data, "note", $this->note);
-        $this->convertContent($data, "organization", $this->organization);
-        $this->convertContent($data, "p_city", $this->billingCity);
-        $this->convertContent($data, "p_code", $this->billingCode);
-        $this->convertContent($data, "p_country", $this->billingCountry);
-        $this->convertContent($data, "p_province", $this->billingProvince);
-        $this->convertContent($data, "p_street", $this->billingStreet);
-        $this->convertContent($data, "p_street2", $this->billingStreet2);
-        $this->convertContent($data, "s_city", $this->shippingCity);
-        $this->convertContent($data, "s_code", $this->shippingCode);
-        $this->convertContent($data, "s_country", $this->shippingCountry);
-        $this->convertContent($data, "s_province", $this->shippingProvince);
-        $this->convertContent($data, "s_street", $this->shippingStreet);
-        $this->convertContent($data, "s_street2", $this->shippingStreet2);
-        $this->convertContent($data, "vat_name", $this->vatName);
-        $this->convertContent($data, "vat_number", $this->vatNumber);
+        Util::convertContent($data, "bus_phone", $this->businessPhone);
+        Util::convertContent($data, "company_industry", $this->companyIndustry);
+        Util::convertContent($data, "company_size", $this->companySize);
+        Util::convertContent($data, "currency_code", $this->currencyCode);
+        Util::convertContent($data, "email", $this->email);
+        Util::convertContent($data, "fax", $this->fax);
+        Util::convertContent($data, "fname", $this->firstName);
+        Util::convertContent($data, "home_phone", $this->homePhone);
+        Util::convertContent($data, "language", $this->language);
+        Util::convertContent($data, "lname", $this->lastName);
+        Util::convertContent($data, "mob_phone", $this->mobilePhone);
+        Util::convertContent($data, "note", $this->note);
+        Util::convertContent($data, "organization", $this->organization);
+        Util::convertContent($data, "p_city", $this->billingCity);
+        Util::convertContent($data, "p_code", $this->billingCode);
+        Util::convertContent($data, "p_country", $this->billingCountry);
+        Util::convertContent($data, "p_province", $this->billingProvince);
+        Util::convertContent($data, "p_street", $this->billingStreet);
+        Util::convertContent($data, "p_street2", $this->billingStreet2);
+        Util::convertContent($data, "s_city", $this->shippingCity);
+        Util::convertContent($data, "s_code", $this->shippingCode);
+        Util::convertContent($data, "s_country", $this->shippingCountry);
+        Util::convertContent($data, "s_province", $this->shippingProvince);
+        Util::convertContent($data, "s_street", $this->shippingStreet);
+        Util::convertContent($data, "s_street2", $this->shippingStreet2);
+        Util::convertContent($data, "vat_name", $this->vatName);
+        Util::convertContent($data, "vat_number", $this->vatNumber);
         return $data;
     }
 }

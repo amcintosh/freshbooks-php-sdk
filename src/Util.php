@@ -25,4 +25,34 @@ class Util
         $parsedDate = DateTimeImmutable::createFromFormat(Util::ACCOUNTING_FORMAT, $value, new DateTimeZone(Util::ACCOUNTING_TIMEZONE));
         return $parsedDate->setTimeZone(new DateTimeZone('UTC'));
     }
+
+    /**
+     * Helper function to convert content from DataModel objects or arrays of DataModel objects.
+     *
+     * @param array $data The data array to modify.
+     * @param string $key The key in the data array to set.
+     * @param mixed $value The value to convert, can be a DataModel, an array of DataModel, or any other type.
+     * @return void
+     */
+    public static function convertContent(array &$data, string $key, mixed $value): void
+    {
+        if ($value === null) {
+            return;
+        }
+        if (is_array($value)) {
+            $convertedItems = [];
+            foreach ($value as $item) {
+                if ($item instanceof DataModel) {
+                    $convertedItems[] = $item->getContent();
+                } else {
+                    $convertedItems[] = $item;
+                }
+            }
+            $data[$key] = $convertedItems;
+        } elseif ($value instanceof DataModel) {
+            $data[$key] = $value->getContent();
+        } else {
+            $data[$key] = $value;
+        }
+    }
 }

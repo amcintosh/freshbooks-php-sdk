@@ -155,6 +155,6 @@ final class ClientTest extends TestCase
             's_province' => '',
             's_street' => '',
             's_street2' => ''
-        ], $client->toRequest());
+        ], $client->getContent());
     }
 }

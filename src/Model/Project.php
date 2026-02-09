@@ -13,7 +13,7 @@ use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\Casters\ArrayCaster;
 use Spatie\DataTransferObject\DataTransferObject;
 use Spryker\DecimalObject\Decimal;
-use amcintosh\FreshBooks\Model\DataModelLegacy;
+use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\ProjectGroup;
 use amcintosh\FreshBooks\Model\Service;
 use amcintosh\FreshBooks\Model\Caster\DateCaster;
@@ -27,7 +27,7 @@ use amcintosh\FreshBooks\Model\Caster\ISODateTimeImmutableCaster;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/project
  */
-class Project extends DataTransferObject implements DataModelLegacy
+class Project extends DataTransferObject implements DataModel
 {
     public const RESPONSE_FIELD = 'project';
 

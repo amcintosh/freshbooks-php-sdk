@@ -161,6 +161,34 @@ final class AccountingResourceTest extends TestCase
         $this->assertSame('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
     }
 
+    public function testListLegacy(): void
+    {
+        $expenseId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => [
+                'expenses' => [['id' => $expenseId]],
+                'page' => 1,
+                'per_page' => 15,
+                'pages' => 1,
+                'total' => 1
+            ]]]
+        );
+
+        $resource = new AccountingResource($mockHttpClient, 'expenses/expenses', Expense::class, ExpenseList::class);
+        $expenses = $resource->list($this->accountId);
+
+        $this->assertSame($expenseId, $expenses->expenses[0]->id);
+        $this->assertSame(1, $expenses->page);
+        $this->assertSame(15, $expenses->perPage);
+        $this->assertSame(1, $expenses->pages);
+        $this->assertSame(1, $expenses->total);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertSame('GET', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/expenses/expenses', $request->getRequestTarget());
+    }
+
     public function testListNoRecords(): void
     {
         $mockHttpClient = $this->getMockHttpClient(
