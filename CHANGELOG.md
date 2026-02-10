@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- *Partial Breaking change*: Begin removing `spatie/data-transfer-object` usage.
+  This begins with converting Client data models. The SDK's methods will accept and
+  return the same data model classes, so it is not a fully breaking change, but the
+  model no longer inherits from `DataTransferObject`, so any code that relies on that
+  will break.
+
 ## 0.9.0
 
 - Support for PHP 8.5
