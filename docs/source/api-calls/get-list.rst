@@ -4,8 +4,7 @@ Get and List
 Get
 ---
 
-API calls which return a single resource return a `DataTransferObject <https://github.com/spatie/data-transfer-object>`_
-with the returned data accessible via properties.
+Get calls return a single `DataModel` class with data accessible via properties.
 
 .. code-block:: php
     $client = $freshBooksClient->clients()->get($accountId, $clientId);
@@ -25,8 +24,7 @@ with the returned data accessible via properties.
 List
 ----
 
-API calls which return a list of resources return a `DataTransferObject <https://github.com/spatie/data-transfer-object>`_
-with an array of the resources.
+List calls return a class containing containing an array of the resource's `DataModel` class.
 
 .. code-block:: php
     $clients = $freshBooksClient->clients()->list($accountId);
