@@ -6,7 +6,7 @@ namespace amcintosh\FreshBooks\Model;
 
 use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Casters\ArrayCaster;
-use amcintosh\FreshBooks\Model\AccountingList;
+use amcintosh\FreshBooks\Model\AccountingListLegacy;
 use amcintosh\FreshBooks\Model\Expense;
 
 /**
@@ -15,7 +15,7 @@ use amcintosh\FreshBooks\Model\Expense;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/expenses
  */
-class ExpenseList extends AccountingList
+class ExpenseList extends AccountingListLegacy
 {
     public const RESPONSE_FIELD = 'expenses';
 

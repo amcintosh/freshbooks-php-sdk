@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use amcintosh\FreshBooks\Model\DataModelList;
+use Spatie\DataTransferObject\Attributes\MapFrom;
+use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\Pages;
 
 /**
@@ -12,18 +13,19 @@ use amcintosh\FreshBooks\Model\Pages;
  *
  * @package amcintosh\FreshBooks\Model
  */
-class AccountingList extends DataModelList
+class AccountingListLegacy extends DataTransferObject
 {
+    public int $page;
+
+    public int $pages;
+
+    #[MapFrom('per_page')]
+    public int $perPage;
+
+    public int $total;
+
     public function pages(): mixed
     {
         return new Pages($this->page, $this->pages, $this->perPage, $this->total);
-    }
-
-    public function __construct(array $data = [])
-    {
-        $this->page = $data['page'] ?? null;
-        $this->pages = $data['pages'] ?? null;
-        $this->perPage = $data['per_page'] ?? null;
-        $this->total = $data['total'] ?? null;
     }
 }

@@ -12,6 +12,8 @@ use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Builder\PaginateBuilder;
 use amcintosh\FreshBooks\Model\Client;
 use amcintosh\FreshBooks\Model\ClientList;
+use amcintosh\FreshBooks\Model\Expense;
+use amcintosh\FreshBooks\Model\ExpenseList;
 use amcintosh\FreshBooks\Model\VisState;
 use amcintosh\FreshBooks\Resource\AccountingResource;
 use amcintosh\FreshBooks\Tests\Resource\BaseResourceTest;
@@ -159,6 +161,34 @@ final class AccountingResourceTest extends TestCase
         $this->assertSame('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
     }
 
+    public function testListLegacy(): void
+    {
+        $expenseId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => [
+                'expenses' => [['id' => $expenseId]],
+                'page' => 1,
+                'per_page' => 15,
+                'pages' => 1,
+                'total' => 1
+            ]]]
+        );
+
+        $resource = new AccountingResource($mockHttpClient, 'expenses/expenses', Expense::class, ExpenseList::class);
+        $expenses = $resource->list($this->accountId);
+
+        $this->assertSame($expenseId, $expenses->expenses[0]->id);
+        $this->assertSame(1, $expenses->page);
+        $this->assertSame(15, $expenses->perPage);
+        $this->assertSame(1, $expenses->pages);
+        $this->assertSame(1, $expenses->total);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertSame('GET', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/expenses/expenses', $request->getRequestTarget());
+    }
+
     public function testListNoRecords(): void
     {
         $mockHttpClient = $this->getMockHttpClient(
@@ -233,6 +263,7 @@ final class AccountingResourceTest extends TestCase
             $request->getRequestTarget()
         );
     }
+
     public function testCreateByModel(): void
     {
         $clientId = 12345;
@@ -252,6 +283,27 @@ final class AccountingResourceTest extends TestCase
         $request = $mockHttpClient->getLastRequest();
         $this->assertSame('POST', $request->getMethod());
         $this->assertSame('/accounting/account/ACM123/users/clients', $request->getRequestTarget());
+    }
+
+    public function testCreateByModelLegacy(): void
+    {
+        $expenseId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['expense' => ['id' => $expenseId, 'notes' => 'My notes']]]]
+        );
+        $model = new Expense();
+        $model->notes = 'My notes';
+
+        $resource = new AccountingResource($mockHttpClient, 'expenses/expenses', Expense::class, ExpenseList::class);
+        $expense = $resource->create($this->accountId, model: $model);
+
+        $this->assertSame($expenseId, $expense->id);
+        $this->assertSame('My notes', $expense->notes);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertSame('POST', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/expenses/expenses', $request->getRequestTarget());
     }
 
     public function testCreateByData(): void
@@ -318,6 +370,27 @@ final class AccountingResourceTest extends TestCase
         $request = $mockHttpClient->getLastRequest();
         $this->assertSame('PUT', $request->getMethod());
         $this->assertSame('/accounting/account/ACM123/users/clients/12345', $request->getRequestTarget());
+    }
+
+    public function testUpdateByModelLegacy(): void
+    {
+        $expenseId = 12345;
+        $mockHttpClient = $this->getMockHttpClient(
+            200,
+            ['response' => ['result' => ['expense' => ['id' => $expenseId, 'notes' => 'My notes']]]]
+        );
+        $model = new Expense();
+        $model->notes = 'My notes';
+
+        $resource = new AccountingResource($mockHttpClient, 'expenses/expenses', Expense::class, ExpenseList::class);
+        $expense = $resource->update($this->accountId, $expenseId, model: $model);
+
+        $this->assertSame($expenseId, $expense->id);
+        $this->assertSame('My notes', $expense->notes);
+
+        $request = $mockHttpClient->getLastRequest();
+        $this->assertSame('PUT', $request->getMethod());
+        $this->assertSame('/accounting/account/ACM123/expenses/expenses/12345', $request->getRequestTarget());
     }
 
     public function testUpdateByData(): void

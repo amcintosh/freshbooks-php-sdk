@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Casters\ArrayCaster;
 use amcintosh\FreshBooks\Model\AccountingList;
 use amcintosh\FreshBooks\Model\Client;
 
@@ -17,8 +15,11 @@ use amcintosh\FreshBooks\Model\Client;
  */
 class ClientList extends AccountingList
 {
-    public const RESPONSE_FIELD = 'clients';
-
-    #[CastWith(ArrayCaster::class, itemType: Client::class)]
     public array $clients;
+
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+        $this->clients = $this->constructList($data['clients'], Client::class);
+    }
 }

@@ -160,8 +160,7 @@ $project = $freshBooksClient->projects()->get($businessId, $projectId);
 
 #### Get and List
 
-API calls which return a single resource return a [DataTransferObject](https://github.com/spatie/data-transfer-object)
-with the returned data accessible via properties.
+Get calls return a single `DataModel` class with data accessible via properties.
 
 ```php
 $client = $freshBooksClient->clients()->get($accountId, $clientId);
@@ -180,8 +179,7 @@ echo $client->visState; // '0'
 echo $client->visState == VisState::ACTIVE ? 'Is Active' : 'Not Active'; // 'Is Active'
 ```
 
-API calls which return a list of resources return a [DataTransferObject](https://github.com/spatie/data-transfer-object)
-with an array of the resources.
+List calls return a class containing containing an array of the resource's `DataModel` class.
 
 ```php
 $clients = $freshBooksClient->clients()->list($accountId);
@@ -196,7 +194,7 @@ foreach ($clients->clients as $client) {
 #### Create, Update, and Delete
 
 API calls to create and update take either a `DataModel` object, or an array of the resource data. A successful call
-will return a `DataTransferObject` object as if a `get` call.
+will return a `DataModel` class as if a `get` call.
 
 _Note_: When using the array of data, you need to specify the field as it exists in the FreshBooks API. There
 are API fields that are translated to more intuitive names in the data models. For example `fname` = `firstName`,

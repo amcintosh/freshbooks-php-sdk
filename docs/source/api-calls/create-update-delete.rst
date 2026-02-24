@@ -2,7 +2,7 @@ Create, Update, and Delete
 ==========================
 
 API calls to create and update take either a ``DataModel`` object, or an array of the resource data. A successful call
-will return a ``DataTransferObject`` object as if a :doc:`get<get-list>` call.
+will return a ``DataModel`` object as if a :doc:`get<get-list>` call.
 
 *Note*: When using the array of data, you need to specify the field as it exists in the FreshBooks API. There
 are API fields that are translated to more intuitive names in the data models. For example ``fname`` = ``firstName``,
