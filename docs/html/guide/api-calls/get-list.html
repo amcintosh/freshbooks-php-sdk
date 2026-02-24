@@ -160,8 +160,8 @@
             <h2>Get</h2>
 
             
-    <p>API calls which return a single resource return a <a href="https://github.com/spatie/data-transfer-object">DataTransferObject</a>
-with the returned data accessible via properties.</p>
+    <p>Get calls return a single <code>DataModel</code>
+ class with data accessible via properties.</p>
 
             <pre><code class="language-php">$client = $freshBooksClient-&gt;clients()-&gt;get($accountId, $clientId);
 
@@ -184,8 +184,8 @@ echo $client-&gt;visState == VisState::ACTIVE ? &#039;Is Active&#039; : &#039;No
             <h2>List</h2>
 
             
-    <p>API calls which return a list of resources return a <a href="https://github.com/spatie/data-transfer-object">DataTransferObject</a>
-with an array of the resources.</p>
+    <p>List calls return a class containing containing an array of the resource&#039;s <code>DataModel</code>
+ class.</p>
 
             <pre><code class="language-php">$clients = $freshBooksClient-&gt;clients()-&gt;list($accountId);
 

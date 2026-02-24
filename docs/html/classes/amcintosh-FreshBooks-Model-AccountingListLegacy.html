@@ -161,10 +161,10 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    ExpenseList
+    AccountingListLegacy
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html"><abbr title="\amcintosh\FreshBooks\Model\AccountingListLegacy">AccountingListLegacy</abbr></a>
+        extends <abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -185,37 +185,23 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/ExpenseList.php"><a href="files/src-model-expenselist.html"><abbr title="src/Model/ExpenseList.php">ExpenseList.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/AccountingListLegacy.php"><a href="files/src-model-accountinglistlegacy.html"><abbr title="src/Model/AccountingListLegacy.php">AccountingListLegacy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">16</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Results of expenses list call containing list of expenses and pagination data.</p>
+            <p class="phpdocumentor-summary">Parent class for list results on accounting endpoints to share pagination details.</p>
 
 
 
 
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">link</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://www.freshbooks.com/api/expenses"> https://www.freshbooks.com/api/expenses </a>
-                    
-                                    </dd>
-                                            </dl>
 
     
     
 <h3 id="toc">
     Table of Contents
-    <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -225,33 +211,14 @@
 
 
 
-<h4 id="toc-constants">
-    Constants
-    <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
-
-</h4>
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a class="" href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#constant_RESPONSE_FIELD">RESPONSE_FIELD</a>
-    <span>
-        &nbsp;= &#039;expenses&#039;                            </span>
-</dt>
-
-    </dl>
 
 
 <h4 id="toc-properties">
     Properties
-    <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a class="" href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_expenses">$expenses</a>
-    <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#property_page">$page</a>
     <span>
@@ -280,7 +247,7 @@
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
@@ -295,105 +262,14 @@
 
 
         
-    <section class="phpdocumentor-constants">
-        <h3 class="phpdocumentor-elements__header" id="constants">
-            Constants
-            <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
-
-        </h3>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_RESPONSE_FIELD">
-        RESPONSE_FIELD
-        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#constant_RESPONSE_FIELD" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/ExpenseList.php"><a href="files/src-model-expenselist.html"><abbr title="src/Model/ExpenseList.php">ExpenseList.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">20</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">RESPONSE_FIELD</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;expenses&#039;</span>
-</code>
-
-
-    
-    
-    
-
-        
-    </article>
-            </section>
 
         
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -public
-                                                                    "
->
-    <h4 class="phpdocumentor-element__name" id="property_expenses">
-        $expenses
-        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_expenses" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/ExpenseList.php"><a href="files/src-model-expenselist.html"><abbr title="src/Model/ExpenseList.php">ExpenseList.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">22</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-        <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$expenses</span>
-    </code>
-
-    
-    
-    
-
-        
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_expenses#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\CastWith">CastWith</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        \Spatie\DataTransferObject\Casters\ArrayCaster::class
-    </dd>
-        <dd class="phpdocumentor-argument-list__entry">
-        $itemType: \amcintosh\FreshBooks\Model\Expense::class
-    </dd>
-    </dl>
-                    </section>
-        
-
-</article>
                     <article
         class="
             phpdocumentor-element
@@ -561,7 +437,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -604,7 +480,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Model/ExpenseList.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Model/AccountingListLegacy.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -705,22 +581,14 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                        <li><a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#toc-constants">Constants</a></li>
-                                                            <li><a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#toc-properties">Properties</a></li>
-                                                            <li><a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#toc-methods">Methods</a></li>
+                                                            <li><a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
-                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
-                <li>
-                    <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#constant_RESPONSE_FIELD">RESPONSE_FIELD</a></li>
-                                            </ul>
-                </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#property_expenses">$expenses</a></li>
                                                     <li class=""><a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#property_page">$page</a></li>
                                                     <li class=""><a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#property_pages">$pages</a></li>
                                                     <li class=""><a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#property_perPage">$perPage</a></li>
@@ -751,7 +619,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/amcintosh-FreshBooks-Model-ExpenseList.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/amcintosh-FreshBooks-Model-AccountingListLegacy.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
