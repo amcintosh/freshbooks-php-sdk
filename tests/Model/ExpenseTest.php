@@ -128,7 +128,10 @@ final class ExpenseTest extends TestCase
         $expenseData = json_decode($this->sampleExpenseData, true);
         $expense = new Expense($expenseData['expense']);
         $this->assertSame([
-            'account_name' => '',
+            'amount' => [
+                'amount' => '54.00',
+                'code' => 'CAD',
+            ],
             'bank_name' => 'ABC Bank',
             'billable' => false,
             'categoryid' => 654654,
@@ -145,16 +148,12 @@ final class ExpenseTest extends TestCase
             'potential_bill_payment' => false,
             'projectid' => 0,
             'staffid' => 1,
-            'taxName1' => 'HST1',
-            'vendor' => 'Serano Bakery',
-            'amount' => [
-                'amount' => '54.00',
-                'code' => 'CAD',
-            ],
             'taxAmount1' => [
                 'amount' => '6.21',
                 'code' => 'CAD',
             ],
+            'taxName1' => 'HST1',
+            'vendor' => 'Serano Bakery',
             'attachment' => [
                 'jwt' => 'someAwesomeJWT',
                 'media_type' => 'image/jpeg'
