@@ -31,6 +31,6 @@ final class MoneyTest extends TestCase
             'amount' => '19.99',
             'code' => 'CAD'
         ];
-        $this->assertEquals($expected, $money->toArray());
+        $this->assertEquals($expected, $money->getContent());
     }
 }

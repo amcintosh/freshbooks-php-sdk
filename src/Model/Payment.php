@@ -16,6 +16,7 @@ use amcintosh\FreshBooks\Model\Money;
 use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
 use amcintosh\FreshBooks\Model\Caster\DateCaster;
 use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Payments are a record of the payments made on invoices.
@@ -158,6 +159,7 @@ class Payment extends DataTransferObject implements DataModel
     {
         $data = $this
             ->except('id')
+            ->except('amount')
             ->except('accountingSystemId')
             ->except('paymentId')
             ->except('clientId')
@@ -167,6 +169,7 @@ class Payment extends DataTransferObject implements DataModel
             ->except('updated')
             ->except('visState')
             ->toArray();
+        Util::convertContent($data, 'amount', $this->amount);
         if (isset($this->date)) {
             $data['date'] = $this->date->format('Y-m-d');
         }

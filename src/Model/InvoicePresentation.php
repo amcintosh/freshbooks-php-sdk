@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\DataTransferObject;
+use amcintosh\FreshBooks\Model\DataModel;
 
 /**
  * Invoice Presentations are used to style an invoice including font, colors, and logos.
@@ -22,13 +20,11 @@ use Spatie\DataTransferObject\DataTransferObject;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/invoice_presentation_attachments
  */
-class InvoicePresentation extends DataTransferObject
+class InvoicePresentation implements DataModel
 {
     /**
      * @var int The unique identifier of the invoice this presentation applies to.
      */
-    #[MapFrom('invoiceid')]
-    #[MapTo('invoiceid')]
     public ?int $invoiceId;
 
     /**
@@ -36,8 +32,6 @@ class InvoicePresentation extends DataTransferObject
      *
      * string format of: “mm/dd/yyyy”, “dd/mm/yyyy”, or “yyyy-mm-dd”
      */
-    #[MapFrom('date_format')]
-    #[MapTo('date_format')]
     public ?string $dateFormat;
 
     /**
@@ -45,8 +39,6 @@ class InvoicePresentation extends DataTransferObject
      *
      * “/uploads/images/<JWT_TOKEN_FROM_IMAGE_UPLOAD>”
      */
-    #[MapFrom('image_banner_src')]
-    #[MapTo('image_banner_src')]
     public ?string $imageBannerSrc;
 
     /**
@@ -54,8 +46,6 @@ class InvoicePresentation extends DataTransferObject
      *
      * “/uploads/images/<JWT_TOKEN_FROM_IMAGE_UPLOAD>”
      */
-    #[MapFrom('image_logo_src')]
-    #[MapTo('image_logo_src')]
     public ?string $imageLogoSrc;
 
     /**
@@ -63,8 +53,6 @@ class InvoicePresentation extends DataTransferObject
      *
      * “modern” or “classic”
      */
-    #[MapFrom('theme_font_name')]
-    #[MapTo('theme_font_name')]
     public ?string $themeFontName;
 
     /**
@@ -72,8 +60,6 @@ class InvoicePresentation extends DataTransferObject
      *
      * “simple, “modern”, or “classic”
      */
-    #[MapFrom('theme_layout')]
-    #[MapTo('theme_layout')]
     public ?string $themeLayout;
 
     /**
@@ -81,7 +67,34 @@ class InvoicePresentation extends DataTransferObject
      *
      * eg. “#345beb”
      */
-    #[MapFrom('theme_primary_color')]
-    #[MapTo('theme_primary_color')]
     public ?string $themePrimaryColor;
+
+    public function __construct(array $data = [])
+    {
+        $this->invoiceId = $data['invoiceid'] ?? null;
+        $this->dateFormat = $data['date_format'] ?? null;
+        $this->imageBannerSrc = $data['image_banner_src'] ?? null;
+        $this->imageLogoSrc = $data['image_logo_src'] ?? null;
+        $this->themeFontName = $data['theme_font_name'] ?? null;
+        $this->themeLayout = $data['theme_layout'] ?? null;
+        $this->themePrimaryColor = $data['theme_primary_color'] ?? null;
+    }
+
+    /**
+     * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
+     *
+     * @return array
+     */
+    public function getContent(): array
+    {
+        return [
+            'invoiceid' => $this->invoiceId,
+            'date_format' => $this->dateFormat,
+            'image_banner_src' => $this->imageBannerSrc,
+            'image_logo_src' => $this->imageLogoSrc,
+            'theme_font_name' => $this->themeFontName,
+            'theme_layout' => $this->themeLayout,
+            'theme_primary_color' => $this->themePrimaryColor
+        ];
+    }
 }

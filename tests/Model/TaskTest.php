@@ -59,12 +59,12 @@ final class TaskTest extends TestCase
             'billable' => true,
             'description' => 'Piloting the project based on the expectations of the executive',
             'name' => 'Piloting',
+            'tax1' => 2,
+            'tax2' => 0,
             'rate' => [
                 'amount' => '100.00',
                 'code' => 'CAD'
-            ],
-            'tax1' => 2,
-            'tax2' => 0
+            ]
         ], $task->getContent());
     }
 }

@@ -13,6 +13,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
 use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Tasks in Freshbooks represent services that your business offers to clients.
@@ -107,10 +108,12 @@ class Task extends DataTransferObject implements DataModel
     {
         $data = $this
             ->except('id')
+            ->except('rate')
             ->except('taskId')
             ->except('updated')
             ->except('visState')
             ->toArray();
+        Util::convertContent($data, 'rate', $this->rate);
         foreach ($data as $key => $value) {
             if (is_null($value)) {
                 unset($data[$key]);

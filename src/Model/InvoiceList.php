@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Casters\ArrayCaster;
-use amcintosh\FreshBooks\Model\AccountingListLegacy;
+use amcintosh\FreshBooks\Model\AccountingList;
 use amcintosh\FreshBooks\Model\Invoice;
 
 /**
@@ -15,10 +13,13 @@ use amcintosh\FreshBooks\Model\Invoice;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/invoices
  */
-class InvoiceList extends AccountingListLegacy
+class InvoiceList extends AccountingList
 {
-    public const RESPONSE_FIELD = 'invoices';
-
-    #[CastWith(ArrayCaster::class, itemType: Invoice::class)]
     public array $invoices;
+
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+        $this->invoices = $this->constructList($data['invoices'], Invoice::class);
+    }
 }

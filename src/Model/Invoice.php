@@ -6,20 +6,11 @@ namespace amcintosh\FreshBooks\Model;
 
 use DateTime;
 use DateTimeImmutable;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\Casters\ArrayCaster;
-use Spatie\DataTransferObject\Casters\DataTransferObjectCaster;
-use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\InvoicePresentation;
 use amcintosh\FreshBooks\Model\LineItem;
 use amcintosh\FreshBooks\Model\Money;
-use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
-use amcintosh\FreshBooks\Model\Caster\DateCaster;
-use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Invoices in FreshBooks are what gets sent to Clients, detailing specific goods or
@@ -29,7 +20,7 @@ use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/invoices
  */
-class Invoice extends DataTransferObject implements DataModel
+class Invoice implements DataModel
 {
     public const RESPONSE_FIELD = 'invoice';
 
@@ -41,14 +32,11 @@ class Invoice extends DataTransferObject implements DataModel
     /**
      * @var int The unique identifier of this invoice within this business.
      */
-    #[MapFrom('invoiceid')]
-    #[MapTo('invoiceid')]
     public ?int $invoiceId;
 
     /**
      * @var string Unique identifier of account the invoice exists on.
      */
-    #[MapFrom('accounting_systemid')]
     public ?string $accountingSystemId;
 
     /**
@@ -56,7 +44,6 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * The same as <code>getAccountingSystemId()</code>.
      */
-    #[MapFrom('accountid')]
     public ?string $accountId;
 
     /**
@@ -69,14 +56,11 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    #[CastWith(MoneyCaster::class)]
     public ?Money $amount;
 
     /**
      * @var bool Whether this invoice has a credit card saved.
      */
-    #[MapFrom('auto_bill')]
-    #[MapTo('auto_bill')]
     public ?bool $autoBill;
 
     /**
@@ -84,7 +68,6 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * Values are: `failed`, `retry`, `success`.
      */
-    #[MapFrom('autobill_status')]
     public ?string $autoBillStatus;
 
     /**
@@ -110,8 +93,6 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * _Note:_ The API request/response uses `customerid` rather than `clientid`.
      */
-    #[MapFrom('customerid')]
-    #[MapTo('customerid')]
     public ?int $clientId;
 
     /**
@@ -119,9 +100,6 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * The API returns this in YYYY-MM-DD format. It is converted to a DateTime.
      */
-    #[MapFrom('create_date')]
-    #[MapTo('create_date')]
-    #[CastWith(DateCaster::class)]
     public ?DateTime $createDate;
 
     /**
@@ -129,15 +107,11 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * _Note:_ The API returns this data in "US/Eastern", but it is converted here to UTC.
      */
-    #[MapFrom('created_at')]
-    #[CastWith(AccountingDateTimeImmutableCaster::class)]
     public ?DateTimeImmutable $createdAt;
 
     /**
      * @var string Three-letter currency code for invoice.
      */
-    #[MapFrom('currency_code')]
-    #[MapTo('currency_code')]
     public ?string $currencyCode;
 
     /**
@@ -146,7 +120,6 @@ class Invoice extends DataTransferObject implements DataModel
      * Once an invoice is set, the organization will not reflect any changes to the client
      * but the current organization is available.
      */
-    #[MapFrom('current_organization')]
     public ?string $currentOrganization;
 
     /**
@@ -154,8 +127,6 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * The API returns this in YYYY-MM-DD format.
      */
-    #[MapFrom('date_paid')]
-    #[CastWith(DateCaster::class)]
     public ?DateTime $datePaid;
 
     /**
@@ -163,16 +134,11 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    #[MapFrom('deposit_amount')]
-    #[MapTo('deposit_amount')]
-    #[CastWith(MoneyCaster::class)]
     public ?Money $depositAmount;
 
     /**
      * @var string Percent of the invoice's value required as a deposit.
      */
-    #[MapFrom('deposit_percentage')]
-    #[MapTo('deposit_percentage')]
     public ?string $depositPercentage;
 
     /**
@@ -182,7 +148,6 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * Values: `paid`, `unpaid`, `partial`, `converted`, `none`.
      */
-    #[MapFrom('deposit_status')]
     public ?string $depositStatus;
 
     /**
@@ -193,8 +158,6 @@ class Invoice extends DataTransferObject implements DataModel
     /**
      * @var string Client-visible note about discount.
      */
-    #[MapFrom('discount_description')]
-    #[MapTo('discount_description')]
     public ?string $discountDescription;
 
     /**
@@ -202,23 +165,16 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    #[MapFrom('discount_total')]
-    #[MapTo('discount_total')]
-    #[CastWith(MoneyCaster::class)]
     public ?Money $discountTotal;
 
     /**
      * @var float Percent amount being discounted from the subtotal.
      */
-    #[MapFrom('discount_value')]
-    #[MapTo('discount_value')]
     public ?float $discountValue;
 
     /**
      * @var string Description of status. Used primarily for the FreshBooks UI.
      */
-    #[MapFrom('display_status')]
-    #[MapTo('display_status')]
     public ?string $displayStatus;
 
     /**
@@ -228,29 +184,21 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * The API returns this in YYYY-MM-DD format.
      */
-    #[MapFrom('due_date')]
-    #[CastWith(DateCaster::class)]
     public ?DateTime $dueDate;
 
     /**
      * @var int Number of days from creation that invoice is due.
      */
-    #[MapFrom('due_offset_days')]
-    #[MapTo('due_offset_days')]
     public ?int $dueOffsetDays;
 
     /**
      * @var int Id of associated estimate, 0 if none.
      */
-    #[MapFrom('estimateid')]
-    #[MapTo('estimateid')]
     public ?int $estimateId;
 
     /**
      * @var string First name of client being invoiced.
      */
-    #[MapFrom('fname')]
-    #[MapTo('fname')]
     public ?string $firstName;
 
     /**
@@ -258,21 +206,16 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * The API returns this in YYYY-MM-DD format.
      */
-    #[MapFrom('generation_date')]
-    #[CastWith(DateCaster::class)]
     public ?DateTime $generationDate;
 
     /**
      * @var bool Whether invoice should be sent via ground mail.
      */
-    #[MapFrom('gmail')]
     public ?bool $groundMail;
 
     /**
      * @var string The user-specified number that appears on the invoice.
      */
-    #[MapFrom('invoice_number')]
-    #[MapTo('invoice_number')]
     public ?string $invoiceNumber;
 
     /**
@@ -285,15 +228,11 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * _Note:_ This is only writeable on creation.
      */
-    #[MapFrom('last_order_status')]
-    #[MapTo('last_order_status')]
     public ?string $lastOrderStatus;
 
     /**
      * @var string Last name of client being invoiced.
      */
-    #[MapFrom('lname')]
-    #[MapTo('lname')]
     public ?string $lastName;
 
     /**
@@ -302,7 +241,6 @@ class Invoice extends DataTransferObject implements DataModel
      * _Note:_ These are only returned with a invoice call using a "lines" include.
      * TODO: code example
      */
-    #[CastWith(ArrayCaster::class, itemType: LineItem::class)]
     public ?array $lines;
 
     /**
@@ -323,14 +261,11 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    #[CastWith(MoneyCaster::class)]
     public ?Money $outstanding;
 
     /**
      * @var int Id of creator of invoice. 1 if business admin, other if created by another user. Eg. a contractor.
      */
-    #[MapFrom('ownerid')]
-    #[MapTo('ownerid')]
     public ?int $ownerId;
 
     /**
@@ -338,7 +273,6 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    #[CastWith(MoneyCaster::class)]
     public ?Money $paid;
 
     /**
@@ -351,15 +285,11 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * One of `unpaid`, `partial`, `paid`, and `auto-paid`.
      */
-    #[MapFrom('payment_status')]
-    #[MapTo('payment_status')]
     public ?string $paymentStatus;
 
     /**
      * @var string Reference number for address on invoice.
      */
-    #[MapFrom('po_number')]
-    #[MapTo('po_number')]
     public ?string $PONumber;
 
     /**
@@ -382,15 +312,11 @@ class Invoice extends DataTransferObject implements DataModel
     /**
      * @var int User id of user who sent the invoice. Typically 1 for the business admin.
      */
-    #[MapFrom('sentid')]
-    #[MapTo('sentid')]
     public ?int $sentId;
 
     /**
      * @var bool Whether attachments on invoice are rendered in FreshBooks UI.
      */
-    #[MapFrom('show_attachments')]
-    #[MapTo('show_attachments')]
     public ?bool $showAttachments;
 
     /**
@@ -436,7 +362,6 @@ class Invoice extends DataTransferObject implements DataModel
     /**
      * @var DateTimeImmutable The time of last modification.
      */
-    #[CastWith(AccountingDateTimeImmutableCaster::class)]
     public ?DateTimeImmutable $updated;
 
     /**
@@ -447,8 +372,6 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * To override this default behaviour, set useDefaultPresentation to false.
      */
-    #[MapFrom('use_default_presentation')]
-    #[MapTo('use_default_presentation')]
     public ?bool $useDefaultPresentation;
 
 
@@ -479,22 +402,16 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * @link https://www.freshbooks.com/api/invoices
      */
-    #[MapFrom('v3_status')]
-    #[MapTo('v3_status')]
     public ?string $v3Status;
 
     /**
      * @var string Value Added Tax name of client if provided.
      */
-    #[MapFrom('vat_name')]
-    #[MapTo('vat_name')]
     public ?string $VATName;
 
     /**
      * @var string Value Added Tax number of client.
      */
-    #[MapFrom('vat_number')]
-    #[MapTo('vat_number')]
     public ?string $VATNumber;
 
     /**
@@ -502,8 +419,96 @@ class Invoice extends DataTransferObject implements DataModel
      *
      * See [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
      */
-    #[MapFrom('vis_state')]
     public ?int $visState;
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->invoiceId = $data['invoiceid'] ?? null;
+        $this->accountingSystemId = $data['accounting_systemid'] ?? null;
+        $this->accountId = $data['accountid'] ?? null;
+        $this->address = $data['address'] ?? null;
+        if (isset($data['amount'])) {
+            $this->amount = new Money($data['amount']['amount'], $data['amount']['code']);
+        }
+        $this->autoBill = $data['auto_bill'] ?? null;
+        $this->autoBillStatus = $data['autobill_status'] ?? null;
+        $this->city = $data['city'] ?? null;
+        $this->code = $data['code'] ?? null;
+        $this->country = $data['country'] ?? null;
+        $this->clientId = $data['customerid'] ?? null;
+        if (isset($data['create_date'])) {
+            $this->createDate = Util::getDate($data['create_date']);
+        }
+        if (isset($data['created_at'])) {
+            $this->createdAt = Util::getAccountingDateTime($data['created_at']);
+        }
+        $this->currencyCode = $data['currency_code'] ?? null;
+        $this->currentOrganization = $data['current_organization'] ?? null;
+        if (isset($data['date_paid'])) {
+            $this->datePaid = Util::getDate($data['date_paid']);
+        }
+        if (isset($data['deposit_amount'])) {
+            $this->depositAmount = new Money($data['deposit_amount']['amount'], $data['deposit_amount']['code']);
+        }
+        $this->depositPercentage = $data['deposit_percentage'] ?? null;
+        $this->depositStatus = $data['deposit_status'] ?? null;
+        $this->description = $data['description'] ?? null;
+        $this->discountDescription = $data['discount_description'] ?? null;
+        if (isset($data['discount_total'])) {
+            $this->discountTotal = new Money($data['discount_total']['amount'], $data['discount_total']['code']);
+        }
+        $this->discountValue = $data['discount_value'] ?? null;
+        $this->displayStatus = $data['display_status'] ?? null;
+        if (isset($data['due_date'])) {
+            $this->dueDate = Util::getDate($data['due_date']);
+        }
+        $this->dueOffsetDays = $data['due_offset_days'] ?? null;
+        $this->estimateId = $data['estimateid'] ?? null;
+        $this->firstName = $data['fname'] ?? null;
+        if (isset($data['generation_date'])) {
+            $this->generationDate = Util::getDate($data['generation_date']);
+        }
+        $this->groundMail = $data['gmail'] ?? null;
+        $this->invoiceNumber = $data['invoice_number'] ?? null;
+        $this->language = $data['language'] ?? null;
+        $this->lastOrderStatus = $data['last_order_status'] ?? null;
+        $this->lastName = $data['lname'] ?? null;
+        $this->notes = $data['notes'] ?? null;
+        $this->organization = $data['organization'] ?? null;
+        if (isset($data['outstanding'])) {
+            $this->outstanding = new Money($data['outstanding']['amount'], $data['outstanding']['code']);
+        }
+        $this->ownerId = $data['ownerid'] ?? null;
+        if (isset($data['paid'])) {
+            $this->paid = new Money($data['paid']['amount'], $data['paid']['code']);
+        }
+        $this->parent = $data['parent'] ?? null;
+        $this->paymentStatus = $data['payment_status'] ?? null;
+        $this->PONumber = $data['po_number'] ?? null;
+        if (isset($data['presentation'])) {
+            $this->presentation = new InvoicePresentation($data['presentation']);
+        }
+        $this->province = $data['province'] ?? null;
+        $this->sentId = $data['sentid'] ?? null;
+        $this->showAttachments = $data['show_attachments'] ?? null;
+        $this->street = $data['street'] ?? null;
+        $this->street2 = $data['street2'] ?? null;
+        $this->status = $data['status'] ?? null;
+        $this->terms = $data['terms'] ?? null;
+        if (isset($data['updated'])) {
+            $this->updated = Util::getAccountingDateTime($data['updated']);
+        }
+        $this->useDefaultPresentation = $data['use_default_presentation'] ?? null;
+        $this->v3Status = $data['v3_status'] ?? null;
+        $this->VATName = $data['vat_name'] ?? null;
+        $this->VATNumber = $data['vat_number'] ?? null;
+        $this->visState = $data['vis_state'] ?? null;
+
+        foreach ($data['lines'] ?? [] as $lineData) {
+            $this->lines[] = new LineItem($lineData);
+        }
+    }
 
     /**
      * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
@@ -512,61 +517,57 @@ class Invoice extends DataTransferObject implements DataModel
      */
     public function getContent(): array
     {
-        $data = $this
-            ->except('id')
-            ->except('accountingSystemId')
-            ->except('accountId')
-            ->except('autoBill')
-            ->except('autoBillStatus')
-            ->except('amount')
-            ->except('createdAt')
-            ->except('currentOrganization')
-            ->except('datePaid')
-            ->except('depositStatus')
-            ->except('description')
-            ->except('display_status')
-            ->except('dueDate')
-            ->except('estimateid')
-            ->except('generationDate')
-            ->except('groundMail')
-            ->except('invoiceId')
-            ->except('lastOrderStatus')
-            ->except('organization')
-            ->except('outstanding')
-            ->except('ownerid')
-            ->except('paid')
-            ->except('payment_status')
-            ->except('sentid')
-            ->except('status')
-            ->except('updated')
-            ->except('v3_status')
-            ->except('visState')
-            ->toArray();
-        if (is_null($this->id) && is_null($this->invoiceId)) {
-            $data['ownerid'] = $this->ownerId;
-            $data['estimateid'] = $this->estimateId;
-            $data['sentid'] = $this->sentId;
-            $data['status'] = $this->status;
-            $data['display_status'] = $this->displayStatus;
-            $data['autobill_status'] = $this->autoBillStatus;
-            $data['payment_status'] = $this->paymentStatus;
-            $data['last_order_status'] = $this->lastOrderStatus;
-            $data['deposit_status'] = $this->depositStatus;
-            $data['auto_bill'] = $this->autoBill;
-            $data['v3_status'] = $this->v3Status;
-        } else {
-            unset($data['discount_total']);
-        }
+        $data = array();
+        Util::convertContent($data, 'address', $this->address);
+        Util::convertContent($data, 'city', $this->city);
+        Util::convertContent($data, 'code', $this->code);
+        Util::convertContent($data, 'country', $this->country);
         if (isset($this->createDate)) {
             $data['create_date'] = $this->createDate->format('Y-m-d');
         }
+        Util::convertContent($data, 'currency_code', $this->currencyCode);
+        Util::convertContent($data, 'customerid', $this->clientId);
+        Util::convertContent($data, 'deposit_amount', $this->depositAmount);
+        Util::convertContent($data, 'deposit_percentage', $this->depositPercentage);
+        Util::convertContent($data, 'discount_description', $this->discountDescription);
+        Util::convertContent($data, 'discount_total', $this->discountTotal);
+        Util::convertContent($data, 'discount_value', $this->discountValue);
+        Util::convertContent($data, 'due_offset_days', $this->dueOffsetDays);
+        Util::convertContent($data, 'fname', $this->firstName);
+        Util::convertContent($data, 'invoice_number', $this->invoiceNumber);
+        Util::convertContent($data, 'language', $this->language);
+        Util::convertContent($data, 'lines', $this->lines);
+        Util::convertContent($data, 'lname', $this->lastName);
+        Util::convertContent($data, 'notes', $this->notes);
+        Util::convertContent($data, 'parent', $this->parent);
+        Util::convertContent($data, 'po_number', $this->PONumber);
+        Util::convertContent($data, 'presentation', $this->presentation);
+        Util::convertContent($data, 'province', $this->province);
+        Util::convertContent($data, 'show_attachments', $this->showAttachments);
+        Util::convertContent($data, 'street', $this->street);
+        Util::convertContent($data, 'street2', $this->street2);
+        Util::convertContent($data, 'terms', $this->terms);
+        Util::convertContent($data, 'use_default_presentation', $this->useDefaultPresentation);
+        Util::convertContent($data, 'vat_name', $this->VATName);
+        Util::convertContent($data, 'vat_number', $this->VATNumber);
+
+        if (is_null($this->id) && is_null($this->invoiceId)) {
+            Util::convertContent($data, 'ownerid', $this->ownerId);
+            Util::convertContent($data, 'estimateid', $this->estimateId);
+            Util::convertContent($data, 'sentid', $this->sentId);
+            Util::convertContent($data, 'status', $this->status);
+            Util::convertContent($data, 'display_status', $this->displayStatus);
+            Util::convertContent($data, 'autobill_status', $this->autoBillStatus);
+            Util::convertContent($data, 'payment_status', $this->paymentStatus);
+            Util::convertContent($data, 'last_order_status', $this->lastOrderStatus);
+            Util::convertContent($data, 'deposit_status', $this->depositStatus);
+            Util::convertContent($data, 'auto_bill', $this->autoBill);
+            Util::convertContent($data, 'v3_status', $this->v3Status);
+        } else {
+            unset($data['discount_total']);
+        }
         if (isset($this->generationDate)) {
             $data['generation_date'] = $this->generationDate->format('Y-m-d');
-        }
-        foreach ($data as $key => $value) {
-            if (is_null($value)) {
-                unset($data[$key]);
-            }
         }
         return $data;
     }

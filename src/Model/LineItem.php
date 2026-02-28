@@ -5,13 +5,8 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks\Model;
 
 use DateTimeImmutable;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
-use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
+use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Invoice lines are used to determine the amount of an invoice, in addition to
@@ -23,15 +18,13 @@ use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
  *
  * @package amcintosh\FreshBooks\Model
  */
-class LineItem extends DataTransferObject
+class LineItem implements DataModel
 {
     protected array $exceptKeys = ['amount', 'taxNumber1', 'taxNumber2', 'updated'];
 
     /**
      * @var int Unique-to-this-invoice line id.
      */
-    #[MapFrom('lineid')]
-    #[MapTo('lineid')]
     public ?int $lineId;
 
     /**
@@ -39,7 +32,6 @@ class LineItem extends DataTransferObject
      *
      * Money object containing amount and currency code.
      */
-    #[CastWith(MoneyCaster::class)]
     public ?Money $amount;
 
     /**
@@ -52,8 +44,6 @@ class LineItem extends DataTransferObject
      *
      * Required when invoice line type is rebilling expense (type = `1`), otherwise should be excluded.
      */
-    #[MapFrom('expenseid')]
-    #[MapTo('expenseid')]
     public ?int $expenseId;
 
     /**
@@ -62,10 +52,8 @@ class LineItem extends DataTransferObject
     public ?string $name;
 
     /**
-     * @var int Quantity of the line unit, multiplied against unit_cost to get amount.
+     * @var float Quantity of the line unit, multiplied against unit_cost to get amount.
      */
-    #[MapFrom('qty')]
-    #[MapTo('qty')]
     public ?float $quantity;
 
     /**
@@ -108,14 +96,58 @@ class LineItem extends DataTransferObject
      *
      * Money object containing amount and currency code.
      */
-    #[CastWith(MoneyCaster::class)]
-    #[MapFrom('unit_cost')]
-    #[MapTo('unit_cost')]
     public ?Money $unitCost;
 
     /**
      * @var DateTimeImmutable The time of last modification.
      */
-    #[CastWith(AccountingDateTimeImmutableCaster::class)]
     public ?DateTimeImmutable $updated;
+
+    public function __construct(array $data = [])
+    {
+        $this->lineId = $data['lineid'] ?? null;
+        if (isset($data['amount'])) {
+            $this->amount = new Money($data['amount']['amount'], $data['amount']['code']);
+        }
+        $this->description = $data['description'] ?? null;
+        $this->expenseId = $data['expenseid'] ?? null;
+        $this->name = $data['name'] ?? null;
+        $this->quantity = floatval($data['qty'] ?? 0);
+        $this->taxAmount1 = $data['taxAmount1'] ?? null;
+        $this->taxAmount2 = $data['taxAmount2'] ?? null;
+        $this->taxName1 = $data['taxName1'] ?? null;
+        $this->taxName2 = $data['taxName2'] ?? null;
+        $this->taxNumber1 = $data['taxNumber1'] ?? null;
+        $this->taxNumber2 = $data['taxNumber2'] ?? null;
+        $this->type = $data['type'] ?? null;
+        if (isset($data['unit_cost'])) {
+            $this->unitCost = new Money($data['unit_cost']['amount'], $data['unit_cost']['code']);
+        }
+        if (isset($data['updated'])) {
+            $this->updated = Util::getAccountingDateTime($data['updated']);
+        }
+    }
+
+    /**
+     * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
+     *
+     * @return array
+     */
+    public function getContent(): array
+    {
+        $data = [
+            'lineid' => $this->lineId,
+            'description' => $this->description,
+            'expenseid' => $this->expenseId,
+            'name' => $this->name,
+            'qty' => $this->quantity,
+            'taxAmount1' => $this->taxAmount1,
+            'taxAmount2' => $this->taxAmount2,
+            'taxName1' => $this->taxName1,
+            'taxName2' => $this->taxName2,
+            'type' => $this->type,
+        ];
+        Util::convertContent($data, 'unit_cost', $this->unitCost);
+        return $data;
+    }
 }
