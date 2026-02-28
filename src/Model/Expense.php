@@ -6,15 +6,8 @@ namespace amcintosh\FreshBooks\Model;
 
 use DateTime;
 use DateTimeImmutable;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\ExpenseAttachment;
-use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
-use amcintosh\FreshBooks\Model\Caster\DateCaster;
-use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
 use amcintosh\FreshBooks\Util;
 
 /**
@@ -23,7 +16,7 @@ use amcintosh\FreshBooks\Util;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/expenses
  */
-class Expense extends DataTransferObject implements DataModel
+class Expense implements DataModel
 {
     public const RESPONSE_FIELD = 'expense';
 
@@ -35,27 +28,21 @@ class Expense extends DataTransferObject implements DataModel
     /**
      * @var int Duplicate of id
      */
-    #[MapFrom('expenseid')]
     public ?int $expenseId;
 
     /**
      * @var string Name of related account if applicable.
      */
-    #[MapFrom('account_name')]
-    #[MapTo('account_name')]
     public ?string $accountName;
 
     /**
      * @var int Id of expense account if applicable.
      */
-    #[MapFrom('accountid')]
-    #[MapTo('accountid')]
     public ?int $accountId;
 
     /**
      * @var string Unique identifier of business the expense exists on.
      */
-    #[MapFrom('accounting_systemid')]
     public ?string $accountingSystemId;
 
     /**
@@ -63,14 +50,11 @@ class Expense extends DataTransferObject implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    #[CastWith(MoneyCaster::class)]
-    public ?Money $amount;
+    public ?Money $amount = null;
 
     /**
      * @var string Name of bank expense was imported from, if applicable.
      */
-    #[MapFrom('bank_name')]
-    #[MapTo('bank_name')]
     public ?string $bankName;
 
     /**
@@ -81,15 +65,11 @@ class Expense extends DataTransferObject implements DataModel
     /**
      * @var int Id of the expense category.
      */
-    #[MapFrom('categoryid')]
-    #[MapTo('categoryid')]
     public ?int $categoryId;
 
     /**
      * @var int Id of client the expense has been assigned to if applicable.
      */
-    #[MapFrom('clientid')]
-    #[MapTo('clientid')]
     public ?int $clientId;
 
     /**
@@ -97,80 +77,58 @@ class Expense extends DataTransferObject implements DataModel
      *
      * The API returns this in YYYY-MM-DD format. It is converted to a DateTime.
      */
-    #[CastWith(DateCaster::class)]
-    public ?DateTime $date;
+    public ?DateTime $date = null;
 
     /**
      * @var int The id of related contractor account if applicable.
      */
-    #[MapFrom('ext_accountid')]
-    #[MapTo('ext_accountid')]
     public ?int $extAccountId;
 
     /**
      * @var int The id of related contractor invoice if applicable.
      */
-    #[MapFrom('ext_invoiceid')]
-    #[MapTo('ext_invoiceid')]
     public ?int $extInvoiceId;
 
     /**
      * @var int The id of related contractor system if applicable.
      */
-    #[MapFrom('ext_systemid')]
-    #[MapTo('ext_systemid')]
     public ?int $extSystemId;
 
     /**
      * @var bool Indicates if the expense was created via a bulk import action.
      */
-    #[MapFrom('from_bulk_import')]
     public ?bool $fromBulkImport;
 
     /**
      * @var bool Indicates if the expense has an attached receipt.
      */
-    #[MapFrom('has_receipt')]
-    #[MapTo('has_receipt')]
     public ?bool $hasReceipt;
 
-    #[MapFrom('include_receipt')]
-    #[MapTo('include_receipt')]
     public ?bool $includeReceipt;
 
     /**
      * @var int The id of related invoice if applicable.
      */
-    #[MapFrom('invoiceid')]
-    #[MapTo('invoiceid')]
     public ?int $invoiceId;
 
     /**
      * @var bool If the expense counts as "Cost of Goods Sold" and is associated with a client.
      */
-    #[MapFrom('is_cogs')]
-    #[MapTo('is_cogs')]
     public ?bool $isCogs;
 
     /**
      * @var bool If the expense is a duplicated expense.
      */
-    #[MapFrom('isduplicate')]
-    #[MapTo('isduplicate')]
     public ?bool $isDuplicate;
 
     /**
      * @var string Note of percent to mark expense up.
      */
-    #[MapFrom('markup_percent')]
-    #[MapTo('markup_percent')]
     public ?string $markupPercent;
 
     /**
      * @var int Id of related new FreshBooks (not Classic) project if applicable.
      */
-    #[MapFrom('modern_projectid')]
-    #[MapTo('modern_projectid')]
     public ?int $modernProjectId;
 
     /**
@@ -178,28 +136,21 @@ class Expense extends DataTransferObject implements DataModel
      */
     public ?string $notes;
 
-    #[MapFrom('potential_bill_payment')]
-    #[MapTo('potential_bill_payment')]
     public ?bool $potentialBillPayment;
 
     /**
      * @var int Id of related recurring expense profile if applicable.
      */
-    #[MapFrom('profileid')]
     public ?int $profileId;
 
     /**
      * @var int Id of related FreshBooks Classic project if applicable.
      */
-    #[MapFrom('projectid')]
-    #[MapTo('projectid')]
     public ?int $projectId;
 
     /**
      * @var int The id of related staff member if applicable.
      */
-    #[MapFrom('staffid')]
-    #[MapTo('staffid')]
     public ?int $staffId;
 
     /**
@@ -225,16 +176,14 @@ class Expense extends DataTransferObject implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    #[CastWith(MoneyCaster::class)]
-    public ?Money $taxAmount1;
+    public ?Money $taxAmount1 = null;
 
     /**
      * @var Money The amount of the second tax making up the total amount of the expense.
      *
      * Money object containing amount and currency code.
      */
-    #[CastWith(MoneyCaster::class)]
-    public ?Money $taxAmount2;
+    public ?Money $taxAmount2 = null;
 
     /**
      * @var string The name of first tax.
@@ -259,14 +208,11 @@ class Expense extends DataTransferObject implements DataModel
     /**
      * @var int The id of related bank imported transaction if applicable.
      */
-    #[MapFrom('transactionid')]
-    #[MapTo('transactionid')]
     public ?int $transactionId;
 
     /**
      * @var DateTimeImmutable The time of last modification.
      */
-    #[CastWith(AccountingDateTimeImmutableCaster::class)]
     public ?DateTimeImmutable $updated;
 
     /**
@@ -279,7 +225,6 @@ class Expense extends DataTransferObject implements DataModel
      *
      * See [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
      */
-    #[MapFrom('vis_state')]
     public ?int $visState;
 
     // Includes
@@ -287,8 +232,62 @@ class Expense extends DataTransferObject implements DataModel
     /**
      * @var ExpenseAttachment Attached receipt.
      */
-    public ?ExpenseAttachment $attachment;
+    public ?ExpenseAttachment $attachment = null;
 
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->expenseId = $data['expenseid'] ?? null;
+        $this->accountName = $data['account_name'] ?? null;
+        $this->accountId = $data['accountid'] ?? null;
+        $this->accountingSystemId = $data['accounting_systemid'] ?? null;
+        if (isset($data['amount'])) {
+            $this->amount = new Money($data['amount']['amount'], $data['amount']['code']);
+        }
+        $this->bankName = $data['bank_name'] ?? null;
+        $this->billable = $data['billable'] ?? null;
+        $this->categoryId = $data['categoryid'] ?? null;
+        $this->clientId = $data['clientid'] ?? null;
+        if (isset($data['date'])) {
+            $this->date = Util::getDate($data['date']);
+        }
+        $this->extAccountId = $data['ext_accountid'] ?? null;
+        $this->extInvoiceId = $data['ext_invoiceid'] ?? null;
+        $this->extSystemId = $data['ext_systemid'] ?? null;
+        $this->fromBulkImport = $data['from_bulk_import'] ?? null;
+        $this->hasReceipt = $data['has_receipt'] ?? null;
+        $this->includeReceipt = $data['include_receipt'] ?? null;
+        $this->invoiceId = $data['invoiceid'] ?? null;
+        $this->isCogs = $data['is_cogs'] ?? null;
+        $this->isDuplicate = $data['isduplicate'] ?? null;
+        $this->markupPercent = $data['markup_percent'] ?? null;
+        $this->modernProjectId = $data['modern_projectid'] ?? null;
+        $this->notes = $data['notes'] ?? null;
+        $this->potentialBillPayment = $data['potential_bill_payment'] ?? null;
+        $this->profileId = $data['profileid'] ?? null;
+        $this->projectId = $data['projectid'] ?? null;
+        $this->staffId = $data['staffid'] ?? null;
+        $this->status = $data['status'] ?? null;
+        if (isset($data['taxAmount1'])) {
+            $this->taxAmount1 = new Money($data['taxAmount1']['amount'], $data['taxAmount1']['code']);
+        }
+        if (isset($data['taxAmount2'])) {
+            $this->taxAmount2 = new Money($data['taxAmount2']['amount'], $data['taxAmount2']['code']);
+        }
+        $this->taxName1 = $data['taxName1'] ?? null;
+        $this->taxName2 = $data['taxName2'] ?? null;
+        $this->taxPercent1 = $data['taxPercent1'] ?? null;
+        $this->taxPercent2 = $data['taxPercent2'] ?? null;
+        $this->transactionId = $data['transactionid'] ?? null;
+        if (isset($data['updated'])) {
+            $this->updated = Util::getAccountingDateTime($data['updated']);
+        }
+        $this->vendor = $data['vendor'] ?? null;
+        $this->visState = $data['vis_state'] ?? null;
+        if (isset($data['attachment'])) {
+            $this->attachment = new ExpenseAttachment($data['attachment']);
+        }
+    }
 
     /**
      * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
@@ -297,37 +296,40 @@ class Expense extends DataTransferObject implements DataModel
      */
     public function getContent(): array
     {
-        $data = $this
-            ->except('id')
-            ->except('expenseId')
-            ->except('accountingSystemId')
-            ->except('fromBulkImport')
-            ->except('profileId')
-            ->except('status')
-            ->except('updated')
-            ->except('visState')
-            ->except('attachment')
-            ->except('amount')
-            ->except('taxAmount1')
-            ->except('taxAmount2')
-            ->toArray();
+        $data = array();
+        Util::convertContent($data, 'invoiceid', $this->invoiceId);
+        Util::convertContent($data, 'accountid', $this->accountId);
         Util::convertContent($data, 'amount', $this->amount);
+        Util::convertContent($data, 'bank_name', $this->bankName);
+        Util::convertContent($data, 'billable', $this->billable);
+        Util::convertContent($data, 'categoryid', $this->categoryId);
+        Util::convertContent($data, 'clientid', $this->clientId);
+        Util::convertContent($data, 'date', $this->date);
+        Util::convertContent($data, 'ext_accountid', $this->extAccountId);
+        Util::convertContent($data, 'ext_invoiceid', $this->extInvoiceId);
+        Util::convertContent($data, 'ext_systemid', $this->extSystemId);
+        Util::convertContent($data, 'has_receipt', $this->hasReceipt);
+        Util::convertContent($data, 'include_receipt', $this->includeReceipt);
+        Util::convertContent($data, 'is_cogs', $this->isCogs);
+        Util::convertContent($data, 'isduplicate', $this->isDuplicate);
+        Util::convertContent($data, 'markup_percent', $this->markupPercent);
+        Util::convertContent($data, 'modern_projectid', $this->modernProjectId);
+        Util::convertContent($data, 'notes', $this->notes);
+        Util::convertContent($data, 'potential_bill_payment', $this->potentialBillPayment);
+        Util::convertContent($data, 'projectid', $this->projectId);
+        Util::convertContent($data, 'staffid', $this->staffId);
         Util::convertContent($data, 'taxAmount1', $this->taxAmount1);
         Util::convertContent($data, 'taxAmount2', $this->taxAmount2);
+        Util::convertContent($data, 'taxName1', $this->taxName1);
+        Util::convertContent($data, 'taxName2', $this->taxName2);
+        Util::convertContent($data, 'vendor', $this->vendor);
         if (is_null($this->id) && is_null($this->expenseId)) {
-            $data['status'] = $this->status;
+            Util::convertContent($data, 'status', $this->status);
         }
         if (isset($this->date)) {
             $data['date'] = $this->date->format('Y-m-d');
         }
-        if (isset($this->attachment)) {
-            $data['attachment'] = $this->attachment->getContent();
-        }
-        foreach ($data as $key => $value) {
-            if (is_null($value)) {
-                unset($data[$key]);
-            }
-        }
+        Util::convertContent($data, 'attachment', $this->attachment);
         return $data;
     }
 }
