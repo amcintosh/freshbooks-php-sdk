@@ -163,9 +163,6 @@
         <h2 class="phpdocumentor-content__title">
     LineItem
 
-        <span class="phpdocumentor-element__extends">
-        extends <abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr>
-    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -176,6 +173,9 @@
                             </ul>
         </div>
     
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <a href="classes/amcintosh-FreshBooks-Model-DataModel.html"><abbr title="\amcintosh\FreshBooks\Model\DataModel">DataModel</abbr></a>                    </span>
     
     </h2>
 
@@ -187,7 +187,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -212,6 +212,13 @@ contain all the lines of the invoice that you wish to remain.</p>
 
 
 
+    <h4 id="toc-interfaces">
+        Interfaces
+        <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#toc-interfaces" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <dl class="phpdocumentor-table-of-contents">
+                    <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/amcintosh-FreshBooks-Model-DataModel.html"><abbr title="\amcintosh\FreshBooks\Model\DataModel">DataModel</abbr></a></dt>    </dl>
 
 
 
@@ -257,7 +264,7 @@ contain all the lines of the invoice that you wish to remain.</p>
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/amcintosh-FreshBooks-Model-LineItem.html#property_quantity">$quantity</a>
     <span>
-                        &nbsp;: int            </span>
+                        &nbsp;: float            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
@@ -322,6 +329,26 @@ contain all the lines of the invoice that you wish to remain.</p>
 
     </dl>
 
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/amcintosh-FreshBooks-Model-LineItem.html#method___construct">__construct()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/amcintosh-FreshBooks-Model-LineItem.html#method_getContent">getContent()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.</dd>
+
+    </dl>
 
 
 
@@ -351,7 +378,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
@@ -371,20 +398,6 @@ contain all the lines of the invoice that you wish to remain.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#property_amount#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\CastWith">CastWith</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        \amcintosh\FreshBooks\Model\Caster\MoneyCaster::class
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -405,7 +418,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -444,7 +457,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
@@ -464,28 +477,6 @@ contain all the lines of the invoice that you wish to remain.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#property_expenseId#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;expenseid&#039;
-    </dd>
-    </dl>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapTo">MapTo</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;expenseid&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -506,7 +497,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -525,28 +516,6 @@ contain all the lines of the invoice that you wish to remain.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#property_lineId#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;lineid&#039;
-    </dd>
-    </dl>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapTo">MapTo</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;lineid&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -567,7 +536,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -606,7 +575,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -614,7 +583,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">int</span>
+            <span class="phpdocumentor-signature__type">float</span>
     <span class="phpdocumentor-signature__name">$quantity</span>
     </code>
 
@@ -625,28 +594,6 @@ contain all the lines of the invoice that you wish to remain.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#property_quantity#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;qty&#039;
-    </dd>
-    </dl>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapTo">MapTo</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;qty&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -667,7 +614,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
@@ -706,7 +653,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
@@ -745,7 +692,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
@@ -784,7 +731,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
@@ -823,7 +770,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -862,7 +809,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -901,7 +848,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">104</span>
+    <span class="phpdocumentor-element-found-in__line">92</span>
 
     </aside>
 
@@ -940,7 +887,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 
     </aside>
 
@@ -960,36 +907,6 @@ contain all the lines of the invoice that you wish to remain.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#property_unitCost#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\CastWith">CastWith</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        \amcintosh\FreshBooks\Model\Caster\MoneyCaster::class
-    </dd>
-    </dl>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;unit_cost&#039;
-    </dd>
-    </dl>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapTo">MapTo</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;unit_cost&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -1010,7 +927,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 
     </aside>
 
@@ -1029,20 +946,6 @@ contain all the lines of the invoice that you wish to remain.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#property_updated#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\CastWith">CastWith</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        \amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster::class
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -1063,7 +966,7 @@ contain all the lines of the invoice that you wish to remain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -1085,7 +988,97 @@ contain all the lines of the invoice that you wish to remain.</p>
 </article>
             </section>
 
+            <section class="phpdocumentor-methods">
+        <h3 class="phpdocumentor-elements__header" id="methods">
+            Methods
+            <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">106</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
         
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getContent">
+        getContent()
+        <a href="classes/amcintosh-FreshBooks-Model-LineItem.html#method_getContent" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/LineItem.php"><a href="files/src-model-lineitem.html"><abbr title="src/Model/LineItem.php">LineItem.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">136</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getContent</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
+</article>
+            </section>
+
         <div class="phpdocumentor-modal" id="source-view">
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
@@ -1192,7 +1185,8 @@ contain all the lines of the invoice that you wish to remain.</p>
             <li>
                 <ul class="phpdocumentor-list -clean">
                                                             <li><a href="classes/amcintosh-FreshBooks-Model-LineItem.html#toc-properties">Properties</a></li>
-                                                        </ul>
+                                                            <li><a href="classes/amcintosh-FreshBooks-Model-LineItem.html#toc-methods">Methods</a></li>
+                                    </ul>
             </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
@@ -1217,6 +1211,13 @@ contain all the lines of the invoice that you wish to remain.</p>
                                             </ul>
                 </li>
             
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li class=""><a href="classes/amcintosh-FreshBooks-Model-LineItem.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/amcintosh-FreshBooks-Model-LineItem.html#method_getContent">getContent()</a></li>
+                                    </ul>
+            </li>
                     </ul>
     </section>
 

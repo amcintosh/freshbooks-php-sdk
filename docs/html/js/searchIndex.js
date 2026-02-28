@@ -1531,6 +1531,11 @@ Search.appendIndex(
             "summary": "Invoices\u0020in\u0020FreshBooks\u0020are\u0020what\u0020gets\u0020sent\u0020to\u0020Clients,\u0020detailing\u0020specific\u0020goods\u0020or\nservices\u0020performed\u0020or\u0020provided\u0020by\u0020the\u0020Administrator\u0020of\u0020their\u0020System,\u0020and\u0020the\u0020amount\nthat\u0020Client\u0020owes\u0020to\u0020the\u0020Admin.",
             "url": "classes/amcintosh-FreshBooks-Model-Invoice.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Invoice\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Invoice.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Invoice\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
             "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
@@ -1876,10 +1881,10 @@ Search.appendIndex(
             "summary": "Results\u0020of\u0020invoices\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020invoices\u0020and\u0020pagination\u0020data.",
             "url": "classes/amcintosh-FreshBooks-Model-InvoiceList.html"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceList\u003A\u003ARESPONSE_FIELD",
-            "name": "RESPONSE_FIELD",
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceList\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
             "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-InvoiceList.html#constant_RESPONSE_FIELD"
+            "url": "classes/amcintosh-FreshBooks-Model-InvoiceList.html#method___construct"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceList\u003A\u003A\u0024invoices",
             "name": "invoices",
@@ -1955,6 +1960,16 @@ Search.appendIndex(
             "name": "InvoicePresentation",
             "summary": "Invoice\u0020Presentations\u0020are\u0020used\u0020to\u0020style\u0020an\u0020invoice\u0020including\u0020font,\u0020colors,\u0020and\u0020logos.",
             "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePresentation.html#method_getContent"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePresentation\u003A\u003A\u0024invoiceId",
             "name": "invoiceId",
@@ -2141,6 +2156,16 @@ Search.appendIndex(
             "summary": "Invoice\u0020lines\u0020are\u0020used\u0020to\u0020determine\u0020the\u0020amount\u0020of\u0020an\u0020invoice,\u0020in\u0020addition\u0020to\nbeing\u0020able\u0020to\u0020tie\u0020the\u0020invoice\u0020to\u0020rebilled\u0020expenses.\u0020The\u0020invoice\u0020line\u0020type\ndetermines\u0020whether\u0020a\u0020line\u0020is\u0020an\u0020amount\u0020or\u0020whether\u0020it\u0020refers\u0020to\u0020an\u0020unbilled\u0020expense.",
             "url": "classes/amcintosh-FreshBooks-Model-LineItem.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\LineItem\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-LineItem.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\LineItem\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
+            "url": "classes/amcintosh-FreshBooks-Model-LineItem.html#method_getContent"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\LineItem\u003A\u003A\u0024exceptKeys",
             "name": "exceptKeys",
             "summary": "",
@@ -2255,6 +2280,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "__construct\u0020Create\u0020a\u0020money\u0020object",
             "url": "classes/amcintosh-FreshBooks-Model-Money.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Money\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Money.html#method_getContent"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Money\u003A\u003AparseArray\u0028\u0029",
             "name": "parseArray",
@@ -3256,6 +3286,11 @@ Search.appendIndex(
             "summary": "FreshBooks\u0020data\u0020utils.",
             "url": "classes/amcintosh-FreshBooks-Util.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003AgetDate\u0028\u0029",
+            "name": "getDate",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Util.html#method_getDate"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003AgetAccountingDateTime\u0028\u0029",
             "name": "getAccountingDateTime",
             "summary": "",
@@ -3275,6 +3310,11 @@ Search.appendIndex(
             "name": "ACCOUNTING_FORMAT",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Util.html#constant_ACCOUNTING_FORMAT"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003ADATE_FORMAT",
+            "name": "DATE_FORMAT",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Util.html#constant_DATE_FORMAT"
         },                {
             "fqsen": "\\",
             "name": "\\",
