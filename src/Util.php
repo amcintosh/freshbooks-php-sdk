@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks;
 
+use DateTime;
 use DateTimeImmutable;
 use DateTimeZone;
+use amcintosh\FreshBooks\Model\DataModel;
 
 /**
  * FreshBooks data utils.
@@ -16,6 +18,17 @@ class Util
 {
     private const ACCOUNTING_TIMEZONE = 'US/Eastern';
     private const ACCOUNTING_FORMAT = 'Y-m-d H:i:s';
+    private const DATE_FORMAT = 'Y-m-d';
+
+    /**
+     * @param string|mixed $value
+     *
+     * @return DateTime
+     */
+    public static function getDate(mixed $value): DateTime
+    {
+        return new DateTime($value, new DateTimeZone('UTC'));
+    }
 
     public static function getAccountingDateTime(string $value, bool $isUtc = false): DateTimeImmutable
     {

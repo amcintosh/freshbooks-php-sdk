@@ -7,7 +7,6 @@ namespace amcintosh\FreshBooks\Model;
 use DateTimeImmutable;
 use amcintosh\FreshBooks\Util;
 use amcintosh\FreshBooks\Model\DataModel;
-use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
 
 /**
  * A client in the new FreshBooks is a resource representing an entity you send invoices to.

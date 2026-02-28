@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks\Tests\Model;
 
 use DateTime;
-use DateTimeZone;
 use Spryker\DecimalObject\Decimal;
 use PHPUnit\Framework\TestCase;
 use amcintosh\FreshBooks\Model\Invoice;
+use amcintosh\FreshBooks\Model\InvoiceList;
 use amcintosh\FreshBooks\Model\InvoiceStatus;
-use amcintosh\FreshBooks\Model\Money;
 use amcintosh\FreshBooks\Model\VisState;
 
 final class InvoiceTest extends TestCase
@@ -290,16 +289,14 @@ final class InvoiceTest extends TestCase
     {
         $invoiceData = json_decode($this->sampleInvoiceData, true);
         $invoice = new Invoice($invoiceData['invoice']);
-        $this->assertSame([
-            'invoiceid' => 987654,
+        $this->assertEquals([
             'address' => '',
-            'auto_bill' => false,
             'city' => 'Toronto',
             'code' => 'M5T 2B3',
             'country' => 'Canada',
-            'customerid' => 12345,
             'create_date' => '2021-04-16',
             'currency_code' => 'CAD',
+            'customerid' => 12345,
             'deposit_amount' => [
                 'amount' => '1.00',
                 'code' => 'CAD'
@@ -460,5 +457,53 @@ final class InvoiceTest extends TestCase
             'vat_name' => 'VAT Number',
             'vat_number' => '123'
         ], $content);
+    }
+
+    public function testInvoiceListFromResponse(): void
+    {
+        $invoicesData = json_decode('{
+            "invoices": [
+                {
+                    "accounting_systemid": "ACM123",
+                    "id": 12345,
+                    "lines": [
+                        {
+                            "amount": {
+                                "amount": "20.00",
+                                "code": "CAD"
+                            },
+                            "compounded_tax": false,
+                            "date": null,
+                            "description": "Melmac melamine resin molded dinnerware"
+                        }
+                    ],
+                    "paid": {
+                        "amount": "20.00",
+                        "code": "CAD"
+                    }
+                },
+                {
+                    "accounting_systemid": "ACM123",
+                    "id": 12346
+                }
+            ],
+            "page": 1,
+            "pages": 1,
+            "per_page": 15,
+            "total": 2
+        }', true);
+        $invoices = new InvoiceList($invoicesData);
+
+        $this->assertSame(1, $invoices->pages()->page);
+        $this->assertSame(1, $invoices->pages()->pages);
+        $this->assertSame(15, $invoices->pages()->perPage);
+        $this->assertSame(2, $invoices->pages()->total);
+
+        $this->assertSame(12345, $invoices->invoices[0]->id);
+        $this->assertSame('ACM123', $invoices->invoices[0]->accountingSystemId);
+        $this->assertEquals(Decimal::create('20.00'), $invoices->invoices[0]->paid->amount);
+        $this->assertSame('Melmac melamine resin molded dinnerware', $invoices->invoices[0]->lines[0]->description);
+
+        $this->assertSame(12346, $invoices->invoices[1]->id);
     }
 }

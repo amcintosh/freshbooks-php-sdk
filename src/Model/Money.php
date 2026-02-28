@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use amcintosh\FreshBooks\Model\DataModel;
 use Spryker\DecimalObject\Decimal;
 
 /**
@@ -12,7 +12,7 @@ use Spryker\DecimalObject\Decimal;
  *
  * @package amcintosh\FreshBooks\Model
  */
-class Money extends DataTransferObject
+class Money implements DataModel
 {
     /**
      * @var Spryker\DecimalObject\Decimal Monetary amount with decimal places appropriate to the currency.
@@ -31,13 +31,21 @@ class Money extends DataTransferObject
      * __construct Create a money object
      *
      * @param  mixed $amount The amount of money. to be converted into a `Decimal` type. Eg. 19.99, '19.99'
-     * @param  mixed $code The three-letter currency code. Eg. USD, CAD, EUR, GBP
+     * @param  string $code The three-letter currency code. Eg. USD, CAD, EUR, GBP
      * @return void
      */
     public function __construct(mixed $amount, string $code)
     {
         $this->amount = Decimal::create($amount);
         $this->code = $code;
+    }
+
+    public function getContent(): array
+    {
+        return [
+            'amount' => $this->amount->toString(),
+            'code' => $this->code
+        ];
     }
 
     protected function parseArray(array $array): array
