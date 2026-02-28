@@ -70,14 +70,14 @@ final class PaymentTest extends TestCase
         $paymentData = json_decode($this->samplePaymentData, true);
         $payment = new Payment($paymentData['payment']);
         $this->assertSame([
-            'amount' => [
-                'amount' => '41.94',
-                'code' => 'CAD'
-            ],
             'from_credit' => false,
             'invoiceid' => 987654,
             'note' => 'Some note',
             'type' => 'Check',
+            'amount' => [
+                'amount' => '41.94',
+                'code' => 'CAD'
+            ],
             'date' => '2021-04-16'
         ], $payment->getContent());
     }

@@ -9,13 +9,13 @@ use DateTimeImmutable;
 use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
 use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\ExpenseAttachment;
 use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
 use amcintosh\FreshBooks\Model\Caster\DateCaster;
 use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Expenses are used to track expenditures your business incurs.
@@ -307,7 +307,13 @@ class Expense extends DataTransferObject implements DataModel
             ->except('updated')
             ->except('visState')
             ->except('attachment')
+            ->except('amount')
+            ->except('taxAmount1')
+            ->except('taxAmount2')
             ->toArray();
+        Util::convertContent($data, 'amount', $this->amount);
+        Util::convertContent($data, 'taxAmount1', $this->taxAmount1);
+        Util::convertContent($data, 'taxAmount2', $this->taxAmount2);
         if (is_null($this->id) && is_null($this->expenseId)) {
             $data['status'] = $this->status;
         }

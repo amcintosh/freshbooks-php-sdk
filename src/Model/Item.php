@@ -13,6 +13,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
 use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Items are stored from invoice lines to make invoicing easier in the future.
@@ -115,7 +116,9 @@ class Item extends DataTransferObject implements DataModel
             ->except('accountingSystemId')
             ->except('updated')
             ->except('visState')
+            ->except('unitCost')
             ->toArray();
+        Util::convertContent($data, 'unit_cost', $this->unitCost);
         foreach ($data as $key => $value) {
             if (is_null($value)) {
                 unset($data[$key]);
