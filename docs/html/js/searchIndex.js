@@ -1086,6 +1086,11 @@ Search.appendIndex(
             "summary": "Expenses\u0020are\u0020used\u0020to\u0020track\u0020expenditures\u0020your\u0020business\u0020incurs.",
             "url": "classes/amcintosh-FreshBooks-Model-Expense.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Expense\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Expense.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Expense\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
             "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
@@ -1406,10 +1411,10 @@ Search.appendIndex(
             "summary": "Results\u0020of\u0020expenses\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020expenses\u0020and\u0020pagination\u0020data.",
             "url": "classes/amcintosh-FreshBooks-Model-ExpenseList.html"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseList\u003A\u003ARESPONSE_FIELD",
-            "name": "RESPONSE_FIELD",
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseList\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
             "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-ExpenseList.html#constant_RESPONSE_FIELD"
+            "url": "classes/amcintosh-FreshBooks-Model-ExpenseList.html#method___construct"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\ExpenseList\u003A\u003A\u0024expenses",
             "name": "expenses",
