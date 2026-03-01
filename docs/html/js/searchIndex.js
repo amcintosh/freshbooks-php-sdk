@@ -2746,6 +2746,11 @@ Search.appendIndex(
             "summary": "Tasks\u0020in\u0020Freshbooks\u0020represent\u0020services\u0020that\u0020your\u0020business\u0020offers\u0020to\u0020clients.",
             "url": "classes/amcintosh-FreshBooks-Model-Task.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Task.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Task\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
             "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
