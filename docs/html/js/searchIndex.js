@@ -1846,15 +1846,15 @@ Search.appendIndex(
             "summary": "Attached\u0020files\u0020and\u0020images\u0020to\u0020include\u0020with\u0020an\u0020invoice.",
             "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
             "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
             "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html#method_getContent"
-        },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003ARESPONSE_FIELD",
-            "name": "RESPONSE_FIELD",
-            "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-InvoiceAttachment.html#constant_RESPONSE_FIELD"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoiceAttachment\u003A\u003A\u0024id",
             "name": "id",
