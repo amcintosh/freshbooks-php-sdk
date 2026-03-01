@@ -5,14 +5,7 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks\Model;
 
 use DateTimeImmutable;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
-use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
-use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
 use amcintosh\FreshBooks\Util;
 
 /**
@@ -26,7 +19,7 @@ use amcintosh\FreshBooks\Util;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/tasks
  */
-class Task extends DataTransferObject implements DataModel
+class Task implements DataModel
 {
     public const RESPONSE_FIELD = 'task';
 
@@ -38,13 +31,11 @@ class Task extends DataTransferObject implements DataModel
     /**
      * @var int Duplicate of id.
      */
-    #[MapFrom('taskid')]
     public ?int $taskId;
 
     /**
      * @var string Unique identifier of account the client exists on.
      */
-    #[MapFrom('accounting_systemid')]
     public ?string $accountingSystemId;
 
 
@@ -72,8 +63,7 @@ class Task extends DataTransferObject implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    #[CastWith(MoneyCaster::class)]
-    public ?Money $rate;
+    public ?Money $rate = null;
 
     /**
      * @var int Id of the first tax to apply to this task.
@@ -88,17 +78,33 @@ class Task extends DataTransferObject implements DataModel
     /**
      * @var DateTimeImmutable The time of last modification.
      */
-    #[CastWith(AccountingDateTimeImmutableCaster::class)]
-    public ?DateTimeImmutable $updated;
+    public ?DateTimeImmutable $updated = null;
 
     /**
      * @var int The visibility state: active, deleted, or archived
      *
      * See [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
      */
-    #[MapFrom('vis_state')]
     public ?int $visState;
 
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->taskId = $data['taskid'] ?? null;
+        $this->accountingSystemId = $data['accounting_systemid'] ?? null;
+        $this->billable = $data['billable'] ?? null;
+        $this->description = $data['description'] ?? null;
+        $this->name = $data['name'] ?? null;
+        if (isset($data['rate'])) {
+            $this->rate = new Money($data['rate']['amount'], $data['rate']['code']);
+        }
+        $this->tax1 = $data['tax1'] ?? null;
+        $this->tax2 = $data['tax2'] ?? null;
+        if (isset($data['updated'])) {
+            $this->updated = Util::getAccountingDateTime($data['updated']);
+        }
+        $this->visState = $data['vis_state'] ?? null;
+    }
     /**
      * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
      *
@@ -106,19 +112,14 @@ class Task extends DataTransferObject implements DataModel
      */
     public function getContent(): array
     {
-        $data = $this
-            ->except('id')
-            ->except('rate')
-            ->except('taskId')
-            ->except('updated')
-            ->except('visState')
-            ->toArray();
+        $data = array();
+        Util::convertContent($data, 'billable', $this->billable);
+        Util::convertContent($data, 'description', $this->description);
+        Util::convertContent($data, 'name', $this->name);
         Util::convertContent($data, 'rate', $this->rate);
-        foreach ($data as $key => $value) {
-            if (is_null($value)) {
-                unset($data[$key]);
-            }
-        }
+        Util::convertContent($data, 'tax1', $this->tax1);
+        Util::convertContent($data, 'tax2', $this->tax2);
+
         return $data;
     }
 }
