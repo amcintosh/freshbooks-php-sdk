@@ -56,8 +56,6 @@ class AuthorizationToken extends DataTransferObject
 
     /**
      * @return DateTimeImmutable Time the bearer token expires at.
-     *
-     * @see InvoiceStatus for a value constants.
      */
     public function getExpiresAt(): DateTimeImmutable
     {

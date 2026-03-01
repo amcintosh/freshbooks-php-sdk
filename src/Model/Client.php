@@ -166,12 +166,12 @@ class Client implements DataModel
     /**
      * @var DateTimeImmutable The signup time of the client.
      */
-    public ?DateTimeImmutable $signupDate;
+    public ?DateTimeImmutable $signupDate = null;
 
     /**
      * @var DateTimeImmutable The time of last modification.
      */
-    public ?DateTimeImmutable $updated;
+    public ?DateTimeImmutable $updated = null;
 
     /**
      * @var int Duplicate of id

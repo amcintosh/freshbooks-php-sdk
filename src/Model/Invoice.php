@@ -56,7 +56,7 @@ class Invoice implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    public ?Money $amount;
+    public ?Money $amount = null;
 
     /**
      * @var bool Whether this invoice has a credit card saved.
@@ -100,14 +100,14 @@ class Invoice implements DataModel
      *
      * The API returns this in YYYY-MM-DD format. It is converted to a DateTime.
      */
-    public ?DateTime $createDate;
+    public ?DateTime $createDate = null;
 
     /**
      * @var DateTimeImmutable The date/time the invoice was created.
      *
      * _Note:_ The API returns this data in "US/Eastern", but it is converted here to UTC.
      */
-    public ?DateTimeImmutable $createdAt;
+    public ?DateTimeImmutable $createdAt = null;
 
     /**
      * @var string Three-letter currency code for invoice.
@@ -127,14 +127,14 @@ class Invoice implements DataModel
      *
      * The API returns this in YYYY-MM-DD format.
      */
-    public ?DateTime $datePaid;
+    public ?DateTime $datePaid = null;
 
     /**
      * @var Money Amount required as deposit if required.
      *
      * Money object containing amount and currency code.
      */
-    public ?Money $depositAmount;
+    public ?Money $depositAmount = null;
 
     /**
      * @var string Percent of the invoice's value required as a deposit.
@@ -165,7 +165,7 @@ class Invoice implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    public ?Money $discountTotal;
+    public ?Money $discountTotal = null;
 
     /**
      * @var float Percent amount being discounted from the subtotal.
@@ -184,7 +184,7 @@ class Invoice implements DataModel
      *
      * The API returns this in YYYY-MM-DD format.
      */
-    public ?DateTime $dueDate;
+    public ?DateTime $dueDate = null;
 
     /**
      * @var int Number of days from creation that invoice is due.
@@ -206,7 +206,7 @@ class Invoice implements DataModel
      *
      * The API returns this in YYYY-MM-DD format.
      */
-    public ?DateTime $generationDate;
+    public ?DateTime $generationDate = null;
 
     /**
      * @var bool Whether invoice should be sent via ground mail.
@@ -261,7 +261,7 @@ class Invoice implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    public ?Money $outstanding;
+    public ?Money $outstanding = null;
 
     /**
      * @var int Id of creator of invoice. 1 if business admin, other if created by another user. Eg. a contractor.
@@ -273,7 +273,7 @@ class Invoice implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    public ?Money $paid;
+    public ?Money $paid = null;
 
     /**
      * @var int Id of object this invoice was generated from, 0 if none
@@ -302,7 +302,7 @@ class Invoice implements DataModel
      * _Note:_ The presentation details are only returned with a invoice call
      * using a "presentation" include.
      */
-    public ?InvoicePresentation $presentation;
+    public ?InvoicePresentation $presentation = null;
 
     /**
      * @var string Province/state for address on invoice.
@@ -362,7 +362,7 @@ class Invoice implements DataModel
     /**
      * @var DateTimeImmutable The time of last modification.
      */
-    public ?DateTimeImmutable $updated;
+    public ?DateTimeImmutable $updated = null;
 
     /**
      * @var bool Whether invoice should use the default presentation.
