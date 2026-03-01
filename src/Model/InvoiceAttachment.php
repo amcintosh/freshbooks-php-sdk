@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Attached files and images to include with an invoice.
@@ -19,10 +16,8 @@ use amcintosh\FreshBooks\Model\DataModel;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/invoice_presentation_attachments
  */
-class InvoiceAttachment extends DataTransferObject implements DataModel
+class InvoiceAttachment implements DataModel
 {
-    public const RESPONSE_FIELD = 'expense';
-
     /**
      * @var int The unique identifier of this expense attachment within this business.
      */
@@ -31,14 +26,11 @@ class InvoiceAttachment extends DataTransferObject implements DataModel
     /**
      * @var int Duplicate of id
      */
-    #[MapFrom('attachmentid')]
     public ?int $attachmentId;
 
     /**
      * @var int Id of the expense this attachment is associated with, if applicable.
      */
-    #[MapFrom('expenseid')]
-    #[MapTo('expenseid')]
     public ?int $expenseId;
 
     /**
@@ -49,9 +41,16 @@ class InvoiceAttachment extends DataTransferObject implements DataModel
     /**
      * @var string Type of the attachment.
      */
-    #[MapFrom('media_type')]
-    #[MapTo('media_type')]
     public ?string $mediaType;
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->attachmentId = $data['attachmentid'] ?? null;
+        $this->expenseId = $data['expenseid'] ?? null;
+        $this->jwt = $data['jwt'] ?? null;
+        $this->mediaType = $data['media_type'] ?? null;
+    }
 
     /**
      * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
@@ -60,15 +59,10 @@ class InvoiceAttachment extends DataTransferObject implements DataModel
      */
     public function getContent(): array
     {
-        $data = $this
-            ->except('id')
-            ->except('attachmentId')
-            ->toArray();
-        foreach ($data as $key => $value) {
-            if (is_null($value)) {
-                unset($data[$key]);
-            }
-        }
+        $data = array();
+        Util::convertContent($data, 'expenseid', $this->expenseId);
+        Util::convertContent($data, 'jwt', $this->jwt);
+        Util::convertContent($data, 'media_type', $this->mediaType);
         return $data;
     }
 }
