@@ -6,16 +6,8 @@ namespace amcintosh\FreshBooks\Model;
 
 use DateTime;
 use DateTimeImmutable;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\Money;
-use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
-use amcintosh\FreshBooks\Model\Caster\DateCaster;
-use amcintosh\FreshBooks\Model\Caster\MoneyCaster;
 use amcintosh\FreshBooks\Util;
 
 /**
@@ -24,7 +16,7 @@ use amcintosh\FreshBooks\Util;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/payments
  */
-class Payment extends DataTransferObject implements DataModel
+class Payment implements DataModel
 {
     public const RESPONSE_FIELD = 'payment';
 
@@ -38,13 +30,11 @@ class Payment extends DataTransferObject implements DataModel
      *
      * _Note_: The API returns this as `logid`.
      */
-    #[MapFrom('logid')]
     public ?int $paymentId;
 
     /**
      * @var string Unique identifier of account the payment exists on.
      */
-    #[MapFrom('accounting_systemid')]
     public ?string $accountingSystemId;
 
     /**
@@ -52,24 +42,18 @@ class Payment extends DataTransferObject implements DataModel
      *
      * Money object containing amount and currency code.
      */
-    #[CastWith(MoneyCaster::class)]
-    public ?Money $amount;
+    public ?Money $amount = null;
 
-    #[MapFrom('bulk_paymentid')]
-    #[MapTo('bulk_paymentid')]
     public ?int $bulkPaymentId;
 
     /**
      * @var int Id of client who made the payment.
      */
-    #[MapFrom('clientid')]
     public ?int $clientId;
 
     /**
      * @var int The id of a related credit resource.
      */
-    #[MapFrom('creditid')]
-    #[MapTo('creditid')]
     public ?int $creditId;
 
     /**
@@ -77,16 +61,12 @@ class Payment extends DataTransferObject implements DataModel
      *
      * The API returns this in YYYY-MM-DD format. It is converted to a DateTime.
      */
-    #[MapFrom('date')]
-    #[CastWith(DateCaster::class)]
     public ?DateTime $date;
 
 
     /**
      * @var bool If the payment was converted from a Credit on a Client's account.
      */
-    #[MapFrom('from_credit')]
-    #[MapTo('from_credit')]
     public ?bool $fromCredit;
 
     /**
@@ -99,8 +79,6 @@ class Payment extends DataTransferObject implements DataModel
     /**
      * @var int The id of a related Invoice resource.
      */
-    #[MapFrom('invoiceid')]
-    #[MapTo('invoiceid')]
     public ?int $invoiceId;
 
     /**
@@ -110,21 +88,16 @@ class Payment extends DataTransferObject implements DataModel
      */
     public ?string $note;
 
-    #[MapFrom('orderid')]
-    #[MapTo('orderid')]
     public ?int $orderId;
 
     /**
      * @var int Id of related overpayment Credit if relevant.
      */
-    #[MapFrom('overpaymentid')]
     public ?int $overpaymentId;
 
     /**
      * @var bool Whether to send the client a notification of this payment.
      */
-    #[MapFrom('send_client_notification')]
-    #[MapTo('send_client_notification')]
     public ?bool $sendClientNotification;
 
     /**
@@ -139,7 +112,6 @@ class Payment extends DataTransferObject implements DataModel
      *
      * _Note:_ The API returns this data in "US/Eastern", but it is converted here to UTC.
      */
-    #[CastWith(AccountingDateTimeImmutableCaster::class)]
     public ?DateTimeImmutable $updated;
 
     /**
@@ -147,8 +119,35 @@ class Payment extends DataTransferObject implements DataModel
      *
      * See [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
      */
-    #[MapFrom('vis_state')]
     public ?int $visState;
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->paymentId = $data['logid'] ?? null;
+        $this->accountingSystemId = $data['accounting_systemid'] ?? null;
+        $this->visState = $data['vis_state'] ?? null;
+        if (isset($data['amount'])) {
+            $this->amount = new Money($data['amount']['amount'], $data['amount']['code']);
+        }
+        $this->bulkPaymentId = $data['bulk_paymentid'] ?? null;
+        $this->clientId = $data['clientid'] ?? null;
+        $this->creditId = $data['creditid'] ?? null;
+        if (isset($data['date'])) {
+            $this->date = Util::getDate($data['date']);
+        }
+        $this->fromCredit = $data['from_credit'] ?? null;
+        $this->gateway = $data['gateway'] ?? null;
+        $this->invoiceId = $data['invoiceid'] ?? null;
+        $this->note = $data['note'] ?? null;
+        $this->orderId = $data['orderid'] ?? null;
+        $this->overpaymentId = $data['overpaymentid'] ?? null;
+        $this->sendClientNotification = $data['send_client_notification'] ?? null;
+        $this->type = $data['type'] ?? null;
+        if (isset($data['updated'])) {
+            $this->updated = Util::getAccountingDateTime($data['updated']);
+        }
+    }
 
     /**
      * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
@@ -157,26 +156,18 @@ class Payment extends DataTransferObject implements DataModel
      */
     public function getContent(): array
     {
-        $data = $this
-            ->except('id')
-            ->except('amount')
-            ->except('accountingSystemId')
-            ->except('paymentId')
-            ->except('clientId')
-            ->except('date')
-            ->except('gateway')
-            ->except('overpaymentId')
-            ->except('updated')
-            ->except('visState')
-            ->toArray();
+        $data = array();
         Util::convertContent($data, 'amount', $this->amount);
+        Util::convertContent($data, 'bulk_paymentid', $this->bulkPaymentId);
+        Util::convertContent($data, 'creditid', $this->creditId);
+        Util::convertContent($data, 'from_credit', $this->fromCredit);
+        Util::convertContent($data, 'invoiceid', $this->invoiceId);
+        Util::convertContent($data, 'note', $this->note);
+        Util::convertContent($data, 'orderid', $this->orderId);
+        Util::convertContent($data, 'send_client_notification', $this->sendClientNotification);
+        Util::convertContent($data, 'type', $this->type);
         if (isset($this->date)) {
             $data['date'] = $this->date->format('Y-m-d');
-        }
-        foreach ($data as $key => $value) {
-            if (is_null($value)) {
-                unset($data[$key]);
-            }
         }
         return $data;
     }

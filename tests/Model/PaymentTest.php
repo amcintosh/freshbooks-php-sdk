@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks\Tests\Model;
 
 use DateTime;
-use DateTimeZone;
 use Spryker\DecimalObject\Decimal;
 use PHPUnit\Framework\TestCase;
 use amcintosh\FreshBooks\Model\Payment;
@@ -70,14 +69,14 @@ final class PaymentTest extends TestCase
         $paymentData = json_decode($this->samplePaymentData, true);
         $payment = new Payment($paymentData['payment']);
         $this->assertSame([
-            'from_credit' => false,
-            'invoiceid' => 987654,
-            'note' => 'Some note',
-            'type' => 'Check',
             'amount' => [
                 'amount' => '41.94',
                 'code' => 'CAD'
             ],
+            'from_credit' => false,
+            'invoiceid' => 987654,
+            'note' => 'Some note',
+            'type' => 'Check',
             'date' => '2021-04-16'
         ], $payment->getContent());
     }
