@@ -2341,6 +2341,11 @@ Search.appendIndex(
             "summary": "Payments\u0020are\u0020a\u0020record\u0020of\u0020the\u0020payments\u0020made\u0020on\u0020invoices.",
             "url": "classes/amcintosh-FreshBooks-Model-Payment.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Payment\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Payment.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Payment\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
             "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
