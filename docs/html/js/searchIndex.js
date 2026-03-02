@@ -2836,6 +2836,11 @@ Search.appendIndex(
             "summary": "System\u002Dwide\u0020taxes\u0020for\u0020invoices.",
             "url": "classes/amcintosh-FreshBooks-Model-Tax.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Tax\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Tax.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Tax\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
             "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
@@ -2886,10 +2891,10 @@ Search.appendIndex(
             "summary": "Results\u0020of\u0020taxes\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020taxes\u0020and\u0020pagination\u0020data.",
             "url": "classes/amcintosh-FreshBooks-Model-TaxList.html"
         },                {
-            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaxList\u003A\u003ARESPONSE_FIELD",
-            "name": "RESPONSE_FIELD",
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaxList\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
             "summary": "",
-            "url": "classes/amcintosh-FreshBooks-Model-TaxList.html#constant_RESPONSE_FIELD"
+            "url": "classes/amcintosh-FreshBooks-Model-TaxList.html#method___construct"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\TaxList\u003A\u003A\u0024taxes",
             "name": "taxes",
