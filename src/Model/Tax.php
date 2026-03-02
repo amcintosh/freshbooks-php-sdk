@@ -5,13 +5,8 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks\Model;
 
 use DateTimeImmutable;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\DataModel;
-use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
+use amcintosh\FreshBooks\Util;
 
 /**
  * System-wide taxes for invoices.
@@ -19,7 +14,7 @@ use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/taxes
  */
-class Tax extends DataTransferObject implements DataModel
+class Tax implements DataModel
 {
     public const RESPONSE_FIELD = 'tax';
 
@@ -31,7 +26,6 @@ class Tax extends DataTransferObject implements DataModel
     /**
      * @var string Unique identifier of account the tax exists on.
      */
-    #[MapFrom('accounting_systemid')]
     public ?string $accountingSystemId;
 
     /**
@@ -54,14 +48,25 @@ class Tax extends DataTransferObject implements DataModel
     /**
      * @var int Duplicate of id.
      */
-    #[MapFrom('taxid')]
     public ?int $taxId;
 
     /**
      * @var DateTimeImmutable The time of last modification.
      */
-    #[CastWith(AccountingDateTimeImmutableCaster::class)]
     public ?DateTimeImmutable $updated;
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->accountingSystemId = $data['accounting_systemid'] ?? null;
+        $this->amount = $data['amount'] ?? null;
+        $this->name = $data['name'] ?? null;
+        $this->number = $data['number'] ?? null;
+        $this->taxId = $data['taxid'] ?? null;
+        if (isset($data['updated'])) {
+            $this->updated = Util::getAccountingDateTime($data['updated']);
+        }
+    }
 
     /**
      * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
@@ -70,17 +75,10 @@ class Tax extends DataTransferObject implements DataModel
      */
     public function getContent(): array
     {
-        $data = $this
-            ->except('id')
-            ->except('accountingSystemId')
-            ->except('taxId')
-            ->except('updated')
-            ->toArray();
-        foreach ($data as $key => $value) {
-            if (is_null($value)) {
-                unset($data[$key]);
-            }
-        }
+        $data = array();
+        Util::convertContent($data, 'amount', $this->amount);
+        Util::convertContent($data, 'name', $this->name);
+        Util::convertContent($data, 'number', $this->number);
         return $data;
     }
 }
