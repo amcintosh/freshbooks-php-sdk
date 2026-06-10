@@ -1911,6 +1911,11 @@ Search.appendIndex(
             "summary": "In\u0020FreshBooks,\u0020invoices\u0020can\u0020be\u0020paid\u0020online\u0020via\u0020a\u0020variety\u0020of\u0020payment\u0020gateways\nsetup\u0020on\u0020the\u0020sender\u2019s\u0020account.\u0020In\u0020order\u0020for\u0020this\u0020to\u0020be\u0020available\u0020on\u0020an\u0020invoice,\nthe\u0020online\u0020payments\u0020must\u0020be\u0020set\u0020up\u0020through\u0020a\u0020separate\u0020call\u0020after\u0020the\u0020invoice\u0020has\nbeen\u0020created.",
             "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-InvoicePaymentOptions.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\InvoicePaymentOptions\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
             "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
