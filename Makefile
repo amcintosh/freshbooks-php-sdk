@@ -1,10 +1,15 @@
-.PHONY: generate-docs, tag
+.PHONY: help, generate-docs, tag
 .PHONY: check-style, test, test-all
 
-generate-docs:
+help: ## Show this help message
+	@echo "Dotfiles v2 - Available targets:"
+	@echo ""
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}'
+
+generate-docs: ## Generate docs
 	./phpDocumentor.phar
 
-install:
+install: ## Composer install
 	composer install
 
 OLD_VERSION = $(shell cat src/VERSION)
@@ -16,10 +21,10 @@ tag:
 	./vendor/bin/bump_version bump --$(VERSION_PART)
 	./scripts/tag_version.sh $(OLD_VERSION)
 
-check-style:
+check-style: ## Run style checks
 	./vendor/bin/phpcs src tests
 
-test:
+test: ## Run tests with coverage
 	./vendor/bin/phpunit --coverage-text tests/
 
-test-all: test check-style
+test-all: test check-style ## Run tests and style checks

@@ -120,9 +120,9 @@ class PaymentResource extends BaseResource
      * Get the default settings for an account resource.
      *
      * @param  string $accountId The alpha-numeric account id
-     * @return DataTransferObject The result model with the default data
+     * @return DataModel|DataTransferObject The result model with the default data
      */
-    public function defaults(string $accountId): DataTransferObject
+    public function defaults(string $accountId): DataModel|DataTransferObject
     {
         $url = $this->getUrl($accountId);
         $result = $this->makeRequest(self::GET, $url);
@@ -134,9 +134,9 @@ class PaymentResource extends BaseResource
      *
      * @param  string $accountId The alpha-numeric account id
      * @param  int $resourceId Id of the resource to return
-     * @return DataTransferObject The result model
+     * @return DataModel|DataTransferObject The result model
      */
-    public function get(string $accountId, int $resourceId): DataTransferObject
+    public function get(string $accountId, int $resourceId): DataModel|DataTransferObject
     {
         $url = $this->getUrl($accountId, $resourceId);
         $result = $this->makeRequest(self::GET, $url);
@@ -149,14 +149,14 @@ class PaymentResource extends BaseResource
      * @param  string $accountId The alpha-numeric account id
      * @param  DataModel $model (Optional) The model to create
      * @param  array $data (Optional) The data to create the model with
-     * @return DataTransferObject Model of the new resource's response data.
+     * @return DataModel|DataTransferObject Model of the new resource's response data.
      */
     public function create(
         string $accountId,
         int $resourceId,
         ?DataModel $model = null,
         ?array $data = null
-    ): DataTransferObject {
+    ): DataModel|DataTransferObject {
         if (!is_null($model)) {
             $data = $model->getContent();
         }
