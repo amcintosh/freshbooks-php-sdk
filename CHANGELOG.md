@@ -2,11 +2,12 @@
 
 ## Unreleased
 
-- *Partial Breaking change*: Begin removing `spatie/data-transfer-object` usage.
-  This begins with converting Client data models. The SDK's methods will accept and
-  return the same data model classes, so it is not a fully breaking change, but the
-  model no longer inherits from `DataTransferObject`, so any code that relies on that
-  will break.
+- *Partial Breaking change*: Removing `spatie/data-transfer-object` usage.
+  This converts the data models to handle requests and responses without Spatie,
+  which is no longer in development. This is a partial breaking change, as the
+  SDK's methods will accept and return the same data model classes, but the
+  models will no longer inherit from `DataTransferObject`, so any code that relies
+  on that will break.
 
 ## 0.9.0
 

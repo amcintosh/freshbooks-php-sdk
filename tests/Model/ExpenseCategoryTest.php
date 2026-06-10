@@ -41,4 +41,11 @@ final class ExpenseCategoryTest extends TestCase
         $this->assertEquals(new DateTime('2022-10-17T18:29:14Z'), $expenseCategory->updatedAt);
         $this->assertSame(VisState::ACTIVE, $expenseCategory->visState);
     }
+
+    public function testExpenseCategoryGetContent(): void
+    {
+        $expenseCategoryData = json_decode($this->sampleExpenseCategoryData, true);
+        $expenseCategory = new ExpenseCategory($expenseCategoryData[ExpenseCategory::RESPONSE_FIELD]);
+        $this->assertSame([], $expenseCategory->getContent());
+    }
 }
