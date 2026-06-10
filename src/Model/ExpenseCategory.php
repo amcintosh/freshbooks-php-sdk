@@ -5,12 +5,8 @@ declare(strict_types=1);
 namespace amcintosh\FreshBooks\Model;
 
 use DateTimeImmutable;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
+use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Expense Categories are used to group expenses together to aid in expense tracking.
@@ -18,7 +14,7 @@ use amcintosh\FreshBooks\Model\Caster\AccountingDateTimeImmutableCaster;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/expense_categories
  */
-class ExpenseCategory extends DataTransferObject
+class ExpenseCategory implements DataModel
 {
     public const RESPONSE_FIELD = 'category';
 
@@ -30,7 +26,6 @@ class ExpenseCategory extends DataTransferObject
     /**
      * @var int Duplicate of id
      */
-    #[MapFrom('categoryid')]
     public ?int $categoryId;
 
     /**
@@ -41,48 +36,67 @@ class ExpenseCategory extends DataTransferObject
     /**
      * @var DateTimeImmutable The time of category creation.
      */
-    #[MapFrom('created_at')]
-    #[CastWith(AccountingDateTimeImmutableCaster::class)]
-    public ?DateTimeImmutable $createdAt;
+    public ?DateTimeImmutable $createdAt = null;
 
     /**
      * @var bool Represents cost of goods sold
      */
-    #[MapFrom('is_cogs')]
     public ?bool $isCogs;
 
     /**
      * @var bool Can this category be edited
      */
-    #[MapFrom('is_editable')]
     public ?bool $isEditable;
 
     /**
      * @var int Category id of parent category
      */
-    #[MapFrom('parentid')]
     public ?int $parentId;
 
     /**
      * @var bool
      */
-    #[MapFrom('transaction_posted')]
     public ?bool $transactionPosted;
 
     /**
      * @var DateTimeImmutable The time of last modification.
      */
-    #[MapFrom('updated_at')]
-    #[CastWith(AccountingDateTimeImmutableCaster::class)]
-    public ?DateTimeImmutable $updatedAt;
+    public ?DateTimeImmutable $updatedAt = null;
 
     /**
      * @var int The visibility state: active, deleted, or archived
      *
      * See [FreshBooks API - Active and Deleted Objects](https://www.freshbooks.com/api/active_deleted)
      */
-    #[MapFrom('vis_state')]
     public ?int $visState;
 
     // Includes
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->categoryId = $data['categoryid'] ?? null;
+        $this->category = $data['category'] ?? null;
+        if (isset($data['created_at'])) {
+            $this->createdAt = Util::getAccountingDateTime($data['created_at']);
+        }
+        $this->isCogs = $data['is_cogs'] ?? null;
+        $this->isEditable = $data['is_editable'] ?? null;
+        $this->parentId = $data['parentid'] ?? null;
+        $this->transactionPosted = $data['transaction_posted'] ?? null;
+        if (isset($data['updated_at'])) {
+            $this->updatedAt = Util::getAccountingDateTime($data['updated_at']);
+        }
+        $this->visState = $data['vis_state'] ?? null;
+    }
+
+    /**
+     * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
+     *
+     * @return array
+     */
+    public function getContent(): array
+    {
+        return array();
+    }
 }
