@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\DataTransferObject;
+use amcintosh\FreshBooks\Model\DataModelList;
 use amcintosh\FreshBooks\Model\Pages;
 
 /**
@@ -13,12 +12,21 @@ use amcintosh\FreshBooks\Model\Pages;
  *
  * @package amcintosh\FreshBooks\Model
  */
-class ProjectLikeList extends DataTransferObject
+class ProjectLikeList extends DataModelList
 {
     public ListMeta $meta;
 
     public function pages(): mixed
     {
         return new Pages($this->meta->page, $this->meta->pages, $this->meta->perPage, $this->meta->total);
+    }
+
+    public function __construct(array $data = [])
+    {
+        if (isset($data['meta'])) {
+            $this->meta = new ListMeta($data['meta']);
+        } else {
+            $this->meta = new ListMeta([]);
+        }
     }
 }

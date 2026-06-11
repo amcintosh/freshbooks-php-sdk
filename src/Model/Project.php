@@ -6,19 +6,11 @@ namespace amcintosh\FreshBooks\Model;
 
 use DateTime;
 use DateTimeImmutable;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\Casters\ArrayCaster;
-use Spatie\DataTransferObject\DataTransferObject;
 use Spryker\DecimalObject\Decimal;
 use amcintosh\FreshBooks\Model\DataModel;
 use amcintosh\FreshBooks\Model\ProjectGroup;
 use amcintosh\FreshBooks\Model\Service;
-use amcintosh\FreshBooks\Model\Caster\DateCaster;
-use amcintosh\FreshBooks\Model\Caster\DecimalCaster;
-use amcintosh\FreshBooks\Model\Caster\ISODateTimeImmutableCaster;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Projects in FreshBooks are used to track business projects and related information
@@ -27,7 +19,7 @@ use amcintosh\FreshBooks\Model\Caster\ISODateTimeImmutableCaster;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/project
  */
-class Project extends DataTransferObject implements DataModel
+class Project implements DataModel
 {
     public const RESPONSE_FIELD = 'project';
 
@@ -45,9 +37,7 @@ class Project extends DataTransferObject implements DataModel
     /**
      * @var Spryker\DecimalObject\Decimal The amount that has been invoiced for this project.
      */
-    #[CastWith(DecimalCaster::class)]
-    #[MapFrom('billed_amount')]
-    public ?Decimal $billedAmount;
+    public ?Decimal $billedAmount = null;
 
     /**
      * @var string Billing statuses for a project, computed from invoice totals that have been sent for that project.
@@ -60,7 +50,6 @@ class Project extends DataTransferObject implements DataModel
      *
      * @link https://www.freshbooks.com/api/project
      */
-    #[MapFrom('billed_status')]
     public ?string $billedStatus;
 
     /**
@@ -69,8 +58,6 @@ class Project extends DataTransferObject implements DataModel
      * Eg. By business hourly rate, team member's rate, different rates
      * by service provided, or a rate for the project.
      */
-    #[MapFrom('billing_method')]
-    #[MapTo('billing_method')]
     public ?string $billingMethod;
 
     /**
@@ -81,8 +68,6 @@ class Project extends DataTransferObject implements DataModel
     /**
      * @var int The id of the client this project is for.
      */
-    #[MapFrom('client_id')]
-    #[MapTo('client_id')]
     public ?int $clientId;
 
     /**
@@ -95,8 +80,6 @@ class Project extends DataTransferObject implements DataModel
     /**
      * @var DateTimeImmutable The creation time of the project.
      */
-    #[CastWith(ISODateTimeImmutableCaster::class, includeTimeZoneDesignator: false)]
-    #[MapFrom('created_at')]
     public ?DateTimeImmutable $createdAt;
 
     /**
@@ -109,25 +92,21 @@ class Project extends DataTransferObject implements DataModel
      *
      * The API returns this in YYYY-MM-DD format. It is converted to a DateTime.
      */
-    #[MapFrom('due_date')]
-    #[CastWith(DateCaster::class)]
     public ?DateTime $dueDate;
 
     /**
      * @var string String percentage markup to be applied to expenses fo this project.
      */
-    #[MapFrom('expense_markup')]
-    #[MapTo('expense_markup')]
     public ?string $expenseMarkup;
 
     /**
      * @var Spryker\DecimalObject\Decimal For projects that are of type "fixed_price" this is the price for the project.
      */
-    #[CastWith(DecimalCaster::class)]
-    #[MapFrom('fixed_price')]
-    public ?Decimal $fixedPrice;
+    public ?Decimal $fixedPrice = null;
 
-    #[MapFrom('group')]
+    /**
+     * @var ProjectGroup The project group this project belongs to.
+     */
     public ?ProjectGroup $group;
 
     /**
@@ -138,11 +117,8 @@ class Project extends DataTransferObject implements DataModel
     /**
      * @var int The time logged against the project in seconds.
      */
-    #[MapFrom('logged_duration')]
     public ?int $loggedDuration;
 
-    #[MapFrom('project_manager_id')]
-    #[MapTo('project_manager_id')]
     public ?int $projectManagerId;
 
     /**
@@ -150,25 +126,19 @@ class Project extends DataTransferObject implements DataModel
      *
      * The type of hourly rate used is set with `getBillingMethod()`.
      */
-    #[MapFrom('project_type')]
-    #[MapTo('project_type')]
     public ?string $projectType;
 
     /**
      * @var Spryker\DecimalObject\Decimal The hourly rate for project_rate hourly projects.
      */
-    #[CastWith(DecimalCaster::class)]
-    public ?Decimal $rate;
+    public ?Decimal $rate = null;
 
-    #[MapFrom('retainer_id')]
-    #[MapTo('retainer_id')]
     public ?int $retainerId;
 
     /**
      * @var array The services that work in this project can be logged against and
      * will appear on invoices when the project is billed for.
      */
-    #[CastWith(ArrayCaster::class, itemType: Service::class)]
     public ?array $services;
 
     /**
@@ -179,10 +149,52 @@ class Project extends DataTransferObject implements DataModel
     /**
      * @var DateTimeImmutable The time of last modification to the project.
      */
-    #[CastWith(ISODateTimeImmutableCaster::class, includeTimeZoneDesignator: false)]
-    #[MapFrom('updated_at')]
     public ?DateTimeImmutable $updatedAt;
 
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->active = $data['active'] ?? null;
+        if (isset($data['billed_amount'])) {
+            $this->billedAmount = Decimal::create($data['billed_amount']);
+        }
+        $this->billedStatus = $data['billed_status'] ?? null;
+        $this->billingMethod = $data['billing_method'] ?? null;
+        $this->budget = $data['budget'] ?? null;
+        $this->clientId = $data['client_id'] ?? null;
+        $this->complete = $data['complete'] ?? null;
+        if (isset($data['created_at'])) {
+            $this->createdAt = Util::getProjectDateTimeFromNaiveUTC($data['created_at']);
+        }
+        $this->description = $data['description'] ?? null;
+        if (isset($data['due_date'])) {
+            $this->dueDate = Util::getDate($data['due_date']);
+        }
+        $this->expenseMarkup = $data['expense_markup'] ?? null;
+        if (isset($data['fixed_price'])) {
+            $this->fixedPrice = Decimal::create($data['fixed_price']);
+        }
+        if (isset($data['group'])) {
+            $this->group = new ProjectGroup($data['group']);
+        }
+        $this->internal = $data['internal'] ?? null;
+        $this->loggedDuration = $data['logged_duration'] ?? null;
+        $this->projectManagerId = $data['project_manager_id'] ?? null;
+        $this->projectType = $data['project_type'] ?? null;
+        if (isset($data['rate'])) {
+            $this->rate = Decimal::create($data['rate']);
+        }
+        $this->retainerId = $data['retainer_id'] ?? null;
+        if (isset($data['services'])) {
+            $this->services = array_map(function ($serviceData) {
+                return new Service($serviceData);
+            }, $data['services']);
+        }
+        $this->title = $data['title'] ?? null;
+        if (isset($data['updated_at'])) {
+            $this->updatedAt = Util::getProjectDateTimeFromNaiveUTC($data['updated_at']);
+        }
+    }
 
     /**
      * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
@@ -191,34 +203,26 @@ class Project extends DataTransferObject implements DataModel
      */
     public function getContent(): array
     {
-        $data = $this
-            ->except('id')
-            ->except('billedAmount')
-            ->except('billedStatus')
-            ->except('createdAt')
-            ->except('createdAt')
-            ->except('dueDate')
-            ->except('fixedPrice')
-            ->except('group')
-            ->except('loggedDuration')
-            ->except('rate')
-            ->except('services')
-            ->except('updatedAt')
-            ->toArray();
+        $data = array();
+        Util::convertContent($data, 'active', $this->active);
+        Util::convertContent($data, 'billing_method', $this->billingMethod);
+        Util::convertContent($data, 'budget', $this->budget);
+        Util::convertContent($data, 'client_id', $this->clientId);
+        Util::convertContent($data, 'complete', $this->complete);
+        Util::convertContent($data, 'description', $this->description);
+        Util::convertContent($data, 'expense_markup', $this->expenseMarkup);
+        Util::convertContent($data, 'fixed_price', $this->fixedPrice);
+        Util::convertContent($data, 'internal', $this->internal);
+        Util::convertContent($data, 'project_manager_id', $this->projectManagerId);
+        Util::convertContent($data, 'project_type', $this->projectType);
+        Util::convertContent($data, 'rate', $this->rate);
+        Util::convertContent($data, 'retainer_id', $this->retainerId);
+        Util::convertContent($data, 'title', $this->title);
+
         if (isset($this->dueDate)) {
-            $data['due_date'] = $this->dueDate->format('Y-m-d');
+            $data['due_date'] = $this->dueDate->format(Util::DATE_FORMAT);
         }
-        if (isset($this->fixedPrice)) {
-            $data['fixed_price'] = $this->fixedPrice->toString();
-        }
-        if (isset($this->rate)) {
-            $data['rate'] = $this->rate->toString();
-        }
-        foreach ($data as $key => $value) {
-            if (is_null($value)) {
-                unset($data[$key]);
-            }
-        }
+
         return $data;
     }
 }

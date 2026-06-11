@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Casters\ArrayCaster;
 use amcintosh\FreshBooks\Model\Project;
 use amcintosh\FreshBooks\Model\ProjectLikeList;
 
@@ -19,6 +17,11 @@ class ProjectList extends ProjectLikeList
 {
     public const RESPONSE_FIELD = 'projects';
 
-    #[CastWith(ArrayCaster::class, itemType: Project::class)]
     public array $projects;
+
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+        $this->projects = $this->constructList($data[ProjectList::RESPONSE_FIELD], Project::class);
+    }
 }

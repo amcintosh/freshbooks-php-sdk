@@ -523,7 +523,7 @@ class Invoice implements DataModel
         Util::convertContent($data, 'code', $this->code);
         Util::convertContent($data, 'country', $this->country);
         if (isset($this->createDate)) {
-            $data['create_date'] = $this->createDate->format('Y-m-d');
+            $data['create_date'] = $this->createDate->format(Util::DATE_FORMAT);
         }
         Util::convertContent($data, 'currency_code', $this->currencyCode);
         Util::convertContent($data, 'customerid', $this->clientId);
@@ -567,7 +567,7 @@ class Invoice implements DataModel
             unset($data['discount_total']);
         }
         if (isset($this->generationDate)) {
-            $data['generation_date'] = $this->generationDate->format('Y-m-d');
+            $data['generation_date'] = $this->generationDate->format(Util::DATE_FORMAT);
         }
         return $data;
     }
