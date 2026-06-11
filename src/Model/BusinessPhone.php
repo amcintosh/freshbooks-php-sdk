@@ -4,29 +4,27 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\Business;
-
 /**
  * The phone number of the business.
  *
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/identity_model
  */
-class BusinessPhone extends DataTransferObject
+class BusinessPhone
 {
     /**
-     * @var int Unique id of the phone number.
+     * @var int|null Unique id of the phone number.
      */
     public ?int $id;
 
     /**
-     * @var string The phone number
+     * @var string|null The phone number
      */
-    #[MapFrom('phone_number')]
-    #[MapTo('phone_number')]
     public ?string $phoneNumber;
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->phoneNumber = $data['phone_number'] ?? null;
+    }
 }
