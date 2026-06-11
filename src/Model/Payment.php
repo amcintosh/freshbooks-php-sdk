@@ -167,7 +167,7 @@ class Payment implements DataModel
         Util::convertContent($data, 'send_client_notification', $this->sendClientNotification);
         Util::convertContent($data, 'type', $this->type);
         if (isset($this->date)) {
-            $data['date'] = $this->date->format('Y-m-d');
+            $data['date'] = $this->date->format(Util::DATE_FORMAT);
         }
         return $data;
     }

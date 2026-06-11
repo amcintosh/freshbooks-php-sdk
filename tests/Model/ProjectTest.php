@@ -126,12 +126,12 @@ final class ProjectTest extends TestCase
             'billing_method' => 'project_rate',
             'complete' => false,
             'expense_markup' => '0',
+            'fixed_price' => '600.00',
             'internal' => true,
             'project_type' => 'hourly_rate',
+            'rate' => '5.00',
             'title' => 'Awesome Project',
-            'due_date' => '2021-04-16',
-            'fixed_price' => '600.00',
-            'rate' => '5.00'
+            'due_date' => '2021-04-16'
         ], $project->getContent());
     }
 }

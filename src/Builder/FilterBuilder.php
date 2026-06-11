@@ -6,6 +6,7 @@ namespace amcintosh\FreshBooks\Builder;
 
 use DateTime;
 use amcintosh\FreshBooks\Builder\BuilderInterface;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Builder for making filtered list queries.
@@ -77,7 +78,7 @@ class FilterBuilder implements BuilderInterface
     private function convertBetweenValue(mixed $value): string
     {
         if ($value instanceof DateTime) {
-            return $value->format('Y-m-d');
+            return $value->format(Util::DATE_FORMAT);
         }
         return strval($value);
     }

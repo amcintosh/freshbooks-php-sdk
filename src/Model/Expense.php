@@ -327,7 +327,7 @@ class Expense implements DataModel
             Util::convertContent($data, 'status', $this->status);
         }
         if (isset($this->date)) {
-            $data['date'] = $this->date->format('Y-m-d');
+            $data['date'] = $this->date->format(Util::DATE_FORMAT);
         }
         Util::convertContent($data, 'attachment', $this->attachment);
         return $data;

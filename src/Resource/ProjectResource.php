@@ -9,8 +9,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Builder\IncludesBuilder;
 use amcintosh\FreshBooks\Exception\FreshBooksException;
 use amcintosh\FreshBooks\Model\DataModel;
-use amcintosh\FreshBooks\Model\ListModel;
-use amcintosh\FreshBooks\Model\VisState;
+use amcintosh\FreshBooks\Model\DataModelList;
 
 class ProjectResource extends BaseResource
 {
@@ -123,10 +122,13 @@ class ProjectResource extends BaseResource
      *
      * @param  int $businessId The business id
      * @param  int $resourceId Id of the resource to return
-     * @return DataTransferObject The result model
+     * @return DataModel|DataTransferObject The result model
      */
-    public function get(int $businessId, int $resourceId, ?IncludesBuilder $includes = null): DataTransferObject
-    {
+    public function get(
+        int $businessId,
+        int $resourceId,
+        ?IncludesBuilder $includes = null
+    ): DataModel|DataTransferObject {
         $url = $this->getUrl($businessId, $resourceId) . $this->buildQueryString([$includes]);
         $result = $this->makeRequest(self::GET, $url);
         return new $this->singleModel($result[$this->singleModel::RESPONSE_FIELD]);
@@ -137,9 +139,9 @@ class ProjectResource extends BaseResource
      *
      * @param  int $businessId The business id
      * @param  array $builders (Optional) List of builder objects for filters, pagination, etc.
-     * @return DataTransferObject The list result model
+     * @return DataModelList|DataTransferObject The list result model
      */
-    public function list(int $businessId, ?array $builders = null): DataTransferObject
+    public function list(int $businessId, ?array $builders = null): DataModelList|DataTransferObject
     {
         $url = $this->getUrl($businessId, isList: true) . $this->buildQueryString($builders);
         $result = $this->makeRequest(self::GET, $url);
@@ -152,14 +154,14 @@ class ProjectResource extends BaseResource
      * @param  int $businessId The business id
      * @param  DataModel $model (Optional) The model to create
      * @param  array $data (Optional) The data to create the model with
-     * @return DataTransferObject Model of the new resource's response data.
+     * @return DataModel|DataTransferObject Model of the new resource's response data.
      */
     public function create(
         int $businessId,
         ?DataModel $model = null,
         ?array $data = null,
         ?IncludesBuilder $includes = null
-    ): DataTransferObject {
+    ): DataModel|DataTransferObject {
         if (!is_null($model)) {
             $data = $model->getContent();
         }
@@ -176,7 +178,7 @@ class ProjectResource extends BaseResource
      * @param  int $resourceId Id of the resource to update
      * @param  DataModel $model (Optional) The model to update
      * @param  array $data (Optional) The data to update the model with
-     * @return DataTransferObject Model of the updated resource's response data.
+     * @return DataModel|DataTransferObject Model of the updated resource's response data.
      */
     public function update(
         int $businessId,
@@ -184,7 +186,7 @@ class ProjectResource extends BaseResource
         ?DataModel $model = null,
         ?array $data = null,
         ?IncludesBuilder $includes = null
-    ): DataTransferObject {
+    ): DataModel|DataTransferObject {
         if (!is_null($model)) {
             $data = $model->getContent();
         }
