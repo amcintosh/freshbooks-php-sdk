@@ -2116,6 +2116,11 @@ Search.appendIndex(
             "summary": "Items\u0020are\u0020stored\u0020from\u0020invoice\u0020lines\u0020to\u0020make\u0020invoicing\u0020easier\u0020in\u0020the\u0020future.",
             "url": "classes/amcintosh-FreshBooks-Model-Item.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Item.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Item\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
             "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
@@ -2195,6 +2200,11 @@ Search.appendIndex(
             "name": "ItemList",
             "summary": "Results\u0020of\u0020items\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020items\u0020and\u0020pagination\u0020data.",
             "url": "classes/amcintosh-FreshBooks-Model-ItemList.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ItemList.html#method___construct"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\ItemList\u003A\u003ARESPONSE_FIELD",
             "name": "RESPONSE_FIELD",
