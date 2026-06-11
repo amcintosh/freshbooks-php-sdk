@@ -166,9 +166,6 @@
         <h2 class="phpdocumentor-content__title">
     Identity
 
-        <span class="phpdocumentor-element__extends">
-        extends <abbr title="\Spatie\DataTransferObject\DataTransferObject">DataTransferObject</abbr>
-    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -190,7 +187,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -247,53 +244,66 @@ own, or be added as an employee of another person’s business.</p>
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/amcintosh-FreshBooks-Model-Identity.html#property_confirmedAt">$confirmedAt</a>
     <span>
-                        &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>            </span>
+                        &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/amcintosh-FreshBooks-Model-Identity.html#property_createdAt">$createdAt</a>
     <span>
-                        &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>            </span>
+                        &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/amcintosh-FreshBooks-Model-Identity.html#property_email">$email</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/amcintosh-FreshBooks-Model-Identity.html#property_firstName">$firstName</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/amcintosh-FreshBooks-Model-Identity.html#property_identityId">$identityId</a>
     <span>
-                        &nbsp;: int            </span>
+                        &nbsp;: int|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/amcintosh-FreshBooks-Model-Identity.html#property_identityUUID">$identityUUID</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/amcintosh-FreshBooks-Model-Identity.html#property_language">$language</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/amcintosh-FreshBooks-Model-Identity.html#property_lastName">$lastName</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 
     </dl>
 
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/amcintosh-FreshBooks-Model-Identity.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/amcintosh-FreshBooks-Model-Identity.html#method___construct">__construct()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+
+    </dl>
 
 
 
@@ -323,7 +333,7 @@ own, or be added as an employee of another person’s business.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -333,38 +343,13 @@ own, or be added as an employee of another person’s business.</p>
         <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
     <span class="phpdocumentor-signature__name">$businessMemberships</span>
-    </code>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
 
     
     
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="property_businessMemberships_attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-Identity.html#property_businessMemberships_attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\CastWith">CastWith</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        \Spatie\DataTransferObject\Casters\ArrayCaster::class
-    </dd>
-        <dd class="phpdocumentor-argument-list__entry">
-        $itemType: \amcintosh\FreshBooks\Model\BusinessMembership::class
-    </dd>
-    </dl>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;business_memberships&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -385,7 +370,7 @@ own, or be added as an employee of another person’s business.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -393,7 +378,7 @@ own, or be added as an employee of another person’s business.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr></span>
+            <span class="phpdocumentor-signature__type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>|null</span>
     <span class="phpdocumentor-signature__name">$confirmedAt</span>
     </code>
 
@@ -404,28 +389,6 @@ own, or be added as an employee of another person’s business.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="property_confirmedAt_attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-Identity.html#property_confirmedAt_attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\CastWith">CastWith</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        \amcintosh\FreshBooks\Model\Caster\ISODateTimeImmutableCaster::class
-    </dd>
-    </dl>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;confirmed_at&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -446,7 +409,7 @@ own, or be added as an employee of another person’s business.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
@@ -454,7 +417,7 @@ own, or be added as an employee of another person’s business.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr></span>
+            <span class="phpdocumentor-signature__type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>|null</span>
     <span class="phpdocumentor-signature__name">$createdAt</span>
     </code>
 
@@ -465,28 +428,6 @@ own, or be added as an employee of another person’s business.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="property_createdAt_attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-Identity.html#property_createdAt_attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\CastWith">CastWith</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        \amcintosh\FreshBooks\Model\Caster\ISODateTimeImmutableCaster::class
-    </dd>
-    </dl>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;created_at&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -507,7 +448,7 @@ own, or be added as an employee of another person’s business.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
@@ -515,7 +456,7 @@ own, or be added as an employee of another person’s business.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">string</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$email</span>
     </code>
 
@@ -546,7 +487,7 @@ own, or be added as an employee of another person’s business.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -554,7 +495,7 @@ own, or be added as an employee of another person’s business.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">string</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$firstName</span>
     </code>
 
@@ -565,20 +506,6 @@ own, or be added as an employee of another person’s business.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="property_firstName_attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-Identity.html#property_firstName_attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;first_name&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -599,7 +526,7 @@ own, or be added as an employee of another person’s business.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
@@ -607,7 +534,7 @@ own, or be added as an employee of another person’s business.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">int</span>
+            <span class="phpdocumentor-signature__type">int|null</span>
     <span class="phpdocumentor-signature__name">$identityId</span>
     </code>
 
@@ -618,20 +545,6 @@ own, or be added as an employee of another person’s business.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="property_identityId_attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-Identity.html#property_identityId_attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;identity_id&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -652,7 +565,7 @@ own, or be added as an employee of another person’s business.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -660,7 +573,7 @@ own, or be added as an employee of another person’s business.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">string</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$identityUUID</span>
     </code>
 
@@ -672,20 +585,6 @@ own, or be added as an employee of another person’s business.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="property_identityUUID_attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-Identity.html#property_identityUUID_attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;identity_uuid&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
@@ -706,7 +605,7 @@ own, or be added as an employee of another person’s business.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -714,7 +613,7 @@ own, or be added as an employee of another person’s business.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">string</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$language</span>
     </code>
 
@@ -745,7 +644,7 @@ own, or be added as an employee of another person’s business.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -753,7 +652,7 @@ own, or be added as an employee of another person’s business.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">string</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$lastName</span>
     </code>
 
@@ -764,26 +663,63 @@ own, or be added as an employee of another person’s business.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="property_lastName_attributes">
-                Attributes <a href="classes/amcintosh-FreshBooks-Model-Identity.html#property_lastName_attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\Spatie\DataTransferObject\Attributes\MapFrom">MapFrom</abbr>]
-    </dt>
-        <dd class="phpdocumentor-argument-list__entry">
-        &#039;last_name&#039;
-    </dd>
-    </dl>
-                    </section>
         
 
 </article>
             </section>
 
+            <section class="phpdocumentor-methods">
+        <h3 class="phpdocumentor-elements__header" id="methods">
+            Methods
+            <a href="classes/amcintosh-FreshBooks-Model-Identity.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/amcintosh-FreshBooks-Model-Identity.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/Identity.php"><a href="files/src-model-identity.html"><abbr title="src/Model/Identity.php">Identity.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">66</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
         
+    
+    
+</article>
+            </section>
+
         
     </article>
                                 </section>
@@ -797,7 +733,8 @@ own, or be added as an employee of another person’s business.</p>
             <li>
                 <ul class="phpdocumentor-list -clean">
                                                             <li><a href="classes/amcintosh-FreshBooks-Model-Identity.html#toc-properties">Properties</a></li>
-                                                        </ul>
+                                                            <li><a href="classes/amcintosh-FreshBooks-Model-Identity.html#toc-methods">Methods</a></li>
+                                    </ul>
             </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
@@ -815,6 +752,12 @@ own, or be added as an employee of another person’s business.</p>
                                             </ul>
                 </li>
             
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li class=""><a href="classes/amcintosh-FreshBooks-Model-Identity.html#method___construct">__construct()</a></li>
+                                    </ul>
+            </li>
                     </ul>
     </section>
 

@@ -561,6 +561,11 @@ Search.appendIndex(
             "summary": "Each\u0020FreshBooks\u0020user\u0020is\u0020associated\u0020with\u0020a\u0020business.",
             "url": "classes/amcintosh-FreshBooks-Model-Business.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Business\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Business.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Business\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
@@ -601,6 +606,11 @@ Search.appendIndex(
             "summary": "The\u0020address\u0020of\u0020the\u0020business.",
             "url": "classes/amcintosh-FreshBooks-Model-BusinessAddress.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessAddress\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessAddress.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessAddress\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
@@ -636,6 +646,11 @@ Search.appendIndex(
             "summary": "Business\/Identity\u0020relationship",
             "url": "classes/amcintosh-FreshBooks-Model-BusinessMembership.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessMembership\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessMembership.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessMembership\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
@@ -655,6 +670,11 @@ Search.appendIndex(
             "name": "BusinessPhone",
             "summary": "The\u0020phone\u0020number\u0020of\u0020the\u0020business.",
             "url": "classes/amcintosh-FreshBooks-Model-BusinessPhone.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessPhone\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-BusinessPhone.html#method___construct"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\BusinessPhone\u003A\u003A\u0024id",
             "name": "id",
@@ -1505,6 +1525,11 @@ Search.appendIndex(
             "name": "Identity",
             "summary": "Users\u0020are\u0020uniquely\u0020identified\u0020by\u0020their\u0020email\u0020across\u0020all\u0020of\u0020FreshBooks,\u0020so\u0020if\n\u0060leafy\u0040example.com\u0060\u0020is\u0020an\u0020Owner\u0020of\u0020one\u0020account\u0020and\u0020gets\u0020added\u0020as\u0020a\u0020Client\u0020on\u0020another,\nthey\u0020will\u0020have\u0020some\u0020access\u0020to\u0020both.\u0020They\u0020could\u0020then\u0020open\u0020a\u0020second\u0020business\u0020of\u0020their\nown,\u0020or\u0020be\u0020added\u0020as\u0020an\u0020employee\u0020of\u0020another\u0020person\u2019s\u0020business.",
             "url": "classes/amcintosh-FreshBooks-Model-Identity.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Identity\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Identity.html#method___construct"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Identity\u003A\u003A\u0024identityId",
             "name": "identityId",
