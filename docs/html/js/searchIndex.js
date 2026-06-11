@@ -521,6 +521,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-AuthorizationToken.html#method_getExpiresAt"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\AuthorizationToken\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-AuthorizationToken.html#method___construct"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\AuthorizationToken\u003A\u003AgetContent\u0028\u0029",
+            "name": "getContent",
+            "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
+            "url": "classes/amcintosh-FreshBooks-Model-AuthorizationToken.html#method_getContent"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\AuthorizationToken\u003A\u003A\u0024accessToken",
             "name": "accessToken",
             "summary": "",
@@ -3353,8 +3363,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003AgetProjectDateTimeFromISO\u0028\u0029",
             "name": "getProjectDateTimeFromISO",
-            "summary": "Get\u0020a\u0020datetime\u0020zoned\u0020to\u0020UTC\u0020from\u0020an\u0020ISO\u0020date\u0020string.\u0020Eg.\u0020\u00222020\u002D09\u002D13T03\u003A10\u003A13Z\u0022\n\u002A",
+            "summary": "Get\u0020a\u0020datetime\u0020zoned\u0020to\u0020UTC\u0020from\u0020an\u0020ISO\u0020date\u0020string.\u0020Eg.\u0020\u00222020\u002D09\u002D13T03\u003A10\u003A13Z\u0022",
             "url": "classes/amcintosh-FreshBooks-Util.html#method_getProjectDateTimeFromISO"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003AgetDateTimeFromTimestamp\u0028\u0029",
+            "name": "getDateTimeFromTimestamp",
+            "summary": "Get\u0020a\u0020datetime\u0020zoned\u0020to\u0020UTC\u0020from\u0020a\u0020Unix\u0020timestamp.",
+            "url": "classes/amcintosh-FreshBooks-Util.html#method_getDateTimeFromTimestamp"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003AconvertContent\u0028\u0029",
             "name": "convertContent",
