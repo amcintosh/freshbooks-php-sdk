@@ -2481,6 +2481,11 @@ Search.appendIndex(
             "summary": "Projects\u0020in\u0020FreshBooks\u0020are\u0020used\u0020to\u0020track\u0020business\u0020projects\u0020and\u0020related\u0020information\nsuch\u0020as\u0020hourly\u0020rate,\u0020service\u0028s\u0029\u0020being\u0020offered,\u0020projected\u0020end\u0020date...etc",
             "url": "classes/amcintosh-FreshBooks-Model-Project.html"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-Project.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\Project\u003A\u003AgetContent\u0028\u0029",
             "name": "getContent",
             "summary": "Get\u0020the\u0020data\u0020as\u0020an\u0020array\u0020to\u0020POST\u0020or\u0020PUT\u0020to\u0020FreshBooks,\u0020removing\u0020any\u0020read\u002Donly\u0020fields.",
@@ -2706,6 +2711,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Model-ProjectLikeList.html#method_pages"
         },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectLikeList\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectLikeList.html#method___construct"
+        },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectLikeList\u003A\u003A\u0024meta",
             "name": "meta",
             "summary": "",
@@ -2715,6 +2725,11 @@ Search.appendIndex(
             "name": "ProjectList",
             "summary": "Results\u0020of\u0020Projects\u0020list\u0020call\u0020containing\u0020list\u0020of\u0020projects\u0020and\u0020pagination\u0020data.",
             "url": "classes/amcintosh-FreshBooks-Model-ProjectList.html"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectList\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Model-ProjectList.html#method___construct"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Model\\ProjectList\u003A\u003ARESPONSE_FIELD",
             "name": "RESPONSE_FIELD",
@@ -3328,8 +3343,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003AgetAccountingDateTime\u0028\u0029",
             "name": "getAccountingDateTime",
-            "summary": "",
+            "summary": "Get\u0020a\u0020datetime\u0020zoned\u0020to\u0020UTC\u0020from\u0020an\u0020accounting\u0020endpoint\u0020date\u0020string.",
             "url": "classes/amcintosh-FreshBooks-Util.html#method_getAccountingDateTime"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003AgetProjectDateTimeFromNaiveUTC\u0028\u0029",
+            "name": "getProjectDateTimeFromNaiveUTC",
+            "summary": "Get\u0020a\u0020datetime\u0020zoned\u0020to\u0020UTC\u0020from\u0020an\u0020project\u002Dlike\u0020endpoint\u0020date\u0020string.",
+            "url": "classes/amcintosh-FreshBooks-Util.html#method_getProjectDateTimeFromNaiveUTC"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003AgetProjectDateTimeFromISO\u0028\u0029",
+            "name": "getProjectDateTimeFromISO",
+            "summary": "Get\u0020a\u0020datetime\u0020zoned\u0020to\u0020UTC\u0020from\u0020an\u0020ISO\u0020date\u0020string.\u0020Eg.\u0020\u00222020\u002D09\u002D13T03\u003A10\u003A13Z\u0022\n\u002A",
+            "url": "classes/amcintosh-FreshBooks-Util.html#method_getProjectDateTimeFromISO"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003AconvertContent\u0028\u0029",
             "name": "convertContent",
@@ -3345,6 +3370,16 @@ Search.appendIndex(
             "name": "ACCOUNTING_FORMAT",
             "summary": "",
             "url": "classes/amcintosh-FreshBooks-Util.html#constant_ACCOUNTING_FORMAT"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003APROJECT_FORMAT",
+            "name": "PROJECT_FORMAT",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Util.html#constant_PROJECT_FORMAT"
+        },                {
+            "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003APROJECT_FORMAT_NO_DESIGNATOR",
+            "name": "PROJECT_FORMAT_NO_DESIGNATOR",
+            "summary": "",
+            "url": "classes/amcintosh-FreshBooks-Util.html#constant_PROJECT_FORMAT_NO_DESIGNATOR"
         },                {
             "fqsen": "\\amcintosh\\FreshBooks\\Util\u003A\u003ADATE_FORMAT",
             "name": "DATE_FORMAT",

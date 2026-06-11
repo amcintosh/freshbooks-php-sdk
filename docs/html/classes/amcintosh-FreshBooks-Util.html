@@ -185,7 +185,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 
     </aside>
 
@@ -215,6 +215,12 @@
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a class="" href="classes/amcintosh-FreshBooks-Util.html#constant_DATE_FORMAT">DATE_FORMAT</a>
+    <span>
+        &nbsp;: mixed&nbsp;= &#039;Y-m-d&#039;                            </span>
+</dt>
+
             <dt class="phpdocumentor-table-of-contents__entry -constant -private">
     <a class="" href="classes/amcintosh-FreshBooks-Util.html#constant_ACCOUNTING_FORMAT">ACCOUNTING_FORMAT</a>
     <span>
@@ -228,9 +234,15 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -private">
-    <a class="" href="classes/amcintosh-FreshBooks-Util.html#constant_DATE_FORMAT">DATE_FORMAT</a>
+    <a class="" href="classes/amcintosh-FreshBooks-Util.html#constant_PROJECT_FORMAT">PROJECT_FORMAT</a>
     <span>
-        &nbsp;: mixed&nbsp;= &#039;Y-m-d&#039;                            </span>
+        &nbsp;: mixed&nbsp;= &#039;Y-m-d\TH:i:s\Z&#039;                            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a class="" href="classes/amcintosh-FreshBooks-Util.html#constant_PROJECT_FORMAT_NO_DESIGNATOR">PROJECT_FORMAT_NO_DESIGNATOR</a>
+    <span>
+        &nbsp;: mixed&nbsp;= &#039;Y-m-d\TH:i:s&#039;                            </span>
 </dt>
 
     </dl>
@@ -255,12 +267,28 @@
     <span>
                                 &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>    </span>
 </dt>
+<dd>Get a datetime zoned to UTC from an accounting endpoint date string.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/amcintosh-FreshBooks-Util.html#method_getDate">getDate()</a>
     <span>
                                 &nbsp;: <abbr title="\DateTime">DateTime</abbr>    </span>
 </dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/amcintosh-FreshBooks-Util.html#method_getProjectDateTimeFromISO">getProjectDateTimeFromISO()</a>
+    <span>
+                                &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>    </span>
+</dt>
+<dd>Get a datetime zoned to UTC from an ISO date string. Eg. &quot;2020-09-13T03:10:13Z&quot;
+*</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/amcintosh-FreshBooks-Util.html#method_getProjectDateTimeFromNaiveUTC">getProjectDateTimeFromNaiveUTC()</a>
+    <span>
+                                &nbsp;: <abbr title="\DateTimeImmutable">DateTimeImmutable</abbr>    </span>
+</dt>
+<dd>Get a datetime zoned to UTC from an project-like endpoint date string.</dd>
 
     </dl>
 
@@ -273,6 +301,36 @@
             <a href="classes/amcintosh-FreshBooks-Util.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_DATE_FORMAT">
+        DATE_FORMAT
+        <a href="classes/amcintosh-FreshBooks-Util.html#constant_DATE_FORMAT" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">DATE_FORMAT</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;Y-m-d&#039;</span>
+</code>
+
+
+    
+    
+    
+
+        
+    </article>
                     <article class="phpdocumentor-element -constant -private ">
     <h4 class="phpdocumentor-element__name" id="constant_ACCOUNTING_FORMAT">
         ACCOUNTING_FORMAT
@@ -283,7 +341,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -313,7 +371,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -334,16 +392,16 @@
         
     </article>
                     <article class="phpdocumentor-element -constant -private ">
-    <h4 class="phpdocumentor-element__name" id="constant_DATE_FORMAT">
-        DATE_FORMAT
-        <a href="classes/amcintosh-FreshBooks-Util.html#constant_DATE_FORMAT" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="constant_PROJECT_FORMAT">
+        PROJECT_FORMAT
+        <a href="classes/amcintosh-FreshBooks-Util.html#constant_PROJECT_FORMAT" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -352,8 +410,38 @@
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">DATE_FORMAT</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;Y-m-d&#039;</span>
+    <span class="phpdocumentor-signature__name">PROJECT_FORMAT</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;Y-m-d\TH:i:s\Z&#039;</span>
+</code>
+
+
+    
+    
+    
+
+        
+    </article>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_PROJECT_FORMAT_NO_DESIGNATOR">
+        PROJECT_FORMAT_NO_DESIGNATOR
+        <a href="classes/amcintosh-FreshBooks-Util.html#constant_PROJECT_FORMAT_NO_DESIGNATOR" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">PROJECT_FORMAT_NO_DESIGNATOR</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;Y-m-d\TH:i:s&#039;</span>
 </code>
 
 
@@ -387,7 +475,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">92</span>
 
     </aside>
 
@@ -452,34 +540,41 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get a datetime zoned to UTC from an accounting endpoint date string.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getAccountingDateTime</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$isUtc</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr></span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getAccountingDateTime</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string|mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$isUtc</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>The accounting service stores almost all dates in the US/Eastern timezone.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$value</span>
-                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>An accounting datetime string. eg. 2021-01-08 20:39:52</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$isUtc</span>
                 : <span class="phpdocumentor-argument-list__argument__type">bool</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Whether the input value is in UTC or in the accounting timezone.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -507,7 +602,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -541,6 +636,112 @@
             </section>
 
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getProjectDateTimeFromISO">
+        getProjectDateTimeFromISO()
+        <a href="classes/amcintosh-FreshBooks-Util.html#method_getProjectDateTimeFromISO" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">79</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get a datetime zoned to UTC from an ISO date string. Eg. &quot;2020-09-13T03:10:13Z&quot;
+*</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getProjectDateTimeFromISO</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string|mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>A project datetime string. eg. &quot;2020-09-13T03:10:13Z&quot;</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getProjectDateTimeFromNaiveUTC">
+        getProjectDateTimeFromNaiveUTC()
+        <a href="classes/amcintosh-FreshBooks-Util.html#method_getProjectDateTimeFromNaiveUTC" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Util.php"><a href="files/src-util.html"><abbr title="src/Util.php">Util.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">68</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get a datetime zoned to UTC from an project-like endpoint date string.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getProjectDateTimeFromNaiveUTC</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string|mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>The project services store their dates in UTC, but depending on the resource do not
+indicate that in the response. Eg. &quot;2020-09-13T03:10:13&quot; rather than &quot;2020-09-13T03:10:13Z&quot;.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$value</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>A project datetime string. eg. 2020-09-13T03:10:13</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\DateTimeImmutable">DateTimeImmutable</abbr></span>
+            </section>
+
+</article>
             </section>
 
         
@@ -562,9 +763,11 @@
                             <li class="phpdocumentor-on-this-page-section__title">Constants</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#constant_DATE_FORMAT">DATE_FORMAT</a></li>
                                                     <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#constant_ACCOUNTING_FORMAT">ACCOUNTING_FORMAT</a></li>
                                                     <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#constant_ACCOUNTING_TIMEZONE">ACCOUNTING_TIMEZONE</a></li>
-                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#constant_DATE_FORMAT">DATE_FORMAT</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#constant_PROJECT_FORMAT">PROJECT_FORMAT</a></li>
+                                                    <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#constant_PROJECT_FORMAT_NO_DESIGNATOR">PROJECT_FORMAT_NO_DESIGNATOR</a></li>
                                             </ul>
                 </li>
             
@@ -575,6 +778,8 @@
                                             <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#method_convertContent">convertContent()</a></li>
                                             <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#method_getAccountingDateTime">getAccountingDateTime()</a></li>
                                             <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#method_getDate">getDate()</a></li>
+                                            <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#method_getProjectDateTimeFromISO">getProjectDateTimeFromISO()</a></li>
+                                            <li class=""><a href="classes/amcintosh-FreshBooks-Util.html#method_getProjectDateTimeFromNaiveUTC">getProjectDateTimeFromNaiveUTC()</a></li>
                                     </ul>
             </li>
                     </ul>
