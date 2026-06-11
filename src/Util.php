@@ -72,13 +72,24 @@ class Util
 
     /**
      * Get a datetime zoned to UTC from an ISO date string. Eg. "2020-09-13T03:10:13Z"
-     **
+     *
      * @param string|mixed $value A project datetime string. eg. "2020-09-13T03:10:13Z"
      * @return DateTimeImmutable
      */
     public static function getProjectDateTimeFromISO(string $value): DateTimeImmutable
     {
         return DateTimeImmutable::createFromFormat(Util::PROJECT_FORMAT, $value, new DateTimeZone('UTC'));
+    }
+
+    /**
+     * Get a datetime zoned to UTC from a Unix timestamp.
+     *
+     * @param string $value A Unix timestamp.
+     * @return DateTimeImmutable
+     */
+    public static function getDateTimeFromTimestamp(int $value): DateTimeImmutable
+    {
+        return (new \DateTimeImmutable())->setTimestamp($value)->setTimezone(new DateTimeZone('UTC'));
     }
 
     /**
