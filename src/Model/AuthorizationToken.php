@@ -7,10 +7,8 @@ namespace amcintosh\FreshBooks\Model;
 use DateInterval;
 use DateTimeImmutable;
 use Exception;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\Caster\TimestampDateTimeImmutableCaster;
+use amcintosh\FreshBooks\Model\DataModel;
+use amcintosh\FreshBooks\Util;
 
 /**
  * Authorization data including the OAuth bearer token, expiry, and refresh token.
@@ -18,25 +16,21 @@ use amcintosh\FreshBooks\Model\Caster\TimestampDateTimeImmutableCaster;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/authentication
  */
-class AuthorizationToken extends DataTransferObject
+class AuthorizationToken implements DataModel
 {
     /**
      * @var string|null The authorized bearer token from the OAuth2 token response.
      */
-    #[MapFrom('access_token')]
     public ?string $accessToken;
 
     /**
      * @var string|null The authorized refresh token from the OAuth2 token response.
      */
-    #[MapFrom('refresh_token')]
     public ?string $refreshToken;
 
     /**
      * @var DateTimeImmutable|null Time the bearer token was created.
      */
-    #[MapFrom('created_at')]
-    #[CastWith(TimestampDateTimeImmutableCaster::class)]
     public ?DateTimeImmutable $createdAt;
 
     /**
@@ -45,13 +39,11 @@ class AuthorizationToken extends DataTransferObject
      * Please note {@see AuthorizationToken::getExpiresAt()} which calculates the expiry time
      * from this and createdAt.
      */
-    #[MapFrom('expires_in')]
     public ?int $expiresIn;
 
     /**
      * @var string|null The scopes that the token is authorized for.
      */
-    #[MapFrom('scope')]
     public ?string $scopes;
 
     /**
@@ -64,5 +56,26 @@ class AuthorizationToken extends DataTransferObject
         } catch (Exception) {
             return $this->createdAt;
         }
+    }
+
+    public function __construct(array $data = [])
+    {
+        $this->accessToken = $data['access_token'] ?? null;
+        $this->refreshToken = $data['refresh_token'] ?? null;
+        if (isset($data['created_at'])) {
+            $this->createdAt = Util::getDateTimeFromTimestamp($data['created_at']);
+        }
+        $this->expiresIn = $data['expires_in'] ?? null;
+        $this->scopes = $data['scope'] ?? null;
+    }
+
+    /**
+     * Get the data as an array to POST or PUT to FreshBooks, removing any read-only fields.
+     *
+     * @return array
+     */
+    public function getContent(): array
+    {
+        return array();
     }
 }
