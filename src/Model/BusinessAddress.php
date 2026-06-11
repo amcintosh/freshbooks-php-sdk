@@ -4,49 +4,51 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
-use amcintosh\FreshBooks\Model\Business;
-
 /**
  * The address of the business.
  *
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/identity_model
  */
-class BusinessAddress extends DataTransferObject
+class BusinessAddress
 {
     /**
-     * @var int Unique id of the address.
+     * @var int|null Unique id of the address.
      */
     public ?int $id;
 
     /**
-     * @var string Street address of business.
+     * @var string|null Street address of business.
      */
     public ?string $street;
 
     /**
-     * @var string City for address of business.
+     * @var string|null City for address of business.
      */
     public ?string $city;
 
     /**
-     * @var string Province/state for address of business.
+     * @var string|null Province/state for address of business.
      */
     public ?string $province;
 
     /**
-     * @var string Country for address of business.
+     * @var string|null Country for address of business.
      */
     public ?string $country;
 
     /**
-     * @var string Postal/ZIP code for address of business.
+     * @var string|null Postal/ZIP code for address of business.
      */
-    #[MapFrom('postal_code')]
-    #[MapTo('postal_code')]
     public ?string $postalCode;
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->street = $data['street'] ?? null;
+        $this->city = $data['city'] ?? null;
+        $this->province = $data['province'] ?? null;
+        $this->country = $data['country'] ?? null;
+        $this->postalCode = $data['postal_code'] ?? null;
+    }
 }

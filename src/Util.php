@@ -84,7 +84,7 @@ class Util
     /**
      * Get a datetime zoned to UTC from a Unix timestamp.
      *
-     * @param string $value A Unix timestamp.
+     * @param int $value A Unix timestamp.
      * @return DateTimeImmutable
      */
     public static function getDateTimeFromTimestamp(int $value): DateTimeImmutable

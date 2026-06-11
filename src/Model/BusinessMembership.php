@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace amcintosh\FreshBooks\Model;
 
-use Spatie\DataTransferObject\DataTransferObject;
 use amcintosh\FreshBooks\Model\Business;
 
 /**
@@ -13,20 +12,29 @@ use amcintosh\FreshBooks\Model\Business;
  * @package amcintosh\FreshBooks\Model
  * @link https://www.freshbooks.com/api/identity_model
  */
-class BusinessMembership extends DataTransferObject
+class BusinessMembership
 {
     /**
-     * @var int Membership Id.
+     * @var int|null Membership Id.
      */
     public ?int $id;
 
     /**
-     * @var string Identity's role in this business.
+     * @var string|null Identity's role in this business.
      */
     public ?string $role;
 
     /**
-     * @var Business The business details.
+     * @var Business|null The business details.
      */
-    public ?Business $business;
+    public ?Business $business = null;
+
+    public function __construct(array $data = [])
+    {
+        $this->id = $data['id'] ?? null;
+        $this->role = $data['role'] ?? null;
+        if (isset($data['business']) && is_array($data['business'])) {
+            $this->business = new Business($data['business']);
+        }
+    }
 }
